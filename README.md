@@ -1,10 +1,10 @@
 # Auth3 C++ SDK
 
-The official [Auth3](https://auth3.dev/?utm_source=github&utm_medium=sdk&utm_campaign=csharp) c++ SDK library.
+The official [Auth3](https://auth3.dev/?utm_source=github&utm_medium=sdk&utm_campaign=cpp) c++ SDK library.
 
 ## API Documentation
 
-Check-out the API documentation at [https://docs.auth3.dev/apis/identity-platform/administrative](https://docs.auth3.dev/apis/identity-platform/administrative?utm_source=github&utm_medium=sdk&utm_campaign=csharp) for further help.
+Check-out the API documentation at [https://docs.auth3.dev/apis/identity-platform/administrative](https://docs.auth3.dev/apis/identity-platform/administrative?utm_source=github&utm_medium=sdk&utm_campaign=cpp) for further help.
 
 ## Install
 
@@ -103,11 +103,11 @@ Not your target language? Check out our official SDKs for:
 
 ## Contributing
 
-At this time we don't accept external contributions, but we're open for feedbacks and requests. We're always looking for contributions on our security, refer to [our dedicated page](https://auth3.dev/bounty-program?utm_source=github&utm_medium=sdk&utm_campaign=csharp) for more.
+At this time we don't accept external contributions, but we're open for feedbacks and requests. We're always looking for contributions on our security, refer to [our dedicated page](https://auth3.dev/bounty-program?utm_source=github&utm_medium=sdk&utm_campaign=cpp) for more.
 
 ## Support
 
-Customers of the Auth3 Identity Platform can access support through the official channels available on [our website](https://auth3.dev/?utm_source=github&utm_medium=sdk&utm_campaign=csharp). We won't be able to accomodate Customer requests through the bug tracker for security reasons. 
+Customers of the Auth3 Identity Platform can access support through the official channels available on [our website](https://auth3.dev/?utm_source=github&utm_medium=sdk&utm_campaign=cpp). We won't be able to accomodate Customer requests through the bug tracker for security reasons. 
 
 ## License
 
