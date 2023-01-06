@@ -53,7 +53,7 @@ struct TableStruct_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2epro
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[81]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[85]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -204,6 +204,18 @@ extern GetIdentitiesResponseDefaultTypeInternal _GetIdentitiesResponse_default_i
 class GetIdentitiesResponse_Identity;
 class GetIdentitiesResponse_IdentityDefaultTypeInternal;
 extern GetIdentitiesResponse_IdentityDefaultTypeInternal _GetIdentitiesResponse_Identity_default_instance_;
+class GetIdentityByIdentifierRequest;
+class GetIdentityByIdentifierRequestDefaultTypeInternal;
+extern GetIdentityByIdentifierRequestDefaultTypeInternal _GetIdentityByIdentifierRequest_default_instance_;
+class GetIdentityByIdentifierResponse;
+class GetIdentityByIdentifierResponseDefaultTypeInternal;
+extern GetIdentityByIdentifierResponseDefaultTypeInternal _GetIdentityByIdentifierResponse_default_instance_;
+class GetIdentityByIdentifierResponse_Identity;
+class GetIdentityByIdentifierResponse_IdentityDefaultTypeInternal;
+extern GetIdentityByIdentifierResponse_IdentityDefaultTypeInternal _GetIdentityByIdentifierResponse_Identity_default_instance_;
+class GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse;
+class GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUseDefaultTypeInternal;
+extern GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUseDefaultTypeInternal _GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse_default_instance_;
 class GetIdentityLoginAttemptsRequest;
 class GetIdentityLoginAttemptsRequestDefaultTypeInternal;
 extern GetIdentityLoginAttemptsRequestDefaultTypeInternal _GetIdentityLoginAttemptsRequest_default_instance_;
@@ -362,6 +374,10 @@ template<> ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttribut
 template<> ::depot::devtools::auth::v0::identity::admin::GetIdentitiesRequest* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::GetIdentitiesRequest>(Arena*);
 template<> ::depot::devtools::auth::v0::identity::admin::GetIdentitiesResponse* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::GetIdentitiesResponse>(Arena*);
 template<> ::depot::devtools::auth::v0::identity::admin::GetIdentitiesResponse_Identity* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::GetIdentitiesResponse_Identity>(Arena*);
+template<> ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest>(Arena*);
+template<> ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse>(Arena*);
+template<> ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity>(Arena*);
+template<> ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse>(Arena*);
 template<> ::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsRequest* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsRequest>(Arena*);
 template<> ::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsResponse* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsResponse>(Arena*);
 template<> ::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsResponse_Attempt* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsResponse_Attempt>(Arena*);
@@ -454,6 +470,31 @@ inline bool GetIdentityResponse_Lock_Parse(
     ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, GetIdentityResponse_Lock* value) {
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<GetIdentityResponse_Lock>(
     GetIdentityResponse_Lock_descriptor(), name, value);
+}
+enum GetIdentityByIdentifierResponse_Identity_Lock : int {
+  GetIdentityByIdentifierResponse_Identity_Lock_UNLOCKED = 0,
+  GetIdentityByIdentifierResponse_Identity_Lock_ADMIN_LOCKED = 1,
+  GetIdentityByIdentifierResponse_Identity_Lock_GetIdentityByIdentifierResponse_Identity_Lock_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  GetIdentityByIdentifierResponse_Identity_Lock_GetIdentityByIdentifierResponse_Identity_Lock_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool GetIdentityByIdentifierResponse_Identity_Lock_IsValid(int value);
+constexpr GetIdentityByIdentifierResponse_Identity_Lock GetIdentityByIdentifierResponse_Identity_Lock_Lock_MIN = GetIdentityByIdentifierResponse_Identity_Lock_UNLOCKED;
+constexpr GetIdentityByIdentifierResponse_Identity_Lock GetIdentityByIdentifierResponse_Identity_Lock_Lock_MAX = GetIdentityByIdentifierResponse_Identity_Lock_ADMIN_LOCKED;
+constexpr int GetIdentityByIdentifierResponse_Identity_Lock_Lock_ARRAYSIZE = GetIdentityByIdentifierResponse_Identity_Lock_Lock_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* GetIdentityByIdentifierResponse_Identity_Lock_descriptor();
+template<typename T>
+inline const std::string& GetIdentityByIdentifierResponse_Identity_Lock_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, GetIdentityByIdentifierResponse_Identity_Lock>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function GetIdentityByIdentifierResponse_Identity_Lock_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    GetIdentityByIdentifierResponse_Identity_Lock_descriptor(), enum_t_value);
+}
+inline bool GetIdentityByIdentifierResponse_Identity_Lock_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, GetIdentityByIdentifierResponse_Identity_Lock* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<GetIdentityByIdentifierResponse_Identity_Lock>(
+    GetIdentityByIdentifierResponse_Identity_Lock_descriptor(), name, value);
 }
 enum GetIdentitiesByAttributeResponse_Identity_Lock : int {
   GetIdentitiesByAttributeResponse_Identity_Lock_UNLOCKED = 0,
@@ -1502,6 +1543,35 @@ class GetIdentitiesRequest PROTOBUF_FINAL :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kPageTokenFieldNumber = 2,
+    kPageSizeFieldNumber = 1,
+  };
+  // string page_token = 2[json_name = "pageToken"];
+  void clear_page_token();
+  const std::string& page_token() const;
+  void set_page_token(const std::string& value);
+  void set_page_token(std::string&& value);
+  void set_page_token(const char* value);
+  void set_page_token(const char* value, size_t size);
+  std::string* mutable_page_token();
+  std::string* release_page_token();
+  void set_allocated_page_token(std::string* page_token);
+  private:
+  const std::string& _internal_page_token() const;
+  void _internal_set_page_token(const std::string& value);
+  std::string* _internal_mutable_page_token();
+  public:
+
+  // int32 page_size = 1[json_name = "pageSize"];
+  void clear_page_size();
+  ::PROTOBUF_NAMESPACE_ID::int32 page_size() const;
+  void set_page_size(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_page_size() const;
+  void _internal_set_page_size(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:depot.devtools.auth.v0.identity.admin.GetIdentitiesRequest)
  private:
   class _Internal;
@@ -1509,6 +1579,8 @@ class GetIdentitiesRequest PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr page_token_;
+  ::PROTOBUF_NAMESPACE_ID::int32 page_size_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto;
 };
@@ -1891,6 +1963,8 @@ class GetIdentitiesResponse PROTOBUF_FINAL :
 
   enum : int {
     kIdentitiesFieldNumber = 1,
+    kNextPageTokenFieldNumber = 2,
+    kTotalSizeFieldNumber = 3,
   };
   // repeated .depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.Identity identities = 1[json_name = "identities"];
   int identities_size() const;
@@ -1910,6 +1984,31 @@ class GetIdentitiesResponse PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::depot::devtools::auth::v0::identity::admin::GetIdentitiesResponse_Identity >&
       identities() const;
 
+  // string next_page_token = 2[json_name = "nextPageToken"];
+  void clear_next_page_token();
+  const std::string& next_page_token() const;
+  void set_next_page_token(const std::string& value);
+  void set_next_page_token(std::string&& value);
+  void set_next_page_token(const char* value);
+  void set_next_page_token(const char* value, size_t size);
+  std::string* mutable_next_page_token();
+  std::string* release_next_page_token();
+  void set_allocated_next_page_token(std::string* next_page_token);
+  private:
+  const std::string& _internal_next_page_token() const;
+  void _internal_set_next_page_token(const std::string& value);
+  std::string* _internal_mutable_next_page_token();
+  public:
+
+  // int32 total_size = 3[json_name = "totalSize"];
+  void clear_total_size();
+  ::PROTOBUF_NAMESPACE_ID::int32 total_size() const;
+  void set_total_size(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_total_size() const;
+  void _internal_set_total_size(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse)
  private:
   class _Internal;
@@ -1918,6 +2017,8 @@ class GetIdentitiesResponse PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::depot::devtools::auth::v0::identity::admin::GetIdentitiesResponse_Identity > identities_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr next_page_token_;
+  ::PROTOBUF_NAMESPACE_ID::int32 total_size_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto;
 };
@@ -2431,6 +2532,698 @@ class GetIdentityResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
+class GetIdentityByIdentifierRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest) */ {
+ public:
+  inline GetIdentityByIdentifierRequest() : GetIdentityByIdentifierRequest(nullptr) {}
+  virtual ~GetIdentityByIdentifierRequest();
+
+  GetIdentityByIdentifierRequest(const GetIdentityByIdentifierRequest& from);
+  GetIdentityByIdentifierRequest(GetIdentityByIdentifierRequest&& from) noexcept
+    : GetIdentityByIdentifierRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline GetIdentityByIdentifierRequest& operator=(const GetIdentityByIdentifierRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetIdentityByIdentifierRequest& operator=(GetIdentityByIdentifierRequest&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const GetIdentityByIdentifierRequest& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetIdentityByIdentifierRequest* internal_default_instance() {
+    return reinterpret_cast<const GetIdentityByIdentifierRequest*>(
+               &_GetIdentityByIdentifierRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(GetIdentityByIdentifierRequest& a, GetIdentityByIdentifierRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetIdentityByIdentifierRequest* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetIdentityByIdentifierRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetIdentityByIdentifierRequest* New() const final {
+    return CreateMaybeMessage<GetIdentityByIdentifierRequest>(nullptr);
+  }
+
+  GetIdentityByIdentifierRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetIdentityByIdentifierRequest>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const GetIdentityByIdentifierRequest& from);
+  void MergeFrom(const GetIdentityByIdentifierRequest& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetIdentityByIdentifierRequest* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest";
+  }
+  protected:
+  explicit GetIdentityByIdentifierRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto);
+    return ::descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAttributeFieldNumber = 1,
+    kValueFieldNumber = 2,
+    kConnectionIdFieldNumber = 3,
+  };
+  // string attribute = 1[json_name = "attribute"];
+  void clear_attribute();
+  const std::string& attribute() const;
+  void set_attribute(const std::string& value);
+  void set_attribute(std::string&& value);
+  void set_attribute(const char* value);
+  void set_attribute(const char* value, size_t size);
+  std::string* mutable_attribute();
+  std::string* release_attribute();
+  void set_allocated_attribute(std::string* attribute);
+  private:
+  const std::string& _internal_attribute() const;
+  void _internal_set_attribute(const std::string& value);
+  std::string* _internal_mutable_attribute();
+  public:
+
+  // string value = 2[json_name = "value"];
+  void clear_value();
+  const std::string& value() const;
+  void set_value(const std::string& value);
+  void set_value(std::string&& value);
+  void set_value(const char* value);
+  void set_value(const char* value, size_t size);
+  std::string* mutable_value();
+  std::string* release_value();
+  void set_allocated_value(std::string* value);
+  private:
+  const std::string& _internal_value() const;
+  void _internal_set_value(const std::string& value);
+  std::string* _internal_mutable_value();
+  public:
+
+  // string connection_id = 3[json_name = "connectionId"];
+  void clear_connection_id();
+  const std::string& connection_id() const;
+  void set_connection_id(const std::string& value);
+  void set_connection_id(std::string&& value);
+  void set_connection_id(const char* value);
+  void set_connection_id(const char* value, size_t size);
+  std::string* mutable_connection_id();
+  std::string* release_connection_id();
+  void set_allocated_connection_id(std::string* connection_id);
+  private:
+  const std::string& _internal_connection_id() const;
+  void _internal_set_connection_id(const std::string& value);
+  std::string* _internal_mutable_connection_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr attribute_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr value_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr connection_id_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    0 > {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    0 > SuperType;
+  GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse();
+  explicit GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse& other);
+  static const GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse*>(&_GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry.key");
+ }
+  static bool ValidateValue(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry.value");
+ }
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& other) final;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto);
+    return ::descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.file_level_metadata[9];
+  }
+
+  public:
+};
+
+// -------------------------------------------------------------------
+
+class GetIdentityByIdentifierResponse_Identity PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity) */ {
+ public:
+  inline GetIdentityByIdentifierResponse_Identity() : GetIdentityByIdentifierResponse_Identity(nullptr) {}
+  virtual ~GetIdentityByIdentifierResponse_Identity();
+
+  GetIdentityByIdentifierResponse_Identity(const GetIdentityByIdentifierResponse_Identity& from);
+  GetIdentityByIdentifierResponse_Identity(GetIdentityByIdentifierResponse_Identity&& from) noexcept
+    : GetIdentityByIdentifierResponse_Identity() {
+    *this = ::std::move(from);
+  }
+
+  inline GetIdentityByIdentifierResponse_Identity& operator=(const GetIdentityByIdentifierResponse_Identity& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetIdentityByIdentifierResponse_Identity& operator=(GetIdentityByIdentifierResponse_Identity&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const GetIdentityByIdentifierResponse_Identity& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetIdentityByIdentifierResponse_Identity* internal_default_instance() {
+    return reinterpret_cast<const GetIdentityByIdentifierResponse_Identity*>(
+               &_GetIdentityByIdentifierResponse_Identity_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  friend void swap(GetIdentityByIdentifierResponse_Identity& a, GetIdentityByIdentifierResponse_Identity& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetIdentityByIdentifierResponse_Identity* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetIdentityByIdentifierResponse_Identity* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetIdentityByIdentifierResponse_Identity* New() const final {
+    return CreateMaybeMessage<GetIdentityByIdentifierResponse_Identity>(nullptr);
+  }
+
+  GetIdentityByIdentifierResponse_Identity* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetIdentityByIdentifierResponse_Identity>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const GetIdentityByIdentifierResponse_Identity& from);
+  void MergeFrom(const GetIdentityByIdentifierResponse_Identity& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetIdentityByIdentifierResponse_Identity* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity";
+  }
+  protected:
+  explicit GetIdentityByIdentifierResponse_Identity(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto);
+    return ::descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+
+  typedef GetIdentityByIdentifierResponse_Identity_Lock Lock;
+  static constexpr Lock UNLOCKED =
+    GetIdentityByIdentifierResponse_Identity_Lock_UNLOCKED;
+  static constexpr Lock ADMIN_LOCKED =
+    GetIdentityByIdentifierResponse_Identity_Lock_ADMIN_LOCKED;
+  static inline bool Lock_IsValid(int value) {
+    return GetIdentityByIdentifierResponse_Identity_Lock_IsValid(value);
+  }
+  static constexpr Lock Lock_MIN =
+    GetIdentityByIdentifierResponse_Identity_Lock_Lock_MIN;
+  static constexpr Lock Lock_MAX =
+    GetIdentityByIdentifierResponse_Identity_Lock_Lock_MAX;
+  static constexpr int Lock_ARRAYSIZE =
+    GetIdentityByIdentifierResponse_Identity_Lock_Lock_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  Lock_descriptor() {
+    return GetIdentityByIdentifierResponse_Identity_Lock_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& Lock_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, Lock>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function Lock_Name.");
+    return GetIdentityByIdentifierResponse_Identity_Lock_Name(enum_t_value);
+  }
+  static inline bool Lock_Parse(::PROTOBUF_NAMESPACE_ID::ConstStringParam name,
+      Lock* value) {
+    return GetIdentityByIdentifierResponse_Identity_Lock_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAddressesIdsFieldNumber = 6,
+    kCredentialsIdsFieldNumber = 7,
+    kIdentityIdFieldNumber = 1,
+    kMainIdentifierFieldNumber = 4,
+    kTraitsIdFieldNumber = 5,
+    kSchemaIdFieldNumber = 8,
+    kCreatedAtFieldNumber = 2,
+    kUpdatedAtFieldNumber = 3,
+    kLockFieldNumber = 9,
+  };
+  // repeated string addresses_ids = 6[json_name = "addressesIds"];
+  int addresses_ids_size() const;
+  private:
+  int _internal_addresses_ids_size() const;
+  public:
+  void clear_addresses_ids();
+  const std::string& addresses_ids(int index) const;
+  std::string* mutable_addresses_ids(int index);
+  void set_addresses_ids(int index, const std::string& value);
+  void set_addresses_ids(int index, std::string&& value);
+  void set_addresses_ids(int index, const char* value);
+  void set_addresses_ids(int index, const char* value, size_t size);
+  std::string* add_addresses_ids();
+  void add_addresses_ids(const std::string& value);
+  void add_addresses_ids(std::string&& value);
+  void add_addresses_ids(const char* value);
+  void add_addresses_ids(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& addresses_ids() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_addresses_ids();
+  private:
+  const std::string& _internal_addresses_ids(int index) const;
+  std::string* _internal_add_addresses_ids();
+  public:
+
+  // map<string, string> credentials_ids = 7[json_name = "credentialsIds"];
+  int credentials_ids_size() const;
+  private:
+  int _internal_credentials_ids_size() const;
+  public:
+  void clear_credentials_ids();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      _internal_credentials_ids() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      _internal_mutable_credentials_ids();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      credentials_ids() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      mutable_credentials_ids();
+
+  // string identity_id = 1[json_name = "identityId"];
+  void clear_identity_id();
+  const std::string& identity_id() const;
+  void set_identity_id(const std::string& value);
+  void set_identity_id(std::string&& value);
+  void set_identity_id(const char* value);
+  void set_identity_id(const char* value, size_t size);
+  std::string* mutable_identity_id();
+  std::string* release_identity_id();
+  void set_allocated_identity_id(std::string* identity_id);
+  private:
+  const std::string& _internal_identity_id() const;
+  void _internal_set_identity_id(const std::string& value);
+  std::string* _internal_mutable_identity_id();
+  public:
+
+  // string main_identifier = 4[json_name = "mainIdentifier"];
+  void clear_main_identifier();
+  const std::string& main_identifier() const;
+  void set_main_identifier(const std::string& value);
+  void set_main_identifier(std::string&& value);
+  void set_main_identifier(const char* value);
+  void set_main_identifier(const char* value, size_t size);
+  std::string* mutable_main_identifier();
+  std::string* release_main_identifier();
+  void set_allocated_main_identifier(std::string* main_identifier);
+  private:
+  const std::string& _internal_main_identifier() const;
+  void _internal_set_main_identifier(const std::string& value);
+  std::string* _internal_mutable_main_identifier();
+  public:
+
+  // string traits_id = 5[json_name = "traitsId"];
+  void clear_traits_id();
+  const std::string& traits_id() const;
+  void set_traits_id(const std::string& value);
+  void set_traits_id(std::string&& value);
+  void set_traits_id(const char* value);
+  void set_traits_id(const char* value, size_t size);
+  std::string* mutable_traits_id();
+  std::string* release_traits_id();
+  void set_allocated_traits_id(std::string* traits_id);
+  private:
+  const std::string& _internal_traits_id() const;
+  void _internal_set_traits_id(const std::string& value);
+  std::string* _internal_mutable_traits_id();
+  public:
+
+  // string schema_id = 8[json_name = "schemaId"];
+  void clear_schema_id();
+  const std::string& schema_id() const;
+  void set_schema_id(const std::string& value);
+  void set_schema_id(std::string&& value);
+  void set_schema_id(const char* value);
+  void set_schema_id(const char* value, size_t size);
+  std::string* mutable_schema_id();
+  std::string* release_schema_id();
+  void set_allocated_schema_id(std::string* schema_id);
+  private:
+  const std::string& _internal_schema_id() const;
+  void _internal_set_schema_id(const std::string& value);
+  std::string* _internal_mutable_schema_id();
+  public:
+
+  // .google.protobuf.Timestamp created_at = 2[json_name = "createdAt"];
+  bool has_created_at() const;
+  private:
+  bool _internal_has_created_at() const;
+  public:
+  void clear_created_at();
+  const PROTOBUF_NAMESPACE_ID::Timestamp& created_at() const;
+  PROTOBUF_NAMESPACE_ID::Timestamp* release_created_at();
+  PROTOBUF_NAMESPACE_ID::Timestamp* mutable_created_at();
+  void set_allocated_created_at(PROTOBUF_NAMESPACE_ID::Timestamp* created_at);
+  private:
+  const PROTOBUF_NAMESPACE_ID::Timestamp& _internal_created_at() const;
+  PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_created_at();
+  public:
+  void unsafe_arena_set_allocated_created_at(
+      PROTOBUF_NAMESPACE_ID::Timestamp* created_at);
+  PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_created_at();
+
+  // .google.protobuf.Timestamp updated_at = 3[json_name = "updatedAt"];
+  bool has_updated_at() const;
+  private:
+  bool _internal_has_updated_at() const;
+  public:
+  void clear_updated_at();
+  const PROTOBUF_NAMESPACE_ID::Timestamp& updated_at() const;
+  PROTOBUF_NAMESPACE_ID::Timestamp* release_updated_at();
+  PROTOBUF_NAMESPACE_ID::Timestamp* mutable_updated_at();
+  void set_allocated_updated_at(PROTOBUF_NAMESPACE_ID::Timestamp* updated_at);
+  private:
+  const PROTOBUF_NAMESPACE_ID::Timestamp& _internal_updated_at() const;
+  PROTOBUF_NAMESPACE_ID::Timestamp* _internal_mutable_updated_at();
+  public:
+  void unsafe_arena_set_allocated_updated_at(
+      PROTOBUF_NAMESPACE_ID::Timestamp* updated_at);
+  PROTOBUF_NAMESPACE_ID::Timestamp* unsafe_arena_release_updated_at();
+
+  // .depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock lock = 9[json_name = "lock"];
+  void clear_lock();
+  ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity_Lock lock() const;
+  void set_lock(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity_Lock value);
+  private:
+  ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity_Lock _internal_lock() const;
+  void _internal_set_lock(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity_Lock value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> addresses_ids_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse,
+      std::string, std::string,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+      0 > credentials_ids_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr identity_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr main_identifier_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr traits_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr schema_id_;
+  PROTOBUF_NAMESPACE_ID::Timestamp* created_at_;
+  PROTOBUF_NAMESPACE_ID::Timestamp* updated_at_;
+  int lock_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GetIdentityByIdentifierResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse) */ {
+ public:
+  inline GetIdentityByIdentifierResponse() : GetIdentityByIdentifierResponse(nullptr) {}
+  virtual ~GetIdentityByIdentifierResponse();
+
+  GetIdentityByIdentifierResponse(const GetIdentityByIdentifierResponse& from);
+  GetIdentityByIdentifierResponse(GetIdentityByIdentifierResponse&& from) noexcept
+    : GetIdentityByIdentifierResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline GetIdentityByIdentifierResponse& operator=(const GetIdentityByIdentifierResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GetIdentityByIdentifierResponse& operator=(GetIdentityByIdentifierResponse&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const GetIdentityByIdentifierResponse& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const GetIdentityByIdentifierResponse* internal_default_instance() {
+    return reinterpret_cast<const GetIdentityByIdentifierResponse*>(
+               &_GetIdentityByIdentifierResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(GetIdentityByIdentifierResponse& a, GetIdentityByIdentifierResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GetIdentityByIdentifierResponse* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GetIdentityByIdentifierResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline GetIdentityByIdentifierResponse* New() const final {
+    return CreateMaybeMessage<GetIdentityByIdentifierResponse>(nullptr);
+  }
+
+  GetIdentityByIdentifierResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetIdentityByIdentifierResponse>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const GetIdentityByIdentifierResponse& from);
+  void MergeFrom(const GetIdentityByIdentifierResponse& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(GetIdentityByIdentifierResponse* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse";
+  }
+  protected:
+  explicit GetIdentityByIdentifierResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto);
+    return ::descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  typedef GetIdentityByIdentifierResponse_Identity Identity;
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kIdentityFieldNumber = 1,
+  };
+  // .depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity identity = 1[json_name = "identity"];
+  bool has_identity() const;
+  private:
+  bool _internal_has_identity() const;
+  public:
+  void clear_identity();
+  const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity& identity() const;
+  ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity* release_identity();
+  ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity* mutable_identity();
+  void set_allocated_identity(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity* identity);
+  private:
+  const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity& _internal_identity() const;
+  ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity* _internal_mutable_identity();
+  public:
+  void unsafe_arena_set_allocated_identity(
+      ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity* identity);
+  ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity* unsafe_arena_release_identity();
+
+  // @@protoc_insertion_point(class_scope:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity* identity_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto;
+};
+// -------------------------------------------------------------------
+
 class GetIdentitiesByAttributeRequest PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:depot.devtools.auth.v0.identity.admin.GetIdentitiesByAttributeRequest) */ {
  public:
@@ -2473,7 +3266,7 @@ class GetIdentitiesByAttributeRequest PROTOBUF_FINAL :
                &_GetIdentitiesByAttributeRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    12;
 
   friend void swap(GetIdentitiesByAttributeRequest& a, GetIdentitiesByAttributeRequest& b) {
     a.Swap(&b);
@@ -2619,7 +3412,7 @@ public:
   private:
   static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
     ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto);
-    return ::descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.file_level_metadata[9];
+    return ::descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.file_level_metadata[13];
   }
 
   public:
@@ -2669,7 +3462,7 @@ class GetIdentitiesByAttributeResponse_Identity PROTOBUF_FINAL :
                &_GetIdentitiesByAttributeResponse_Identity_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    14;
 
   friend void swap(GetIdentitiesByAttributeResponse_Identity& a, GetIdentitiesByAttributeResponse_Identity& b) {
     a.Swap(&b);
@@ -2999,7 +3792,7 @@ class GetIdentitiesByAttributeResponse PROTOBUF_FINAL :
                &_GetIdentitiesByAttributeResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    15;
 
   friend void swap(GetIdentitiesByAttributeResponse& a, GetIdentitiesByAttributeResponse& b) {
     a.Swap(&b);
@@ -3147,7 +3940,7 @@ class UpdateIdentityRequest PROTOBUF_FINAL :
                &_UpdateIdentityRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    16;
 
   friend void swap(UpdateIdentityRequest& a, UpdateIdentityRequest& b) {
     a.Swap(&b);
@@ -3332,7 +4125,7 @@ class UpdateIdentityResponse PROTOBUF_FINAL :
                &_UpdateIdentityResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    17;
 
   friend void swap(UpdateIdentityResponse& a, UpdateIdentityResponse& b) {
     a.Swap(&b);
@@ -3456,7 +4249,7 @@ class DeleteIdentityRequest PROTOBUF_FINAL :
                &_DeleteIdentityRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    18;
 
   friend void swap(DeleteIdentityRequest& a, DeleteIdentityRequest& b) {
     a.Swap(&b);
@@ -3600,7 +4393,7 @@ class DeleteIdentityResponse PROTOBUF_FINAL :
                &_DeleteIdentityResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    19;
 
   friend void swap(DeleteIdentityResponse& a, DeleteIdentityResponse& b) {
     a.Swap(&b);
@@ -3724,7 +4517,7 @@ class GetCredentialsRequest PROTOBUF_FINAL :
                &_GetCredentialsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    20;
 
   friend void swap(GetCredentialsRequest& a, GetCredentialsRequest& b) {
     a.Swap(&b);
@@ -3868,7 +4661,7 @@ class GetCredentialsResponse_Credential PROTOBUF_FINAL :
                &_GetCredentialsResponse_Credential_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    21;
 
   friend void swap(GetCredentialsResponse_Credential& a, GetCredentialsResponse_Credential& b) {
     a.Swap(&b);
@@ -4092,7 +4885,7 @@ public:
   private:
   static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
     ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto);
-    return ::descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.file_level_metadata[18];
+    return ::descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.file_level_metadata[22];
   }
 
   public:
@@ -4142,7 +4935,7 @@ class GetCredentialsResponse PROTOBUF_FINAL :
                &_GetCredentialsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    23;
 
   friend void swap(GetCredentialsResponse& a, GetCredentialsResponse& b) {
     a.Swap(&b);
@@ -4294,7 +5087,7 @@ class UpdateCredentialRequest PROTOBUF_FINAL :
                &_UpdateCredentialRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    24;
 
   friend void swap(UpdateCredentialRequest& a, UpdateCredentialRequest& b) {
     a.Swap(&b);
@@ -4476,7 +5269,7 @@ class UpdateCredentialResponse PROTOBUF_FINAL :
                &_UpdateCredentialResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    25;
 
   friend void swap(UpdateCredentialResponse& a, UpdateCredentialResponse& b) {
     a.Swap(&b);
@@ -4600,7 +5393,7 @@ class CreateConnectionRequest PROTOBUF_FINAL :
                &_CreateConnectionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    26;
 
   friend void swap(CreateConnectionRequest& a, CreateConnectionRequest& b) {
     a.Swap(&b);
@@ -5046,7 +5839,7 @@ class CreateConnectionResponse PROTOBUF_FINAL :
                &_CreateConnectionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    27;
 
   friend void swap(CreateConnectionResponse& a, CreateConnectionResponse& b) {
     a.Swap(&b);
@@ -5190,7 +5983,7 @@ class GetConnectionsRequest PROTOBUF_FINAL :
                &_GetConnectionsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    28;
 
   friend void swap(GetConnectionsRequest& a, GetConnectionsRequest& b) {
     a.Swap(&b);
@@ -5314,7 +6107,7 @@ class GetConnectionsResponse_Connection PROTOBUF_FINAL :
                &_GetConnectionsResponse_Connection_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    29;
 
   friend void swap(GetConnectionsResponse_Connection& a, GetConnectionsResponse_Connection& b) {
     a.Swap(&b);
@@ -5625,7 +6418,7 @@ class GetConnectionsResponse PROTOBUF_FINAL :
                &_GetConnectionsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    30;
 
   friend void swap(GetConnectionsResponse& a, GetConnectionsResponse& b) {
     a.Swap(&b);
@@ -5969,7 +6762,7 @@ class UpdateConnectionRequest PROTOBUF_FINAL :
                &_UpdateConnectionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    31;
 
   friend void swap(UpdateConnectionRequest& a, UpdateConnectionRequest& b) {
     a.Swap(&b);
@@ -6433,7 +7226,7 @@ class UpdateConnectionResponse PROTOBUF_FINAL :
                &_UpdateConnectionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    32;
 
   friend void swap(UpdateConnectionResponse& a, UpdateConnectionResponse& b) {
     a.Swap(&b);
@@ -6557,7 +7350,7 @@ class DeleteConnectionRequest PROTOBUF_FINAL :
                &_DeleteConnectionRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    33;
 
   friend void swap(DeleteConnectionRequest& a, DeleteConnectionRequest& b) {
     a.Swap(&b);
@@ -6701,7 +7494,7 @@ class DeleteConnectionResponse PROTOBUF_FINAL :
                &_DeleteConnectionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    34;
 
   friend void swap(DeleteConnectionResponse& a, DeleteConnectionResponse& b) {
     a.Swap(&b);
@@ -6825,7 +7618,7 @@ class GetOAuth2ClientsRequest PROTOBUF_FINAL :
                &_GetOAuth2ClientsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    35;
 
   friend void swap(GetOAuth2ClientsRequest& a, GetOAuth2ClientsRequest& b) {
     a.Swap(&b);
@@ -6949,7 +7742,7 @@ class GetOAuth2ClientsResponse_Client PROTOBUF_FINAL :
                &_GetOAuth2ClientsResponse_Client_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    36;
 
   friend void swap(GetOAuth2ClientsResponse_Client& a, GetOAuth2ClientsResponse_Client& b) {
     a.Swap(&b);
@@ -7666,7 +8459,7 @@ class GetOAuth2ClientsResponse PROTOBUF_FINAL :
                &_GetOAuth2ClientsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    37;
 
   friend void swap(GetOAuth2ClientsResponse& a, GetOAuth2ClientsResponse& b) {
     a.Swap(&b);
@@ -7814,7 +8607,7 @@ class CreateOAuth2ClientRequest PROTOBUF_FINAL :
                &_CreateOAuth2ClientRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    38;
 
   friend void swap(CreateOAuth2ClientRequest& a, CreateOAuth2ClientRequest& b) {
     a.Swap(&b);
@@ -8480,7 +9273,7 @@ class CreateOAuth2ClientResponse PROTOBUF_FINAL :
                &_CreateOAuth2ClientResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    39;
 
   friend void swap(CreateOAuth2ClientResponse& a, CreateOAuth2ClientResponse& b) {
     a.Swap(&b);
@@ -8642,7 +9435,7 @@ class UpdateOAuth2ClientRequest PROTOBUF_FINAL :
                &_UpdateOAuth2ClientRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    40;
 
   friend void swap(UpdateOAuth2ClientRequest& a, UpdateOAuth2ClientRequest& b) {
     a.Swap(&b);
@@ -9315,7 +10108,7 @@ class UpdateOAuth2ClientResponse PROTOBUF_FINAL :
                &_UpdateOAuth2ClientResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    41;
 
   friend void swap(UpdateOAuth2ClientResponse& a, UpdateOAuth2ClientResponse& b) {
     a.Swap(&b);
@@ -9477,7 +10270,7 @@ class DeleteOAuth2ClientRequest PROTOBUF_FINAL :
                &_DeleteOAuth2ClientRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    42;
 
   friend void swap(DeleteOAuth2ClientRequest& a, DeleteOAuth2ClientRequest& b) {
     a.Swap(&b);
@@ -9621,7 +10414,7 @@ class DeleteOAuth2ClientResponse PROTOBUF_FINAL :
                &_DeleteOAuth2ClientResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    43;
 
   friend void swap(DeleteOAuth2ClientResponse& a, DeleteOAuth2ClientResponse& b) {
     a.Swap(&b);
@@ -9745,7 +10538,7 @@ class GetAddressesRequest PROTOBUF_FINAL :
                &_GetAddressesRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    44;
 
   friend void swap(GetAddressesRequest& a, GetAddressesRequest& b) {
     a.Swap(&b);
@@ -9889,7 +10682,7 @@ class GetAddressesResponse_Address PROTOBUF_FINAL :
                &_GetAddressesResponse_Address_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    45;
 
   friend void swap(GetAddressesResponse_Address& a, GetAddressesResponse_Address& b) {
     a.Swap(&b);
@@ -10116,7 +10909,7 @@ class GetAddressesResponse PROTOBUF_FINAL :
                &_GetAddressesResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    42;
+    46;
 
   friend void swap(GetAddressesResponse& a, GetAddressesResponse& b) {
     a.Swap(&b);
@@ -10270,7 +11063,7 @@ class GetAddressRequest PROTOBUF_FINAL :
                &_GetAddressRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    43;
+    47;
 
   friend void swap(GetAddressRequest& a, GetAddressRequest& b) {
     a.Swap(&b);
@@ -10450,7 +11243,7 @@ class GetAddressResponse PROTOBUF_FINAL :
                &_GetAddressResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    44;
+    48;
 
   friend void swap(GetAddressResponse& a, GetAddressResponse& b) {
     a.Swap(&b);
@@ -10683,7 +11476,7 @@ class UpdateAddressRequest PROTOBUF_FINAL :
                &_UpdateAddressRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    45;
+    49;
 
   friend void swap(UpdateAddressRequest& a, UpdateAddressRequest& b) {
     a.Swap(&b);
@@ -10874,7 +11667,7 @@ class UpdateAddressResponse PROTOBUF_FINAL :
                &_UpdateAddressResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    46;
+    50;
 
   friend void swap(UpdateAddressResponse& a, UpdateAddressResponse& b) {
     a.Swap(&b);
@@ -10998,7 +11791,7 @@ class GetTraitsRequest PROTOBUF_FINAL :
                &_GetTraitsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    47;
+    51;
 
   friend void swap(GetTraitsRequest& a, GetTraitsRequest& b) {
     a.Swap(&b);
@@ -11142,7 +11935,7 @@ class GetTraitsResponse PROTOBUF_FINAL :
                &_GetTraitsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    48;
+    52;
 
   friend void swap(GetTraitsResponse& a, GetTraitsResponse& b) {
     a.Swap(&b);
@@ -11286,7 +12079,7 @@ class UpdateTraitsRequest PROTOBUF_FINAL :
                &_UpdateTraitsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    49;
+    53;
 
   friend void swap(UpdateTraitsRequest& a, UpdateTraitsRequest& b) {
     a.Swap(&b);
@@ -11448,7 +12241,7 @@ class UpdateTraitsResponse PROTOBUF_FINAL :
                &_UpdateTraitsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    50;
+    54;
 
   friend void swap(UpdateTraitsResponse& a, UpdateTraitsResponse& b) {
     a.Swap(&b);
@@ -11572,7 +12365,7 @@ class GetIdentityLoginAttemptsRequest PROTOBUF_FINAL :
                &_GetIdentityLoginAttemptsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    51;
+    55;
 
   friend void swap(GetIdentityLoginAttemptsRequest& a, GetIdentityLoginAttemptsRequest& b) {
     a.Swap(&b);
@@ -11716,7 +12509,7 @@ class GetIdentityLoginAttemptsResponse_Attempt PROTOBUF_FINAL :
                &_GetIdentityLoginAttemptsResponse_Attempt_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    52;
+    56;
 
   friend void swap(GetIdentityLoginAttemptsResponse_Attempt& a, GetIdentityLoginAttemptsResponse_Attempt& b) {
     a.Swap(&b);
@@ -11962,7 +12755,7 @@ class GetIdentityLoginAttemptsResponse PROTOBUF_FINAL :
                &_GetIdentityLoginAttemptsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    53;
+    57;
 
   friend void swap(GetIdentityLoginAttemptsResponse& a, GetIdentityLoginAttemptsResponse& b) {
     a.Swap(&b);
@@ -12110,7 +12903,7 @@ class CreateIdSchemaRequest PROTOBUF_FINAL :
                &_CreateIdSchemaRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    54;
+    58;
 
   friend void swap(CreateIdSchemaRequest& a, CreateIdSchemaRequest& b) {
     a.Swap(&b);
@@ -12274,7 +13067,7 @@ class CreateIdSchemaResponse PROTOBUF_FINAL :
                &_CreateIdSchemaResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    55;
+    59;
 
   friend void swap(CreateIdSchemaResponse& a, CreateIdSchemaResponse& b) {
     a.Swap(&b);
@@ -12418,7 +13211,7 @@ class GetIdSchemasRequest PROTOBUF_FINAL :
                &_GetIdSchemasRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    56;
+    60;
 
   friend void swap(GetIdSchemasRequest& a, GetIdSchemasRequest& b) {
     a.Swap(&b);
@@ -12542,7 +13335,7 @@ class GetIdSchemasResponse_JsonSchema PROTOBUF_FINAL :
                &_GetIdSchemasResponse_JsonSchema_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    57;
+    61;
 
   friend void swap(GetIdSchemasResponse_JsonSchema& a, GetIdSchemasResponse_JsonSchema& b) {
     a.Swap(&b);
@@ -12775,7 +13568,7 @@ class GetIdSchemasResponse PROTOBUF_FINAL :
                &_GetIdSchemasResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    58;
+    62;
 
   friend void swap(GetIdSchemasResponse& a, GetIdSchemasResponse& b) {
     a.Swap(&b);
@@ -12923,7 +13716,7 @@ class GetIdSchemaRequest PROTOBUF_FINAL :
                &_GetIdSchemaRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    59;
+    63;
 
   friend void swap(GetIdSchemaRequest& a, GetIdSchemaRequest& b) {
     a.Swap(&b);
@@ -13067,7 +13860,7 @@ class GetIdSchemaResponse PROTOBUF_FINAL :
                &_GetIdSchemaResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    60;
+    64;
 
   friend void swap(GetIdSchemaResponse& a, GetIdSchemaResponse& b) {
     a.Swap(&b);
@@ -13300,7 +14093,7 @@ class GetDefaultIdSchemaRequest PROTOBUF_FINAL :
                &_GetDefaultIdSchemaRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    61;
+    65;
 
   friend void swap(GetDefaultIdSchemaRequest& a, GetDefaultIdSchemaRequest& b) {
     a.Swap(&b);
@@ -13424,7 +14217,7 @@ class GetDefaultIdSchemaResponse PROTOBUF_FINAL :
                &_GetDefaultIdSchemaResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    62;
+    66;
 
   friend void swap(GetDefaultIdSchemaResponse& a, GetDefaultIdSchemaResponse& b) {
     a.Swap(&b);
@@ -13657,7 +14450,7 @@ class UpdateIdSchemaRequest PROTOBUF_FINAL :
                &_UpdateIdSchemaRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    63;
+    67;
 
   friend void swap(UpdateIdSchemaRequest& a, UpdateIdSchemaRequest& b) {
     a.Swap(&b);
@@ -13839,7 +14632,7 @@ class UpdateIdSchemaResponse PROTOBUF_FINAL :
                &_UpdateIdSchemaResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    64;
+    68;
 
   friend void swap(UpdateIdSchemaResponse& a, UpdateIdSchemaResponse& b) {
     a.Swap(&b);
@@ -13963,7 +14756,7 @@ class MarkDefaultIdSchemaRequest PROTOBUF_FINAL :
                &_MarkDefaultIdSchemaRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    65;
+    69;
 
   friend void swap(MarkDefaultIdSchemaRequest& a, MarkDefaultIdSchemaRequest& b) {
     a.Swap(&b);
@@ -14107,7 +14900,7 @@ class MarkDefaultIdSchemaResponse PROTOBUF_FINAL :
                &_MarkDefaultIdSchemaResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    66;
+    70;
 
   friend void swap(MarkDefaultIdSchemaResponse& a, MarkDefaultIdSchemaResponse& b) {
     a.Swap(&b);
@@ -14231,7 +15024,7 @@ class DeleteIdSchemaRequest PROTOBUF_FINAL :
                &_DeleteIdSchemaRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    67;
+    71;
 
   friend void swap(DeleteIdSchemaRequest& a, DeleteIdSchemaRequest& b) {
     a.Swap(&b);
@@ -14375,7 +15168,7 @@ class DeleteIdSchemaResponse PROTOBUF_FINAL :
                &_DeleteIdSchemaResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    68;
+    72;
 
   friend void swap(DeleteIdSchemaResponse& a, DeleteIdSchemaResponse& b) {
     a.Swap(&b);
@@ -14499,7 +15292,7 @@ class GetEmailsSetupRequest PROTOBUF_FINAL :
                &_GetEmailsSetupRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    69;
+    73;
 
   friend void swap(GetEmailsSetupRequest& a, GetEmailsSetupRequest& b) {
     a.Swap(&b);
@@ -14623,7 +15416,7 @@ class GetEmailsSetupResponse_EmailTemplate PROTOBUF_FINAL :
                &_GetEmailsSetupResponse_EmailTemplate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    70;
+    74;
 
   friend void swap(GetEmailsSetupResponse_EmailTemplate& a, GetEmailsSetupResponse_EmailTemplate& b) {
     a.Swap(&b);
@@ -14785,7 +15578,7 @@ class GetEmailsSetupResponse_EmailSender PROTOBUF_FINAL :
                &_GetEmailsSetupResponse_EmailSender_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    71;
+    75;
 
   friend void swap(GetEmailsSetupResponse_EmailSender& a, GetEmailsSetupResponse_EmailSender& b) {
     a.Swap(&b);
@@ -14994,7 +15787,7 @@ class GetEmailsSetupResponse PROTOBUF_FINAL :
                &_GetEmailsSetupResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    72;
+    76;
 
   friend void swap(GetEmailsSetupResponse& a, GetEmailsSetupResponse& b) {
     a.Swap(&b);
@@ -15261,7 +16054,7 @@ class UpdateEmailsSetupRequest_EmailTemplate PROTOBUF_FINAL :
                &_UpdateEmailsSetupRequest_EmailTemplate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    73;
+    77;
 
   friend void swap(UpdateEmailsSetupRequest_EmailTemplate& a, UpdateEmailsSetupRequest_EmailTemplate& b) {
     a.Swap(&b);
@@ -15423,7 +16216,7 @@ class UpdateEmailsSetupRequest_EmailSender PROTOBUF_FINAL :
                &_UpdateEmailsSetupRequest_EmailSender_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    74;
+    78;
 
   friend void swap(UpdateEmailsSetupRequest_EmailSender& a, UpdateEmailsSetupRequest_EmailSender& b) {
     a.Swap(&b);
@@ -15632,7 +16425,7 @@ class UpdateEmailsSetupRequest PROTOBUF_FINAL :
                &_UpdateEmailsSetupRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    75;
+    79;
 
   friend void swap(UpdateEmailsSetupRequest& a, UpdateEmailsSetupRequest& b) {
     a.Swap(&b);
@@ -15881,7 +16674,7 @@ class UpdateEmailsSetupResponse PROTOBUF_FINAL :
                &_UpdateEmailsSetupResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    76;
+    80;
 
   friend void swap(UpdateEmailsSetupResponse& a, UpdateEmailsSetupResponse& b) {
     a.Swap(&b);
@@ -16005,7 +16798,7 @@ class GetUserBaseStatisticsRequest PROTOBUF_FINAL :
                &_GetUserBaseStatisticsRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    77;
+    81;
 
   friend void swap(GetUserBaseStatisticsRequest& a, GetUserBaseStatisticsRequest& b) {
     a.Swap(&b);
@@ -16164,7 +16957,7 @@ public:
   private:
   static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
     ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto);
-    return ::descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.file_level_metadata[78];
+    return ::descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.file_level_metadata[82];
   }
 
   public:
@@ -16196,7 +16989,7 @@ public:
   private:
   static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
     ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto);
-    return ::descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.file_level_metadata[79];
+    return ::descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.file_level_metadata[83];
   }
 
   public:
@@ -16246,7 +17039,7 @@ class GetUserBaseStatisticsResponse PROTOBUF_FINAL :
                &_GetUserBaseStatisticsResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    80;
+    84;
 
   friend void swap(GetUserBaseStatisticsResponse& a, GetUserBaseStatisticsResponse& b) {
     a.Swap(&b);
@@ -16692,6 +17485,88 @@ inline void CreateIdentityResponse::set_allocated_identity_id(std::string* ident
 
 // GetIdentitiesRequest
 
+// int32 page_size = 1[json_name = "pageSize"];
+inline void GetIdentitiesRequest::clear_page_size() {
+  page_size_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetIdentitiesRequest::_internal_page_size() const {
+  return page_size_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetIdentitiesRequest::page_size() const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetIdentitiesRequest.page_size)
+  return _internal_page_size();
+}
+inline void GetIdentitiesRequest::_internal_set_page_size(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  page_size_ = value;
+}
+inline void GetIdentitiesRequest::set_page_size(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_page_size(value);
+  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetIdentitiesRequest.page_size)
+}
+
+// string page_token = 2[json_name = "pageToken"];
+inline void GetIdentitiesRequest::clear_page_token() {
+  page_token_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& GetIdentitiesRequest::page_token() const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetIdentitiesRequest.page_token)
+  return _internal_page_token();
+}
+inline void GetIdentitiesRequest::set_page_token(const std::string& value) {
+  _internal_set_page_token(value);
+  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetIdentitiesRequest.page_token)
+}
+inline std::string* GetIdentitiesRequest::mutable_page_token() {
+  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetIdentitiesRequest.page_token)
+  return _internal_mutable_page_token();
+}
+inline const std::string& GetIdentitiesRequest::_internal_page_token() const {
+  return page_token_.Get();
+}
+inline void GetIdentitiesRequest::_internal_set_page_token(const std::string& value) {
+  
+  page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void GetIdentitiesRequest::set_page_token(std::string&& value) {
+  
+  page_token_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.GetIdentitiesRequest.page_token)
+}
+inline void GetIdentitiesRequest::set_page_token(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.GetIdentitiesRequest.page_token)
+}
+inline void GetIdentitiesRequest::set_page_token(const char* value,
+    size_t size) {
+  
+  page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.GetIdentitiesRequest.page_token)
+}
+inline std::string* GetIdentitiesRequest::_internal_mutable_page_token() {
+  
+  return page_token_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* GetIdentitiesRequest::release_page_token() {
+  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetIdentitiesRequest.page_token)
+  return page_token_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void GetIdentitiesRequest::set_allocated_page_token(std::string* page_token) {
+  if (page_token != nullptr) {
+    
+  } else {
+    
+  }
+  page_token_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), page_token,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetIdentitiesRequest.page_token)
+}
+
 // -------------------------------------------------------------------
 
 // GetIdentitiesResponse_Identity
@@ -17097,6 +17972,88 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::depot::devtools::auth:
 GetIdentitiesResponse::identities() const {
   // @@protoc_insertion_point(field_list:depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.identities)
   return identities_;
+}
+
+// string next_page_token = 2[json_name = "nextPageToken"];
+inline void GetIdentitiesResponse::clear_next_page_token() {
+  next_page_token_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& GetIdentitiesResponse::next_page_token() const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.next_page_token)
+  return _internal_next_page_token();
+}
+inline void GetIdentitiesResponse::set_next_page_token(const std::string& value) {
+  _internal_set_next_page_token(value);
+  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.next_page_token)
+}
+inline std::string* GetIdentitiesResponse::mutable_next_page_token() {
+  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.next_page_token)
+  return _internal_mutable_next_page_token();
+}
+inline const std::string& GetIdentitiesResponse::_internal_next_page_token() const {
+  return next_page_token_.Get();
+}
+inline void GetIdentitiesResponse::_internal_set_next_page_token(const std::string& value) {
+  
+  next_page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void GetIdentitiesResponse::set_next_page_token(std::string&& value) {
+  
+  next_page_token_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.next_page_token)
+}
+inline void GetIdentitiesResponse::set_next_page_token(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  next_page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.next_page_token)
+}
+inline void GetIdentitiesResponse::set_next_page_token(const char* value,
+    size_t size) {
+  
+  next_page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.next_page_token)
+}
+inline std::string* GetIdentitiesResponse::_internal_mutable_next_page_token() {
+  
+  return next_page_token_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* GetIdentitiesResponse::release_next_page_token() {
+  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.next_page_token)
+  return next_page_token_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void GetIdentitiesResponse::set_allocated_next_page_token(std::string* next_page_token) {
+  if (next_page_token != nullptr) {
+    
+  } else {
+    
+  }
+  next_page_token_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), next_page_token,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.next_page_token)
+}
+
+// int32 total_size = 3[json_name = "totalSize"];
+inline void GetIdentitiesResponse::clear_total_size() {
+  total_size_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetIdentitiesResponse::_internal_total_size() const {
+  return total_size_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GetIdentitiesResponse::total_size() const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.total_size)
+  return _internal_total_size();
+}
+inline void GetIdentitiesResponse::_internal_set_total_size(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  total_size_ = value;
+}
+inline void GetIdentitiesResponse::set_total_size(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_total_size(value);
+  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.total_size)
 }
 
 // -------------------------------------------------------------------
@@ -17694,6 +18651,814 @@ inline void GetIdentityResponse::_internal_set_lock(::depot::devtools::auth::v0:
 inline void GetIdentityResponse::set_lock(::depot::devtools::auth::v0::identity::admin::GetIdentityResponse_Lock value) {
   _internal_set_lock(value);
   // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetIdentityResponse.lock)
+}
+
+// -------------------------------------------------------------------
+
+// GetIdentityByIdentifierRequest
+
+// string attribute = 1[json_name = "attribute"];
+inline void GetIdentityByIdentifierRequest::clear_attribute() {
+  attribute_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& GetIdentityByIdentifierRequest::attribute() const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.attribute)
+  return _internal_attribute();
+}
+inline void GetIdentityByIdentifierRequest::set_attribute(const std::string& value) {
+  _internal_set_attribute(value);
+  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.attribute)
+}
+inline std::string* GetIdentityByIdentifierRequest::mutable_attribute() {
+  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.attribute)
+  return _internal_mutable_attribute();
+}
+inline const std::string& GetIdentityByIdentifierRequest::_internal_attribute() const {
+  return attribute_.Get();
+}
+inline void GetIdentityByIdentifierRequest::_internal_set_attribute(const std::string& value) {
+  
+  attribute_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void GetIdentityByIdentifierRequest::set_attribute(std::string&& value) {
+  
+  attribute_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.attribute)
+}
+inline void GetIdentityByIdentifierRequest::set_attribute(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  attribute_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.attribute)
+}
+inline void GetIdentityByIdentifierRequest::set_attribute(const char* value,
+    size_t size) {
+  
+  attribute_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.attribute)
+}
+inline std::string* GetIdentityByIdentifierRequest::_internal_mutable_attribute() {
+  
+  return attribute_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* GetIdentityByIdentifierRequest::release_attribute() {
+  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.attribute)
+  return attribute_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void GetIdentityByIdentifierRequest::set_allocated_attribute(std::string* attribute) {
+  if (attribute != nullptr) {
+    
+  } else {
+    
+  }
+  attribute_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), attribute,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.attribute)
+}
+
+// string value = 2[json_name = "value"];
+inline void GetIdentityByIdentifierRequest::clear_value() {
+  value_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& GetIdentityByIdentifierRequest::value() const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.value)
+  return _internal_value();
+}
+inline void GetIdentityByIdentifierRequest::set_value(const std::string& value) {
+  _internal_set_value(value);
+  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.value)
+}
+inline std::string* GetIdentityByIdentifierRequest::mutable_value() {
+  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.value)
+  return _internal_mutable_value();
+}
+inline const std::string& GetIdentityByIdentifierRequest::_internal_value() const {
+  return value_.Get();
+}
+inline void GetIdentityByIdentifierRequest::_internal_set_value(const std::string& value) {
+  
+  value_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void GetIdentityByIdentifierRequest::set_value(std::string&& value) {
+  
+  value_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.value)
+}
+inline void GetIdentityByIdentifierRequest::set_value(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  value_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.value)
+}
+inline void GetIdentityByIdentifierRequest::set_value(const char* value,
+    size_t size) {
+  
+  value_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.value)
+}
+inline std::string* GetIdentityByIdentifierRequest::_internal_mutable_value() {
+  
+  return value_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* GetIdentityByIdentifierRequest::release_value() {
+  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.value)
+  return value_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void GetIdentityByIdentifierRequest::set_allocated_value(std::string* value) {
+  if (value != nullptr) {
+    
+  } else {
+    
+  }
+  value_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.value)
+}
+
+// string connection_id = 3[json_name = "connectionId"];
+inline void GetIdentityByIdentifierRequest::clear_connection_id() {
+  connection_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& GetIdentityByIdentifierRequest::connection_id() const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.connection_id)
+  return _internal_connection_id();
+}
+inline void GetIdentityByIdentifierRequest::set_connection_id(const std::string& value) {
+  _internal_set_connection_id(value);
+  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.connection_id)
+}
+inline std::string* GetIdentityByIdentifierRequest::mutable_connection_id() {
+  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.connection_id)
+  return _internal_mutable_connection_id();
+}
+inline const std::string& GetIdentityByIdentifierRequest::_internal_connection_id() const {
+  return connection_id_.Get();
+}
+inline void GetIdentityByIdentifierRequest::_internal_set_connection_id(const std::string& value) {
+  
+  connection_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void GetIdentityByIdentifierRequest::set_connection_id(std::string&& value) {
+  
+  connection_id_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.connection_id)
+}
+inline void GetIdentityByIdentifierRequest::set_connection_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  connection_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.connection_id)
+}
+inline void GetIdentityByIdentifierRequest::set_connection_id(const char* value,
+    size_t size) {
+  
+  connection_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.connection_id)
+}
+inline std::string* GetIdentityByIdentifierRequest::_internal_mutable_connection_id() {
+  
+  return connection_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* GetIdentityByIdentifierRequest::release_connection_id() {
+  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.connection_id)
+  return connection_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void GetIdentityByIdentifierRequest::set_allocated_connection_id(std::string* connection_id) {
+  if (connection_id != nullptr) {
+    
+  } else {
+    
+  }
+  connection_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), connection_id,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.connection_id)
+}
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// GetIdentityByIdentifierResponse_Identity
+
+// string identity_id = 1[json_name = "identityId"];
+inline void GetIdentityByIdentifierResponse_Identity::clear_identity_id() {
+  identity_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& GetIdentityByIdentifierResponse_Identity::identity_id() const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.identity_id)
+  return _internal_identity_id();
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_identity_id(const std::string& value) {
+  _internal_set_identity_id(value);
+  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.identity_id)
+}
+inline std::string* GetIdentityByIdentifierResponse_Identity::mutable_identity_id() {
+  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.identity_id)
+  return _internal_mutable_identity_id();
+}
+inline const std::string& GetIdentityByIdentifierResponse_Identity::_internal_identity_id() const {
+  return identity_id_.Get();
+}
+inline void GetIdentityByIdentifierResponse_Identity::_internal_set_identity_id(const std::string& value) {
+  
+  identity_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_identity_id(std::string&& value) {
+  
+  identity_id_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.identity_id)
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_identity_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  identity_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.identity_id)
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_identity_id(const char* value,
+    size_t size) {
+  
+  identity_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.identity_id)
+}
+inline std::string* GetIdentityByIdentifierResponse_Identity::_internal_mutable_identity_id() {
+  
+  return identity_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* GetIdentityByIdentifierResponse_Identity::release_identity_id() {
+  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.identity_id)
+  return identity_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_allocated_identity_id(std::string* identity_id) {
+  if (identity_id != nullptr) {
+    
+  } else {
+    
+  }
+  identity_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), identity_id,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.identity_id)
+}
+
+// .google.protobuf.Timestamp created_at = 2[json_name = "createdAt"];
+inline bool GetIdentityByIdentifierResponse_Identity::_internal_has_created_at() const {
+  return this != internal_default_instance() && created_at_ != nullptr;
+}
+inline bool GetIdentityByIdentifierResponse_Identity::has_created_at() const {
+  return _internal_has_created_at();
+}
+inline const PROTOBUF_NAMESPACE_ID::Timestamp& GetIdentityByIdentifierResponse_Identity::_internal_created_at() const {
+  const PROTOBUF_NAMESPACE_ID::Timestamp* p = created_at_;
+  return p != nullptr ? *p : *reinterpret_cast<const PROTOBUF_NAMESPACE_ID::Timestamp*>(
+      &PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const PROTOBUF_NAMESPACE_ID::Timestamp& GetIdentityByIdentifierResponse_Identity::created_at() const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.created_at)
+  return _internal_created_at();
+}
+inline void GetIdentityByIdentifierResponse_Identity::unsafe_arena_set_allocated_created_at(
+    PROTOBUF_NAMESPACE_ID::Timestamp* created_at) {
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(created_at_);
+  }
+  created_at_ = created_at;
+  if (created_at) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.created_at)
+}
+inline PROTOBUF_NAMESPACE_ID::Timestamp* GetIdentityByIdentifierResponse_Identity::release_created_at() {
+  
+  PROTOBUF_NAMESPACE_ID::Timestamp* temp = created_at_;
+  created_at_ = nullptr;
+  if (GetArena() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline PROTOBUF_NAMESPACE_ID::Timestamp* GetIdentityByIdentifierResponse_Identity::unsafe_arena_release_created_at() {
+  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.created_at)
+  
+  PROTOBUF_NAMESPACE_ID::Timestamp* temp = created_at_;
+  created_at_ = nullptr;
+  return temp;
+}
+inline PROTOBUF_NAMESPACE_ID::Timestamp* GetIdentityByIdentifierResponse_Identity::_internal_mutable_created_at() {
+  
+  if (created_at_ == nullptr) {
+    auto* p = CreateMaybeMessage<PROTOBUF_NAMESPACE_ID::Timestamp>(GetArena());
+    created_at_ = p;
+  }
+  return created_at_;
+}
+inline PROTOBUF_NAMESPACE_ID::Timestamp* GetIdentityByIdentifierResponse_Identity::mutable_created_at() {
+  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.created_at)
+  return _internal_mutable_created_at();
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_allocated_created_at(PROTOBUF_NAMESPACE_ID::Timestamp* created_at) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(created_at_);
+  }
+  if (created_at) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(created_at)->GetArena();
+    if (message_arena != submessage_arena) {
+      created_at = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, created_at, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  created_at_ = created_at;
+  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.created_at)
+}
+
+// .google.protobuf.Timestamp updated_at = 3[json_name = "updatedAt"];
+inline bool GetIdentityByIdentifierResponse_Identity::_internal_has_updated_at() const {
+  return this != internal_default_instance() && updated_at_ != nullptr;
+}
+inline bool GetIdentityByIdentifierResponse_Identity::has_updated_at() const {
+  return _internal_has_updated_at();
+}
+inline const PROTOBUF_NAMESPACE_ID::Timestamp& GetIdentityByIdentifierResponse_Identity::_internal_updated_at() const {
+  const PROTOBUF_NAMESPACE_ID::Timestamp* p = updated_at_;
+  return p != nullptr ? *p : *reinterpret_cast<const PROTOBUF_NAMESPACE_ID::Timestamp*>(
+      &PROTOBUF_NAMESPACE_ID::_Timestamp_default_instance_);
+}
+inline const PROTOBUF_NAMESPACE_ID::Timestamp& GetIdentityByIdentifierResponse_Identity::updated_at() const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.updated_at)
+  return _internal_updated_at();
+}
+inline void GetIdentityByIdentifierResponse_Identity::unsafe_arena_set_allocated_updated_at(
+    PROTOBUF_NAMESPACE_ID::Timestamp* updated_at) {
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(updated_at_);
+  }
+  updated_at_ = updated_at;
+  if (updated_at) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.updated_at)
+}
+inline PROTOBUF_NAMESPACE_ID::Timestamp* GetIdentityByIdentifierResponse_Identity::release_updated_at() {
+  
+  PROTOBUF_NAMESPACE_ID::Timestamp* temp = updated_at_;
+  updated_at_ = nullptr;
+  if (GetArena() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline PROTOBUF_NAMESPACE_ID::Timestamp* GetIdentityByIdentifierResponse_Identity::unsafe_arena_release_updated_at() {
+  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.updated_at)
+  
+  PROTOBUF_NAMESPACE_ID::Timestamp* temp = updated_at_;
+  updated_at_ = nullptr;
+  return temp;
+}
+inline PROTOBUF_NAMESPACE_ID::Timestamp* GetIdentityByIdentifierResponse_Identity::_internal_mutable_updated_at() {
+  
+  if (updated_at_ == nullptr) {
+    auto* p = CreateMaybeMessage<PROTOBUF_NAMESPACE_ID::Timestamp>(GetArena());
+    updated_at_ = p;
+  }
+  return updated_at_;
+}
+inline PROTOBUF_NAMESPACE_ID::Timestamp* GetIdentityByIdentifierResponse_Identity::mutable_updated_at() {
+  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.updated_at)
+  return _internal_mutable_updated_at();
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_allocated_updated_at(PROTOBUF_NAMESPACE_ID::Timestamp* updated_at) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(updated_at_);
+  }
+  if (updated_at) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(updated_at)->GetArena();
+    if (message_arena != submessage_arena) {
+      updated_at = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, updated_at, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  updated_at_ = updated_at;
+  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.updated_at)
+}
+
+// string main_identifier = 4[json_name = "mainIdentifier"];
+inline void GetIdentityByIdentifierResponse_Identity::clear_main_identifier() {
+  main_identifier_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& GetIdentityByIdentifierResponse_Identity::main_identifier() const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.main_identifier)
+  return _internal_main_identifier();
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_main_identifier(const std::string& value) {
+  _internal_set_main_identifier(value);
+  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.main_identifier)
+}
+inline std::string* GetIdentityByIdentifierResponse_Identity::mutable_main_identifier() {
+  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.main_identifier)
+  return _internal_mutable_main_identifier();
+}
+inline const std::string& GetIdentityByIdentifierResponse_Identity::_internal_main_identifier() const {
+  return main_identifier_.Get();
+}
+inline void GetIdentityByIdentifierResponse_Identity::_internal_set_main_identifier(const std::string& value) {
+  
+  main_identifier_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_main_identifier(std::string&& value) {
+  
+  main_identifier_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.main_identifier)
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_main_identifier(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  main_identifier_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.main_identifier)
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_main_identifier(const char* value,
+    size_t size) {
+  
+  main_identifier_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.main_identifier)
+}
+inline std::string* GetIdentityByIdentifierResponse_Identity::_internal_mutable_main_identifier() {
+  
+  return main_identifier_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* GetIdentityByIdentifierResponse_Identity::release_main_identifier() {
+  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.main_identifier)
+  return main_identifier_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_allocated_main_identifier(std::string* main_identifier) {
+  if (main_identifier != nullptr) {
+    
+  } else {
+    
+  }
+  main_identifier_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), main_identifier,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.main_identifier)
+}
+
+// string traits_id = 5[json_name = "traitsId"];
+inline void GetIdentityByIdentifierResponse_Identity::clear_traits_id() {
+  traits_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& GetIdentityByIdentifierResponse_Identity::traits_id() const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.traits_id)
+  return _internal_traits_id();
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_traits_id(const std::string& value) {
+  _internal_set_traits_id(value);
+  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.traits_id)
+}
+inline std::string* GetIdentityByIdentifierResponse_Identity::mutable_traits_id() {
+  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.traits_id)
+  return _internal_mutable_traits_id();
+}
+inline const std::string& GetIdentityByIdentifierResponse_Identity::_internal_traits_id() const {
+  return traits_id_.Get();
+}
+inline void GetIdentityByIdentifierResponse_Identity::_internal_set_traits_id(const std::string& value) {
+  
+  traits_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_traits_id(std::string&& value) {
+  
+  traits_id_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.traits_id)
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_traits_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  traits_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.traits_id)
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_traits_id(const char* value,
+    size_t size) {
+  
+  traits_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.traits_id)
+}
+inline std::string* GetIdentityByIdentifierResponse_Identity::_internal_mutable_traits_id() {
+  
+  return traits_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* GetIdentityByIdentifierResponse_Identity::release_traits_id() {
+  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.traits_id)
+  return traits_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_allocated_traits_id(std::string* traits_id) {
+  if (traits_id != nullptr) {
+    
+  } else {
+    
+  }
+  traits_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), traits_id,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.traits_id)
+}
+
+// repeated string addresses_ids = 6[json_name = "addressesIds"];
+inline int GetIdentityByIdentifierResponse_Identity::_internal_addresses_ids_size() const {
+  return addresses_ids_.size();
+}
+inline int GetIdentityByIdentifierResponse_Identity::addresses_ids_size() const {
+  return _internal_addresses_ids_size();
+}
+inline void GetIdentityByIdentifierResponse_Identity::clear_addresses_ids() {
+  addresses_ids_.Clear();
+}
+inline std::string* GetIdentityByIdentifierResponse_Identity::add_addresses_ids() {
+  // @@protoc_insertion_point(field_add_mutable:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.addresses_ids)
+  return _internal_add_addresses_ids();
+}
+inline const std::string& GetIdentityByIdentifierResponse_Identity::_internal_addresses_ids(int index) const {
+  return addresses_ids_.Get(index);
+}
+inline const std::string& GetIdentityByIdentifierResponse_Identity::addresses_ids(int index) const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.addresses_ids)
+  return _internal_addresses_ids(index);
+}
+inline std::string* GetIdentityByIdentifierResponse_Identity::mutable_addresses_ids(int index) {
+  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.addresses_ids)
+  return addresses_ids_.Mutable(index);
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_addresses_ids(int index, const std::string& value) {
+  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.addresses_ids)
+  addresses_ids_.Mutable(index)->assign(value);
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_addresses_ids(int index, std::string&& value) {
+  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.addresses_ids)
+  addresses_ids_.Mutable(index)->assign(std::move(value));
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_addresses_ids(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  addresses_ids_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.addresses_ids)
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_addresses_ids(int index, const char* value, size_t size) {
+  addresses_ids_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.addresses_ids)
+}
+inline std::string* GetIdentityByIdentifierResponse_Identity::_internal_add_addresses_ids() {
+  return addresses_ids_.Add();
+}
+inline void GetIdentityByIdentifierResponse_Identity::add_addresses_ids(const std::string& value) {
+  addresses_ids_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.addresses_ids)
+}
+inline void GetIdentityByIdentifierResponse_Identity::add_addresses_ids(std::string&& value) {
+  addresses_ids_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.addresses_ids)
+}
+inline void GetIdentityByIdentifierResponse_Identity::add_addresses_ids(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  addresses_ids_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.addresses_ids)
+}
+inline void GetIdentityByIdentifierResponse_Identity::add_addresses_ids(const char* value, size_t size) {
+  addresses_ids_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.addresses_ids)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+GetIdentityByIdentifierResponse_Identity::addresses_ids() const {
+  // @@protoc_insertion_point(field_list:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.addresses_ids)
+  return addresses_ids_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+GetIdentityByIdentifierResponse_Identity::mutable_addresses_ids() {
+  // @@protoc_insertion_point(field_mutable_list:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.addresses_ids)
+  return &addresses_ids_;
+}
+
+// map<string, string> credentials_ids = 7[json_name = "credentialsIds"];
+inline int GetIdentityByIdentifierResponse_Identity::_internal_credentials_ids_size() const {
+  return credentials_ids_.size();
+}
+inline int GetIdentityByIdentifierResponse_Identity::credentials_ids_size() const {
+  return _internal_credentials_ids_size();
+}
+inline void GetIdentityByIdentifierResponse_Identity::clear_credentials_ids() {
+  credentials_ids_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+GetIdentityByIdentifierResponse_Identity::_internal_credentials_ids() const {
+  return credentials_ids_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+GetIdentityByIdentifierResponse_Identity::credentials_ids() const {
+  // @@protoc_insertion_point(field_map:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.credentials_ids)
+  return _internal_credentials_ids();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+GetIdentityByIdentifierResponse_Identity::_internal_mutable_credentials_ids() {
+  return credentials_ids_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+GetIdentityByIdentifierResponse_Identity::mutable_credentials_ids() {
+  // @@protoc_insertion_point(field_mutable_map:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.credentials_ids)
+  return _internal_mutable_credentials_ids();
+}
+
+// string schema_id = 8[json_name = "schemaId"];
+inline void GetIdentityByIdentifierResponse_Identity::clear_schema_id() {
+  schema_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& GetIdentityByIdentifierResponse_Identity::schema_id() const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.schema_id)
+  return _internal_schema_id();
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_schema_id(const std::string& value) {
+  _internal_set_schema_id(value);
+  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.schema_id)
+}
+inline std::string* GetIdentityByIdentifierResponse_Identity::mutable_schema_id() {
+  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.schema_id)
+  return _internal_mutable_schema_id();
+}
+inline const std::string& GetIdentityByIdentifierResponse_Identity::_internal_schema_id() const {
+  return schema_id_.Get();
+}
+inline void GetIdentityByIdentifierResponse_Identity::_internal_set_schema_id(const std::string& value) {
+  
+  schema_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_schema_id(std::string&& value) {
+  
+  schema_id_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.schema_id)
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_schema_id(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  schema_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.schema_id)
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_schema_id(const char* value,
+    size_t size) {
+  
+  schema_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.schema_id)
+}
+inline std::string* GetIdentityByIdentifierResponse_Identity::_internal_mutable_schema_id() {
+  
+  return schema_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* GetIdentityByIdentifierResponse_Identity::release_schema_id() {
+  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.schema_id)
+  return schema_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_allocated_schema_id(std::string* schema_id) {
+  if (schema_id != nullptr) {
+    
+  } else {
+    
+  }
+  schema_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), schema_id,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.schema_id)
+}
+
+// .depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock lock = 9[json_name = "lock"];
+inline void GetIdentityByIdentifierResponse_Identity::clear_lock() {
+  lock_ = 0;
+}
+inline ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity_Lock GetIdentityByIdentifierResponse_Identity::_internal_lock() const {
+  return static_cast< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity_Lock >(lock_);
+}
+inline ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity_Lock GetIdentityByIdentifierResponse_Identity::lock() const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.lock)
+  return _internal_lock();
+}
+inline void GetIdentityByIdentifierResponse_Identity::_internal_set_lock(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity_Lock value) {
+  
+  lock_ = value;
+}
+inline void GetIdentityByIdentifierResponse_Identity::set_lock(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity_Lock value) {
+  _internal_set_lock(value);
+  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.lock)
+}
+
+// -------------------------------------------------------------------
+
+// GetIdentityByIdentifierResponse
+
+// .depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity identity = 1[json_name = "identity"];
+inline bool GetIdentityByIdentifierResponse::_internal_has_identity() const {
+  return this != internal_default_instance() && identity_ != nullptr;
+}
+inline bool GetIdentityByIdentifierResponse::has_identity() const {
+  return _internal_has_identity();
+}
+inline void GetIdentityByIdentifierResponse::clear_identity() {
+  if (GetArena() == nullptr && identity_ != nullptr) {
+    delete identity_;
+  }
+  identity_ = nullptr;
+}
+inline const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity& GetIdentityByIdentifierResponse::_internal_identity() const {
+  const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity* p = identity_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity*>(
+      &::depot::devtools::auth::v0::identity::admin::_GetIdentityByIdentifierResponse_Identity_default_instance_);
+}
+inline const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity& GetIdentityByIdentifierResponse::identity() const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.identity)
+  return _internal_identity();
+}
+inline void GetIdentityByIdentifierResponse::unsafe_arena_set_allocated_identity(
+    ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity* identity) {
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(identity_);
+  }
+  identity_ = identity;
+  if (identity) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.identity)
+}
+inline ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity* GetIdentityByIdentifierResponse::release_identity() {
+  
+  ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity* temp = identity_;
+  identity_ = nullptr;
+  if (GetArena() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity* GetIdentityByIdentifierResponse::unsafe_arena_release_identity() {
+  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.identity)
+  
+  ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity* temp = identity_;
+  identity_ = nullptr;
+  return temp;
+}
+inline ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity* GetIdentityByIdentifierResponse::_internal_mutable_identity() {
+  
+  if (identity_ == nullptr) {
+    auto* p = CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity>(GetArena());
+    identity_ = p;
+  }
+  return identity_;
+}
+inline ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity* GetIdentityByIdentifierResponse::mutable_identity() {
+  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.identity)
+  return _internal_mutable_identity();
+}
+inline void GetIdentityByIdentifierResponse::set_allocated_identity(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity* identity) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  if (message_arena == nullptr) {
+    delete identity_;
+  }
+  if (identity) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(identity);
+    if (message_arena != submessage_arena) {
+      identity = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, identity, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  identity_ = identity;
+  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.identity)
 }
 
 // -------------------------------------------------------------------
@@ -32584,6 +34349,14 @@ inline void GetUserBaseStatisticsResponse::set_total_lifetime_used(double value)
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -32605,6 +34378,11 @@ template <> struct is_proto_enum< ::depot::devtools::auth::v0::identity::admin::
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::depot::devtools::auth::v0::identity::admin::GetIdentityResponse_Lock>() {
   return ::depot::devtools::auth::v0::identity::admin::GetIdentityResponse_Lock_descriptor();
+}
+template <> struct is_proto_enum< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity_Lock> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity_Lock>() {
+  return ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity_Lock_descriptor();
 }
 template <> struct is_proto_enum< ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse_Identity_Lock> : ::std::true_type {};
 template <>

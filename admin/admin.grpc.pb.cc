@@ -29,6 +29,7 @@ namespace admin {
 static const char* Admin_method_names[] = {
   "/depot.devtools.auth.v0.identity.admin.Admin/CreateIdentity",
   "/depot.devtools.auth.v0.identity.admin.Admin/GetIdentity",
+  "/depot.devtools.auth.v0.identity.admin.Admin/GetIdentityByIdentifier",
   "/depot.devtools.auth.v0.identity.admin.Admin/GetIdentitiesByAttribute",
   "/depot.devtools.auth.v0.identity.admin.Admin/GetIdentities",
   "/depot.devtools.auth.v0.identity.admin.Admin/UpdateIdentity",
@@ -70,36 +71,37 @@ std::unique_ptr< Admin::Stub> Admin::NewStub(const std::shared_ptr< ::grpc::Chan
 Admin::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
   : channel_(channel), rpcmethod_CreateIdentity_(Admin_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetIdentity_(Admin_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetIdentitiesByAttribute_(Admin_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetIdentities_(Admin_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UpdateIdentity_(Admin_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_DeleteIdentity_(Admin_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetAddresses_(Admin_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetAddress_(Admin_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UpdateAddress_(Admin_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetTraits_(Admin_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UpdateTraits_(Admin_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetCredentials_(Admin_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UpdateCredential_(Admin_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetIdentityLoginAttempts_(Admin_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CreateConnection_(Admin_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetConnections_(Admin_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UpdateConnection_(Admin_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_DeleteConnection_(Admin_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CreateIdSchema_(Admin_method_names[18], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetIdSchemas_(Admin_method_names[19], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetIdSchema_(Admin_method_names[20], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetDefaultIdSchema_(Admin_method_names[21], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UpdateIdSchema_(Admin_method_names[22], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_MarkDefaultIdSchema_(Admin_method_names[23], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_DeleteIdSchema_(Admin_method_names[24], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_CreateOAuth2Client_(Admin_method_names[25], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetOAuth2Clients_(Admin_method_names[26], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UpdateOAuth2Client_(Admin_method_names[27], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_DeleteOAuth2Client_(Admin_method_names[28], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetEmailsSetup_(Admin_method_names[29], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UpdateEmailsSetup_(Admin_method_names[30], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetUserBaseStatistics_(Admin_method_names[31], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetIdentityByIdentifier_(Admin_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetIdentitiesByAttribute_(Admin_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetIdentities_(Admin_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateIdentity_(Admin_method_names[5], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteIdentity_(Admin_method_names[6], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetAddresses_(Admin_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetAddress_(Admin_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateAddress_(Admin_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetTraits_(Admin_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateTraits_(Admin_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetCredentials_(Admin_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateCredential_(Admin_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetIdentityLoginAttempts_(Admin_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateConnection_(Admin_method_names[15], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetConnections_(Admin_method_names[16], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateConnection_(Admin_method_names[17], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteConnection_(Admin_method_names[18], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateIdSchema_(Admin_method_names[19], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetIdSchemas_(Admin_method_names[20], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetIdSchema_(Admin_method_names[21], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetDefaultIdSchema_(Admin_method_names[22], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateIdSchema_(Admin_method_names[23], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_MarkDefaultIdSchema_(Admin_method_names[24], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteIdSchema_(Admin_method_names[25], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_CreateOAuth2Client_(Admin_method_names[26], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetOAuth2Clients_(Admin_method_names[27], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateOAuth2Client_(Admin_method_names[28], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteOAuth2Client_(Admin_method_names[29], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetEmailsSetup_(Admin_method_names[30], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateEmailsSetup_(Admin_method_names[31], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetUserBaseStatistics_(Admin_method_names[32], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status Admin::Stub::CreateIdentity(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::CreateIdentityRequest& request, ::depot::devtools::auth::v0::identity::admin::CreateIdentityResponse* response) {
@@ -144,6 +146,29 @@ void Admin::Stub::async::GetIdentity(::grpc::ClientContext* context, const ::dep
 ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetIdentityResponse>* Admin::Stub::AsyncGetIdentityRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
     this->PrepareAsyncGetIdentityRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
+
+::grpc::Status Admin::Stub::GetIdentityByIdentifier(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest& request, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetIdentityByIdentifier_, context, request, response);
+}
+
+void Admin::Stub::async::GetIdentityByIdentifier(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetIdentityByIdentifier_, context, request, response, std::move(f));
+}
+
+void Admin::Stub::async::GetIdentityByIdentifier(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetIdentityByIdentifier_, context, request, response, reactor);
+}
+
+::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse>* Admin::Stub::PrepareAsyncGetIdentityByIdentifierRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetIdentityByIdentifier_, context, request);
+}
+
+::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse>* Admin::Stub::AsyncGetIdentityByIdentifierRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetIdentityByIdentifierRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -862,6 +887,16 @@ Admin::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Admin_method_names[2],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](Admin::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest* req,
+             ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse* resp) {
+               return service->GetIdentityByIdentifier(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Admin_method_names[3],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeRequest, ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
              ::grpc::ServerContext* ctx,
@@ -870,7 +905,7 @@ Admin::Service::Service() {
                return service->GetIdentitiesByAttribute(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[3],
+      Admin_method_names[4],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::GetIdentitiesRequest, ::depot::devtools::auth::v0::identity::admin::GetIdentitiesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -880,7 +915,7 @@ Admin::Service::Service() {
                return service->GetIdentities(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[4],
+      Admin_method_names[5],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::UpdateIdentityRequest, ::depot::devtools::auth::v0::identity::admin::UpdateIdentityResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -890,7 +925,7 @@ Admin::Service::Service() {
                return service->UpdateIdentity(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[5],
+      Admin_method_names[6],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::DeleteIdentityRequest, ::depot::devtools::auth::v0::identity::admin::DeleteIdentityResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -900,7 +935,7 @@ Admin::Service::Service() {
                return service->DeleteIdentity(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[6],
+      Admin_method_names[7],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::GetAddressesRequest, ::depot::devtools::auth::v0::identity::admin::GetAddressesResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -910,7 +945,7 @@ Admin::Service::Service() {
                return service->GetAddresses(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[7],
+      Admin_method_names[8],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::GetAddressRequest, ::depot::devtools::auth::v0::identity::admin::GetAddressResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -920,7 +955,7 @@ Admin::Service::Service() {
                return service->GetAddress(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[8],
+      Admin_method_names[9],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::UpdateAddressRequest, ::depot::devtools::auth::v0::identity::admin::UpdateAddressResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -930,7 +965,7 @@ Admin::Service::Service() {
                return service->UpdateAddress(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[9],
+      Admin_method_names[10],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -940,7 +975,7 @@ Admin::Service::Service() {
                return service->GetTraits(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[10],
+      Admin_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -950,7 +985,7 @@ Admin::Service::Service() {
                return service->UpdateTraits(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[11],
+      Admin_method_names[12],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::GetCredentialsRequest, ::depot::devtools::auth::v0::identity::admin::GetCredentialsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -960,7 +995,7 @@ Admin::Service::Service() {
                return service->GetCredentials(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[12],
+      Admin_method_names[13],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::UpdateCredentialRequest, ::depot::devtools::auth::v0::identity::admin::UpdateCredentialResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -970,7 +1005,7 @@ Admin::Service::Service() {
                return service->UpdateCredential(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[13],
+      Admin_method_names[14],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsRequest, ::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -980,7 +1015,7 @@ Admin::Service::Service() {
                return service->GetIdentityLoginAttempts(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[14],
+      Admin_method_names[15],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::CreateConnectionRequest, ::depot::devtools::auth::v0::identity::admin::CreateConnectionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -990,7 +1025,7 @@ Admin::Service::Service() {
                return service->CreateConnection(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[15],
+      Admin_method_names[16],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::GetConnectionsRequest, ::depot::devtools::auth::v0::identity::admin::GetConnectionsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -1000,7 +1035,7 @@ Admin::Service::Service() {
                return service->GetConnections(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[16],
+      Admin_method_names[17],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::UpdateConnectionRequest, ::depot::devtools::auth::v0::identity::admin::UpdateConnectionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -1010,7 +1045,7 @@ Admin::Service::Service() {
                return service->UpdateConnection(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[17],
+      Admin_method_names[18],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::DeleteConnectionRequest, ::depot::devtools::auth::v0::identity::admin::DeleteConnectionResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -1020,7 +1055,7 @@ Admin::Service::Service() {
                return service->DeleteConnection(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[18],
+      Admin_method_names[19],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::CreateIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::CreateIdSchemaResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -1030,7 +1065,7 @@ Admin::Service::Service() {
                return service->CreateIdSchema(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[19],
+      Admin_method_names[20],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::GetIdSchemasRequest, ::depot::devtools::auth::v0::identity::admin::GetIdSchemasResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -1040,7 +1075,7 @@ Admin::Service::Service() {
                return service->GetIdSchemas(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[20],
+      Admin_method_names[21],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::GetIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::GetIdSchemaResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -1050,7 +1085,7 @@ Admin::Service::Service() {
                return service->GetIdSchema(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[21],
+      Admin_method_names[22],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::GetDefaultIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::GetDefaultIdSchemaResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -1060,7 +1095,7 @@ Admin::Service::Service() {
                return service->GetDefaultIdSchema(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[22],
+      Admin_method_names[23],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::UpdateIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::UpdateIdSchemaResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -1070,7 +1105,7 @@ Admin::Service::Service() {
                return service->UpdateIdSchema(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[23],
+      Admin_method_names[24],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::MarkDefaultIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::MarkDefaultIdSchemaResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -1080,7 +1115,7 @@ Admin::Service::Service() {
                return service->MarkDefaultIdSchema(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[24],
+      Admin_method_names[25],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::DeleteIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::DeleteIdSchemaResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -1090,7 +1125,7 @@ Admin::Service::Service() {
                return service->DeleteIdSchema(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[25],
+      Admin_method_names[26],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::CreateOAuth2ClientRequest, ::depot::devtools::auth::v0::identity::admin::CreateOAuth2ClientResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -1100,7 +1135,7 @@ Admin::Service::Service() {
                return service->CreateOAuth2Client(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[26],
+      Admin_method_names[27],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::GetOAuth2ClientsRequest, ::depot::devtools::auth::v0::identity::admin::GetOAuth2ClientsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -1110,7 +1145,7 @@ Admin::Service::Service() {
                return service->GetOAuth2Clients(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[27],
+      Admin_method_names[28],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::UpdateOAuth2ClientRequest, ::depot::devtools::auth::v0::identity::admin::UpdateOAuth2ClientResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -1120,7 +1155,7 @@ Admin::Service::Service() {
                return service->UpdateOAuth2Client(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[28],
+      Admin_method_names[29],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::DeleteOAuth2ClientRequest, ::depot::devtools::auth::v0::identity::admin::DeleteOAuth2ClientResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -1130,7 +1165,7 @@ Admin::Service::Service() {
                return service->DeleteOAuth2Client(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[29],
+      Admin_method_names[30],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::GetEmailsSetupRequest, ::depot::devtools::auth::v0::identity::admin::GetEmailsSetupResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -1140,7 +1175,7 @@ Admin::Service::Service() {
                return service->GetEmailsSetup(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[30],
+      Admin_method_names[31],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::UpdateEmailsSetupRequest, ::depot::devtools::auth::v0::identity::admin::UpdateEmailsSetupResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -1150,7 +1185,7 @@ Admin::Service::Service() {
                return service->UpdateEmailsSetup(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
-      Admin_method_names[31],
+      Admin_method_names[32],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsRequest, ::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
@@ -1172,6 +1207,13 @@ Admin::Service::~Service() {
 }
 
 ::grpc::Status Admin::Service::GetIdentity(::grpc::ServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentityResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Admin::Service::GetIdentityByIdentifier(::grpc::ServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse* response) {
   (void) context;
   (void) request;
   (void) response;

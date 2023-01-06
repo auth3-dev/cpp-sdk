@@ -54,6 +54,13 @@ class Admin final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetIdentityResponse>> PrepareAsyncGetIdentity(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetIdentityResponse>>(PrepareAsyncGetIdentityRaw(context, request, cq));
     }
+    virtual ::grpc::Status GetIdentityByIdentifier(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest& request, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse>> AsyncGetIdentityByIdentifier(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse>>(AsyncGetIdentityByIdentifierRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse>> PrepareAsyncGetIdentityByIdentifier(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse>>(PrepareAsyncGetIdentityByIdentifierRaw(context, request, cq));
+    }
     virtual ::grpc::Status GetIdentitiesByAttribute(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeRequest& request, ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse>> AsyncGetIdentitiesByAttribute(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse>>(AsyncGetIdentitiesByAttributeRaw(context, request, cq));
@@ -271,6 +278,8 @@ class Admin final {
       virtual void CreateIdentity(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::CreateIdentityRequest* request, ::depot::devtools::auth::v0::identity::admin::CreateIdentityResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void GetIdentity(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentityResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetIdentity(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentityResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetIdentityByIdentifier(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetIdentityByIdentifier(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void GetIdentitiesByAttribute(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetIdentitiesByAttribute(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void GetIdentities(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentitiesRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentitiesResponse* response, std::function<void(::grpc::Status)>) = 0;
@@ -340,6 +349,8 @@ class Admin final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::CreateIdentityResponse>* PrepareAsyncCreateIdentityRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::CreateIdentityRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetIdentityResponse>* AsyncGetIdentityRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetIdentityResponse>* PrepareAsyncGetIdentityRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse>* AsyncGetIdentityByIdentifierRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse>* PrepareAsyncGetIdentityByIdentifierRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse>* AsyncGetIdentitiesByAttributeRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse>* PrepareAsyncGetIdentitiesByAttributeRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetIdentitiesResponse>* AsyncGetIdentitiesRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentitiesRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -417,6 +428,13 @@ class Admin final {
     }
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetIdentityResponse>> PrepareAsyncGetIdentity(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetIdentityResponse>>(PrepareAsyncGetIdentityRaw(context, request, cq));
+    }
+    ::grpc::Status GetIdentityByIdentifier(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest& request, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse>> AsyncGetIdentityByIdentifier(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse>>(AsyncGetIdentityByIdentifierRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse>> PrepareAsyncGetIdentityByIdentifier(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse>>(PrepareAsyncGetIdentityByIdentifierRaw(context, request, cq));
     }
     ::grpc::Status GetIdentitiesByAttribute(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeRequest& request, ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse>> AsyncGetIdentitiesByAttribute(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeRequest& request, ::grpc::CompletionQueue* cq) {
@@ -635,6 +653,8 @@ class Admin final {
       void CreateIdentity(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::CreateIdentityRequest* request, ::depot::devtools::auth::v0::identity::admin::CreateIdentityResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void GetIdentity(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentityResponse* response, std::function<void(::grpc::Status)>) override;
       void GetIdentity(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentityResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetIdentityByIdentifier(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetIdentityByIdentifier(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void GetIdentitiesByAttribute(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse* response, std::function<void(::grpc::Status)>) override;
       void GetIdentitiesByAttribute(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void GetIdentities(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentitiesRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentitiesResponse* response, std::function<void(::grpc::Status)>) override;
@@ -710,6 +730,8 @@ class Admin final {
     ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::CreateIdentityResponse>* PrepareAsyncCreateIdentityRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::CreateIdentityRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetIdentityResponse>* AsyncGetIdentityRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetIdentityResponse>* PrepareAsyncGetIdentityRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse>* AsyncGetIdentityByIdentifierRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse>* PrepareAsyncGetIdentityByIdentifierRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse>* AsyncGetIdentitiesByAttributeRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse>* PrepareAsyncGetIdentitiesByAttributeRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetIdentitiesResponse>* AsyncGetIdentitiesRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentitiesRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -772,6 +794,7 @@ class Admin final {
     ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsResponse>* PrepareAsyncGetUserBaseStatisticsRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsRequest& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_CreateIdentity_;
     const ::grpc::internal::RpcMethod rpcmethod_GetIdentity_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetIdentityByIdentifier_;
     const ::grpc::internal::RpcMethod rpcmethod_GetIdentitiesByAttribute_;
     const ::grpc::internal::RpcMethod rpcmethod_GetIdentities_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateIdentity_;
@@ -811,6 +834,7 @@ class Admin final {
     virtual ~Service();
     virtual ::grpc::Status CreateIdentity(::grpc::ServerContext* context, const ::depot::devtools::auth::v0::identity::admin::CreateIdentityRequest* request, ::depot::devtools::auth::v0::identity::admin::CreateIdentityResponse* response);
     virtual ::grpc::Status GetIdentity(::grpc::ServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentityResponse* response);
+    virtual ::grpc::Status GetIdentityByIdentifier(::grpc::ServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse* response);
     virtual ::grpc::Status GetIdentitiesByAttribute(::grpc::ServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse* response);
     virtual ::grpc::Status GetIdentities(::grpc::ServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentitiesRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentitiesResponse* response);
     virtual ::grpc::Status UpdateIdentity(::grpc::ServerContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateIdentityRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateIdentityResponse* response);
@@ -883,12 +907,32 @@ class Admin final {
     }
   };
   template <class BaseClass>
+  class WithAsyncMethod_GetIdentityByIdentifier : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithAsyncMethod_GetIdentityByIdentifier() {
+      ::grpc::Service::MarkMethodAsync(2);
+    }
+    ~WithAsyncMethod_GetIdentityByIdentifier() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetIdentityByIdentifier(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetIdentityByIdentifier(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithAsyncMethod_GetIdentitiesByAttribute : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetIdentitiesByAttribute() {
-      ::grpc::Service::MarkMethodAsync(2);
+      ::grpc::Service::MarkMethodAsync(3);
     }
     ~WithAsyncMethod_GetIdentitiesByAttribute() override {
       BaseClassMustBeDerivedFromService(this);
@@ -899,7 +943,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetIdentitiesByAttribute(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -908,7 +952,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetIdentities() {
-      ::grpc::Service::MarkMethodAsync(3);
+      ::grpc::Service::MarkMethodAsync(4);
     }
     ~WithAsyncMethod_GetIdentities() override {
       BaseClassMustBeDerivedFromService(this);
@@ -919,7 +963,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetIdentities(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::GetIdentitiesRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::GetIdentitiesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -928,7 +972,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_UpdateIdentity() {
-      ::grpc::Service::MarkMethodAsync(4);
+      ::grpc::Service::MarkMethodAsync(5);
     }
     ~WithAsyncMethod_UpdateIdentity() override {
       BaseClassMustBeDerivedFromService(this);
@@ -939,7 +983,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateIdentity(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::UpdateIdentityRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::UpdateIdentityResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -948,7 +992,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_DeleteIdentity() {
-      ::grpc::Service::MarkMethodAsync(5);
+      ::grpc::Service::MarkMethodAsync(6);
     }
     ~WithAsyncMethod_DeleteIdentity() override {
       BaseClassMustBeDerivedFromService(this);
@@ -959,7 +1003,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeleteIdentity(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::DeleteIdentityRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::DeleteIdentityResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -968,7 +1012,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetAddresses() {
-      ::grpc::Service::MarkMethodAsync(6);
+      ::grpc::Service::MarkMethodAsync(7);
     }
     ~WithAsyncMethod_GetAddresses() override {
       BaseClassMustBeDerivedFromService(this);
@@ -979,7 +1023,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetAddresses(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::GetAddressesRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::GetAddressesResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -988,7 +1032,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetAddress() {
-      ::grpc::Service::MarkMethodAsync(7);
+      ::grpc::Service::MarkMethodAsync(8);
     }
     ~WithAsyncMethod_GetAddress() override {
       BaseClassMustBeDerivedFromService(this);
@@ -999,7 +1043,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetAddress(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::GetAddressRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::GetAddressResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1008,7 +1052,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_UpdateAddress() {
-      ::grpc::Service::MarkMethodAsync(8);
+      ::grpc::Service::MarkMethodAsync(9);
     }
     ~WithAsyncMethod_UpdateAddress() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1019,7 +1063,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateAddress(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::UpdateAddressRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::UpdateAddressResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1028,7 +1072,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetTraits() {
-      ::grpc::Service::MarkMethodAsync(9);
+      ::grpc::Service::MarkMethodAsync(10);
     }
     ~WithAsyncMethod_GetTraits() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1039,7 +1083,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetTraits(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1048,7 +1092,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_UpdateTraits() {
-      ::grpc::Service::MarkMethodAsync(10);
+      ::grpc::Service::MarkMethodAsync(11);
     }
     ~WithAsyncMethod_UpdateTraits() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1059,7 +1103,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateTraits(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1068,7 +1112,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetCredentials() {
-      ::grpc::Service::MarkMethodAsync(11);
+      ::grpc::Service::MarkMethodAsync(12);
     }
     ~WithAsyncMethod_GetCredentials() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1079,7 +1123,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetCredentials(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::GetCredentialsRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::GetCredentialsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1088,7 +1132,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_UpdateCredential() {
-      ::grpc::Service::MarkMethodAsync(12);
+      ::grpc::Service::MarkMethodAsync(13);
     }
     ~WithAsyncMethod_UpdateCredential() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1099,7 +1143,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateCredential(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::UpdateCredentialRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::UpdateCredentialResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1108,7 +1152,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetIdentityLoginAttempts() {
-      ::grpc::Service::MarkMethodAsync(13);
+      ::grpc::Service::MarkMethodAsync(14);
     }
     ~WithAsyncMethod_GetIdentityLoginAttempts() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1119,7 +1163,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetIdentityLoginAttempts(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1128,7 +1172,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_CreateConnection() {
-      ::grpc::Service::MarkMethodAsync(14);
+      ::grpc::Service::MarkMethodAsync(15);
     }
     ~WithAsyncMethod_CreateConnection() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1139,7 +1183,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCreateConnection(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::CreateConnectionRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::CreateConnectionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1148,7 +1192,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetConnections() {
-      ::grpc::Service::MarkMethodAsync(15);
+      ::grpc::Service::MarkMethodAsync(16);
     }
     ~WithAsyncMethod_GetConnections() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1159,7 +1203,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetConnections(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::GetConnectionsRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::GetConnectionsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1168,7 +1212,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_UpdateConnection() {
-      ::grpc::Service::MarkMethodAsync(16);
+      ::grpc::Service::MarkMethodAsync(17);
     }
     ~WithAsyncMethod_UpdateConnection() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1179,7 +1223,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateConnection(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::UpdateConnectionRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::UpdateConnectionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1188,7 +1232,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_DeleteConnection() {
-      ::grpc::Service::MarkMethodAsync(17);
+      ::grpc::Service::MarkMethodAsync(18);
     }
     ~WithAsyncMethod_DeleteConnection() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1199,7 +1243,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeleteConnection(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::DeleteConnectionRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::DeleteConnectionResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1208,7 +1252,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_CreateIdSchema() {
-      ::grpc::Service::MarkMethodAsync(18);
+      ::grpc::Service::MarkMethodAsync(19);
     }
     ~WithAsyncMethod_CreateIdSchema() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1219,7 +1263,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCreateIdSchema(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::CreateIdSchemaRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::CreateIdSchemaResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1228,7 +1272,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetIdSchemas() {
-      ::grpc::Service::MarkMethodAsync(19);
+      ::grpc::Service::MarkMethodAsync(20);
     }
     ~WithAsyncMethod_GetIdSchemas() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1239,7 +1283,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetIdSchemas(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::GetIdSchemasRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::GetIdSchemasResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1248,7 +1292,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetIdSchema() {
-      ::grpc::Service::MarkMethodAsync(20);
+      ::grpc::Service::MarkMethodAsync(21);
     }
     ~WithAsyncMethod_GetIdSchema() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1259,7 +1303,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetIdSchema(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::GetIdSchemaRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::GetIdSchemaResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1268,7 +1312,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetDefaultIdSchema() {
-      ::grpc::Service::MarkMethodAsync(21);
+      ::grpc::Service::MarkMethodAsync(22);
     }
     ~WithAsyncMethod_GetDefaultIdSchema() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1279,7 +1323,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetDefaultIdSchema(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::GetDefaultIdSchemaRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::GetDefaultIdSchemaResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1288,7 +1332,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_UpdateIdSchema() {
-      ::grpc::Service::MarkMethodAsync(22);
+      ::grpc::Service::MarkMethodAsync(23);
     }
     ~WithAsyncMethod_UpdateIdSchema() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1299,7 +1343,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateIdSchema(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::UpdateIdSchemaRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::UpdateIdSchemaResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1308,7 +1352,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_MarkDefaultIdSchema() {
-      ::grpc::Service::MarkMethodAsync(23);
+      ::grpc::Service::MarkMethodAsync(24);
     }
     ~WithAsyncMethod_MarkDefaultIdSchema() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1319,7 +1363,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestMarkDefaultIdSchema(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::MarkDefaultIdSchemaRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::MarkDefaultIdSchemaResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1328,7 +1372,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_DeleteIdSchema() {
-      ::grpc::Service::MarkMethodAsync(24);
+      ::grpc::Service::MarkMethodAsync(25);
     }
     ~WithAsyncMethod_DeleteIdSchema() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1339,7 +1383,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeleteIdSchema(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::DeleteIdSchemaRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::DeleteIdSchemaResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1348,7 +1392,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_CreateOAuth2Client() {
-      ::grpc::Service::MarkMethodAsync(25);
+      ::grpc::Service::MarkMethodAsync(26);
     }
     ~WithAsyncMethod_CreateOAuth2Client() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1359,7 +1403,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCreateOAuth2Client(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::CreateOAuth2ClientRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::CreateOAuth2ClientResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1368,7 +1412,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetOAuth2Clients() {
-      ::grpc::Service::MarkMethodAsync(26);
+      ::grpc::Service::MarkMethodAsync(27);
     }
     ~WithAsyncMethod_GetOAuth2Clients() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1379,7 +1423,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetOAuth2Clients(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::GetOAuth2ClientsRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::GetOAuth2ClientsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(27, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1388,7 +1432,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_UpdateOAuth2Client() {
-      ::grpc::Service::MarkMethodAsync(27);
+      ::grpc::Service::MarkMethodAsync(28);
     }
     ~WithAsyncMethod_UpdateOAuth2Client() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1399,7 +1443,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateOAuth2Client(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::UpdateOAuth2ClientRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::UpdateOAuth2ClientResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(27, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(28, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1408,7 +1452,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_DeleteOAuth2Client() {
-      ::grpc::Service::MarkMethodAsync(28);
+      ::grpc::Service::MarkMethodAsync(29);
     }
     ~WithAsyncMethod_DeleteOAuth2Client() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1419,7 +1463,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeleteOAuth2Client(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::DeleteOAuth2ClientRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::DeleteOAuth2ClientResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(28, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(29, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1428,7 +1472,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetEmailsSetup() {
-      ::grpc::Service::MarkMethodAsync(29);
+      ::grpc::Service::MarkMethodAsync(30);
     }
     ~WithAsyncMethod_GetEmailsSetup() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1439,7 +1483,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetEmailsSetup(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::GetEmailsSetupRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::GetEmailsSetupResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(29, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(30, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1448,7 +1492,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_UpdateEmailsSetup() {
-      ::grpc::Service::MarkMethodAsync(30);
+      ::grpc::Service::MarkMethodAsync(31);
     }
     ~WithAsyncMethod_UpdateEmailsSetup() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1459,7 +1503,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateEmailsSetup(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::UpdateEmailsSetupRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::UpdateEmailsSetupResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(30, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(31, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -1468,7 +1512,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithAsyncMethod_GetUserBaseStatistics() {
-      ::grpc::Service::MarkMethodAsync(31);
+      ::grpc::Service::MarkMethodAsync(32);
     }
     ~WithAsyncMethod_GetUserBaseStatistics() override {
       BaseClassMustBeDerivedFromService(this);
@@ -1479,10 +1523,10 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetUserBaseStatistics(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(31, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(32, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateIdentity<WithAsyncMethod_GetIdentity<WithAsyncMethod_GetIdentitiesByAttribute<WithAsyncMethod_GetIdentities<WithAsyncMethod_UpdateIdentity<WithAsyncMethod_DeleteIdentity<WithAsyncMethod_GetAddresses<WithAsyncMethod_GetAddress<WithAsyncMethod_UpdateAddress<WithAsyncMethod_GetTraits<WithAsyncMethod_UpdateTraits<WithAsyncMethod_GetCredentials<WithAsyncMethod_UpdateCredential<WithAsyncMethod_GetIdentityLoginAttempts<WithAsyncMethod_CreateConnection<WithAsyncMethod_GetConnections<WithAsyncMethod_UpdateConnection<WithAsyncMethod_DeleteConnection<WithAsyncMethod_CreateIdSchema<WithAsyncMethod_GetIdSchemas<WithAsyncMethod_GetIdSchema<WithAsyncMethod_GetDefaultIdSchema<WithAsyncMethod_UpdateIdSchema<WithAsyncMethod_MarkDefaultIdSchema<WithAsyncMethod_DeleteIdSchema<WithAsyncMethod_CreateOAuth2Client<WithAsyncMethod_GetOAuth2Clients<WithAsyncMethod_UpdateOAuth2Client<WithAsyncMethod_DeleteOAuth2Client<WithAsyncMethod_GetEmailsSetup<WithAsyncMethod_UpdateEmailsSetup<WithAsyncMethod_GetUserBaseStatistics<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_CreateIdentity<WithAsyncMethod_GetIdentity<WithAsyncMethod_GetIdentityByIdentifier<WithAsyncMethod_GetIdentitiesByAttribute<WithAsyncMethod_GetIdentities<WithAsyncMethod_UpdateIdentity<WithAsyncMethod_DeleteIdentity<WithAsyncMethod_GetAddresses<WithAsyncMethod_GetAddress<WithAsyncMethod_UpdateAddress<WithAsyncMethod_GetTraits<WithAsyncMethod_UpdateTraits<WithAsyncMethod_GetCredentials<WithAsyncMethod_UpdateCredential<WithAsyncMethod_GetIdentityLoginAttempts<WithAsyncMethod_CreateConnection<WithAsyncMethod_GetConnections<WithAsyncMethod_UpdateConnection<WithAsyncMethod_DeleteConnection<WithAsyncMethod_CreateIdSchema<WithAsyncMethod_GetIdSchemas<WithAsyncMethod_GetIdSchema<WithAsyncMethod_GetDefaultIdSchema<WithAsyncMethod_UpdateIdSchema<WithAsyncMethod_MarkDefaultIdSchema<WithAsyncMethod_DeleteIdSchema<WithAsyncMethod_CreateOAuth2Client<WithAsyncMethod_GetOAuth2Clients<WithAsyncMethod_UpdateOAuth2Client<WithAsyncMethod_DeleteOAuth2Client<WithAsyncMethod_GetEmailsSetup<WithAsyncMethod_UpdateEmailsSetup<WithAsyncMethod_GetUserBaseStatistics<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_CreateIdentity : public BaseClass {
    private:
@@ -1538,18 +1582,45 @@ class Admin final {
       ::grpc::CallbackServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::GetIdentityRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::GetIdentityResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithCallbackMethod_GetIdentityByIdentifier : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithCallbackMethod_GetIdentityByIdentifier() {
+      ::grpc::Service::MarkMethodCallback(2,
+          new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse* response) { return this->GetIdentityByIdentifier(context, request, response); }));}
+    void SetMessageAllocatorFor_GetIdentityByIdentifier(
+        ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse>* allocator) {
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse>*>(handler)
+              ->SetMessageAllocator(allocator);
+    }
+    ~WithCallbackMethod_GetIdentityByIdentifier() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetIdentityByIdentifier(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetIdentityByIdentifier(
+      ::grpc::CallbackServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithCallbackMethod_GetIdentitiesByAttribute : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetIdentitiesByAttribute() {
-      ::grpc::Service::MarkMethodCallback(2,
+      ::grpc::Service::MarkMethodCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeRequest, ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse* response) { return this->GetIdentitiesByAttribute(context, request, response); }));}
     void SetMessageAllocatorFor_GetIdentitiesByAttribute(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeRequest, ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(2);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeRequest, ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1570,13 +1641,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetIdentities() {
-      ::grpc::Service::MarkMethodCallback(3,
+      ::grpc::Service::MarkMethodCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetIdentitiesRequest, ::depot::devtools::auth::v0::identity::admin::GetIdentitiesResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentitiesRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentitiesResponse* response) { return this->GetIdentities(context, request, response); }));}
     void SetMessageAllocatorFor_GetIdentities(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::GetIdentitiesRequest, ::depot::devtools::auth::v0::identity::admin::GetIdentitiesResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(3);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetIdentitiesRequest, ::depot::devtools::auth::v0::identity::admin::GetIdentitiesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1597,13 +1668,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_UpdateIdentity() {
-      ::grpc::Service::MarkMethodCallback(4,
+      ::grpc::Service::MarkMethodCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::UpdateIdentityRequest, ::depot::devtools::auth::v0::identity::admin::UpdateIdentityResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateIdentityRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateIdentityResponse* response) { return this->UpdateIdentity(context, request, response); }));}
     void SetMessageAllocatorFor_UpdateIdentity(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::UpdateIdentityRequest, ::depot::devtools::auth::v0::identity::admin::UpdateIdentityResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(4);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::UpdateIdentityRequest, ::depot::devtools::auth::v0::identity::admin::UpdateIdentityResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1624,13 +1695,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_DeleteIdentity() {
-      ::grpc::Service::MarkMethodCallback(5,
+      ::grpc::Service::MarkMethodCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::DeleteIdentityRequest, ::depot::devtools::auth::v0::identity::admin::DeleteIdentityResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::DeleteIdentityRequest* request, ::depot::devtools::auth::v0::identity::admin::DeleteIdentityResponse* response) { return this->DeleteIdentity(context, request, response); }));}
     void SetMessageAllocatorFor_DeleteIdentity(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::DeleteIdentityRequest, ::depot::devtools::auth::v0::identity::admin::DeleteIdentityResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(5);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::DeleteIdentityRequest, ::depot::devtools::auth::v0::identity::admin::DeleteIdentityResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1651,13 +1722,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetAddresses() {
-      ::grpc::Service::MarkMethodCallback(6,
+      ::grpc::Service::MarkMethodCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetAddressesRequest, ::depot::devtools::auth::v0::identity::admin::GetAddressesResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetAddressesRequest* request, ::depot::devtools::auth::v0::identity::admin::GetAddressesResponse* response) { return this->GetAddresses(context, request, response); }));}
     void SetMessageAllocatorFor_GetAddresses(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::GetAddressesRequest, ::depot::devtools::auth::v0::identity::admin::GetAddressesResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(6);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetAddressesRequest, ::depot::devtools::auth::v0::identity::admin::GetAddressesResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1678,13 +1749,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetAddress() {
-      ::grpc::Service::MarkMethodCallback(7,
+      ::grpc::Service::MarkMethodCallback(8,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetAddressRequest, ::depot::devtools::auth::v0::identity::admin::GetAddressResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetAddressRequest* request, ::depot::devtools::auth::v0::identity::admin::GetAddressResponse* response) { return this->GetAddress(context, request, response); }));}
     void SetMessageAllocatorFor_GetAddress(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::GetAddressRequest, ::depot::devtools::auth::v0::identity::admin::GetAddressResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(7);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetAddressRequest, ::depot::devtools::auth::v0::identity::admin::GetAddressResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1705,13 +1776,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_UpdateAddress() {
-      ::grpc::Service::MarkMethodCallback(8,
+      ::grpc::Service::MarkMethodCallback(9,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::UpdateAddressRequest, ::depot::devtools::auth::v0::identity::admin::UpdateAddressResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateAddressRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateAddressResponse* response) { return this->UpdateAddress(context, request, response); }));}
     void SetMessageAllocatorFor_UpdateAddress(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::UpdateAddressRequest, ::depot::devtools::auth::v0::identity::admin::UpdateAddressResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(8);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::UpdateAddressRequest, ::depot::devtools::auth::v0::identity::admin::UpdateAddressResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1732,13 +1803,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetTraits() {
-      ::grpc::Service::MarkMethodCallback(9,
+      ::grpc::Service::MarkMethodCallback(10,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest* request, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse* response) { return this->GetTraits(context, request, response); }));}
     void SetMessageAllocatorFor_GetTraits(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(9);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1759,13 +1830,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_UpdateTraits() {
-      ::grpc::Service::MarkMethodCallback(10,
+      ::grpc::Service::MarkMethodCallback(11,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse* response) { return this->UpdateTraits(context, request, response); }));}
     void SetMessageAllocatorFor_UpdateTraits(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(11);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1786,13 +1857,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetCredentials() {
-      ::grpc::Service::MarkMethodCallback(11,
+      ::grpc::Service::MarkMethodCallback(12,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetCredentialsRequest, ::depot::devtools::auth::v0::identity::admin::GetCredentialsResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetCredentialsRequest* request, ::depot::devtools::auth::v0::identity::admin::GetCredentialsResponse* response) { return this->GetCredentials(context, request, response); }));}
     void SetMessageAllocatorFor_GetCredentials(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::GetCredentialsRequest, ::depot::devtools::auth::v0::identity::admin::GetCredentialsResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(11);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(12);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetCredentialsRequest, ::depot::devtools::auth::v0::identity::admin::GetCredentialsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1813,13 +1884,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_UpdateCredential() {
-      ::grpc::Service::MarkMethodCallback(12,
+      ::grpc::Service::MarkMethodCallback(13,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::UpdateCredentialRequest, ::depot::devtools::auth::v0::identity::admin::UpdateCredentialResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateCredentialRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateCredentialResponse* response) { return this->UpdateCredential(context, request, response); }));}
     void SetMessageAllocatorFor_UpdateCredential(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::UpdateCredentialRequest, ::depot::devtools::auth::v0::identity::admin::UpdateCredentialResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(12);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(13);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::UpdateCredentialRequest, ::depot::devtools::auth::v0::identity::admin::UpdateCredentialResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1840,13 +1911,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetIdentityLoginAttempts() {
-      ::grpc::Service::MarkMethodCallback(13,
+      ::grpc::Service::MarkMethodCallback(14,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsRequest, ::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsResponse* response) { return this->GetIdentityLoginAttempts(context, request, response); }));}
     void SetMessageAllocatorFor_GetIdentityLoginAttempts(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsRequest, ::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(13);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(14);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsRequest, ::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1867,13 +1938,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_CreateConnection() {
-      ::grpc::Service::MarkMethodCallback(14,
+      ::grpc::Service::MarkMethodCallback(15,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::CreateConnectionRequest, ::depot::devtools::auth::v0::identity::admin::CreateConnectionResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::CreateConnectionRequest* request, ::depot::devtools::auth::v0::identity::admin::CreateConnectionResponse* response) { return this->CreateConnection(context, request, response); }));}
     void SetMessageAllocatorFor_CreateConnection(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::CreateConnectionRequest, ::depot::devtools::auth::v0::identity::admin::CreateConnectionResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(14);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::CreateConnectionRequest, ::depot::devtools::auth::v0::identity::admin::CreateConnectionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1894,13 +1965,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetConnections() {
-      ::grpc::Service::MarkMethodCallback(15,
+      ::grpc::Service::MarkMethodCallback(16,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetConnectionsRequest, ::depot::devtools::auth::v0::identity::admin::GetConnectionsResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetConnectionsRequest* request, ::depot::devtools::auth::v0::identity::admin::GetConnectionsResponse* response) { return this->GetConnections(context, request, response); }));}
     void SetMessageAllocatorFor_GetConnections(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::GetConnectionsRequest, ::depot::devtools::auth::v0::identity::admin::GetConnectionsResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(15);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetConnectionsRequest, ::depot::devtools::auth::v0::identity::admin::GetConnectionsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1921,13 +1992,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_UpdateConnection() {
-      ::grpc::Service::MarkMethodCallback(16,
+      ::grpc::Service::MarkMethodCallback(17,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::UpdateConnectionRequest, ::depot::devtools::auth::v0::identity::admin::UpdateConnectionResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateConnectionRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateConnectionResponse* response) { return this->UpdateConnection(context, request, response); }));}
     void SetMessageAllocatorFor_UpdateConnection(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::UpdateConnectionRequest, ::depot::devtools::auth::v0::identity::admin::UpdateConnectionResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(16);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(17);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::UpdateConnectionRequest, ::depot::devtools::auth::v0::identity::admin::UpdateConnectionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1948,13 +2019,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_DeleteConnection() {
-      ::grpc::Service::MarkMethodCallback(17,
+      ::grpc::Service::MarkMethodCallback(18,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::DeleteConnectionRequest, ::depot::devtools::auth::v0::identity::admin::DeleteConnectionResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::DeleteConnectionRequest* request, ::depot::devtools::auth::v0::identity::admin::DeleteConnectionResponse* response) { return this->DeleteConnection(context, request, response); }));}
     void SetMessageAllocatorFor_DeleteConnection(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::DeleteConnectionRequest, ::depot::devtools::auth::v0::identity::admin::DeleteConnectionResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(17);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(18);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::DeleteConnectionRequest, ::depot::devtools::auth::v0::identity::admin::DeleteConnectionResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -1975,13 +2046,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_CreateIdSchema() {
-      ::grpc::Service::MarkMethodCallback(18,
+      ::grpc::Service::MarkMethodCallback(19,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::CreateIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::CreateIdSchemaResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::CreateIdSchemaRequest* request, ::depot::devtools::auth::v0::identity::admin::CreateIdSchemaResponse* response) { return this->CreateIdSchema(context, request, response); }));}
     void SetMessageAllocatorFor_CreateIdSchema(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::CreateIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::CreateIdSchemaResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(18);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(19);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::CreateIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::CreateIdSchemaResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2002,13 +2073,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetIdSchemas() {
-      ::grpc::Service::MarkMethodCallback(19,
+      ::grpc::Service::MarkMethodCallback(20,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetIdSchemasRequest, ::depot::devtools::auth::v0::identity::admin::GetIdSchemasResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdSchemasRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdSchemasResponse* response) { return this->GetIdSchemas(context, request, response); }));}
     void SetMessageAllocatorFor_GetIdSchemas(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::GetIdSchemasRequest, ::depot::devtools::auth::v0::identity::admin::GetIdSchemasResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(19);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(20);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetIdSchemasRequest, ::depot::devtools::auth::v0::identity::admin::GetIdSchemasResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2029,13 +2100,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetIdSchema() {
-      ::grpc::Service::MarkMethodCallback(20,
+      ::grpc::Service::MarkMethodCallback(21,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::GetIdSchemaResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdSchemaRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdSchemaResponse* response) { return this->GetIdSchema(context, request, response); }));}
     void SetMessageAllocatorFor_GetIdSchema(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::GetIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::GetIdSchemaResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(20);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(21);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::GetIdSchemaResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2056,13 +2127,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetDefaultIdSchema() {
-      ::grpc::Service::MarkMethodCallback(21,
+      ::grpc::Service::MarkMethodCallback(22,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetDefaultIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::GetDefaultIdSchemaResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetDefaultIdSchemaRequest* request, ::depot::devtools::auth::v0::identity::admin::GetDefaultIdSchemaResponse* response) { return this->GetDefaultIdSchema(context, request, response); }));}
     void SetMessageAllocatorFor_GetDefaultIdSchema(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::GetDefaultIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::GetDefaultIdSchemaResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(21);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(22);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetDefaultIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::GetDefaultIdSchemaResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2083,13 +2154,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_UpdateIdSchema() {
-      ::grpc::Service::MarkMethodCallback(22,
+      ::grpc::Service::MarkMethodCallback(23,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::UpdateIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::UpdateIdSchemaResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateIdSchemaRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateIdSchemaResponse* response) { return this->UpdateIdSchema(context, request, response); }));}
     void SetMessageAllocatorFor_UpdateIdSchema(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::UpdateIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::UpdateIdSchemaResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(22);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(23);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::UpdateIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::UpdateIdSchemaResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2110,13 +2181,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_MarkDefaultIdSchema() {
-      ::grpc::Service::MarkMethodCallback(23,
+      ::grpc::Service::MarkMethodCallback(24,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::MarkDefaultIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::MarkDefaultIdSchemaResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::MarkDefaultIdSchemaRequest* request, ::depot::devtools::auth::v0::identity::admin::MarkDefaultIdSchemaResponse* response) { return this->MarkDefaultIdSchema(context, request, response); }));}
     void SetMessageAllocatorFor_MarkDefaultIdSchema(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::MarkDefaultIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::MarkDefaultIdSchemaResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(23);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(24);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::MarkDefaultIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::MarkDefaultIdSchemaResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2137,13 +2208,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_DeleteIdSchema() {
-      ::grpc::Service::MarkMethodCallback(24,
+      ::grpc::Service::MarkMethodCallback(25,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::DeleteIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::DeleteIdSchemaResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::DeleteIdSchemaRequest* request, ::depot::devtools::auth::v0::identity::admin::DeleteIdSchemaResponse* response) { return this->DeleteIdSchema(context, request, response); }));}
     void SetMessageAllocatorFor_DeleteIdSchema(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::DeleteIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::DeleteIdSchemaResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(24);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(25);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::DeleteIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::DeleteIdSchemaResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2164,13 +2235,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_CreateOAuth2Client() {
-      ::grpc::Service::MarkMethodCallback(25,
+      ::grpc::Service::MarkMethodCallback(26,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::CreateOAuth2ClientRequest, ::depot::devtools::auth::v0::identity::admin::CreateOAuth2ClientResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::CreateOAuth2ClientRequest* request, ::depot::devtools::auth::v0::identity::admin::CreateOAuth2ClientResponse* response) { return this->CreateOAuth2Client(context, request, response); }));}
     void SetMessageAllocatorFor_CreateOAuth2Client(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::CreateOAuth2ClientRequest, ::depot::devtools::auth::v0::identity::admin::CreateOAuth2ClientResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(25);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(26);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::CreateOAuth2ClientRequest, ::depot::devtools::auth::v0::identity::admin::CreateOAuth2ClientResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2191,13 +2262,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetOAuth2Clients() {
-      ::grpc::Service::MarkMethodCallback(26,
+      ::grpc::Service::MarkMethodCallback(27,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetOAuth2ClientsRequest, ::depot::devtools::auth::v0::identity::admin::GetOAuth2ClientsResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetOAuth2ClientsRequest* request, ::depot::devtools::auth::v0::identity::admin::GetOAuth2ClientsResponse* response) { return this->GetOAuth2Clients(context, request, response); }));}
     void SetMessageAllocatorFor_GetOAuth2Clients(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::GetOAuth2ClientsRequest, ::depot::devtools::auth::v0::identity::admin::GetOAuth2ClientsResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(26);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(27);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetOAuth2ClientsRequest, ::depot::devtools::auth::v0::identity::admin::GetOAuth2ClientsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2218,13 +2289,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_UpdateOAuth2Client() {
-      ::grpc::Service::MarkMethodCallback(27,
+      ::grpc::Service::MarkMethodCallback(28,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::UpdateOAuth2ClientRequest, ::depot::devtools::auth::v0::identity::admin::UpdateOAuth2ClientResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateOAuth2ClientRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateOAuth2ClientResponse* response) { return this->UpdateOAuth2Client(context, request, response); }));}
     void SetMessageAllocatorFor_UpdateOAuth2Client(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::UpdateOAuth2ClientRequest, ::depot::devtools::auth::v0::identity::admin::UpdateOAuth2ClientResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(27);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(28);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::UpdateOAuth2ClientRequest, ::depot::devtools::auth::v0::identity::admin::UpdateOAuth2ClientResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2245,13 +2316,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_DeleteOAuth2Client() {
-      ::grpc::Service::MarkMethodCallback(28,
+      ::grpc::Service::MarkMethodCallback(29,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::DeleteOAuth2ClientRequest, ::depot::devtools::auth::v0::identity::admin::DeleteOAuth2ClientResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::DeleteOAuth2ClientRequest* request, ::depot::devtools::auth::v0::identity::admin::DeleteOAuth2ClientResponse* response) { return this->DeleteOAuth2Client(context, request, response); }));}
     void SetMessageAllocatorFor_DeleteOAuth2Client(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::DeleteOAuth2ClientRequest, ::depot::devtools::auth::v0::identity::admin::DeleteOAuth2ClientResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(28);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(29);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::DeleteOAuth2ClientRequest, ::depot::devtools::auth::v0::identity::admin::DeleteOAuth2ClientResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2272,13 +2343,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetEmailsSetup() {
-      ::grpc::Service::MarkMethodCallback(29,
+      ::grpc::Service::MarkMethodCallback(30,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetEmailsSetupRequest, ::depot::devtools::auth::v0::identity::admin::GetEmailsSetupResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetEmailsSetupRequest* request, ::depot::devtools::auth::v0::identity::admin::GetEmailsSetupResponse* response) { return this->GetEmailsSetup(context, request, response); }));}
     void SetMessageAllocatorFor_GetEmailsSetup(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::GetEmailsSetupRequest, ::depot::devtools::auth::v0::identity::admin::GetEmailsSetupResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(29);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(30);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetEmailsSetupRequest, ::depot::devtools::auth::v0::identity::admin::GetEmailsSetupResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2299,13 +2370,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_UpdateEmailsSetup() {
-      ::grpc::Service::MarkMethodCallback(30,
+      ::grpc::Service::MarkMethodCallback(31,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::UpdateEmailsSetupRequest, ::depot::devtools::auth::v0::identity::admin::UpdateEmailsSetupResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateEmailsSetupRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateEmailsSetupResponse* response) { return this->UpdateEmailsSetup(context, request, response); }));}
     void SetMessageAllocatorFor_UpdateEmailsSetup(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::UpdateEmailsSetupRequest, ::depot::devtools::auth::v0::identity::admin::UpdateEmailsSetupResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(30);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(31);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::UpdateEmailsSetupRequest, ::depot::devtools::auth::v0::identity::admin::UpdateEmailsSetupResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2326,13 +2397,13 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithCallbackMethod_GetUserBaseStatistics() {
-      ::grpc::Service::MarkMethodCallback(31,
+      ::grpc::Service::MarkMethodCallback(32,
           new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsRequest, ::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsResponse>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsRequest* request, ::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsResponse* response) { return this->GetUserBaseStatistics(context, request, response); }));}
     void SetMessageAllocatorFor_GetUserBaseStatistics(
         ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsRequest, ::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsResponse>* allocator) {
-      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(31);
+      ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(32);
       static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsRequest, ::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
@@ -2347,7 +2418,7 @@ class Admin final {
     virtual ::grpc::ServerUnaryReactor* GetUserBaseStatistics(
       ::grpc::CallbackServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_CreateIdentity<WithCallbackMethod_GetIdentity<WithCallbackMethod_GetIdentitiesByAttribute<WithCallbackMethod_GetIdentities<WithCallbackMethod_UpdateIdentity<WithCallbackMethod_DeleteIdentity<WithCallbackMethod_GetAddresses<WithCallbackMethod_GetAddress<WithCallbackMethod_UpdateAddress<WithCallbackMethod_GetTraits<WithCallbackMethod_UpdateTraits<WithCallbackMethod_GetCredentials<WithCallbackMethod_UpdateCredential<WithCallbackMethod_GetIdentityLoginAttempts<WithCallbackMethod_CreateConnection<WithCallbackMethod_GetConnections<WithCallbackMethod_UpdateConnection<WithCallbackMethod_DeleteConnection<WithCallbackMethod_CreateIdSchema<WithCallbackMethod_GetIdSchemas<WithCallbackMethod_GetIdSchema<WithCallbackMethod_GetDefaultIdSchema<WithCallbackMethod_UpdateIdSchema<WithCallbackMethod_MarkDefaultIdSchema<WithCallbackMethod_DeleteIdSchema<WithCallbackMethod_CreateOAuth2Client<WithCallbackMethod_GetOAuth2Clients<WithCallbackMethod_UpdateOAuth2Client<WithCallbackMethod_DeleteOAuth2Client<WithCallbackMethod_GetEmailsSetup<WithCallbackMethod_UpdateEmailsSetup<WithCallbackMethod_GetUserBaseStatistics<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
+  typedef WithCallbackMethod_CreateIdentity<WithCallbackMethod_GetIdentity<WithCallbackMethod_GetIdentityByIdentifier<WithCallbackMethod_GetIdentitiesByAttribute<WithCallbackMethod_GetIdentities<WithCallbackMethod_UpdateIdentity<WithCallbackMethod_DeleteIdentity<WithCallbackMethod_GetAddresses<WithCallbackMethod_GetAddress<WithCallbackMethod_UpdateAddress<WithCallbackMethod_GetTraits<WithCallbackMethod_UpdateTraits<WithCallbackMethod_GetCredentials<WithCallbackMethod_UpdateCredential<WithCallbackMethod_GetIdentityLoginAttempts<WithCallbackMethod_CreateConnection<WithCallbackMethod_GetConnections<WithCallbackMethod_UpdateConnection<WithCallbackMethod_DeleteConnection<WithCallbackMethod_CreateIdSchema<WithCallbackMethod_GetIdSchemas<WithCallbackMethod_GetIdSchema<WithCallbackMethod_GetDefaultIdSchema<WithCallbackMethod_UpdateIdSchema<WithCallbackMethod_MarkDefaultIdSchema<WithCallbackMethod_DeleteIdSchema<WithCallbackMethod_CreateOAuth2Client<WithCallbackMethod_GetOAuth2Clients<WithCallbackMethod_UpdateOAuth2Client<WithCallbackMethod_DeleteOAuth2Client<WithCallbackMethod_GetEmailsSetup<WithCallbackMethod_UpdateEmailsSetup<WithCallbackMethod_GetUserBaseStatistics<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateIdentity : public BaseClass {
@@ -2384,12 +2455,29 @@ class Admin final {
     }
   };
   template <class BaseClass>
+  class WithGenericMethod_GetIdentityByIdentifier : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithGenericMethod_GetIdentityByIdentifier() {
+      ::grpc::Service::MarkMethodGeneric(2);
+    }
+    ~WithGenericMethod_GetIdentityByIdentifier() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetIdentityByIdentifier(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
   class WithGenericMethod_GetIdentitiesByAttribute : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetIdentitiesByAttribute() {
-      ::grpc::Service::MarkMethodGeneric(2);
+      ::grpc::Service::MarkMethodGeneric(3);
     }
     ~WithGenericMethod_GetIdentitiesByAttribute() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2406,7 +2494,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetIdentities() {
-      ::grpc::Service::MarkMethodGeneric(3);
+      ::grpc::Service::MarkMethodGeneric(4);
     }
     ~WithGenericMethod_GetIdentities() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2423,7 +2511,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_UpdateIdentity() {
-      ::grpc::Service::MarkMethodGeneric(4);
+      ::grpc::Service::MarkMethodGeneric(5);
     }
     ~WithGenericMethod_UpdateIdentity() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2440,7 +2528,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_DeleteIdentity() {
-      ::grpc::Service::MarkMethodGeneric(5);
+      ::grpc::Service::MarkMethodGeneric(6);
     }
     ~WithGenericMethod_DeleteIdentity() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2457,7 +2545,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetAddresses() {
-      ::grpc::Service::MarkMethodGeneric(6);
+      ::grpc::Service::MarkMethodGeneric(7);
     }
     ~WithGenericMethod_GetAddresses() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2474,7 +2562,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetAddress() {
-      ::grpc::Service::MarkMethodGeneric(7);
+      ::grpc::Service::MarkMethodGeneric(8);
     }
     ~WithGenericMethod_GetAddress() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2491,7 +2579,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_UpdateAddress() {
-      ::grpc::Service::MarkMethodGeneric(8);
+      ::grpc::Service::MarkMethodGeneric(9);
     }
     ~WithGenericMethod_UpdateAddress() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2508,7 +2596,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetTraits() {
-      ::grpc::Service::MarkMethodGeneric(9);
+      ::grpc::Service::MarkMethodGeneric(10);
     }
     ~WithGenericMethod_GetTraits() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2525,7 +2613,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_UpdateTraits() {
-      ::grpc::Service::MarkMethodGeneric(10);
+      ::grpc::Service::MarkMethodGeneric(11);
     }
     ~WithGenericMethod_UpdateTraits() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2542,7 +2630,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetCredentials() {
-      ::grpc::Service::MarkMethodGeneric(11);
+      ::grpc::Service::MarkMethodGeneric(12);
     }
     ~WithGenericMethod_GetCredentials() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2559,7 +2647,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_UpdateCredential() {
-      ::grpc::Service::MarkMethodGeneric(12);
+      ::grpc::Service::MarkMethodGeneric(13);
     }
     ~WithGenericMethod_UpdateCredential() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2576,7 +2664,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetIdentityLoginAttempts() {
-      ::grpc::Service::MarkMethodGeneric(13);
+      ::grpc::Service::MarkMethodGeneric(14);
     }
     ~WithGenericMethod_GetIdentityLoginAttempts() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2593,7 +2681,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_CreateConnection() {
-      ::grpc::Service::MarkMethodGeneric(14);
+      ::grpc::Service::MarkMethodGeneric(15);
     }
     ~WithGenericMethod_CreateConnection() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2610,7 +2698,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetConnections() {
-      ::grpc::Service::MarkMethodGeneric(15);
+      ::grpc::Service::MarkMethodGeneric(16);
     }
     ~WithGenericMethod_GetConnections() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2627,7 +2715,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_UpdateConnection() {
-      ::grpc::Service::MarkMethodGeneric(16);
+      ::grpc::Service::MarkMethodGeneric(17);
     }
     ~WithGenericMethod_UpdateConnection() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2644,7 +2732,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_DeleteConnection() {
-      ::grpc::Service::MarkMethodGeneric(17);
+      ::grpc::Service::MarkMethodGeneric(18);
     }
     ~WithGenericMethod_DeleteConnection() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2661,7 +2749,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_CreateIdSchema() {
-      ::grpc::Service::MarkMethodGeneric(18);
+      ::grpc::Service::MarkMethodGeneric(19);
     }
     ~WithGenericMethod_CreateIdSchema() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2678,7 +2766,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetIdSchemas() {
-      ::grpc::Service::MarkMethodGeneric(19);
+      ::grpc::Service::MarkMethodGeneric(20);
     }
     ~WithGenericMethod_GetIdSchemas() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2695,7 +2783,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetIdSchema() {
-      ::grpc::Service::MarkMethodGeneric(20);
+      ::grpc::Service::MarkMethodGeneric(21);
     }
     ~WithGenericMethod_GetIdSchema() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2712,7 +2800,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetDefaultIdSchema() {
-      ::grpc::Service::MarkMethodGeneric(21);
+      ::grpc::Service::MarkMethodGeneric(22);
     }
     ~WithGenericMethod_GetDefaultIdSchema() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2729,7 +2817,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_UpdateIdSchema() {
-      ::grpc::Service::MarkMethodGeneric(22);
+      ::grpc::Service::MarkMethodGeneric(23);
     }
     ~WithGenericMethod_UpdateIdSchema() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2746,7 +2834,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_MarkDefaultIdSchema() {
-      ::grpc::Service::MarkMethodGeneric(23);
+      ::grpc::Service::MarkMethodGeneric(24);
     }
     ~WithGenericMethod_MarkDefaultIdSchema() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2763,7 +2851,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_DeleteIdSchema() {
-      ::grpc::Service::MarkMethodGeneric(24);
+      ::grpc::Service::MarkMethodGeneric(25);
     }
     ~WithGenericMethod_DeleteIdSchema() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2780,7 +2868,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_CreateOAuth2Client() {
-      ::grpc::Service::MarkMethodGeneric(25);
+      ::grpc::Service::MarkMethodGeneric(26);
     }
     ~WithGenericMethod_CreateOAuth2Client() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2797,7 +2885,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetOAuth2Clients() {
-      ::grpc::Service::MarkMethodGeneric(26);
+      ::grpc::Service::MarkMethodGeneric(27);
     }
     ~WithGenericMethod_GetOAuth2Clients() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2814,7 +2902,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_UpdateOAuth2Client() {
-      ::grpc::Service::MarkMethodGeneric(27);
+      ::grpc::Service::MarkMethodGeneric(28);
     }
     ~WithGenericMethod_UpdateOAuth2Client() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2831,7 +2919,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_DeleteOAuth2Client() {
-      ::grpc::Service::MarkMethodGeneric(28);
+      ::grpc::Service::MarkMethodGeneric(29);
     }
     ~WithGenericMethod_DeleteOAuth2Client() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2848,7 +2936,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetEmailsSetup() {
-      ::grpc::Service::MarkMethodGeneric(29);
+      ::grpc::Service::MarkMethodGeneric(30);
     }
     ~WithGenericMethod_GetEmailsSetup() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2865,7 +2953,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_UpdateEmailsSetup() {
-      ::grpc::Service::MarkMethodGeneric(30);
+      ::grpc::Service::MarkMethodGeneric(31);
     }
     ~WithGenericMethod_UpdateEmailsSetup() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2882,7 +2970,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithGenericMethod_GetUserBaseStatistics() {
-      ::grpc::Service::MarkMethodGeneric(31);
+      ::grpc::Service::MarkMethodGeneric(32);
     }
     ~WithGenericMethod_GetUserBaseStatistics() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2934,12 +3022,32 @@ class Admin final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_GetIdentityByIdentifier : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawMethod_GetIdentityByIdentifier() {
+      ::grpc::Service::MarkMethodRaw(2);
+    }
+    ~WithRawMethod_GetIdentityByIdentifier() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetIdentityByIdentifier(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGetIdentityByIdentifier(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithRawMethod_GetIdentitiesByAttribute : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetIdentitiesByAttribute() {
-      ::grpc::Service::MarkMethodRaw(2);
+      ::grpc::Service::MarkMethodRaw(3);
     }
     ~WithRawMethod_GetIdentitiesByAttribute() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2950,7 +3058,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetIdentitiesByAttribute(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2959,7 +3067,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetIdentities() {
-      ::grpc::Service::MarkMethodRaw(3);
+      ::grpc::Service::MarkMethodRaw(4);
     }
     ~WithRawMethod_GetIdentities() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2970,7 +3078,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetIdentities(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2979,7 +3087,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_UpdateIdentity() {
-      ::grpc::Service::MarkMethodRaw(4);
+      ::grpc::Service::MarkMethodRaw(5);
     }
     ~WithRawMethod_UpdateIdentity() override {
       BaseClassMustBeDerivedFromService(this);
@@ -2990,7 +3098,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateIdentity(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(4, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -2999,7 +3107,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_DeleteIdentity() {
-      ::grpc::Service::MarkMethodRaw(5);
+      ::grpc::Service::MarkMethodRaw(6);
     }
     ~WithRawMethod_DeleteIdentity() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3010,7 +3118,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeleteIdentity(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(5, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3019,7 +3127,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetAddresses() {
-      ::grpc::Service::MarkMethodRaw(6);
+      ::grpc::Service::MarkMethodRaw(7);
     }
     ~WithRawMethod_GetAddresses() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3030,7 +3138,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetAddresses(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(6, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3039,7 +3147,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetAddress() {
-      ::grpc::Service::MarkMethodRaw(7);
+      ::grpc::Service::MarkMethodRaw(8);
     }
     ~WithRawMethod_GetAddress() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3050,7 +3158,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetAddress(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3059,7 +3167,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_UpdateAddress() {
-      ::grpc::Service::MarkMethodRaw(8);
+      ::grpc::Service::MarkMethodRaw(9);
     }
     ~WithRawMethod_UpdateAddress() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3070,7 +3178,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateAddress(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3079,7 +3187,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetTraits() {
-      ::grpc::Service::MarkMethodRaw(9);
+      ::grpc::Service::MarkMethodRaw(10);
     }
     ~WithRawMethod_GetTraits() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3090,7 +3198,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetTraits(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(9, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3099,7 +3207,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_UpdateTraits() {
-      ::grpc::Service::MarkMethodRaw(10);
+      ::grpc::Service::MarkMethodRaw(11);
     }
     ~WithRawMethod_UpdateTraits() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3110,7 +3218,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateTraits(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3119,7 +3227,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetCredentials() {
-      ::grpc::Service::MarkMethodRaw(11);
+      ::grpc::Service::MarkMethodRaw(12);
     }
     ~WithRawMethod_GetCredentials() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3130,7 +3238,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetCredentials(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3139,7 +3247,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_UpdateCredential() {
-      ::grpc::Service::MarkMethodRaw(12);
+      ::grpc::Service::MarkMethodRaw(13);
     }
     ~WithRawMethod_UpdateCredential() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3150,7 +3258,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateCredential(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(12, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3159,7 +3267,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetIdentityLoginAttempts() {
-      ::grpc::Service::MarkMethodRaw(13);
+      ::grpc::Service::MarkMethodRaw(14);
     }
     ~WithRawMethod_GetIdentityLoginAttempts() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3170,7 +3278,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetIdentityLoginAttempts(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(13, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3179,7 +3287,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_CreateConnection() {
-      ::grpc::Service::MarkMethodRaw(14);
+      ::grpc::Service::MarkMethodRaw(15);
     }
     ~WithRawMethod_CreateConnection() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3190,7 +3298,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCreateConnection(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(14, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3199,7 +3307,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetConnections() {
-      ::grpc::Service::MarkMethodRaw(15);
+      ::grpc::Service::MarkMethodRaw(16);
     }
     ~WithRawMethod_GetConnections() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3210,7 +3318,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetConnections(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(15, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3219,7 +3327,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_UpdateConnection() {
-      ::grpc::Service::MarkMethodRaw(16);
+      ::grpc::Service::MarkMethodRaw(17);
     }
     ~WithRawMethod_UpdateConnection() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3230,7 +3338,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateConnection(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(16, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3239,7 +3347,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_DeleteConnection() {
-      ::grpc::Service::MarkMethodRaw(17);
+      ::grpc::Service::MarkMethodRaw(18);
     }
     ~WithRawMethod_DeleteConnection() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3250,7 +3358,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeleteConnection(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(17, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3259,7 +3367,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_CreateIdSchema() {
-      ::grpc::Service::MarkMethodRaw(18);
+      ::grpc::Service::MarkMethodRaw(19);
     }
     ~WithRawMethod_CreateIdSchema() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3270,7 +3378,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCreateIdSchema(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(18, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3279,7 +3387,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetIdSchemas() {
-      ::grpc::Service::MarkMethodRaw(19);
+      ::grpc::Service::MarkMethodRaw(20);
     }
     ~WithRawMethod_GetIdSchemas() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3290,7 +3398,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetIdSchemas(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(19, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3299,7 +3407,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetIdSchema() {
-      ::grpc::Service::MarkMethodRaw(20);
+      ::grpc::Service::MarkMethodRaw(21);
     }
     ~WithRawMethod_GetIdSchema() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3310,7 +3418,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetIdSchema(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(20, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3319,7 +3427,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetDefaultIdSchema() {
-      ::grpc::Service::MarkMethodRaw(21);
+      ::grpc::Service::MarkMethodRaw(22);
     }
     ~WithRawMethod_GetDefaultIdSchema() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3330,7 +3438,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetDefaultIdSchema(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(21, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3339,7 +3447,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_UpdateIdSchema() {
-      ::grpc::Service::MarkMethodRaw(22);
+      ::grpc::Service::MarkMethodRaw(23);
     }
     ~WithRawMethod_UpdateIdSchema() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3350,7 +3458,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateIdSchema(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(22, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3359,7 +3467,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_MarkDefaultIdSchema() {
-      ::grpc::Service::MarkMethodRaw(23);
+      ::grpc::Service::MarkMethodRaw(24);
     }
     ~WithRawMethod_MarkDefaultIdSchema() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3370,7 +3478,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestMarkDefaultIdSchema(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(23, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3379,7 +3487,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_DeleteIdSchema() {
-      ::grpc::Service::MarkMethodRaw(24);
+      ::grpc::Service::MarkMethodRaw(25);
     }
     ~WithRawMethod_DeleteIdSchema() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3390,7 +3498,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeleteIdSchema(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(24, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3399,7 +3507,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_CreateOAuth2Client() {
-      ::grpc::Service::MarkMethodRaw(25);
+      ::grpc::Service::MarkMethodRaw(26);
     }
     ~WithRawMethod_CreateOAuth2Client() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3410,7 +3518,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestCreateOAuth2Client(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(25, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3419,7 +3527,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetOAuth2Clients() {
-      ::grpc::Service::MarkMethodRaw(26);
+      ::grpc::Service::MarkMethodRaw(27);
     }
     ~WithRawMethod_GetOAuth2Clients() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3430,7 +3538,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetOAuth2Clients(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(26, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(27, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3439,7 +3547,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_UpdateOAuth2Client() {
-      ::grpc::Service::MarkMethodRaw(27);
+      ::grpc::Service::MarkMethodRaw(28);
     }
     ~WithRawMethod_UpdateOAuth2Client() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3450,7 +3558,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateOAuth2Client(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(27, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(28, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3459,7 +3567,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_DeleteOAuth2Client() {
-      ::grpc::Service::MarkMethodRaw(28);
+      ::grpc::Service::MarkMethodRaw(29);
     }
     ~WithRawMethod_DeleteOAuth2Client() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3470,7 +3578,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestDeleteOAuth2Client(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(28, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(29, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3479,7 +3587,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetEmailsSetup() {
-      ::grpc::Service::MarkMethodRaw(29);
+      ::grpc::Service::MarkMethodRaw(30);
     }
     ~WithRawMethod_GetEmailsSetup() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3490,7 +3598,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetEmailsSetup(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(29, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(30, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3499,7 +3607,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_UpdateEmailsSetup() {
-      ::grpc::Service::MarkMethodRaw(30);
+      ::grpc::Service::MarkMethodRaw(31);
     }
     ~WithRawMethod_UpdateEmailsSetup() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3510,7 +3618,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestUpdateEmailsSetup(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(30, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(31, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3519,7 +3627,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawMethod_GetUserBaseStatistics() {
-      ::grpc::Service::MarkMethodRaw(31);
+      ::grpc::Service::MarkMethodRaw(32);
     }
     ~WithRawMethod_GetUserBaseStatistics() override {
       BaseClassMustBeDerivedFromService(this);
@@ -3530,7 +3638,7 @@ class Admin final {
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     void RequestGetUserBaseStatistics(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
-      ::grpc::Service::RequestAsyncUnary(31, context, request, response, new_call_cq, notification_cq, tag);
+      ::grpc::Service::RequestAsyncUnary(32, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
@@ -3578,12 +3686,34 @@ class Admin final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
+  class WithRawCallbackMethod_GetIdentityByIdentifier : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithRawCallbackMethod_GetIdentityByIdentifier() {
+      ::grpc::Service::MarkMethodRawCallback(2,
+          new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
+            [this](
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetIdentityByIdentifier(context, request, response); }));
+    }
+    ~WithRawCallbackMethod_GetIdentityByIdentifier() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GetIdentityByIdentifier(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    virtual ::grpc::ServerUnaryReactor* GetIdentityByIdentifier(
+      ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
+  };
+  template <class BaseClass>
   class WithRawCallbackMethod_GetIdentitiesByAttribute : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetIdentitiesByAttribute() {
-      ::grpc::Service::MarkMethodRawCallback(2,
+      ::grpc::Service::MarkMethodRawCallback(3,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetIdentitiesByAttribute(context, request, response); }));
@@ -3605,7 +3735,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetIdentities() {
-      ::grpc::Service::MarkMethodRawCallback(3,
+      ::grpc::Service::MarkMethodRawCallback(4,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetIdentities(context, request, response); }));
@@ -3627,7 +3757,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_UpdateIdentity() {
-      ::grpc::Service::MarkMethodRawCallback(4,
+      ::grpc::Service::MarkMethodRawCallback(5,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->UpdateIdentity(context, request, response); }));
@@ -3649,7 +3779,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_DeleteIdentity() {
-      ::grpc::Service::MarkMethodRawCallback(5,
+      ::grpc::Service::MarkMethodRawCallback(6,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DeleteIdentity(context, request, response); }));
@@ -3671,7 +3801,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetAddresses() {
-      ::grpc::Service::MarkMethodRawCallback(6,
+      ::grpc::Service::MarkMethodRawCallback(7,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetAddresses(context, request, response); }));
@@ -3693,7 +3823,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetAddress() {
-      ::grpc::Service::MarkMethodRawCallback(7,
+      ::grpc::Service::MarkMethodRawCallback(8,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetAddress(context, request, response); }));
@@ -3715,7 +3845,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_UpdateAddress() {
-      ::grpc::Service::MarkMethodRawCallback(8,
+      ::grpc::Service::MarkMethodRawCallback(9,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->UpdateAddress(context, request, response); }));
@@ -3737,7 +3867,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetTraits() {
-      ::grpc::Service::MarkMethodRawCallback(9,
+      ::grpc::Service::MarkMethodRawCallback(10,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetTraits(context, request, response); }));
@@ -3759,7 +3889,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_UpdateTraits() {
-      ::grpc::Service::MarkMethodRawCallback(10,
+      ::grpc::Service::MarkMethodRawCallback(11,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->UpdateTraits(context, request, response); }));
@@ -3781,7 +3911,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetCredentials() {
-      ::grpc::Service::MarkMethodRawCallback(11,
+      ::grpc::Service::MarkMethodRawCallback(12,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetCredentials(context, request, response); }));
@@ -3803,7 +3933,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_UpdateCredential() {
-      ::grpc::Service::MarkMethodRawCallback(12,
+      ::grpc::Service::MarkMethodRawCallback(13,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->UpdateCredential(context, request, response); }));
@@ -3825,7 +3955,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetIdentityLoginAttempts() {
-      ::grpc::Service::MarkMethodRawCallback(13,
+      ::grpc::Service::MarkMethodRawCallback(14,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetIdentityLoginAttempts(context, request, response); }));
@@ -3847,7 +3977,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_CreateConnection() {
-      ::grpc::Service::MarkMethodRawCallback(14,
+      ::grpc::Service::MarkMethodRawCallback(15,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CreateConnection(context, request, response); }));
@@ -3869,7 +3999,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetConnections() {
-      ::grpc::Service::MarkMethodRawCallback(15,
+      ::grpc::Service::MarkMethodRawCallback(16,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetConnections(context, request, response); }));
@@ -3891,7 +4021,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_UpdateConnection() {
-      ::grpc::Service::MarkMethodRawCallback(16,
+      ::grpc::Service::MarkMethodRawCallback(17,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->UpdateConnection(context, request, response); }));
@@ -3913,7 +4043,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_DeleteConnection() {
-      ::grpc::Service::MarkMethodRawCallback(17,
+      ::grpc::Service::MarkMethodRawCallback(18,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DeleteConnection(context, request, response); }));
@@ -3935,7 +4065,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_CreateIdSchema() {
-      ::grpc::Service::MarkMethodRawCallback(18,
+      ::grpc::Service::MarkMethodRawCallback(19,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CreateIdSchema(context, request, response); }));
@@ -3957,7 +4087,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetIdSchemas() {
-      ::grpc::Service::MarkMethodRawCallback(19,
+      ::grpc::Service::MarkMethodRawCallback(20,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetIdSchemas(context, request, response); }));
@@ -3979,7 +4109,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetIdSchema() {
-      ::grpc::Service::MarkMethodRawCallback(20,
+      ::grpc::Service::MarkMethodRawCallback(21,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetIdSchema(context, request, response); }));
@@ -4001,7 +4131,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetDefaultIdSchema() {
-      ::grpc::Service::MarkMethodRawCallback(21,
+      ::grpc::Service::MarkMethodRawCallback(22,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetDefaultIdSchema(context, request, response); }));
@@ -4023,7 +4153,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_UpdateIdSchema() {
-      ::grpc::Service::MarkMethodRawCallback(22,
+      ::grpc::Service::MarkMethodRawCallback(23,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->UpdateIdSchema(context, request, response); }));
@@ -4045,7 +4175,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_MarkDefaultIdSchema() {
-      ::grpc::Service::MarkMethodRawCallback(23,
+      ::grpc::Service::MarkMethodRawCallback(24,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->MarkDefaultIdSchema(context, request, response); }));
@@ -4067,7 +4197,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_DeleteIdSchema() {
-      ::grpc::Service::MarkMethodRawCallback(24,
+      ::grpc::Service::MarkMethodRawCallback(25,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DeleteIdSchema(context, request, response); }));
@@ -4089,7 +4219,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_CreateOAuth2Client() {
-      ::grpc::Service::MarkMethodRawCallback(25,
+      ::grpc::Service::MarkMethodRawCallback(26,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->CreateOAuth2Client(context, request, response); }));
@@ -4111,7 +4241,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetOAuth2Clients() {
-      ::grpc::Service::MarkMethodRawCallback(26,
+      ::grpc::Service::MarkMethodRawCallback(27,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetOAuth2Clients(context, request, response); }));
@@ -4133,7 +4263,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_UpdateOAuth2Client() {
-      ::grpc::Service::MarkMethodRawCallback(27,
+      ::grpc::Service::MarkMethodRawCallback(28,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->UpdateOAuth2Client(context, request, response); }));
@@ -4155,7 +4285,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_DeleteOAuth2Client() {
-      ::grpc::Service::MarkMethodRawCallback(28,
+      ::grpc::Service::MarkMethodRawCallback(29,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->DeleteOAuth2Client(context, request, response); }));
@@ -4177,7 +4307,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetEmailsSetup() {
-      ::grpc::Service::MarkMethodRawCallback(29,
+      ::grpc::Service::MarkMethodRawCallback(30,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetEmailsSetup(context, request, response); }));
@@ -4199,7 +4329,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_UpdateEmailsSetup() {
-      ::grpc::Service::MarkMethodRawCallback(30,
+      ::grpc::Service::MarkMethodRawCallback(31,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->UpdateEmailsSetup(context, request, response); }));
@@ -4221,7 +4351,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithRawCallbackMethod_GetUserBaseStatistics() {
-      ::grpc::Service::MarkMethodRawCallback(31,
+      ::grpc::Service::MarkMethodRawCallback(32,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
                    ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetUserBaseStatistics(context, request, response); }));
@@ -4292,12 +4422,39 @@ class Admin final {
     virtual ::grpc::Status StreamedGetIdentity(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::depot::devtools::auth::v0::identity::admin::GetIdentityRequest,::depot::devtools::auth::v0::identity::admin::GetIdentityResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
+  class WithStreamedUnaryMethod_GetIdentityByIdentifier : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
+   public:
+    WithStreamedUnaryMethod_GetIdentityByIdentifier() {
+      ::grpc::Service::MarkMethodStreamed(2,
+        new ::grpc::internal::StreamedUnaryHandler<
+          ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse>(
+            [this](::grpc::ServerContext* context,
+                   ::grpc::ServerUnaryStreamer<
+                     ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse>* streamer) {
+                       return this->StreamedGetIdentityByIdentifier(context,
+                         streamer);
+                  }));
+    }
+    ~WithStreamedUnaryMethod_GetIdentityByIdentifier() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GetIdentityByIdentifier(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse* /*response*/) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGetIdentityByIdentifier(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest,::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_GetIdentitiesByAttribute : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetIdentitiesByAttribute() {
-      ::grpc::Service::MarkMethodStreamed(2,
+      ::grpc::Service::MarkMethodStreamed(3,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeRequest, ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse>(
             [this](::grpc::ServerContext* context,
@@ -4324,7 +4481,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetIdentities() {
-      ::grpc::Service::MarkMethodStreamed(3,
+      ::grpc::Service::MarkMethodStreamed(4,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::GetIdentitiesRequest, ::depot::devtools::auth::v0::identity::admin::GetIdentitiesResponse>(
             [this](::grpc::ServerContext* context,
@@ -4351,7 +4508,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_UpdateIdentity() {
-      ::grpc::Service::MarkMethodStreamed(4,
+      ::grpc::Service::MarkMethodStreamed(5,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::UpdateIdentityRequest, ::depot::devtools::auth::v0::identity::admin::UpdateIdentityResponse>(
             [this](::grpc::ServerContext* context,
@@ -4378,7 +4535,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_DeleteIdentity() {
-      ::grpc::Service::MarkMethodStreamed(5,
+      ::grpc::Service::MarkMethodStreamed(6,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::DeleteIdentityRequest, ::depot::devtools::auth::v0::identity::admin::DeleteIdentityResponse>(
             [this](::grpc::ServerContext* context,
@@ -4405,7 +4562,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetAddresses() {
-      ::grpc::Service::MarkMethodStreamed(6,
+      ::grpc::Service::MarkMethodStreamed(7,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::GetAddressesRequest, ::depot::devtools::auth::v0::identity::admin::GetAddressesResponse>(
             [this](::grpc::ServerContext* context,
@@ -4432,7 +4589,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetAddress() {
-      ::grpc::Service::MarkMethodStreamed(7,
+      ::grpc::Service::MarkMethodStreamed(8,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::GetAddressRequest, ::depot::devtools::auth::v0::identity::admin::GetAddressResponse>(
             [this](::grpc::ServerContext* context,
@@ -4459,7 +4616,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_UpdateAddress() {
-      ::grpc::Service::MarkMethodStreamed(8,
+      ::grpc::Service::MarkMethodStreamed(9,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::UpdateAddressRequest, ::depot::devtools::auth::v0::identity::admin::UpdateAddressResponse>(
             [this](::grpc::ServerContext* context,
@@ -4486,7 +4643,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetTraits() {
-      ::grpc::Service::MarkMethodStreamed(9,
+      ::grpc::Service::MarkMethodStreamed(10,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>(
             [this](::grpc::ServerContext* context,
@@ -4513,7 +4670,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_UpdateTraits() {
-      ::grpc::Service::MarkMethodStreamed(10,
+      ::grpc::Service::MarkMethodStreamed(11,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>(
             [this](::grpc::ServerContext* context,
@@ -4540,7 +4697,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetCredentials() {
-      ::grpc::Service::MarkMethodStreamed(11,
+      ::grpc::Service::MarkMethodStreamed(12,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::GetCredentialsRequest, ::depot::devtools::auth::v0::identity::admin::GetCredentialsResponse>(
             [this](::grpc::ServerContext* context,
@@ -4567,7 +4724,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_UpdateCredential() {
-      ::grpc::Service::MarkMethodStreamed(12,
+      ::grpc::Service::MarkMethodStreamed(13,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::UpdateCredentialRequest, ::depot::devtools::auth::v0::identity::admin::UpdateCredentialResponse>(
             [this](::grpc::ServerContext* context,
@@ -4594,7 +4751,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetIdentityLoginAttempts() {
-      ::grpc::Service::MarkMethodStreamed(13,
+      ::grpc::Service::MarkMethodStreamed(14,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsRequest, ::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsResponse>(
             [this](::grpc::ServerContext* context,
@@ -4621,7 +4778,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_CreateConnection() {
-      ::grpc::Service::MarkMethodStreamed(14,
+      ::grpc::Service::MarkMethodStreamed(15,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::CreateConnectionRequest, ::depot::devtools::auth::v0::identity::admin::CreateConnectionResponse>(
             [this](::grpc::ServerContext* context,
@@ -4648,7 +4805,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetConnections() {
-      ::grpc::Service::MarkMethodStreamed(15,
+      ::grpc::Service::MarkMethodStreamed(16,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::GetConnectionsRequest, ::depot::devtools::auth::v0::identity::admin::GetConnectionsResponse>(
             [this](::grpc::ServerContext* context,
@@ -4675,7 +4832,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_UpdateConnection() {
-      ::grpc::Service::MarkMethodStreamed(16,
+      ::grpc::Service::MarkMethodStreamed(17,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::UpdateConnectionRequest, ::depot::devtools::auth::v0::identity::admin::UpdateConnectionResponse>(
             [this](::grpc::ServerContext* context,
@@ -4702,7 +4859,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_DeleteConnection() {
-      ::grpc::Service::MarkMethodStreamed(17,
+      ::grpc::Service::MarkMethodStreamed(18,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::DeleteConnectionRequest, ::depot::devtools::auth::v0::identity::admin::DeleteConnectionResponse>(
             [this](::grpc::ServerContext* context,
@@ -4729,7 +4886,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_CreateIdSchema() {
-      ::grpc::Service::MarkMethodStreamed(18,
+      ::grpc::Service::MarkMethodStreamed(19,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::CreateIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::CreateIdSchemaResponse>(
             [this](::grpc::ServerContext* context,
@@ -4756,7 +4913,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetIdSchemas() {
-      ::grpc::Service::MarkMethodStreamed(19,
+      ::grpc::Service::MarkMethodStreamed(20,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::GetIdSchemasRequest, ::depot::devtools::auth::v0::identity::admin::GetIdSchemasResponse>(
             [this](::grpc::ServerContext* context,
@@ -4783,7 +4940,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetIdSchema() {
-      ::grpc::Service::MarkMethodStreamed(20,
+      ::grpc::Service::MarkMethodStreamed(21,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::GetIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::GetIdSchemaResponse>(
             [this](::grpc::ServerContext* context,
@@ -4810,7 +4967,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetDefaultIdSchema() {
-      ::grpc::Service::MarkMethodStreamed(21,
+      ::grpc::Service::MarkMethodStreamed(22,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::GetDefaultIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::GetDefaultIdSchemaResponse>(
             [this](::grpc::ServerContext* context,
@@ -4837,7 +4994,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_UpdateIdSchema() {
-      ::grpc::Service::MarkMethodStreamed(22,
+      ::grpc::Service::MarkMethodStreamed(23,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::UpdateIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::UpdateIdSchemaResponse>(
             [this](::grpc::ServerContext* context,
@@ -4864,7 +5021,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_MarkDefaultIdSchema() {
-      ::grpc::Service::MarkMethodStreamed(23,
+      ::grpc::Service::MarkMethodStreamed(24,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::MarkDefaultIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::MarkDefaultIdSchemaResponse>(
             [this](::grpc::ServerContext* context,
@@ -4891,7 +5048,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_DeleteIdSchema() {
-      ::grpc::Service::MarkMethodStreamed(24,
+      ::grpc::Service::MarkMethodStreamed(25,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::DeleteIdSchemaRequest, ::depot::devtools::auth::v0::identity::admin::DeleteIdSchemaResponse>(
             [this](::grpc::ServerContext* context,
@@ -4918,7 +5075,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_CreateOAuth2Client() {
-      ::grpc::Service::MarkMethodStreamed(25,
+      ::grpc::Service::MarkMethodStreamed(26,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::CreateOAuth2ClientRequest, ::depot::devtools::auth::v0::identity::admin::CreateOAuth2ClientResponse>(
             [this](::grpc::ServerContext* context,
@@ -4945,7 +5102,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetOAuth2Clients() {
-      ::grpc::Service::MarkMethodStreamed(26,
+      ::grpc::Service::MarkMethodStreamed(27,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::GetOAuth2ClientsRequest, ::depot::devtools::auth::v0::identity::admin::GetOAuth2ClientsResponse>(
             [this](::grpc::ServerContext* context,
@@ -4972,7 +5129,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_UpdateOAuth2Client() {
-      ::grpc::Service::MarkMethodStreamed(27,
+      ::grpc::Service::MarkMethodStreamed(28,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::UpdateOAuth2ClientRequest, ::depot::devtools::auth::v0::identity::admin::UpdateOAuth2ClientResponse>(
             [this](::grpc::ServerContext* context,
@@ -4999,7 +5156,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_DeleteOAuth2Client() {
-      ::grpc::Service::MarkMethodStreamed(28,
+      ::grpc::Service::MarkMethodStreamed(29,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::DeleteOAuth2ClientRequest, ::depot::devtools::auth::v0::identity::admin::DeleteOAuth2ClientResponse>(
             [this](::grpc::ServerContext* context,
@@ -5026,7 +5183,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetEmailsSetup() {
-      ::grpc::Service::MarkMethodStreamed(29,
+      ::grpc::Service::MarkMethodStreamed(30,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::GetEmailsSetupRequest, ::depot::devtools::auth::v0::identity::admin::GetEmailsSetupResponse>(
             [this](::grpc::ServerContext* context,
@@ -5053,7 +5210,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_UpdateEmailsSetup() {
-      ::grpc::Service::MarkMethodStreamed(30,
+      ::grpc::Service::MarkMethodStreamed(31,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::UpdateEmailsSetupRequest, ::depot::devtools::auth::v0::identity::admin::UpdateEmailsSetupResponse>(
             [this](::grpc::ServerContext* context,
@@ -5080,7 +5237,7 @@ class Admin final {
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
     WithStreamedUnaryMethod_GetUserBaseStatistics() {
-      ::grpc::Service::MarkMethodStreamed(31,
+      ::grpc::Service::MarkMethodStreamed(32,
         new ::grpc::internal::StreamedUnaryHandler<
           ::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsRequest, ::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsResponse>(
             [this](::grpc::ServerContext* context,
@@ -5101,9 +5258,9 @@ class Admin final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedGetUserBaseStatistics(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsRequest,::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateIdentity<WithStreamedUnaryMethod_GetIdentity<WithStreamedUnaryMethod_GetIdentitiesByAttribute<WithStreamedUnaryMethod_GetIdentities<WithStreamedUnaryMethod_UpdateIdentity<WithStreamedUnaryMethod_DeleteIdentity<WithStreamedUnaryMethod_GetAddresses<WithStreamedUnaryMethod_GetAddress<WithStreamedUnaryMethod_UpdateAddress<WithStreamedUnaryMethod_GetTraits<WithStreamedUnaryMethod_UpdateTraits<WithStreamedUnaryMethod_GetCredentials<WithStreamedUnaryMethod_UpdateCredential<WithStreamedUnaryMethod_GetIdentityLoginAttempts<WithStreamedUnaryMethod_CreateConnection<WithStreamedUnaryMethod_GetConnections<WithStreamedUnaryMethod_UpdateConnection<WithStreamedUnaryMethod_DeleteConnection<WithStreamedUnaryMethod_CreateIdSchema<WithStreamedUnaryMethod_GetIdSchemas<WithStreamedUnaryMethod_GetIdSchema<WithStreamedUnaryMethod_GetDefaultIdSchema<WithStreamedUnaryMethod_UpdateIdSchema<WithStreamedUnaryMethod_MarkDefaultIdSchema<WithStreamedUnaryMethod_DeleteIdSchema<WithStreamedUnaryMethod_CreateOAuth2Client<WithStreamedUnaryMethod_GetOAuth2Clients<WithStreamedUnaryMethod_UpdateOAuth2Client<WithStreamedUnaryMethod_DeleteOAuth2Client<WithStreamedUnaryMethod_GetEmailsSetup<WithStreamedUnaryMethod_UpdateEmailsSetup<WithStreamedUnaryMethod_GetUserBaseStatistics<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_CreateIdentity<WithStreamedUnaryMethod_GetIdentity<WithStreamedUnaryMethod_GetIdentityByIdentifier<WithStreamedUnaryMethod_GetIdentitiesByAttribute<WithStreamedUnaryMethod_GetIdentities<WithStreamedUnaryMethod_UpdateIdentity<WithStreamedUnaryMethod_DeleteIdentity<WithStreamedUnaryMethod_GetAddresses<WithStreamedUnaryMethod_GetAddress<WithStreamedUnaryMethod_UpdateAddress<WithStreamedUnaryMethod_GetTraits<WithStreamedUnaryMethod_UpdateTraits<WithStreamedUnaryMethod_GetCredentials<WithStreamedUnaryMethod_UpdateCredential<WithStreamedUnaryMethod_GetIdentityLoginAttempts<WithStreamedUnaryMethod_CreateConnection<WithStreamedUnaryMethod_GetConnections<WithStreamedUnaryMethod_UpdateConnection<WithStreamedUnaryMethod_DeleteConnection<WithStreamedUnaryMethod_CreateIdSchema<WithStreamedUnaryMethod_GetIdSchemas<WithStreamedUnaryMethod_GetIdSchema<WithStreamedUnaryMethod_GetDefaultIdSchema<WithStreamedUnaryMethod_UpdateIdSchema<WithStreamedUnaryMethod_MarkDefaultIdSchema<WithStreamedUnaryMethod_DeleteIdSchema<WithStreamedUnaryMethod_CreateOAuth2Client<WithStreamedUnaryMethod_GetOAuth2Clients<WithStreamedUnaryMethod_UpdateOAuth2Client<WithStreamedUnaryMethod_DeleteOAuth2Client<WithStreamedUnaryMethod_GetEmailsSetup<WithStreamedUnaryMethod_UpdateEmailsSetup<WithStreamedUnaryMethod_GetUserBaseStatistics<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateIdentity<WithStreamedUnaryMethod_GetIdentity<WithStreamedUnaryMethod_GetIdentitiesByAttribute<WithStreamedUnaryMethod_GetIdentities<WithStreamedUnaryMethod_UpdateIdentity<WithStreamedUnaryMethod_DeleteIdentity<WithStreamedUnaryMethod_GetAddresses<WithStreamedUnaryMethod_GetAddress<WithStreamedUnaryMethod_UpdateAddress<WithStreamedUnaryMethod_GetTraits<WithStreamedUnaryMethod_UpdateTraits<WithStreamedUnaryMethod_GetCredentials<WithStreamedUnaryMethod_UpdateCredential<WithStreamedUnaryMethod_GetIdentityLoginAttempts<WithStreamedUnaryMethod_CreateConnection<WithStreamedUnaryMethod_GetConnections<WithStreamedUnaryMethod_UpdateConnection<WithStreamedUnaryMethod_DeleteConnection<WithStreamedUnaryMethod_CreateIdSchema<WithStreamedUnaryMethod_GetIdSchemas<WithStreamedUnaryMethod_GetIdSchema<WithStreamedUnaryMethod_GetDefaultIdSchema<WithStreamedUnaryMethod_UpdateIdSchema<WithStreamedUnaryMethod_MarkDefaultIdSchema<WithStreamedUnaryMethod_DeleteIdSchema<WithStreamedUnaryMethod_CreateOAuth2Client<WithStreamedUnaryMethod_GetOAuth2Clients<WithStreamedUnaryMethod_UpdateOAuth2Client<WithStreamedUnaryMethod_DeleteOAuth2Client<WithStreamedUnaryMethod_GetEmailsSetup<WithStreamedUnaryMethod_UpdateEmailsSetup<WithStreamedUnaryMethod_GetUserBaseStatistics<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateIdentity<WithStreamedUnaryMethod_GetIdentity<WithStreamedUnaryMethod_GetIdentityByIdentifier<WithStreamedUnaryMethod_GetIdentitiesByAttribute<WithStreamedUnaryMethod_GetIdentities<WithStreamedUnaryMethod_UpdateIdentity<WithStreamedUnaryMethod_DeleteIdentity<WithStreamedUnaryMethod_GetAddresses<WithStreamedUnaryMethod_GetAddress<WithStreamedUnaryMethod_UpdateAddress<WithStreamedUnaryMethod_GetTraits<WithStreamedUnaryMethod_UpdateTraits<WithStreamedUnaryMethod_GetCredentials<WithStreamedUnaryMethod_UpdateCredential<WithStreamedUnaryMethod_GetIdentityLoginAttempts<WithStreamedUnaryMethod_CreateConnection<WithStreamedUnaryMethod_GetConnections<WithStreamedUnaryMethod_UpdateConnection<WithStreamedUnaryMethod_DeleteConnection<WithStreamedUnaryMethod_CreateIdSchema<WithStreamedUnaryMethod_GetIdSchemas<WithStreamedUnaryMethod_GetIdSchema<WithStreamedUnaryMethod_GetDefaultIdSchema<WithStreamedUnaryMethod_UpdateIdSchema<WithStreamedUnaryMethod_MarkDefaultIdSchema<WithStreamedUnaryMethod_DeleteIdSchema<WithStreamedUnaryMethod_CreateOAuth2Client<WithStreamedUnaryMethod_GetOAuth2Clients<WithStreamedUnaryMethod_UpdateOAuth2Client<WithStreamedUnaryMethod_DeleteOAuth2Client<WithStreamedUnaryMethod_GetEmailsSetup<WithStreamedUnaryMethod_UpdateEmailsSetup<WithStreamedUnaryMethod_GetUserBaseStatistics<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace admin

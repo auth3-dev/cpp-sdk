@@ -24,6 +24,8 @@ extern PROTOBUF_INTERNAL_EXPORT_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_
 extern PROTOBUF_INTERNAL_EXPORT_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_GetIdentitiesByAttributeResponse_Identity_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetIdentitiesByAttributeResponse_Identity_CredentialsIdsEntry_DoNotUse_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetIdentitiesResponse_Identity_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_GetIdentityByIdentifierResponse_Identity_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetIdentityLoginAttemptsResponse_Attempt_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetIdentityResponse_CredentialsIdsEntry_DoNotUse_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_GetOAuth2ClientsResponse_Client_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto;
@@ -71,6 +73,22 @@ class GetIdentityResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetIdentityResponse> _instance;
 } _GetIdentityResponse_default_instance_;
+class GetIdentityByIdentifierRequestDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetIdentityByIdentifierRequest> _instance;
+} _GetIdentityByIdentifierRequest_default_instance_;
+class GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse> _instance;
+} _GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse_default_instance_;
+class GetIdentityByIdentifierResponse_IdentityDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetIdentityByIdentifierResponse_Identity> _instance;
+} _GetIdentityByIdentifierResponse_Identity_default_instance_;
+class GetIdentityByIdentifierResponseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetIdentityByIdentifierResponse> _instance;
+} _GetIdentityByIdentifierResponse_default_instance_;
 class GetIdentitiesByAttributeRequestDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<GetIdentitiesByAttributeRequest> _instance;
@@ -1037,6 +1055,64 @@ static void InitDefaultsscc_info_GetIdentitiesResponse_Identity_devtools_2fauth_
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetIdentitiesResponse_Identity_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto}, {
       &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,}};
 
+static void InitDefaultsscc_info_GetIdentityByIdentifierRequest_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::depot::devtools::auth::v0::identity::admin::_GetIdentityByIdentifierRequest_default_instance_;
+    new (ptr) ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetIdentityByIdentifierRequest_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetIdentityByIdentifierRequest_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto}, {}};
+
+static void InitDefaultsscc_info_GetIdentityByIdentifierResponse_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::depot::devtools::auth::v0::identity::admin::_GetIdentityByIdentifierResponse_default_instance_;
+    new (ptr) ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_GetIdentityByIdentifierResponse_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, 0, InitDefaultsscc_info_GetIdentityByIdentifierResponse_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto}, {
+      &scc_info_GetIdentityByIdentifierResponse_Identity_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.base,}};
+
+static void InitDefaultsscc_info_GetIdentityByIdentifierResponse_Identity_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::depot::devtools::auth::v0::identity::admin::_GetIdentityByIdentifierResponse_Identity_default_instance_;
+    new (ptr) ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_GetIdentityByIdentifierResponse_Identity_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, 0, InitDefaultsscc_info_GetIdentityByIdentifierResponse_Identity_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto}, {
+      &scc_info_Timestamp_google_2fprotobuf_2ftimestamp_2eproto.base,
+      &scc_info_GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.base,}};
+
+static void InitDefaultsscc_info_GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::depot::devtools::auth::v0::identity::admin::_GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse_default_instance_;
+    new (ptr) ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse();
+  }
+  ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto}, {}};
+
 static void InitDefaultsscc_info_GetIdentityLoginAttemptsRequest_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -1539,8 +1615,8 @@ static void InitDefaultsscc_info_UpdateTraitsResponse_devtools_2fauth_2fv0_2fpro
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_UpdateTraitsResponse_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_UpdateTraitsResponse_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[81];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[19];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[85];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[20];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto = nullptr;
 
 const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -1563,6 +1639,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_devtools_2fauth_2fv0_2fproto_2
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentitiesRequest, page_size_),
+  PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentitiesRequest, page_token_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentitiesResponse_Identity, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1580,6 +1658,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_devtools_2fauth_2fv0_2fproto_2
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentitiesResponse, identities_),
+  PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentitiesResponse, next_page_token_),
+  PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentitiesResponse, total_size_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentityRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1609,6 +1689,43 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_devtools_2fauth_2fv0_2fproto_2
   PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentityResponse, credentials_ids_),
   PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentityResponse, schema_id_),
   PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentityResponse, lock_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest, attribute_),
+  PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest, value_),
+  PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest, connection_id_),
+  PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse, value_),
+  0,
+  1,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity, identity_id_),
+  PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity, created_at_),
+  PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity, updated_at_),
+  PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity, main_identifier_),
+  PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity, traits_id_),
+  PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity, addresses_ids_),
+  PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity, credentials_ids_),
+  PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity, schema_id_),
+  PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity, lock_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse, identity_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -2250,84 +2367,88 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 0, -1, sizeof(::depot::devtools::auth::v0::identity::admin::CreateIdentityRequest)},
   { 8, -1, sizeof(::depot::devtools::auth::v0::identity::admin::CreateIdentityResponse)},
   { 14, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentitiesRequest)},
-  { 19, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentitiesResponse_Identity)},
-  { 30, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentitiesResponse)},
-  { 36, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentityRequest)},
-  { 42, 49, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentityResponse_CredentialsIdsEntry_DoNotUse)},
-  { 51, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentityResponse)},
-  { 65, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeRequest)},
-  { 72, 79, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse_Identity_CredentialsIdsEntry_DoNotUse)},
-  { 81, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse_Identity)},
-  { 95, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse)},
-  { 101, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateIdentityRequest)},
-  { 108, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateIdentityResponse)},
-  { 113, -1, sizeof(::depot::devtools::auth::v0::identity::admin::DeleteIdentityRequest)},
-  { 119, -1, sizeof(::depot::devtools::auth::v0::identity::admin::DeleteIdentityResponse)},
-  { 124, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetCredentialsRequest)},
-  { 130, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetCredentialsResponse_Credential)},
-  { 142, 149, sizeof(::depot::devtools::auth::v0::identity::admin::GetCredentialsResponse_CredentialsEntry_DoNotUse)},
-  { 151, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetCredentialsResponse)},
-  { 157, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateCredentialRequest)},
-  { 165, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateCredentialResponse)},
-  { 170, -1, sizeof(::depot::devtools::auth::v0::identity::admin::CreateConnectionRequest)},
-  { 184, -1, sizeof(::depot::devtools::auth::v0::identity::admin::CreateConnectionResponse)},
-  { 190, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetConnectionsRequest)},
-  { 195, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetConnectionsResponse_Connection)},
-  { 211, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetConnectionsResponse)},
-  { 217, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateConnectionRequest)},
-  { 232, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateConnectionResponse)},
-  { 237, -1, sizeof(::depot::devtools::auth::v0::identity::admin::DeleteConnectionRequest)},
-  { 243, -1, sizeof(::depot::devtools::auth::v0::identity::admin::DeleteConnectionResponse)},
-  { 248, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetOAuth2ClientsRequest)},
-  { 253, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetOAuth2ClientsResponse_Client)},
-  { 291, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetOAuth2ClientsResponse)},
-  { 297, -1, sizeof(::depot::devtools::auth::v0::identity::admin::CreateOAuth2ClientRequest)},
-  { 332, -1, sizeof(::depot::devtools::auth::v0::identity::admin::CreateOAuth2ClientResponse)},
-  { 339, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateOAuth2ClientRequest)},
-  { 374, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateOAuth2ClientResponse)},
-  { 381, -1, sizeof(::depot::devtools::auth::v0::identity::admin::DeleteOAuth2ClientRequest)},
-  { 387, -1, sizeof(::depot::devtools::auth::v0::identity::admin::DeleteOAuth2ClientResponse)},
-  { 392, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetAddressesRequest)},
-  { 398, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetAddressesResponse_Address)},
-  { 409, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetAddressesResponse)},
-  { 415, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetAddressRequest)},
-  { 423, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetAddressResponse)},
-  { 434, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateAddressRequest)},
-  { 443, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateAddressResponse)},
-  { 448, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetTraitsRequest)},
-  { 454, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetTraitsResponse)},
-  { 460, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest)},
-  { 467, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse)},
-  { 472, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsRequest)},
-  { 478, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsResponse_Attempt)},
-  { 489, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsResponse)},
-  { 495, -1, sizeof(::depot::devtools::auth::v0::identity::admin::CreateIdSchemaRequest)},
-  { 502, -1, sizeof(::depot::devtools::auth::v0::identity::admin::CreateIdSchemaResponse)},
-  { 508, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdSchemasRequest)},
-  { 513, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdSchemasResponse_JsonSchema)},
-  { 524, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdSchemasResponse)},
-  { 530, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdSchemaRequest)},
-  { 536, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdSchemaResponse)},
-  { 547, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetDefaultIdSchemaRequest)},
-  { 552, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetDefaultIdSchemaResponse)},
-  { 563, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateIdSchemaRequest)},
-  { 571, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateIdSchemaResponse)},
-  { 576, -1, sizeof(::depot::devtools::auth::v0::identity::admin::MarkDefaultIdSchemaRequest)},
-  { 582, -1, sizeof(::depot::devtools::auth::v0::identity::admin::MarkDefaultIdSchemaResponse)},
-  { 587, -1, sizeof(::depot::devtools::auth::v0::identity::admin::DeleteIdSchemaRequest)},
-  { 593, -1, sizeof(::depot::devtools::auth::v0::identity::admin::DeleteIdSchemaResponse)},
-  { 598, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetEmailsSetupRequest)},
-  { 603, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetEmailsSetupResponse_EmailTemplate)},
-  { 610, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetEmailsSetupResponse_EmailSender)},
-  { 620, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetEmailsSetupResponse)},
-  { 632, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateEmailsSetupRequest_EmailTemplate)},
-  { 639, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateEmailsSetupRequest_EmailSender)},
-  { 649, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateEmailsSetupRequest)},
-  { 660, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateEmailsSetupResponse)},
-  { 665, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsRequest)},
-  { 673, 680, sizeof(::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsResponse_UsersPerDayEntry_DoNotUse)},
-  { 682, 689, sizeof(::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsResponse_SessionsPerDayEntry_DoNotUse)},
-  { 691, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsResponse)},
+  { 21, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentitiesResponse_Identity)},
+  { 32, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentitiesResponse)},
+  { 40, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentityRequest)},
+  { 46, 53, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentityResponse_CredentialsIdsEntry_DoNotUse)},
+  { 55, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentityResponse)},
+  { 69, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest)},
+  { 77, 84, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse)},
+  { 86, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity)},
+  { 100, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse)},
+  { 106, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeRequest)},
+  { 113, 120, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse_Identity_CredentialsIdsEntry_DoNotUse)},
+  { 122, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse_Identity)},
+  { 136, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeResponse)},
+  { 142, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateIdentityRequest)},
+  { 149, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateIdentityResponse)},
+  { 154, -1, sizeof(::depot::devtools::auth::v0::identity::admin::DeleteIdentityRequest)},
+  { 160, -1, sizeof(::depot::devtools::auth::v0::identity::admin::DeleteIdentityResponse)},
+  { 165, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetCredentialsRequest)},
+  { 171, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetCredentialsResponse_Credential)},
+  { 183, 190, sizeof(::depot::devtools::auth::v0::identity::admin::GetCredentialsResponse_CredentialsEntry_DoNotUse)},
+  { 192, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetCredentialsResponse)},
+  { 198, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateCredentialRequest)},
+  { 206, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateCredentialResponse)},
+  { 211, -1, sizeof(::depot::devtools::auth::v0::identity::admin::CreateConnectionRequest)},
+  { 225, -1, sizeof(::depot::devtools::auth::v0::identity::admin::CreateConnectionResponse)},
+  { 231, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetConnectionsRequest)},
+  { 236, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetConnectionsResponse_Connection)},
+  { 252, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetConnectionsResponse)},
+  { 258, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateConnectionRequest)},
+  { 273, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateConnectionResponse)},
+  { 278, -1, sizeof(::depot::devtools::auth::v0::identity::admin::DeleteConnectionRequest)},
+  { 284, -1, sizeof(::depot::devtools::auth::v0::identity::admin::DeleteConnectionResponse)},
+  { 289, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetOAuth2ClientsRequest)},
+  { 294, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetOAuth2ClientsResponse_Client)},
+  { 332, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetOAuth2ClientsResponse)},
+  { 338, -1, sizeof(::depot::devtools::auth::v0::identity::admin::CreateOAuth2ClientRequest)},
+  { 373, -1, sizeof(::depot::devtools::auth::v0::identity::admin::CreateOAuth2ClientResponse)},
+  { 380, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateOAuth2ClientRequest)},
+  { 415, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateOAuth2ClientResponse)},
+  { 422, -1, sizeof(::depot::devtools::auth::v0::identity::admin::DeleteOAuth2ClientRequest)},
+  { 428, -1, sizeof(::depot::devtools::auth::v0::identity::admin::DeleteOAuth2ClientResponse)},
+  { 433, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetAddressesRequest)},
+  { 439, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetAddressesResponse_Address)},
+  { 450, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetAddressesResponse)},
+  { 456, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetAddressRequest)},
+  { 464, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetAddressResponse)},
+  { 475, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateAddressRequest)},
+  { 484, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateAddressResponse)},
+  { 489, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetTraitsRequest)},
+  { 495, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetTraitsResponse)},
+  { 501, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest)},
+  { 508, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse)},
+  { 513, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsRequest)},
+  { 519, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsResponse_Attempt)},
+  { 530, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsResponse)},
+  { 536, -1, sizeof(::depot::devtools::auth::v0::identity::admin::CreateIdSchemaRequest)},
+  { 543, -1, sizeof(::depot::devtools::auth::v0::identity::admin::CreateIdSchemaResponse)},
+  { 549, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdSchemasRequest)},
+  { 554, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdSchemasResponse_JsonSchema)},
+  { 565, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdSchemasResponse)},
+  { 571, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdSchemaRequest)},
+  { 577, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetIdSchemaResponse)},
+  { 588, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetDefaultIdSchemaRequest)},
+  { 593, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetDefaultIdSchemaResponse)},
+  { 604, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateIdSchemaRequest)},
+  { 612, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateIdSchemaResponse)},
+  { 617, -1, sizeof(::depot::devtools::auth::v0::identity::admin::MarkDefaultIdSchemaRequest)},
+  { 623, -1, sizeof(::depot::devtools::auth::v0::identity::admin::MarkDefaultIdSchemaResponse)},
+  { 628, -1, sizeof(::depot::devtools::auth::v0::identity::admin::DeleteIdSchemaRequest)},
+  { 634, -1, sizeof(::depot::devtools::auth::v0::identity::admin::DeleteIdSchemaResponse)},
+  { 639, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetEmailsSetupRequest)},
+  { 644, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetEmailsSetupResponse_EmailTemplate)},
+  { 651, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetEmailsSetupResponse_EmailSender)},
+  { 661, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetEmailsSetupResponse)},
+  { 673, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateEmailsSetupRequest_EmailTemplate)},
+  { 680, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateEmailsSetupRequest_EmailSender)},
+  { 690, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateEmailsSetupRequest)},
+  { 701, -1, sizeof(::depot::devtools::auth::v0::identity::admin::UpdateEmailsSetupResponse)},
+  { 706, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsRequest)},
+  { 714, 721, sizeof(::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsResponse_UsersPerDayEntry_DoNotUse)},
+  { 723, 730, sizeof(::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsResponse_SessionsPerDayEntry_DoNotUse)},
+  { 732, -1, sizeof(::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -2339,6 +2460,10 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::depot::devtools::auth::v0::identity::admin::_GetIdentityRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::depot::devtools::auth::v0::identity::admin::_GetIdentityResponse_CredentialsIdsEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::depot::devtools::auth::v0::identity::admin::_GetIdentityResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::depot::devtools::auth::v0::identity::admin::_GetIdentityByIdentifierRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::depot::devtools::auth::v0::identity::admin::_GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::depot::devtools::auth::v0::identity::admin::_GetIdentityByIdentifierResponse_Identity_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::depot::devtools::auth::v0::identity::admin::_GetIdentityByIdentifierResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::depot::devtools::auth::v0::identity::admin::_GetIdentitiesByAttributeRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::depot::devtools::auth::v0::identity::admin::_GetIdentitiesByAttributeResponse_Identity_CredentialsIdsEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::depot::devtools::auth::v0::identity::admin::_GetIdentitiesByAttributeResponse_Identity_default_instance_),
@@ -2423,239 +2548,313 @@ const char descriptor_table_protodef_devtools_2fauth_2fv0_2fproto_2fidentity_2fa
   "le.protobuf.StructR\004data\022#\n\rconnection_i"
   "d\030\002 \001(\tR\014connectionId\022\033\n\tschema_id\030\003 \001(\t"
   "R\010schemaId\"9\n\026CreateIdentityResponse\022\037\n\013"
-  "identity_id\030\001 \001(\tR\nidentityId\"\026\n\024GetIden"
-  "titiesRequest\"\347\003\n\025GetIdentitiesResponse\022"
-  "e\n\nidentities\030\001 \003(\0132E.depot.devtools.aut"
-  "h.v0.identity.admin.GetIdentitiesRespons"
-  "e.IdentityR\nidentities\032\276\002\n\010Identity\022\037\n\013i"
-  "dentity_id\030\001 \001(\tR\nidentityId\0229\n\ncreated_"
-  "at\030\002 \001(\0132\032.google.protobuf.TimestampR\tcr"
-  "eatedAt\0229\n\nupdated_at\030\003 \001(\0132\032.google.pro"
-  "tobuf.TimestampR\tupdatedAt\022\'\n\017main_ident"
-  "ifier\030\004 \001(\tR\016mainIdentifier\022\033\n\tschema_id"
-  "\030\005 \001(\tR\010schemaId\022U\n\004lock\030\006 \001(\0162A.depot.d"
-  "evtools.auth.v0.identity.admin.GetIdenti"
-  "tiesResponse.LockR\004lock\"&\n\004Lock\022\014\n\010UNLOC"
-  "KED\020\000\022\020\n\014ADMIN_LOCKED\020\001\"5\n\022GetIdentityRe"
-  "quest\022\037\n\013identity_id\030\002 \001(\tR\nidentityId\"\355"
-  "\004\n\023GetIdentityResponse\022\037\n\013identity_id\030\001 "
-  "\001(\tR\nidentityId\0229\n\ncreated_at\030\002 \001(\0132\032.go"
-  "ogle.protobuf.TimestampR\tcreatedAt\0229\n\nup"
-  "dated_at\030\003 \001(\0132\032.google.protobuf.Timesta"
-  "mpR\tupdatedAt\022\'\n\017main_identifier\030\004 \001(\tR\016"
-  "mainIdentifier\022\033\n\ttraits_id\030\005 \001(\tR\010trait"
-  "sId\022#\n\raddresses_ids\030\006 \003(\tR\014addressesIds"
-  "\022w\n\017credentials_ids\030\007 \003(\0132N.depot.devtoo"
-  "ls.auth.v0.identity.admin.GetIdentityRes"
-  "ponse.CredentialsIdsEntryR\016credentialsId"
-  "s\022\033\n\tschema_id\030\010 \001(\tR\010schemaId\022S\n\004lock\030\t"
-  " \001(\0162\?.depot.devtools.auth.v0.identity.a"
-  "dmin.GetIdentityResponse.LockR\004lock\032A\n\023C"
-  "redentialsIdsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005"
-  "value\030\002 \001(\tR\005value:\0028\001\"&\n\004Lock\022\014\n\010UNLOCK"
-  "ED\020\000\022\020\n\014ADMIN_LOCKED\020\001\"U\n\037GetIdentitiesB"
-  "yAttributeRequest\022\034\n\tattribute\030\001 \001(\tR\tat"
-  "tribute\022\024\n\005value\030\002 \001(\tR\005value\"\246\006\n GetIde"
-  "ntitiesByAttributeResponse\022p\n\nidentities"
-  "\030\001 \003(\0132P.depot.devtools.auth.v0.identity"
-  ".admin.GetIdentitiesByAttributeResponse."
-  "IdentityR\nidentities\032\217\005\n\010Identity\022\037\n\013ide"
+  "identity_id\030\001 \001(\tR\nidentityId\"R\n\024GetIden"
+  "titiesRequest\022\033\n\tpage_size\030\001 \001(\005R\010pageSi"
+  "ze\022\035\n\npage_token\030\002 \001(\tR\tpageToken\"\256\004\n\025Ge"
+  "tIdentitiesResponse\022e\n\nidentities\030\001 \003(\0132"
+  "E.depot.devtools.auth.v0.identity.admin."
+  "GetIdentitiesResponse.IdentityR\nidentiti"
+  "es\022&\n\017next_page_token\030\002 \001(\tR\rnextPageTok"
+  "en\022\035\n\ntotal_size\030\003 \001(\005R\ttotalSize\032\276\002\n\010Id"
+  "entity\022\037\n\013identity_id\030\001 \001(\tR\nidentityId\022"
+  "9\n\ncreated_at\030\002 \001(\0132\032.google.protobuf.Ti"
+  "mestampR\tcreatedAt\0229\n\nupdated_at\030\003 \001(\0132\032"
+  ".google.protobuf.TimestampR\tupdatedAt\022\'\n"
+  "\017main_identifier\030\004 \001(\tR\016mainIdentifier\022\033"
+  "\n\tschema_id\030\005 \001(\tR\010schemaId\022U\n\004lock\030\006 \001("
+  "\0162A.depot.devtools.auth.v0.identity.admi"
+  "n.GetIdentitiesResponse.LockR\004lock\"&\n\004Lo"
+  "ck\022\014\n\010UNLOCKED\020\000\022\020\n\014ADMIN_LOCKED\020\001\"5\n\022Ge"
+  "tIdentityRequest\022\037\n\013identity_id\030\002 \001(\tR\ni"
+  "dentityId\"\355\004\n\023GetIdentityResponse\022\037\n\013ide"
   "ntity_id\030\001 \001(\tR\nidentityId\0229\n\ncreated_at"
   "\030\002 \001(\0132\032.google.protobuf.TimestampR\tcrea"
   "tedAt\0229\n\nupdated_at\030\003 \001(\0132\032.google.proto"
   "buf.TimestampR\tupdatedAt\022\'\n\017main_identif"
   "ier\030\004 \001(\tR\016mainIdentifier\022\033\n\ttraits_id\030\005"
   " \001(\tR\010traitsId\022#\n\raddresses_ids\030\006 \003(\tR\014a"
-  "ddressesIds\022\215\001\n\017credentials_ids\030\007 \003(\0132d."
-  "depot.devtools.auth.v0.identity.admin.Ge"
-  "tIdentitiesByAttributeResponse.Identity."
-  "CredentialsIdsEntryR\016credentialsIds\022\033\n\ts"
-  "chema_id\030\010 \001(\tR\010schemaId\022i\n\004lock\030\t \001(\0162U"
+  "ddressesIds\022w\n\017credentials_ids\030\007 \003(\0132N.d"
+  "epot.devtools.auth.v0.identity.admin.Get"
+  "IdentityResponse.CredentialsIdsEntryR\016cr"
+  "edentialsIds\022\033\n\tschema_id\030\010 \001(\tR\010schemaI"
+  "d\022S\n\004lock\030\t \001(\0162\?.depot.devtools.auth.v0"
+  ".identity.admin.GetIdentityResponse.Lock"
+  "R\004lock\032A\n\023CredentialsIdsEntry\022\020\n\003key\030\001 \001"
+  "(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"&\n\004Loc"
+  "k\022\014\n\010UNLOCKED\020\000\022\020\n\014ADMIN_LOCKED\020\001\"y\n\036Get"
+  "IdentityByIdentifierRequest\022\034\n\tattribute"
+  "\030\001 \001(\tR\tattribute\022\024\n\005value\030\002 \001(\tR\005value\022"
+  "#\n\rconnection_id\030\003 \001(\tR\014connectionId\"\236\006\n"
+  "\037GetIdentityByIdentifierResponse\022k\n\010iden"
+  "tity\030\001 \001(\0132O.depot.devtools.auth.v0.iden"
+  "tity.admin.GetIdentityByIdentifierRespon"
+  "se.IdentityR\010identity\032\215\005\n\010Identity\022\037\n\013id"
+  "entity_id\030\001 \001(\tR\nidentityId\0229\n\ncreated_a"
+  "t\030\002 \001(\0132\032.google.protobuf.TimestampR\tcre"
+  "atedAt\0229\n\nupdated_at\030\003 \001(\0132\032.google.prot"
+  "obuf.TimestampR\tupdatedAt\022\'\n\017main_identi"
+  "fier\030\004 \001(\tR\016mainIdentifier\022\033\n\ttraits_id\030"
+  "\005 \001(\tR\010traitsId\022#\n\raddresses_ids\030\006 \003(\tR\014"
+  "addressesIds\022\214\001\n\017credentials_ids\030\007 \003(\0132c"
   ".depot.devtools.auth.v0.identity.admin.G"
-  "etIdentitiesByAttributeResponse.Identity"
-  ".LockR\004lock\032A\n\023CredentialsIdsEntry\022\020\n\003ke"
-  "y\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"&"
-  "\n\004Lock\022\014\n\010UNLOCKED\020\000\022\020\n\014ADMIN_LOCKED\020\001\"\267"
-  "\001\n\025UpdateIdentityRequest\022\037\n\013identity_id\030"
-  "\001 \001(\tR\nidentityId\022U\n\004lock\030\002 \001(\0162A.depot."
-  "devtools.auth.v0.identity.admin.UpdateId"
-  "entityRequest.LockR\004lock\"&\n\004Lock\022\014\n\010UNLO"
-  "CKED\020\000\022\020\n\014ADMIN_LOCKED\020\001\"\030\n\026UpdateIdenti"
-  "tyResponse\"8\n\025DeleteIdentityRequest\022\037\n\013i"
-  "dentity_id\030\001 \001(\tR\nidentityId\"\030\n\026DeleteId"
-  "entityResponse\"8\n\025GetCredentialsRequest\022"
-  "\037\n\013identity_id\030\001 \001(\tR\nidentityId\"\250\004\n\026Get"
-  "CredentialsResponse\022p\n\013credentials\030\001 \003(\013"
-  "2N.depot.devtools.auth.v0.identity.admin"
-  ".GetCredentialsResponse.CredentialsEntry"
-  "R\013credentials\032\220\002\n\nCredential\022#\n\rcredenti"
-  "al_id\030\001 \001(\tR\014credentialId\0229\n\ncreated_at\030"
-  "\002 \001(\0132\032.google.protobuf.TimestampR\tcreat"
-  "edAt\0229\n\nupdated_at\030\003 \001(\0132\032.google.protob"
-  "uf.TimestampR\tupdatedAt\022\037\n\013identity_id\030\004"
-  " \001(\tR\nidentityId\022\022\n\004type\030\005 \001(\005R\004type\022\022\n\004"
-  "name\030\006 \001(\tR\004name\022\036\n\nconfigured\030\007 \001(\010R\nco"
-  "nfigured\032\210\001\n\020CredentialsEntry\022\020\n\003key\030\001 \001"
-  "(\tR\003key\022^\n\005value\030\002 \001(\0132H.depot.devtools."
-  "auth.v0.identity.admin.GetCredentialsRes"
-  "ponse.CredentialR\005value:\0028\001\"\214\001\n\027UpdateCr"
-  "edentialRequest\022+\n\004data\030\001 \001(\0132\027.google.p"
-  "rotobuf.StructR\004data\022#\n\rconnection_id\030\002 "
-  "\001(\tR\014connectionId\022\037\n\013identity_id\030\003 \001(\tR\n"
-  "identityId\"\032\n\030UpdateCredentialResponse\"\206"
-  "\t\n\027CreateConnectionRequest\022\022\n\004name\030\001 \001(\t"
-  "R\004name\022\033\n\tclient_id\030\002 \001(\tR\010clientId\022#\n\rc"
-  "lient_secret\030\003 \001(\tR\014clientSecret\022(\n\020butt"
-  "on_image_url\030\004 \001(\tR\016buttonImageUrl\022d\n\010pr"
-  "ovider\030\006 \001(\0162H.depot.devtools.auth.v0.id"
-  "entity.admin.CreateConnectionRequest.Pro"
-  "vidersR\010provider\022,\n\022oidc_discovery_url\030\007"
-  " \001(\tR\020oidcDiscoveryUrl\022\020\n\003mfa\030\010 \003(\tR\003mfa"
-  "\022X\n\004type\030\t \001(\0162D.depot.devtools.auth.v0."
-  "identity.admin.CreateConnectionRequest.T"
-  "ypesR\004type\022\026\n\006scopes\030\n \001(\tR\006scopes\"\223\005\n\tP"
-  "roviders\022\010\n\004NONE\020\000\022\n\n\006OPENID\020\001\022\n\n\006AMAZON"
-  "\020\002\022\r\n\tBITBUCKET\020\003\022\007\n\003BOX\020\004\022\017\n\013DAILYMOTIO"
-  "N\020\005\022\n\n\006DEEZER\020\006\022\020\n\014DIGITALOCEAN\020\007\022\013\n\007DIS"
-  "CORD\020\010\022\013\n\007DROPBOX\020\t\022\r\n\tEVEONLINE\020\n\022\014\n\010FA"
-  "CEBOOK\020\013\022\n\n\006FITBIT\020\014\022\t\n\005GITEA\020\r\022\n\n\006GITHU"
-  "B\020\016\022\n\n\006GITLAB\020\017\022\n\n\006GOOGLE\020\020\022\013\n\007SHOPIFY\020\022"
-  "\022\016\n\nSOUNDCLOUD\020\023\022\013\n\007SPOTIFY\020\024\022\t\n\005STEAM\020\025"
-  "\022\n\n\006STRIPE\020\026\022\n\n\006TWITCH\020\027\022\010\n\004UBER\020\030\022\t\n\005WE"
-  "PAY\020\031\022\t\n\005YAHOO\020\032\022\n\n\006YAMMER\020\033\022\n\n\006HEROKU\020\034"
-  "\022\r\n\tINSTAGRAM\020\035\022\014\n\010INTERCOM\020\036\022\t\n\005KAKAO\020\037"
-  "\022\n\n\006LASTFM\020 \022\014\n\010LINKEDIN\020!\022\010\n\004LINE\020\"\022\014\n\010"
-  "ONEDRIVE\020#\022\013\n\007AZUREAD\020$\022\023\n\017MICROSOFTONLI"
-  "NE\020%\022\r\n\tBATTLENET\020&\022\n\n\006PAYPAL\020\'\022\013\n\007TWITT"
-  "ER\020(\022\016\n\nSALESFORCE\020)\022\014\n\010TYPETALK\020*\022\t\n\005SL"
-  "ACK\020+\022\n\n\006MEETUP\020,\022\010\n\004XERO\020.\022\006\n\002VK\020/\022\t\n\005N"
-  "AVER\0200\022\n\n\006YANDEX\0201\022\r\n\tNEXTCLOUD\0202\022\t\n\005APP"
-  "LE\0204\022\n\n\006STRAVA\0205\"=\n\005Types\022\t\n\005UNSET\020\000\022\014\n\010"
-  "PASSWORD\020\001\022\007\n\003OTP\020\002\022\010\n\004TOTP\020\003\022\010\n\004OIDC\020\004\""
-  ".\n\030CreateConnectionResponse\022\022\n\004name\030\001 \001("
-  "\tR\004name\"\027\n\025GetConnectionsRequest\"\305\013\n\026Get"
-  "ConnectionsResponse\022j\n\013connections\030\001 \003(\013"
-  "2H.depot.devtools.auth.v0.identity.admin"
-  ".GetConnectionsResponse.ConnectionR\013conn"
-  "ections\032\224\004\n\nConnection\022\022\n\004name\030\001 \001(\tR\004na"
-  "me\022\033\n\tclient_id\030\002 \001(\tR\010clientId\022#\n\rclien"
-  "t_secret\030\003 \001(\tR\014clientSecret\022(\n\020button_i"
-  "mage_url\030\004 \001(\tR\016buttonImageUrl\022c\n\010provid"
-  "er\030\006 \001(\0162G.depot.devtools.auth.v0.identi"
-  "ty.admin.GetConnectionsResponse.Provider"
-  "sR\010provider\022,\n\022oidc_discovery_url\030\007 \001(\tR"
-  "\020oidcDiscoveryUrl\022\020\n\003mfa\030\010 \003(\tR\003mfa\022W\n\004t"
-  "ype\030\t \001(\0162C.depot.devtools.auth.v0.ident"
-  "ity.admin.GetConnectionsResponse.TypesR\004"
-  "type\022\016\n\002id\030\n \001(\tR\002id\022\026\n\006scopes\030\013 \001(\tR\006sc"
-  "opes\022`\n\007purpose\030\014 \001(\0162F.depot.devtools.a"
-  "uth.v0.identity.admin.GetConnectionsResp"
-  "onse.PurposesR\007purpose\"\223\005\n\tProviders\022\010\n\004"
-  "NONE\020\000\022\n\n\006OPENID\020\001\022\n\n\006AMAZON\020\002\022\r\n\tBITBUC"
-  "KET\020\003\022\007\n\003BOX\020\004\022\017\n\013DAILYMOTION\020\005\022\n\n\006DEEZE"
-  "R\020\006\022\020\n\014DIGITALOCEAN\020\007\022\013\n\007DISCORD\020\010\022\013\n\007DR"
-  "OPBOX\020\t\022\r\n\tEVEONLINE\020\n\022\014\n\010FACEBOOK\020\013\022\n\n\006"
-  "FITBIT\020\014\022\t\n\005GITEA\020\r\022\n\n\006GITHUB\020\016\022\n\n\006GITLA"
-  "B\020\017\022\n\n\006GOOGLE\020\020\022\013\n\007SHOPIFY\020\022\022\016\n\nSOUNDCLO"
-  "UD\020\023\022\013\n\007SPOTIFY\020\024\022\t\n\005STEAM\020\025\022\n\n\006STRIPE\020\026"
-  "\022\n\n\006TWITCH\020\027\022\010\n\004UBER\020\030\022\t\n\005WEPAY\020\031\022\t\n\005YAH"
-  "OO\020\032\022\n\n\006YAMMER\020\033\022\n\n\006HEROKU\020\034\022\r\n\tINSTAGRA"
-  "M\020\035\022\014\n\010INTERCOM\020\036\022\t\n\005KAKAO\020\037\022\n\n\006LASTFM\020 "
-  "\022\014\n\010LINKEDIN\020!\022\010\n\004LINE\020\"\022\014\n\010ONEDRIVE\020#\022\013"
-  "\n\007AZUREAD\020$\022\023\n\017MICROSOFTONLINE\020%\022\r\n\tBATT"
-  "LENET\020&\022\n\n\006PAYPAL\020\'\022\013\n\007TWITTER\020(\022\016\n\nSALE"
-  "SFORCE\020)\022\014\n\010TYPETALK\020*\022\t\n\005SLACK\020+\022\n\n\006MEE"
-  "TUP\020,\022\010\n\004XERO\020.\022\006\n\002VK\020/\022\t\n\005NAVER\0200\022\n\n\006YA"
-  "NDEX\0201\022\r\n\tNEXTCLOUD\0202\022\t\n\005APPLE\0204\022\n\n\006STRA"
-  "VA\0205\"=\n\005Types\022\t\n\005UNSET\020\000\022\014\n\010PASSWORD\020\001\022\007"
-  "\n\003OTP\020\002\022\010\n\004TOTP\020\003\022\010\n\004OIDC\020\004\"S\n\010Purposes\022"
-  "\023\n\017PURPOSE_UNKNOWN\020\000\022\027\n\023PURPOSE_MAIN_FAC"
-  "TOR\020\001\022\031\n\025PURPOSE_SECOND_FACTOR\020\002\"\226\t\n\027Upd"
-  "ateConnectionRequest\022\022\n\004name\030\001 \001(\tR\004name"
-  "\022\033\n\tclient_id\030\002 \001(\tR\010clientId\022#\n\rclient_"
-  "secret\030\003 \001(\tR\014clientSecret\022(\n\020button_ima"
-  "ge_url\030\004 \001(\tR\016buttonImageUrl\022d\n\010provider"
-  "\030\006 \001(\0162H.depot.devtools.auth.v0.identity"
-  ".admin.UpdateConnectionRequest.Providers"
-  "R\010provider\022,\n\022oidc_discovery_url\030\007 \001(\tR\020"
-  "oidcDiscoveryUrl\022\020\n\003mfa\030\010 \003(\tR\003mfa\022X\n\004ty"
-  "pe\030\t \001(\0162D.depot.devtools.auth.v0.identi"
-  "ty.admin.UpdateConnectionRequest.TypesR\004"
-  "type\022\016\n\002id\030\n \001(\tR\002id\022\026\n\006scopes\030\013 \001(\tR\006sc"
-  "opes\"\223\005\n\tProviders\022\010\n\004NONE\020\000\022\n\n\006OPENID\020\001"
-  "\022\n\n\006AMAZON\020\002\022\r\n\tBITBUCKET\020\003\022\007\n\003BOX\020\004\022\017\n\013"
-  "DAILYMOTION\020\005\022\n\n\006DEEZER\020\006\022\020\n\014DIGITALOCEA"
-  "N\020\007\022\013\n\007DISCORD\020\010\022\013\n\007DROPBOX\020\t\022\r\n\tEVEONLI"
-  "NE\020\n\022\014\n\010FACEBOOK\020\013\022\n\n\006FITBIT\020\014\022\t\n\005GITEA\020"
-  "\r\022\n\n\006GITHUB\020\016\022\n\n\006GITLAB\020\017\022\n\n\006GOOGLE\020\020\022\013\n"
-  "\007SHOPIFY\020\022\022\016\n\nSOUNDCLOUD\020\023\022\013\n\007SPOTIFY\020\024\022"
-  "\t\n\005STEAM\020\025\022\n\n\006STRIPE\020\026\022\n\n\006TWITCH\020\027\022\010\n\004UB"
-  "ER\020\030\022\t\n\005WEPAY\020\031\022\t\n\005YAHOO\020\032\022\n\n\006YAMMER\020\033\022\n"
-  "\n\006HEROKU\020\034\022\r\n\tINSTAGRAM\020\035\022\014\n\010INTERCOM\020\036\022"
-  "\t\n\005KAKAO\020\037\022\n\n\006LASTFM\020 \022\014\n\010LINKEDIN\020!\022\010\n\004"
-  "LINE\020\"\022\014\n\010ONEDRIVE\020#\022\013\n\007AZUREAD\020$\022\023\n\017MIC"
-  "ROSOFTONLINE\020%\022\r\n\tBATTLENET\020&\022\n\n\006PAYPAL\020"
-  "\'\022\013\n\007TWITTER\020(\022\016\n\nSALESFORCE\020)\022\014\n\010TYPETA"
-  "LK\020*\022\t\n\005SLACK\020+\022\n\n\006MEETUP\020,\022\010\n\004XERO\020.\022\006\n"
-  "\002VK\020/\022\t\n\005NAVER\0200\022\n\n\006YANDEX\0201\022\r\n\tNEXTCLOU"
-  "D\0202\022\t\n\005APPLE\0204\022\n\n\006STRAVA\0205\"=\n\005Types\022\t\n\005U"
-  "NSET\020\000\022\014\n\010PASSWORD\020\001\022\007\n\003OTP\020\002\022\010\n\004TOTP\020\003\022"
-  "\010\n\004OIDC\020\004\"\032\n\030UpdateConnectionResponse\")\n"
-  "\027DeleteConnectionRequest\022\016\n\002id\030\001 \001(\tR\002id"
-  "\"\032\n\030DeleteConnectionResponse\"\031\n\027GetOAuth"
-  "2ClientsRequest\"\241\020\n\030GetOAuth2ClientsResp"
-  "onse\022`\n\007clients\030\001 \003(\0132F.depot.devtools.a"
-  "uth.v0.identity.admin.GetOAuth2ClientsRe"
-  "sponse.ClientR\007clients\032\242\017\n\006Client\0220\n\024all"
-  "owed_cors_origins\030\001 \003(\tR\022allowedCorsOrig"
-  "ins\022\032\n\010audience\030\002 \003(\tR\010audience\022M\n#backc"
-  "hannel_logout_session_required\030\003 \001(\010R ba"
-  "ckchannelLogoutSessionRequired\0224\n\026backch"
-  "annel_logout_uri\030\004 \001(\tR\024backchannelLogou"
-  "tUri\022\033\n\tclient_id\030\005 \001(\tR\010clientId\022\037\n\013cli"
-  "ent_name\030\006 \001(\tR\nclientName\0227\n\030client_sec"
-  "ret_expires_at\030\007 \001(\003R\025clientSecretExpire"
-  "sAt\022\035\n\nclient_uri\030\010 \001(\tR\tclientUri\022\032\n\010co"
-  "ntacts\030\t \003(\tR\010contacts\0229\n\ncreated_at\030\n \001"
-  "(\0132\032.google.protobuf.TimestampR\tcreatedA"
-  "t\022O\n$frontchannel_logout_session_require"
-  "d\030\013 \001(\010R!frontchannelLogoutSessionRequir"
-  "ed\0226\n\027frontchannel_logout_uri\030\014 \001(\tR\025fro"
-  "ntchannelLogoutUri\022Q\n\013grant_types\030\r \003(\0162"
-  "0.depot.devtools.auth.v0.identity.admin."
-  "GrantTypeR\ngrantTypes\022+\n\004jwks\030\016 \001(\0132\027.go"
-  "ogle.protobuf.StructR\004jwks\022\031\n\010jwks_uri\030\017"
-  " \001(\tR\007jwksUri\022\031\n\010logo_uri\030\020 \001(\tR\007logoUri"
-  "\0223\n\010metadata\030\021 \001(\0132\027.google.protobuf.Str"
-  "uctR\010metadata\022\024\n\005owner\030\022 \001(\tR\005owner\022\035\n\np"
-  "olicy_uri\030\023 \001(\tR\tpolicyUri\0229\n\031post_logou"
-  "t_redirect_uris\030\024 \003(\tR\026postLogoutRedirec"
-  "tUris\022#\n\rredirect_uris\030\025 \003(\tR\014redirectUr"
-  "is\022{\n\032request_object_signing_alg\030\026 \001(\0162>"
-  ".depot.devtools.auth.v0.identity.admin.R"
-  "equestObjectSigningAlgR\027requestObjectSig"
-  "ningAlg\022!\n\014request_uris\030\027 \003(\tR\013requestUr"
-  "is\022Z\n\016response_types\030\030 \003(\01623.depot.devto"
-  "ols.auth.v0.identity.admin.ResponseTypeR"
-  "\rresponseTypes\022\024\n\005scope\030\031 \001(\tR\005scope\0222\n\025"
-  "sector_identifier_uri\030\032 \001(\tR\023sectorIdent"
-  "ifierUri\022U\n\014subject_type\030\033 \001(\01622.depot.d"
-  "evtools.auth.v0.identity.admin.SubjectTy"
-  "peR\013subjectType\022{\n\032token_endpoint_auth_m"
-  "ethod\030\034 \001(\0162>.depot.devtools.auth.v0.ide"
-  "ntity.admin.TokenEndpointAuthMethodR\027tok"
-  "enEndpointAuthMethod\022\210\001\n\037token_endpoint_"
-  "auth_signing_alg\030\035 \001(\0162B.depot.devtools."
-  "auth.v0.identity.admin.TokenEndpointAuth"
-  "SigningAlgR\033tokenEndpointAuthSigningAlg\022"
-  "\027\n\007tos_uri\030\036 \001(\tR\006tosUri\0229\n\nupdated_at\030\037"
-  " \001(\0132\032.google.protobuf.TimestampR\tupdate"
-  "dAt\022\201\001\n\034userinfo_signed_response_alg\030  \001"
-  "(\0162@.depot.devtools.auth.v0.identity.adm"
-  "in.UserinfoSignedResponseAlgR\031userinfoSi"
-  "gnedResponseAlg\022R\n\013client_type\030! \001(\01621.d"
-  "epot.devtools.auth.v0.identity.admin.Cli"
-  "entTypeR\nclientType\"\216\016\n\031CreateOAuth2Clie"
+  "etIdentityByIdentifierResponse.Identity."
+  "CredentialsIdsEntryR\016credentialsIds\022\033\n\ts"
+  "chema_id\030\010 \001(\tR\010schemaId\022h\n\004lock\030\t \001(\0162T"
+  ".depot.devtools.auth.v0.identity.admin.G"
+  "etIdentityByIdentifierResponse.Identity."
+  "LockR\004lock\032A\n\023CredentialsIdsEntry\022\020\n\003key"
+  "\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"&\n"
+  "\004Lock\022\014\n\010UNLOCKED\020\000\022\020\n\014ADMIN_LOCKED\020\001\"U\n"
+  "\037GetIdentitiesByAttributeRequest\022\034\n\tattr"
+  "ibute\030\001 \001(\tR\tattribute\022\024\n\005value\030\002 \001(\tR\005v"
+  "alue\"\246\006\n GetIdentitiesByAttributeRespons"
+  "e\022p\n\nidentities\030\001 \003(\0132P.depot.devtools.a"
+  "uth.v0.identity.admin.GetIdentitiesByAtt"
+  "ributeResponse.IdentityR\nidentities\032\217\005\n\010"
+  "Identity\022\037\n\013identity_id\030\001 \001(\tR\nidentityI"
+  "d\0229\n\ncreated_at\030\002 \001(\0132\032.google.protobuf."
+  "TimestampR\tcreatedAt\0229\n\nupdated_at\030\003 \001(\013"
+  "2\032.google.protobuf.TimestampR\tupdatedAt\022"
+  "\'\n\017main_identifier\030\004 \001(\tR\016mainIdentifier"
+  "\022\033\n\ttraits_id\030\005 \001(\tR\010traitsId\022#\n\raddress"
+  "es_ids\030\006 \003(\tR\014addressesIds\022\215\001\n\017credentia"
+  "ls_ids\030\007 \003(\0132d.depot.devtools.auth.v0.id"
+  "entity.admin.GetIdentitiesByAttributeRes"
+  "ponse.Identity.CredentialsIdsEntryR\016cred"
+  "entialsIds\022\033\n\tschema_id\030\010 \001(\tR\010schemaId\022"
+  "i\n\004lock\030\t \001(\0162U.depot.devtools.auth.v0.i"
+  "dentity.admin.GetIdentitiesByAttributeRe"
+  "sponse.Identity.LockR\004lock\032A\n\023Credential"
+  "sIdsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001"
+  "(\tR\005value:\0028\001\"&\n\004Lock\022\014\n\010UNLOCKED\020\000\022\020\n\014A"
+  "DMIN_LOCKED\020\001\"\267\001\n\025UpdateIdentityRequest\022"
+  "\037\n\013identity_id\030\001 \001(\tR\nidentityId\022U\n\004lock"
+  "\030\002 \001(\0162A.depot.devtools.auth.v0.identity"
+  ".admin.UpdateIdentityRequest.LockR\004lock\""
+  "&\n\004Lock\022\014\n\010UNLOCKED\020\000\022\020\n\014ADMIN_LOCKED\020\001\""
+  "\030\n\026UpdateIdentityResponse\"8\n\025DeleteIdent"
+  "ityRequest\022\037\n\013identity_id\030\001 \001(\tR\nidentit"
+  "yId\"\030\n\026DeleteIdentityResponse\"8\n\025GetCred"
+  "entialsRequest\022\037\n\013identity_id\030\001 \001(\tR\nide"
+  "ntityId\"\250\004\n\026GetCredentialsResponse\022p\n\013cr"
+  "edentials\030\001 \003(\0132N.depot.devtools.auth.v0"
+  ".identity.admin.GetCredentialsResponse.C"
+  "redentialsEntryR\013credentials\032\220\002\n\nCredent"
+  "ial\022#\n\rcredential_id\030\001 \001(\tR\014credentialId"
+  "\0229\n\ncreated_at\030\002 \001(\0132\032.google.protobuf.T"
+  "imestampR\tcreatedAt\0229\n\nupdated_at\030\003 \001(\0132"
+  "\032.google.protobuf.TimestampR\tupdatedAt\022\037"
+  "\n\013identity_id\030\004 \001(\tR\nidentityId\022\022\n\004type\030"
+  "\005 \001(\005R\004type\022\022\n\004name\030\006 \001(\tR\004name\022\036\n\nconfi"
+  "gured\030\007 \001(\010R\nconfigured\032\210\001\n\020CredentialsE"
+  "ntry\022\020\n\003key\030\001 \001(\tR\003key\022^\n\005value\030\002 \001(\0132H."
+  "depot.devtools.auth.v0.identity.admin.Ge"
+  "tCredentialsResponse.CredentialR\005value:\002"
+  "8\001\"\214\001\n\027UpdateCredentialRequest\022+\n\004data\030\001"
+  " \001(\0132\027.google.protobuf.StructR\004data\022#\n\rc"
+  "onnection_id\030\002 \001(\tR\014connectionId\022\037\n\013iden"
+  "tity_id\030\003 \001(\tR\nidentityId\"\032\n\030UpdateCrede"
+  "ntialResponse\"\206\t\n\027CreateConnectionReques"
+  "t\022\022\n\004name\030\001 \001(\tR\004name\022\033\n\tclient_id\030\002 \001(\t"
+  "R\010clientId\022#\n\rclient_secret\030\003 \001(\tR\014clien"
+  "tSecret\022(\n\020button_image_url\030\004 \001(\tR\016butto"
+  "nImageUrl\022d\n\010provider\030\006 \001(\0162H.depot.devt"
+  "ools.auth.v0.identity.admin.CreateConnec"
+  "tionRequest.ProvidersR\010provider\022,\n\022oidc_"
+  "discovery_url\030\007 \001(\tR\020oidcDiscoveryUrl\022\020\n"
+  "\003mfa\030\010 \003(\tR\003mfa\022X\n\004type\030\t \001(\0162D.depot.de"
+  "vtools.auth.v0.identity.admin.CreateConn"
+  "ectionRequest.TypesR\004type\022\026\n\006scopes\030\n \001("
+  "\tR\006scopes\"\223\005\n\tProviders\022\010\n\004NONE\020\000\022\n\n\006OPE"
+  "NID\020\001\022\n\n\006AMAZON\020\002\022\r\n\tBITBUCKET\020\003\022\007\n\003BOX\020"
+  "\004\022\017\n\013DAILYMOTION\020\005\022\n\n\006DEEZER\020\006\022\020\n\014DIGITA"
+  "LOCEAN\020\007\022\013\n\007DISCORD\020\010\022\013\n\007DROPBOX\020\t\022\r\n\tEV"
+  "EONLINE\020\n\022\014\n\010FACEBOOK\020\013\022\n\n\006FITBIT\020\014\022\t\n\005G"
+  "ITEA\020\r\022\n\n\006GITHUB\020\016\022\n\n\006GITLAB\020\017\022\n\n\006GOOGLE"
+  "\020\020\022\013\n\007SHOPIFY\020\022\022\016\n\nSOUNDCLOUD\020\023\022\013\n\007SPOTI"
+  "FY\020\024\022\t\n\005STEAM\020\025\022\n\n\006STRIPE\020\026\022\n\n\006TWITCH\020\027\022"
+  "\010\n\004UBER\020\030\022\t\n\005WEPAY\020\031\022\t\n\005YAHOO\020\032\022\n\n\006YAMME"
+  "R\020\033\022\n\n\006HEROKU\020\034\022\r\n\tINSTAGRAM\020\035\022\014\n\010INTERC"
+  "OM\020\036\022\t\n\005KAKAO\020\037\022\n\n\006LASTFM\020 \022\014\n\010LINKEDIN\020"
+  "!\022\010\n\004LINE\020\"\022\014\n\010ONEDRIVE\020#\022\013\n\007AZUREAD\020$\022\023"
+  "\n\017MICROSOFTONLINE\020%\022\r\n\tBATTLENET\020&\022\n\n\006PA"
+  "YPAL\020\'\022\013\n\007TWITTER\020(\022\016\n\nSALESFORCE\020)\022\014\n\010T"
+  "YPETALK\020*\022\t\n\005SLACK\020+\022\n\n\006MEETUP\020,\022\010\n\004XERO"
+  "\020.\022\006\n\002VK\020/\022\t\n\005NAVER\0200\022\n\n\006YANDEX\0201\022\r\n\tNEX"
+  "TCLOUD\0202\022\t\n\005APPLE\0204\022\n\n\006STRAVA\0205\"=\n\005Types"
+  "\022\t\n\005UNSET\020\000\022\014\n\010PASSWORD\020\001\022\007\n\003OTP\020\002\022\010\n\004TO"
+  "TP\020\003\022\010\n\004OIDC\020\004\".\n\030CreateConnectionRespon"
+  "se\022\022\n\004name\030\001 \001(\tR\004name\"\027\n\025GetConnections"
+  "Request\"\305\013\n\026GetConnectionsResponse\022j\n\013co"
+  "nnections\030\001 \003(\0132H.depot.devtools.auth.v0"
+  ".identity.admin.GetConnectionsResponse.C"
+  "onnectionR\013connections\032\224\004\n\nConnection\022\022\n"
+  "\004name\030\001 \001(\tR\004name\022\033\n\tclient_id\030\002 \001(\tR\010cl"
+  "ientId\022#\n\rclient_secret\030\003 \001(\tR\014clientSec"
+  "ret\022(\n\020button_image_url\030\004 \001(\tR\016buttonIma"
+  "geUrl\022c\n\010provider\030\006 \001(\0162G.depot.devtools"
+  ".auth.v0.identity.admin.GetConnectionsRe"
+  "sponse.ProvidersR\010provider\022,\n\022oidc_disco"
+  "very_url\030\007 \001(\tR\020oidcDiscoveryUrl\022\020\n\003mfa\030"
+  "\010 \003(\tR\003mfa\022W\n\004type\030\t \001(\0162C.depot.devtool"
+  "s.auth.v0.identity.admin.GetConnectionsR"
+  "esponse.TypesR\004type\022\016\n\002id\030\n \001(\tR\002id\022\026\n\006s"
+  "copes\030\013 \001(\tR\006scopes\022`\n\007purpose\030\014 \001(\0162F.d"
+  "epot.devtools.auth.v0.identity.admin.Get"
+  "ConnectionsResponse.PurposesR\007purpose\"\223\005"
+  "\n\tProviders\022\010\n\004NONE\020\000\022\n\n\006OPENID\020\001\022\n\n\006AMA"
+  "ZON\020\002\022\r\n\tBITBUCKET\020\003\022\007\n\003BOX\020\004\022\017\n\013DAILYMO"
+  "TION\020\005\022\n\n\006DEEZER\020\006\022\020\n\014DIGITALOCEAN\020\007\022\013\n\007"
+  "DISCORD\020\010\022\013\n\007DROPBOX\020\t\022\r\n\tEVEONLINE\020\n\022\014\n"
+  "\010FACEBOOK\020\013\022\n\n\006FITBIT\020\014\022\t\n\005GITEA\020\r\022\n\n\006GI"
+  "THUB\020\016\022\n\n\006GITLAB\020\017\022\n\n\006GOOGLE\020\020\022\013\n\007SHOPIF"
+  "Y\020\022\022\016\n\nSOUNDCLOUD\020\023\022\013\n\007SPOTIFY\020\024\022\t\n\005STEA"
+  "M\020\025\022\n\n\006STRIPE\020\026\022\n\n\006TWITCH\020\027\022\010\n\004UBER\020\030\022\t\n"
+  "\005WEPAY\020\031\022\t\n\005YAHOO\020\032\022\n\n\006YAMMER\020\033\022\n\n\006HEROK"
+  "U\020\034\022\r\n\tINSTAGRAM\020\035\022\014\n\010INTERCOM\020\036\022\t\n\005KAKA"
+  "O\020\037\022\n\n\006LASTFM\020 \022\014\n\010LINKEDIN\020!\022\010\n\004LINE\020\"\022"
+  "\014\n\010ONEDRIVE\020#\022\013\n\007AZUREAD\020$\022\023\n\017MICROSOFTO"
+  "NLINE\020%\022\r\n\tBATTLENET\020&\022\n\n\006PAYPAL\020\'\022\013\n\007TW"
+  "ITTER\020(\022\016\n\nSALESFORCE\020)\022\014\n\010TYPETALK\020*\022\t\n"
+  "\005SLACK\020+\022\n\n\006MEETUP\020,\022\010\n\004XERO\020.\022\006\n\002VK\020/\022\t"
+  "\n\005NAVER\0200\022\n\n\006YANDEX\0201\022\r\n\tNEXTCLOUD\0202\022\t\n\005"
+  "APPLE\0204\022\n\n\006STRAVA\0205\"=\n\005Types\022\t\n\005UNSET\020\000\022"
+  "\014\n\010PASSWORD\020\001\022\007\n\003OTP\020\002\022\010\n\004TOTP\020\003\022\010\n\004OIDC"
+  "\020\004\"S\n\010Purposes\022\023\n\017PURPOSE_UNKNOWN\020\000\022\027\n\023P"
+  "URPOSE_MAIN_FACTOR\020\001\022\031\n\025PURPOSE_SECOND_F"
+  "ACTOR\020\002\"\226\t\n\027UpdateConnectionRequest\022\022\n\004n"
+  "ame\030\001 \001(\tR\004name\022\033\n\tclient_id\030\002 \001(\tR\010clie"
+  "ntId\022#\n\rclient_secret\030\003 \001(\tR\014clientSecre"
+  "t\022(\n\020button_image_url\030\004 \001(\tR\016buttonImage"
+  "Url\022d\n\010provider\030\006 \001(\0162H.depot.devtools.a"
+  "uth.v0.identity.admin.UpdateConnectionRe"
+  "quest.ProvidersR\010provider\022,\n\022oidc_discov"
+  "ery_url\030\007 \001(\tR\020oidcDiscoveryUrl\022\020\n\003mfa\030\010"
+  " \003(\tR\003mfa\022X\n\004type\030\t \001(\0162D.depot.devtools"
+  ".auth.v0.identity.admin.UpdateConnection"
+  "Request.TypesR\004type\022\016\n\002id\030\n \001(\tR\002id\022\026\n\006s"
+  "copes\030\013 \001(\tR\006scopes\"\223\005\n\tProviders\022\010\n\004NON"
+  "E\020\000\022\n\n\006OPENID\020\001\022\n\n\006AMAZON\020\002\022\r\n\tBITBUCKET"
+  "\020\003\022\007\n\003BOX\020\004\022\017\n\013DAILYMOTION\020\005\022\n\n\006DEEZER\020\006"
+  "\022\020\n\014DIGITALOCEAN\020\007\022\013\n\007DISCORD\020\010\022\013\n\007DROPB"
+  "OX\020\t\022\r\n\tEVEONLINE\020\n\022\014\n\010FACEBOOK\020\013\022\n\n\006FIT"
+  "BIT\020\014\022\t\n\005GITEA\020\r\022\n\n\006GITHUB\020\016\022\n\n\006GITLAB\020\017"
+  "\022\n\n\006GOOGLE\020\020\022\013\n\007SHOPIFY\020\022\022\016\n\nSOUNDCLOUD\020"
+  "\023\022\013\n\007SPOTIFY\020\024\022\t\n\005STEAM\020\025\022\n\n\006STRIPE\020\026\022\n\n"
+  "\006TWITCH\020\027\022\010\n\004UBER\020\030\022\t\n\005WEPAY\020\031\022\t\n\005YAHOO\020"
+  "\032\022\n\n\006YAMMER\020\033\022\n\n\006HEROKU\020\034\022\r\n\tINSTAGRAM\020\035"
+  "\022\014\n\010INTERCOM\020\036\022\t\n\005KAKAO\020\037\022\n\n\006LASTFM\020 \022\014\n"
+  "\010LINKEDIN\020!\022\010\n\004LINE\020\"\022\014\n\010ONEDRIVE\020#\022\013\n\007A"
+  "ZUREAD\020$\022\023\n\017MICROSOFTONLINE\020%\022\r\n\tBATTLEN"
+  "ET\020&\022\n\n\006PAYPAL\020\'\022\013\n\007TWITTER\020(\022\016\n\nSALESFO"
+  "RCE\020)\022\014\n\010TYPETALK\020*\022\t\n\005SLACK\020+\022\n\n\006MEETUP"
+  "\020,\022\010\n\004XERO\020.\022\006\n\002VK\020/\022\t\n\005NAVER\0200\022\n\n\006YANDE"
+  "X\0201\022\r\n\tNEXTCLOUD\0202\022\t\n\005APPLE\0204\022\n\n\006STRAVA\020"
+  "5\"=\n\005Types\022\t\n\005UNSET\020\000\022\014\n\010PASSWORD\020\001\022\007\n\003O"
+  "TP\020\002\022\010\n\004TOTP\020\003\022\010\n\004OIDC\020\004\"\032\n\030UpdateConnec"
+  "tionResponse\")\n\027DeleteConnectionRequest\022"
+  "\016\n\002id\030\001 \001(\tR\002id\"\032\n\030DeleteConnectionRespo"
+  "nse\"\031\n\027GetOAuth2ClientsRequest\"\241\020\n\030GetOA"
+  "uth2ClientsResponse\022`\n\007clients\030\001 \003(\0132F.d"
+  "epot.devtools.auth.v0.identity.admin.Get"
+  "OAuth2ClientsResponse.ClientR\007clients\032\242\017"
+  "\n\006Client\0220\n\024allowed_cors_origins\030\001 \003(\tR\022"
+  "allowedCorsOrigins\022\032\n\010audience\030\002 \003(\tR\010au"
+  "dience\022M\n#backchannel_logout_session_req"
+  "uired\030\003 \001(\010R backchannelLogoutSessionReq"
+  "uired\0224\n\026backchannel_logout_uri\030\004 \001(\tR\024b"
+  "ackchannelLogoutUri\022\033\n\tclient_id\030\005 \001(\tR\010"
+  "clientId\022\037\n\013client_name\030\006 \001(\tR\nclientNam"
+  "e\0227\n\030client_secret_expires_at\030\007 \001(\003R\025cli"
+  "entSecretExpiresAt\022\035\n\nclient_uri\030\010 \001(\tR\t"
+  "clientUri\022\032\n\010contacts\030\t \003(\tR\010contacts\0229\n"
+  "\ncreated_at\030\n \001(\0132\032.google.protobuf.Time"
+  "stampR\tcreatedAt\022O\n$frontchannel_logout_"
+  "session_required\030\013 \001(\010R!frontchannelLogo"
+  "utSessionRequired\0226\n\027frontchannel_logout"
+  "_uri\030\014 \001(\tR\025frontchannelLogoutUri\022Q\n\013gra"
+  "nt_types\030\r \003(\01620.depot.devtools.auth.v0."
+  "identity.admin.GrantTypeR\ngrantTypes\022+\n\004"
+  "jwks\030\016 \001(\0132\027.google.protobuf.StructR\004jwk"
+  "s\022\031\n\010jwks_uri\030\017 \001(\tR\007jwksUri\022\031\n\010logo_uri"
+  "\030\020 \001(\tR\007logoUri\0223\n\010metadata\030\021 \001(\0132\027.goog"
+  "le.protobuf.StructR\010metadata\022\024\n\005owner\030\022 "
+  "\001(\tR\005owner\022\035\n\npolicy_uri\030\023 \001(\tR\tpolicyUr"
+  "i\0229\n\031post_logout_redirect_uris\030\024 \003(\tR\026po"
+  "stLogoutRedirectUris\022#\n\rredirect_uris\030\025 "
+  "\003(\tR\014redirectUris\022{\n\032request_object_sign"
+  "ing_alg\030\026 \001(\0162>.depot.devtools.auth.v0.i"
+  "dentity.admin.RequestObjectSigningAlgR\027r"
+  "equestObjectSigningAlg\022!\n\014request_uris\030\027"
+  " \003(\tR\013requestUris\022Z\n\016response_types\030\030 \003("
+  "\01623.depot.devtools.auth.v0.identity.admi"
+  "n.ResponseTypeR\rresponseTypes\022\024\n\005scope\030\031"
+  " \001(\tR\005scope\0222\n\025sector_identifier_uri\030\032 \001"
+  "(\tR\023sectorIdentifierUri\022U\n\014subject_type\030"
+  "\033 \001(\01622.depot.devtools.auth.v0.identity."
+  "admin.SubjectTypeR\013subjectType\022{\n\032token_"
+  "endpoint_auth_method\030\034 \001(\0162>.depot.devto"
+  "ols.auth.v0.identity.admin.TokenEndpoint"
+  "AuthMethodR\027tokenEndpointAuthMethod\022\210\001\n\037"
+  "token_endpoint_auth_signing_alg\030\035 \001(\0162B."
+  "depot.devtools.auth.v0.identity.admin.To"
+  "kenEndpointAuthSigningAlgR\033tokenEndpoint"
+  "AuthSigningAlg\022\027\n\007tos_uri\030\036 \001(\tR\006tosUri\022"
+  "9\n\nupdated_at\030\037 \001(\0132\032.google.protobuf.Ti"
+  "mestampR\tupdatedAt\022\201\001\n\034userinfo_signed_r"
+  "esponse_alg\030  \001(\0162@.depot.devtools.auth."
+  "v0.identity.admin.UserinfoSignedResponse"
+  "AlgR\031userinfoSignedResponseAlg\022R\n\013client"
+  "_type\030! \001(\01621.depot.devtools.auth.v0.ide"
+  "ntity.admin.ClientTypeR\nclientType\"\216\016\n\031C"
+  "reateOAuth2ClientRequest\0220\n\024allowed_cors"
+  "_origins\030\001 \003(\tR\022allowedCorsOrigins\022\032\n\010au"
+  "dience\030\002 \003(\tR\010audience\022M\n#backchannel_lo"
+  "gout_session_required\030\003 \001(\010R backchannel"
+  "LogoutSessionRequired\0224\n\026backchannel_log"
+  "out_uri\030\004 \001(\tR\024backchannelLogoutUri\022\037\n\013c"
+  "lient_name\030\006 \001(\tR\nclientName\022\035\n\nclient_u"
+  "ri\030\010 \001(\tR\tclientUri\022\032\n\010contacts\030\t \003(\tR\010c"
+  "ontacts\022O\n$frontchannel_logout_session_r"
+  "equired\030\013 \001(\010R!frontchannelLogoutSession"
+  "Required\0226\n\027frontchannel_logout_uri\030\014 \001("
+  "\tR\025frontchannelLogoutUri\022Q\n\013grant_types\030"
+  "\r \003(\01620.depot.devtools.auth.v0.identity."
+  "admin.GrantTypeR\ngrantTypes\022+\n\004jwks\030\016 \001("
+  "\0132\027.google.protobuf.StructR\004jwks\022\031\n\010jwks"
+  "_uri\030\017 \001(\tR\007jwksUri\022\031\n\010logo_uri\030\020 \001(\tR\007l"
+  "ogoUri\0223\n\010metadata\030\021 \001(\0132\027.google.protob"
+  "uf.StructR\010metadata\022\024\n\005owner\030\022 \001(\tR\005owne"
+  "r\022\035\n\npolicy_uri\030\023 \001(\tR\tpolicyUri\0229\n\031post"
+  "_logout_redirect_uris\030\024 \003(\tR\026postLogoutR"
+  "edirectUris\022#\n\rredirect_uris\030\025 \003(\tR\014redi"
+  "rectUris\022{\n\032request_object_signing_alg\030\026"
+  " \001(\0162>.depot.devtools.auth.v0.identity.a"
+  "dmin.RequestObjectSigningAlgR\027requestObj"
+  "ectSigningAlg\022!\n\014request_uris\030\027 \003(\tR\013req"
+  "uestUris\022Z\n\016response_types\030\030 \003(\01623.depot"
+  ".devtools.auth.v0.identity.admin.Respons"
+  "eTypeR\rresponseTypes\022\024\n\005scope\030\031 \001(\tR\005sco"
+  "pe\0222\n\025sector_identifier_uri\030\032 \001(\tR\023secto"
+  "rIdentifierUri\022U\n\014subject_type\030\033 \001(\01622.d"
+  "epot.devtools.auth.v0.identity.admin.Sub"
+  "jectTypeR\013subjectType\022{\n\032token_endpoint_"
+  "auth_method\030\034 \001(\0162>.depot.devtools.auth."
+  "v0.identity.admin.TokenEndpointAuthMetho"
+  "dR\027tokenEndpointAuthMethod\022\210\001\n\037token_end"
+  "point_auth_signing_alg\030\035 \001(\0162B.depot.dev"
+  "tools.auth.v0.identity.admin.TokenEndpoi"
+  "ntAuthSigningAlgR\033tokenEndpointAuthSigni"
+  "ngAlg\022\027\n\007tos_uri\030\036 \001(\tR\006tosUri\022\201\001\n\034useri"
+  "nfo_signed_response_alg\030\037 \001(\0162@.depot.de"
+  "vtools.auth.v0.identity.admin.UserinfoSi"
+  "gnedResponseAlgR\031userinfoSignedResponseA"
+  "lg\022#\n\rclient_secret\030  \001(\tR\014clientSecret\022"
+  "R\n\013client_type\030! \001(\01621.depot.devtools.au"
+  "th.v0.identity.admin.ClientTypeR\nclientT"
+  "ype\"^\n\032CreateOAuth2ClientResponse\022\033\n\tcli"
+  "ent_id\030\001 \001(\tR\010clientId\022#\n\rclient_secret\030"
+  "\002 \001(\tR\014clientSecret\"\327\r\n\031UpdateOAuth2Clie"
   "ntRequest\0220\n\024allowed_cors_origins\030\001 \003(\tR"
   "\022allowedCorsOrigins\022\032\n\010audience\030\002 \003(\tR\010a"
   "udience\022M\n#backchannel_logout_session_re"
@@ -2698,369 +2897,325 @@ const char descriptor_table_protodef_devtools_2fauth_2fv0_2fproto_2fidentity_2fa
   "onse_alg\030\037 \001(\0162@.depot.devtools.auth.v0."
   "identity.admin.UserinfoSignedResponseAlg"
   "R\031userinfoSignedResponseAlg\022#\n\rclient_se"
-  "cret\030  \001(\tR\014clientSecret\022R\n\013client_type\030"
-  "! \001(\01621.depot.devtools.auth.v0.identity."
-  "admin.ClientTypeR\nclientType\"^\n\032CreateOA"
-  "uth2ClientResponse\022\033\n\tclient_id\030\001 \001(\tR\010c"
-  "lientId\022#\n\rclient_secret\030\002 \001(\tR\014clientSe"
-  "cret\"\327\r\n\031UpdateOAuth2ClientRequest\0220\n\024al"
-  "lowed_cors_origins\030\001 \003(\tR\022allowedCorsOri"
-  "gins\022\032\n\010audience\030\002 \003(\tR\010audience\022M\n#back"
-  "channel_logout_session_required\030\003 \001(\010R b"
-  "ackchannelLogoutSessionRequired\0224\n\026backc"
-  "hannel_logout_uri\030\004 \001(\tR\024backchannelLogo"
-  "utUri\022\037\n\013client_name\030\006 \001(\tR\nclientName\022\035"
-  "\n\nclient_uri\030\010 \001(\tR\tclientUri\022\032\n\010contact"
-  "s\030\t \003(\tR\010contacts\022O\n$frontchannel_logout"
-  "_session_required\030\013 \001(\010R!frontchannelLog"
-  "outSessionRequired\0226\n\027frontchannel_logou"
-  "t_uri\030\014 \001(\tR\025frontchannelLogoutUri\022Q\n\013gr"
-  "ant_types\030\r \003(\01620.depot.devtools.auth.v0"
-  ".identity.admin.GrantTypeR\ngrantTypes\022+\n"
-  "\004jwks\030\016 \001(\0132\027.google.protobuf.StructR\004jw"
-  "ks\022\031\n\010jwks_uri\030\017 \001(\tR\007jwksUri\022\031\n\010logo_ur"
-  "i\030\020 \001(\tR\007logoUri\0223\n\010metadata\030\021 \001(\0132\027.goo"
-  "gle.protobuf.StructR\010metadata\022\024\n\005owner\030\022"
-  " \001(\tR\005owner\022\035\n\npolicy_uri\030\023 \001(\tR\tpolicyU"
-  "ri\0229\n\031post_logout_redirect_uris\030\024 \003(\tR\026p"
-  "ostLogoutRedirectUris\022#\n\rredirect_uris\030\025"
-  " \003(\tR\014redirectUris\022{\n\032request_object_sig"
-  "ning_alg\030\026 \001(\0162>.depot.devtools.auth.v0."
-  "identity.admin.RequestObjectSigningAlgR\027"
-  "requestObjectSigningAlg\022!\n\014request_uris\030"
-  "\027 \003(\tR\013requestUris\022Z\n\016response_types\030\030 \003"
-  "(\01623.depot.devtools.auth.v0.identity.adm"
-  "in.ResponseTypeR\rresponseTypes\022\024\n\005scope\030"
-  "\031 \001(\tR\005scope\0222\n\025sector_identifier_uri\030\032 "
-  "\001(\tR\023sectorIdentifierUri\022U\n\014subject_type"
-  "\030\033 \001(\01622.depot.devtools.auth.v0.identity"
-  ".admin.SubjectTypeR\013subjectType\022{\n\032token"
-  "_endpoint_auth_method\030\034 \001(\0162>.depot.devt"
-  "ools.auth.v0.identity.admin.TokenEndpoin"
-  "tAuthMethodR\027tokenEndpointAuthMethod\022\210\001\n"
-  "\037token_endpoint_auth_signing_alg\030\035 \001(\0162B"
-  ".depot.devtools.auth.v0.identity.admin.T"
-  "okenEndpointAuthSigningAlgR\033tokenEndpoin"
-  "tAuthSigningAlg\022\027\n\007tos_uri\030\036 \001(\tR\006tosUri"
-  "\022\201\001\n\034userinfo_signed_response_alg\030\037 \001(\0162"
-  "@.depot.devtools.auth.v0.identity.admin."
-  "UserinfoSignedResponseAlgR\031userinfoSigne"
-  "dResponseAlg\022#\n\rclient_secret\030  \001(\tR\014cli"
-  "entSecret\022\033\n\tclient_id\030! \001(\tR\010clientId\"^"
-  "\n\032UpdateOAuth2ClientResponse\022\033\n\tclient_i"
-  "d\030\001 \001(\tR\010clientId\022#\n\rclient_secret\030\002 \001(\t"
-  "R\014clientSecret\"8\n\031DeleteOAuth2ClientRequ"
-  "est\022\033\n\tclient_id\030\001 \001(\tR\010clientId\"\034\n\032Dele"
-  "teOAuth2ClientResponse\"6\n\023GetAddressesRe"
-  "quest\022\037\n\013identity_id\030\001 \001(\tR\nidentityId\"\244"
-  "\002\n\024GetAddressesResponse\022a\n\taddresses\030\001 \003"
-  "(\0132C.depot.devtools.auth.v0.identity.adm"
-  "in.GetAddressesResponse.AddressR\taddress"
-  "es\032\250\001\n\007Address\022\016\n\002id\030\001 \001(\tR\002id\022\037\n\013identi"
-  "ty_id\030\002 \001(\tR\nidentityId\022\022\n\004name\030\003 \001(\tR\004n"
-  "ame\022\030\n\007address\030\004 \001(\tR\007address\022\032\n\010verifie"
-  "d\030\005 \001(\010R\010verified\022\"\n\rid_schema_key\030\006 \001(\t"
-  "R\013idSchemaKey\"T\n\021GetAddressRequest\022\020\n\002id"
-  "\030\001 \001(\tH\000R\002id\022$\n\014verification\030\002 \001(\tH\000R\014ve"
-  "rificationB\007\n\005match\"\263\001\n\022GetAddressRespon"
-  "se\022\016\n\002id\030\001 \001(\tR\002id\022\037\n\013identity_id\030\002 \001(\tR"
-  "\nidentityId\022\022\n\004name\030\003 \001(\tR\004name\022\030\n\007addre"
-  "ss\030\004 \001(\tR\007address\022\032\n\010verified\030\005 \001(\010R\010ver"
-  "ified\022\"\n\rid_schema_key\030\006 \001(\tR\013idSchemaKe"
-  "y\"m\n\024UpdateAddressRequest\022\016\n\002id\030\001 \001(\tR\002i"
-  "d\022\034\n\010verified\030\002 \001(\010H\000R\010verified\022\032\n\007addre"
-  "ss\030\003 \001(\tH\000R\007addressB\013\n\tattribute\"\027\n\025Upda"
-  "teAddressResponse\"3\n\020GetTraitsRequest\022\037\n"
-  "\013identity_id\030\001 \001(\tR\nidentityId\"+\n\021GetTra"
-  "itsResponse\022\026\n\006traits\030\001 \001(\tR\006traits\"N\n\023U"
-  "pdateTraitsRequest\022\037\n\013identity_id\030\001 \001(\tR"
-  "\nidentityId\022\026\n\006traits\030\002 \001(\tR\006traits\"\026\n\024U"
-  "pdateTraitsResponse\"B\n\037GetIdentityLoginA"
-  "ttemptsRequest\022\037\n\013identity_id\030\001 \001(\tR\nide"
-  "ntityId\"\221\003\n GetIdentityLoginAttemptsResp"
-  "onse\022k\n\010attempts\030\001 \003(\0132O.depot.devtools."
-  "auth.v0.identity.admin.GetIdentityLoginA"
-  "ttemptsResponse.AttemptR\010attempts\032\377\001\n\007At"
-  "tempt\022\016\n\002id\030\001 \001(\tR\002id\022\037\n\013identity_id\030\002 \001"
-  "(\tR\nidentityId\022\026\n\006status\030\003 \001(\tR\006status\0225"
-  "\n\026authentication_methods\030\004 \003(\tR\025authenti"
-  "cationMethods\0229\n\ncreated_at\030\005 \001(\0132\032.goog"
-  "le.protobuf.TimestampR\tcreatedAt\0229\n\nexpi"
-  "res_at\030\006 \001(\0132\032.google.protobuf.Timestamp"
-  "R\texpiresAt\"^\n\025CreateIdSchemaRequest\022\022\n\004"
-  "name\030\001 \001(\tR\004name\0221\n\007content\030\002 \001(\0132\027.goog"
-  "le.protobuf.StructR\007content\"(\n\026CreateIdS"
-  "chemaResponse\022\016\n\002id\030\002 \001(\tR\002id\"\025\n\023GetIdSc"
-  "hemasRequest\"\373\002\n\024GetIdSchemasResponse\022h\n"
-  "\013jsonschemas\030\001 \003(\0132F.depot.devtools.auth"
-  ".v0.identity.admin.GetIdSchemasResponse."
-  "JsonSchemaR\013jsonschemas\032\370\001\n\nJsonSchema\022\016"
-  "\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\0221\n\007co"
-  "ntent\030\003 \001(\0132\027.google.protobuf.StructR\007co"
-  "ntent\0229\n\ncreated_at\030\004 \001(\0132\032.google.proto"
-  "buf.TimestampR\tcreatedAt\0229\n\nupdated_at\030\005"
-  " \001(\0132\032.google.protobuf.TimestampR\tupdate"
-  "dAt\022\035\n\nis_default\030\006 \001(\010R\tisDefault\"$\n\022Ge"
-  "tIdSchemaRequest\022\016\n\002id\030\001 \001(\tR\002id\"\201\002\n\023Get"
-  "IdSchemaResponse\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name"
-  "\030\002 \001(\tR\004name\0221\n\007content\030\003 \001(\0132\027.google.p"
-  "rotobuf.StructR\007content\0229\n\ncreated_at\030\004 "
-  "\001(\0132\032.google.protobuf.TimestampR\tcreated"
-  "At\0229\n\nupdated_at\030\005 \001(\0132\032.google.protobuf"
-  ".TimestampR\tupdatedAt\022\035\n\nis_default\030\006 \001("
-  "\010R\tisDefault\"\033\n\031GetDefaultIdSchemaReques"
-  "t\"\210\002\n\032GetDefaultIdSchemaResponse\022\016\n\002id\030\001"
-  " \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\0221\n\007content\030"
-  "\003 \001(\0132\027.google.protobuf.StructR\007content\022"
-  "9\n\ncreated_at\030\004 \001(\0132\032.google.protobuf.Ti"
-  "mestampR\tcreatedAt\0229\n\nupdated_at\030\005 \001(\0132\032"
-  ".google.protobuf.TimestampR\tupdatedAt\022\035\n"
-  "\nis_default\030\006 \001(\010R\tisDefault\"n\n\025UpdateId"
-  "SchemaRequest\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 "
+  "cret\030  \001(\tR\014clientSecret\022\033\n\tclient_id\030! "
+  "\001(\tR\010clientId\"^\n\032UpdateOAuth2ClientRespo"
+  "nse\022\033\n\tclient_id\030\001 \001(\tR\010clientId\022#\n\rclie"
+  "nt_secret\030\002 \001(\tR\014clientSecret\"8\n\031DeleteO"
+  "Auth2ClientRequest\022\033\n\tclient_id\030\001 \001(\tR\010c"
+  "lientId\"\034\n\032DeleteOAuth2ClientResponse\"6\n"
+  "\023GetAddressesRequest\022\037\n\013identity_id\030\001 \001("
+  "\tR\nidentityId\"\244\002\n\024GetAddressesResponse\022a"
+  "\n\taddresses\030\001 \003(\0132C.depot.devtools.auth."
+  "v0.identity.admin.GetAddressesResponse.A"
+  "ddressR\taddresses\032\250\001\n\007Address\022\016\n\002id\030\001 \001("
+  "\tR\002id\022\037\n\013identity_id\030\002 \001(\tR\nidentityId\022\022"
+  "\n\004name\030\003 \001(\tR\004name\022\030\n\007address\030\004 \001(\tR\007add"
+  "ress\022\032\n\010verified\030\005 \001(\010R\010verified\022\"\n\rid_s"
+  "chema_key\030\006 \001(\tR\013idSchemaKey\"T\n\021GetAddre"
+  "ssRequest\022\020\n\002id\030\001 \001(\tH\000R\002id\022$\n\014verificat"
+  "ion\030\002 \001(\tH\000R\014verificationB\007\n\005match\"\263\001\n\022G"
+  "etAddressResponse\022\016\n\002id\030\001 \001(\tR\002id\022\037\n\013ide"
+  "ntity_id\030\002 \001(\tR\nidentityId\022\022\n\004name\030\003 \001(\t"
+  "R\004name\022\030\n\007address\030\004 \001(\tR\007address\022\032\n\010veri"
+  "fied\030\005 \001(\010R\010verified\022\"\n\rid_schema_key\030\006 "
+  "\001(\tR\013idSchemaKey\"m\n\024UpdateAddressRequest"
+  "\022\016\n\002id\030\001 \001(\tR\002id\022\034\n\010verified\030\002 \001(\010H\000R\010ve"
+  "rified\022\032\n\007address\030\003 \001(\tH\000R\007addressB\013\n\tat"
+  "tribute\"\027\n\025UpdateAddressResponse\"3\n\020GetT"
+  "raitsRequest\022\037\n\013identity_id\030\001 \001(\tR\nident"
+  "ityId\"+\n\021GetTraitsResponse\022\026\n\006traits\030\001 \001"
+  "(\tR\006traits\"N\n\023UpdateTraitsRequest\022\037\n\013ide"
+  "ntity_id\030\001 \001(\tR\nidentityId\022\026\n\006traits\030\002 \001"
+  "(\tR\006traits\"\026\n\024UpdateTraitsResponse\"B\n\037Ge"
+  "tIdentityLoginAttemptsRequest\022\037\n\013identit"
+  "y_id\030\001 \001(\tR\nidentityId\"\221\003\n GetIdentityLo"
+  "ginAttemptsResponse\022k\n\010attempts\030\001 \003(\0132O."
+  "depot.devtools.auth.v0.identity.admin.Ge"
+  "tIdentityLoginAttemptsResponse.AttemptR\010"
+  "attempts\032\377\001\n\007Attempt\022\016\n\002id\030\001 \001(\tR\002id\022\037\n\013"
+  "identity_id\030\002 \001(\tR\nidentityId\022\026\n\006status\030"
+  "\003 \001(\tR\006status\0225\n\026authentication_methods\030"
+  "\004 \003(\tR\025authenticationMethods\0229\n\ncreated_"
+  "at\030\005 \001(\0132\032.google.protobuf.TimestampR\tcr"
+  "eatedAt\0229\n\nexpires_at\030\006 \001(\0132\032.google.pro"
+  "tobuf.TimestampR\texpiresAt\"^\n\025CreateIdSc"
+  "hemaRequest\022\022\n\004name\030\001 \001(\tR\004name\0221\n\007conte"
+  "nt\030\002 \001(\0132\027.google.protobuf.StructR\007conte"
+  "nt\"(\n\026CreateIdSchemaResponse\022\016\n\002id\030\002 \001(\t"
+  "R\002id\"\025\n\023GetIdSchemasRequest\"\373\002\n\024GetIdSch"
+  "emasResponse\022h\n\013jsonschemas\030\001 \003(\0132F.depo"
+  "t.devtools.auth.v0.identity.admin.GetIdS"
+  "chemasResponse.JsonSchemaR\013jsonschemas\032\370"
+  "\001\n\nJsonSchema\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 "
   "\001(\tR\004name\0221\n\007content\030\003 \001(\0132\027.google.prot"
-  "obuf.StructR\007content\"\030\n\026UpdateIdSchemaRe"
-  "sponse\",\n\032MarkDefaultIdSchemaRequest\022\016\n\002"
-  "id\030\001 \001(\tR\002id\"\035\n\033MarkDefaultIdSchemaRespo"
-  "nse\"\'\n\025DeleteIdSchemaRequest\022\016\n\002id\030\001 \001(\t"
-  "R\002id\"\030\n\026DeleteIdSchemaResponse\"\027\n\025GetEma"
-  "ilsSetupRequest\"\314\007\n\026GetEmailsSetupRespon"
-  "se\022e\n\007welcome\030\001 \001(\0132K.depot.devtools.aut"
-  "h.v0.identity.admin.GetEmailsSetupRespon"
-  "se.EmailTemplateR\007welcome\022~\n\024account_ver"
-  "ification\030\002 \001(\0132K.depot.devtools.auth.v0"
-  ".identity.admin.GetEmailsSetupResponse.E"
-  "mailTemplateR\023accountVerification\022v\n\020acc"
-  "ount_recovery\030\003 \001(\0132K.depot.devtools.aut"
-  "h.v0.identity.admin.GetEmailsSetupRespon"
-  "se.EmailTemplateR\017accountRecovery\022x\n\021acc"
-  "ount_recovered\030\004 \001(\0132K.depot.devtools.au"
-  "th.v0.identity.admin.GetEmailsSetupRespo"
-  "nse.EmailTemplateR\020accountRecovered\022]\n\003o"
-  "tp\030\005 \001(\0132K.depot.devtools.auth.v0.identi"
-  "ty.admin.GetEmailsSetupResponse.EmailTem"
-  "plateR\003otp\022]\n\004smtp\030\006 \001(\0132I.depot.devtool"
-  "s.auth.v0.identity.admin.GetEmailsSetupR"
-  "esponse.EmailSenderR\004smtp\022\035\n\nproject_id\030"
-  "\007 \001(\tR\tprojectId\032C\n\rEmailTemplate\022\030\n\007con"
-  "tent\030\003 \001(\tR\007content\022\030\n\007subject\030\004 \001(\tR\007su"
-  "bject\032\266\001\n\013EmailSender\022#\n\remail_address\030\001"
-  " \001(\tR\014emailAddress\022\033\n\tsmtp_host\030\002 \001(\tR\010s"
-  "mtpHost\022\033\n\tsmtp_port\030\003 \001(\rR\010smtpPort\022#\n\r"
-  "smtp_username\030\004 \001(\tR\014smtpUsername\022#\n\rsmt"
-  "p_password\030\005 \001(\tR\014smtpPassword\"\274\007\n\030Updat"
-  "eEmailsSetupRequest\022g\n\007welcome\030\001 \001(\0132M.d"
-  "epot.devtools.auth.v0.identity.admin.Upd"
-  "ateEmailsSetupRequest.EmailTemplateR\007wel"
-  "come\022\200\001\n\024account_verification\030\002 \001(\0132M.de"
-  "pot.devtools.auth.v0.identity.admin.Upda"
-  "teEmailsSetupRequest.EmailTemplateR\023acco"
-  "untVerification\022x\n\020account_recovery\030\003 \001("
-  "\0132M.depot.devtools.auth.v0.identity.admi"
-  "n.UpdateEmailsSetupRequest.EmailTemplate"
-  "R\017accountRecovery\022z\n\021account_recovered\030\004"
-  " \001(\0132M.depot.devtools.auth.v0.identity.a"
-  "dmin.UpdateEmailsSetupRequest.EmailTempl"
-  "ateR\020accountRecovered\022_\n\003otp\030\005 \001(\0132M.dep"
-  "ot.devtools.auth.v0.identity.admin.Updat"
-  "eEmailsSetupRequest.EmailTemplateR\003otp\022_"
-  "\n\004smtp\030\006 \001(\0132K.depot.devtools.auth.v0.id"
-  "entity.admin.UpdateEmailsSetupRequest.Em"
-  "ailSenderR\004smtp\032C\n\rEmailTemplate\022\030\n\007cont"
-  "ent\030\001 \001(\tR\007content\022\030\n\007subject\030\002 \001(\tR\007sub"
-  "ject\032\266\001\n\013EmailSender\022#\n\remail_address\030\001 "
-  "\001(\tR\014emailAddress\022\033\n\tsmtp_host\030\002 \001(\tR\010sm"
-  "tpHost\022\033\n\tsmtp_port\030\003 \001(\rR\010smtpPort\022#\n\rs"
-  "mtp_username\030\004 \001(\tR\014smtpUsername\022#\n\rsmtp"
-  "_password\030\005 \001(\tR\014smtpPassword\"\033\n\031UpdateE"
-  "mailsSetupResponse\"\313\001\n\034GetUserBaseStatis"
-  "ticsRequest\022\037\n\013days_before\030\001 \001(\rR\ndaysBe"
-  "fore\022F\n\021lifetime_start_at\030\002 \001(\0132\032.google"
-  ".protobuf.TimestampR\017lifetimeStartAt\022B\n\017"
-  "lifetime_end_at\030\003 \001(\0132\032.google.protobuf."
-  "TimestampR\rlifetimeEndAt\"\241\004\n\035GetUserBase"
-  "StatisticsResponse\022\037\n\013total_users\030\001 \001(\005R"
-  "\ntotalUsers\022y\n\rusers_per_day\030\002 \003(\0132U.dep"
-  "ot.devtools.auth.v0.identity.admin.GetUs"
-  "erBaseStatisticsResponse.UsersPerDayEntr"
-  "yR\013usersPerDay\022\202\001\n\020sessions_per_day\030\003 \003("
-  "\0132X.depot.devtools.auth.v0.identity.admi"
-  "n.GetUserBaseStatisticsResponse.Sessions"
-  "PerDayEntryR\016sessionsPerDay\022,\n\022total_act"
-  "ive_users\030\004 \001(\005R\020totalActiveUsers\022.\n\023tot"
-  "al_lifetime_used\030\005 \001(\001R\021totalLifetimeUse"
-  "d\032>\n\020UsersPerDayEntry\022\020\n\003key\030\001 \001(\tR\003key\022"
-  "\024\n\005value\030\002 \001(\005R\005value:\0028\001\032A\n\023SessionsPer"
-  "DayEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001("
-  "\005R\005value:\0028\001*l\n\nClientType\022\025\n\021CLIENT_TYP"
-  "E_UNSET\020\000\022\026\n\022CLIENT_FIRST_PARTY\020\001\022\026\n\022CLI"
-  "ENT_THIRD_PARTY\020\002\022\027\n\023CLIENT_SYSTEM_PARTY"
-  "\020\003*A\n\013SubjectType\022\027\n\023SUBJECT_TYPE_PUBLIC"
-  "\020\000\022\031\n\025SUBJECT_TYPE_PAIRWISE\020\001*\325\001\n\027TokenE"
-  "ndpointAuthMethod\0222\n.TOKEN_ENDPOINT_AUTH"
-  "_METHOD_CLIENT_SECRET_BASIC\020\000\0221\n-TOKEN_E"
-  "NDPOINT_AUTH_METHOD_CLIENT_SECRET_POST\020\001"
-  "\022.\n*TOKEN_ENDPOINT_AUTH_METHOD_PRIVATE_K"
-  "EY_JWT\020\002\022#\n\037TOKEN_ENDPOINT_AUTH_METHOD_N"
-  "ONE\020\003*\313\003\n\033TokenEndpointAuthSigningAlg\022)\n"
-  "%TOKEN_ENDPOINT_AUTH_SIGNING_ALG_UNSET\020\000"
-  "\022)\n%TOKEN_ENDPOINT_AUTH_SIGNING_ALG_RS25"
-  "6\020\001\022)\n%TOKEN_ENDPOINT_AUTH_SIGNING_ALG_R"
-  "S384\020\002\022)\n%TOKEN_ENDPOINT_AUTH_SIGNING_AL"
-  "G_RS512\020\003\022)\n%TOKEN_ENDPOINT_AUTH_SIGNING"
-  "_ALG_PS256\020\004\022)\n%TOKEN_ENDPOINT_AUTH_SIGN"
-  "ING_ALG_PS384\020\005\022)\n%TOKEN_ENDPOINT_AUTH_S"
-  "IGNING_ALG_PS512\020\006\022)\n%TOKEN_ENDPOINT_AUT"
-  "H_SIGNING_ALG_ES256\020\007\022)\n%TOKEN_ENDPOINT_"
-  "AUTH_SIGNING_ALG_ES384\020\010\022)\n%TOKEN_ENDPOI"
-  "NT_AUTH_SIGNING_ALG_ES512\020\t*\272\001\n\tGrantTyp"
-  "e\022\024\n\020GRANT_TYPE_UNSET\020\000\022!\n\035GRANT_TYPE_CL"
-  "IENT_CREDENTIALS\020\001\022!\n\035GRANT_TYPE_AUTHORI"
-  "ZATION_CODE\020\002\022\027\n\023GRANT_TYPE_IMPLICIT\020\003\022\034"
-  "\n\030GRANT_TYPE_REFRESH_TOKEN\020\004\022\032\n\026GRANT_TY"
-  "PE_DEVICE_CODE\020\005*\224\002\n\014ResponseType\022\027\n\023RES"
-  "PONSE_TYPE_UNSET\020\000\022\026\n\022RESPONSE_TYPE_NONE"
-  "\020\001\022\032\n\026RESPONSE_TYPE_ID_TOKEN\020\002\022\027\n\023RESPON"
-  "SE_TYPE_TOKEN\020\003\022\026\n\022RESPONSE_TYPE_CODE\020\004\022"
-  " \n\034RESPONSE_TYPE_ID_TOKEN_TOKEN\020\005\022\037\n\033RES"
-  "PONSE_TYPE_CODE_ID_TOKEN\020\006\022\034\n\030RESPONSE_T"
-  "YPE_CODE_TOKEN\020\007\022%\n!RESPONSE_TYPE_CODE_I"
-  "D_TOKEN_TOKEN\020\010*\212\001\n\027RequestObjectSigning"
-  "Alg\022$\n REQUEST_OBJECT_SIGNING_ALG_UNSET\020"
-  "\000\022#\n\037REQUEST_OBJECT_SIGNING_ALG_NONE\020\001\022$"
-  "\n REQUEST_OBJECT_SIGNING_ALG_RS256\020\002*\222\001\n"
-  "\031UserinfoSignedResponseAlg\022&\n\"USERINFO_S"
-  "IGNED_RESPONSE_ALG_UNSET\020\000\022%\n!USERINFO_S"
-  "IGNED_RESPONSE_ALG_NONE\020\001\022&\n\"USERINFO_SI"
-  "GNED_RESPONSE_ALG_RS256\020\0022\370$\n\005Admin\022\215\001\n\016"
-  "CreateIdentity\022<.depot.devtools.auth.v0."
-  "identity.admin.CreateIdentityRequest\032=.d"
-  "epot.devtools.auth.v0.identity.admin.Cre"
-  "ateIdentityResponse\022\204\001\n\013GetIdentity\0229.de"
-  "pot.devtools.auth.v0.identity.admin.GetI"
-  "dentityRequest\032:.depot.devtools.auth.v0."
-  "identity.admin.GetIdentityResponse\022\253\001\n\030G"
-  "etIdentitiesByAttribute\022F.depot.devtools"
-  ".auth.v0.identity.admin.GetIdentitiesByA"
-  "ttributeRequest\032G.depot.devtools.auth.v0"
-  ".identity.admin.GetIdentitiesByAttribute"
-  "Response\022\212\001\n\rGetIdentities\022;.depot.devto"
-  "ols.auth.v0.identity.admin.GetIdentities"
-  "Request\032<.depot.devtools.auth.v0.identit"
-  "y.admin.GetIdentitiesResponse\022\215\001\n\016Update"
-  "Identity\022<.depot.devtools.auth.v0.identi"
-  "ty.admin.UpdateIdentityRequest\032=.depot.d"
-  "evtools.auth.v0.identity.admin.UpdateIde"
-  "ntityResponse\022\215\001\n\016DeleteIdentity\022<.depot"
-  ".devtools.auth.v0.identity.admin.DeleteI"
-  "dentityRequest\032=.depot.devtools.auth.v0."
-  "identity.admin.DeleteIdentityResponse\022\207\001"
-  "\n\014GetAddresses\022:.depot.devtools.auth.v0."
-  "identity.admin.GetAddressesRequest\032;.dep"
-  "ot.devtools.auth.v0.identity.admin.GetAd"
-  "dressesResponse\022\201\001\n\nGetAddress\0228.depot.d"
-  "evtools.auth.v0.identity.admin.GetAddres"
-  "sRequest\0329.depot.devtools.auth.v0.identi"
-  "ty.admin.GetAddressResponse\022\212\001\n\rUpdateAd"
-  "dress\022;.depot.devtools.auth.v0.identity."
-  "admin.UpdateAddressRequest\032<.depot.devto"
-  "ols.auth.v0.identity.admin.UpdateAddress"
-  "Response\022~\n\tGetTraits\0227.depot.devtools.a"
-  "uth.v0.identity.admin.GetTraitsRequest\0328"
-  ".depot.devtools.auth.v0.identity.admin.G"
-  "etTraitsResponse\022\207\001\n\014UpdateTraits\022:.depo"
-  "t.devtools.auth.v0.identity.admin.Update"
-  "TraitsRequest\032;.depot.devtools.auth.v0.i"
-  "dentity.admin.UpdateTraitsResponse\022\215\001\n\016G"
-  "etCredentials\022<.depot.devtools.auth.v0.i"
-  "dentity.admin.GetCredentialsRequest\032=.de"
-  "pot.devtools.auth.v0.identity.admin.GetC"
-  "redentialsResponse\022\223\001\n\020UpdateCredential\022"
-  ">.depot.devtools.auth.v0.identity.admin."
-  "UpdateCredentialRequest\032\?.depot.devtools"
-  ".auth.v0.identity.admin.UpdateCredential"
-  "Response\022\253\001\n\030GetIdentityLoginAttempts\022F."
-  "depot.devtools.auth.v0.identity.admin.Ge"
-  "tIdentityLoginAttemptsRequest\032G.depot.de"
+  "obuf.StructR\007content\0229\n\ncreated_at\030\004 \001(\013"
+  "2\032.google.protobuf.TimestampR\tcreatedAt\022"
+  "9\n\nupdated_at\030\005 \001(\0132\032.google.protobuf.Ti"
+  "mestampR\tupdatedAt\022\035\n\nis_default\030\006 \001(\010R\t"
+  "isDefault\"$\n\022GetIdSchemaRequest\022\016\n\002id\030\001 "
+  "\001(\tR\002id\"\201\002\n\023GetIdSchemaResponse\022\016\n\002id\030\001 "
+  "\001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\0221\n\007content\030\003"
+  " \001(\0132\027.google.protobuf.StructR\007content\0229"
+  "\n\ncreated_at\030\004 \001(\0132\032.google.protobuf.Tim"
+  "estampR\tcreatedAt\0229\n\nupdated_at\030\005 \001(\0132\032."
+  "google.protobuf.TimestampR\tupdatedAt\022\035\n\n"
+  "is_default\030\006 \001(\010R\tisDefault\"\033\n\031GetDefaul"
+  "tIdSchemaRequest\"\210\002\n\032GetDefaultIdSchemaR"
+  "esponse\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004n"
+  "ame\0221\n\007content\030\003 \001(\0132\027.google.protobuf.S"
+  "tructR\007content\0229\n\ncreated_at\030\004 \001(\0132\032.goo"
+  "gle.protobuf.TimestampR\tcreatedAt\0229\n\nupd"
+  "ated_at\030\005 \001(\0132\032.google.protobuf.Timestam"
+  "pR\tupdatedAt\022\035\n\nis_default\030\006 \001(\010R\tisDefa"
+  "ult\"n\n\025UpdateIdSchemaRequest\022\016\n\002id\030\001 \001(\t"
+  "R\002id\022\022\n\004name\030\002 \001(\tR\004name\0221\n\007content\030\003 \001("
+  "\0132\027.google.protobuf.StructR\007content\"\030\n\026U"
+  "pdateIdSchemaResponse\",\n\032MarkDefaultIdSc"
+  "hemaRequest\022\016\n\002id\030\001 \001(\tR\002id\"\035\n\033MarkDefau"
+  "ltIdSchemaResponse\"\'\n\025DeleteIdSchemaRequ"
+  "est\022\016\n\002id\030\001 \001(\tR\002id\"\030\n\026DeleteIdSchemaRes"
+  "ponse\"\027\n\025GetEmailsSetupRequest\"\314\007\n\026GetEm"
+  "ailsSetupResponse\022e\n\007welcome\030\001 \001(\0132K.dep"
+  "ot.devtools.auth.v0.identity.admin.GetEm"
+  "ailsSetupResponse.EmailTemplateR\007welcome"
+  "\022~\n\024account_verification\030\002 \001(\0132K.depot.d"
+  "evtools.auth.v0.identity.admin.GetEmails"
+  "SetupResponse.EmailTemplateR\023accountVeri"
+  "fication\022v\n\020account_recovery\030\003 \001(\0132K.dep"
+  "ot.devtools.auth.v0.identity.admin.GetEm"
+  "ailsSetupResponse.EmailTemplateR\017account"
+  "Recovery\022x\n\021account_recovered\030\004 \001(\0132K.de"
+  "pot.devtools.auth.v0.identity.admin.GetE"
+  "mailsSetupResponse.EmailTemplateR\020accoun"
+  "tRecovered\022]\n\003otp\030\005 \001(\0132K.depot.devtools"
+  ".auth.v0.identity.admin.GetEmailsSetupRe"
+  "sponse.EmailTemplateR\003otp\022]\n\004smtp\030\006 \001(\0132"
+  "I.depot.devtools.auth.v0.identity.admin."
+  "GetEmailsSetupResponse.EmailSenderR\004smtp"
+  "\022\035\n\nproject_id\030\007 \001(\tR\tprojectId\032C\n\rEmail"
+  "Template\022\030\n\007content\030\003 \001(\tR\007content\022\030\n\007su"
+  "bject\030\004 \001(\tR\007subject\032\266\001\n\013EmailSender\022#\n\r"
+  "email_address\030\001 \001(\tR\014emailAddress\022\033\n\tsmt"
+  "p_host\030\002 \001(\tR\010smtpHost\022\033\n\tsmtp_port\030\003 \001("
+  "\rR\010smtpPort\022#\n\rsmtp_username\030\004 \001(\tR\014smtp"
+  "Username\022#\n\rsmtp_password\030\005 \001(\tR\014smtpPas"
+  "sword\"\274\007\n\030UpdateEmailsSetupRequest\022g\n\007we"
+  "lcome\030\001 \001(\0132M.depot.devtools.auth.v0.ide"
+  "ntity.admin.UpdateEmailsSetupRequest.Ema"
+  "ilTemplateR\007welcome\022\200\001\n\024account_verifica"
+  "tion\030\002 \001(\0132M.depot.devtools.auth.v0.iden"
+  "tity.admin.UpdateEmailsSetupRequest.Emai"
+  "lTemplateR\023accountVerification\022x\n\020accoun"
+  "t_recovery\030\003 \001(\0132M.depot.devtools.auth.v"
+  "0.identity.admin.UpdateEmailsSetupReques"
+  "t.EmailTemplateR\017accountRecovery\022z\n\021acco"
+  "unt_recovered\030\004 \001(\0132M.depot.devtools.aut"
+  "h.v0.identity.admin.UpdateEmailsSetupReq"
+  "uest.EmailTemplateR\020accountRecovered\022_\n\003"
+  "otp\030\005 \001(\0132M.depot.devtools.auth.v0.ident"
+  "ity.admin.UpdateEmailsSetupRequest.Email"
+  "TemplateR\003otp\022_\n\004smtp\030\006 \001(\0132K.depot.devt"
+  "ools.auth.v0.identity.admin.UpdateEmails"
+  "SetupRequest.EmailSenderR\004smtp\032C\n\rEmailT"
+  "emplate\022\030\n\007content\030\001 \001(\tR\007content\022\030\n\007sub"
+  "ject\030\002 \001(\tR\007subject\032\266\001\n\013EmailSender\022#\n\re"
+  "mail_address\030\001 \001(\tR\014emailAddress\022\033\n\tsmtp"
+  "_host\030\002 \001(\tR\010smtpHost\022\033\n\tsmtp_port\030\003 \001(\r"
+  "R\010smtpPort\022#\n\rsmtp_username\030\004 \001(\tR\014smtpU"
+  "sername\022#\n\rsmtp_password\030\005 \001(\tR\014smtpPass"
+  "word\"\033\n\031UpdateEmailsSetupResponse\"\313\001\n\034Ge"
+  "tUserBaseStatisticsRequest\022\037\n\013days_befor"
+  "e\030\001 \001(\rR\ndaysBefore\022F\n\021lifetime_start_at"
+  "\030\002 \001(\0132\032.google.protobuf.TimestampR\017life"
+  "timeStartAt\022B\n\017lifetime_end_at\030\003 \001(\0132\032.g"
+  "oogle.protobuf.TimestampR\rlifetimeEndAt\""
+  "\241\004\n\035GetUserBaseStatisticsResponse\022\037\n\013tot"
+  "al_users\030\001 \001(\005R\ntotalUsers\022y\n\rusers_per_"
+  "day\030\002 \003(\0132U.depot.devtools.auth.v0.ident"
+  "ity.admin.GetUserBaseStatisticsResponse."
+  "UsersPerDayEntryR\013usersPerDay\022\202\001\n\020sessio"
+  "ns_per_day\030\003 \003(\0132X.depot.devtools.auth.v"
+  "0.identity.admin.GetUserBaseStatisticsRe"
+  "sponse.SessionsPerDayEntryR\016sessionsPerD"
+  "ay\022,\n\022total_active_users\030\004 \001(\005R\020totalAct"
+  "iveUsers\022.\n\023total_lifetime_used\030\005 \001(\001R\021t"
+  "otalLifetimeUsed\032>\n\020UsersPerDayEntry\022\020\n\003"
+  "key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\005R\005value:\0028\001"
+  "\032A\n\023SessionsPerDayEntry\022\020\n\003key\030\001 \001(\tR\003ke"
+  "y\022\024\n\005value\030\002 \001(\005R\005value:\0028\001*l\n\nClientTyp"
+  "e\022\025\n\021CLIENT_TYPE_UNSET\020\000\022\026\n\022CLIENT_FIRST"
+  "_PARTY\020\001\022\026\n\022CLIENT_THIRD_PARTY\020\002\022\027\n\023CLIE"
+  "NT_SYSTEM_PARTY\020\003*A\n\013SubjectType\022\027\n\023SUBJ"
+  "ECT_TYPE_PUBLIC\020\000\022\031\n\025SUBJECT_TYPE_PAIRWI"
+  "SE\020\001*\325\001\n\027TokenEndpointAuthMethod\0222\n.TOKE"
+  "N_ENDPOINT_AUTH_METHOD_CLIENT_SECRET_BAS"
+  "IC\020\000\0221\n-TOKEN_ENDPOINT_AUTH_METHOD_CLIEN"
+  "T_SECRET_POST\020\001\022.\n*TOKEN_ENDPOINT_AUTH_M"
+  "ETHOD_PRIVATE_KEY_JWT\020\002\022#\n\037TOKEN_ENDPOIN"
+  "T_AUTH_METHOD_NONE\020\003*\313\003\n\033TokenEndpointAu"
+  "thSigningAlg\022)\n%TOKEN_ENDPOINT_AUTH_SIGN"
+  "ING_ALG_UNSET\020\000\022)\n%TOKEN_ENDPOINT_AUTH_S"
+  "IGNING_ALG_RS256\020\001\022)\n%TOKEN_ENDPOINT_AUT"
+  "H_SIGNING_ALG_RS384\020\002\022)\n%TOKEN_ENDPOINT_"
+  "AUTH_SIGNING_ALG_RS512\020\003\022)\n%TOKEN_ENDPOI"
+  "NT_AUTH_SIGNING_ALG_PS256\020\004\022)\n%TOKEN_END"
+  "POINT_AUTH_SIGNING_ALG_PS384\020\005\022)\n%TOKEN_"
+  "ENDPOINT_AUTH_SIGNING_ALG_PS512\020\006\022)\n%TOK"
+  "EN_ENDPOINT_AUTH_SIGNING_ALG_ES256\020\007\022)\n%"
+  "TOKEN_ENDPOINT_AUTH_SIGNING_ALG_ES384\020\010\022"
+  ")\n%TOKEN_ENDPOINT_AUTH_SIGNING_ALG_ES512"
+  "\020\t*\272\001\n\tGrantType\022\024\n\020GRANT_TYPE_UNSET\020\000\022!"
+  "\n\035GRANT_TYPE_CLIENT_CREDENTIALS\020\001\022!\n\035GRA"
+  "NT_TYPE_AUTHORIZATION_CODE\020\002\022\027\n\023GRANT_TY"
+  "PE_IMPLICIT\020\003\022\034\n\030GRANT_TYPE_REFRESH_TOKE"
+  "N\020\004\022\032\n\026GRANT_TYPE_DEVICE_CODE\020\005*\224\002\n\014Resp"
+  "onseType\022\027\n\023RESPONSE_TYPE_UNSET\020\000\022\026\n\022RES"
+  "PONSE_TYPE_NONE\020\001\022\032\n\026RESPONSE_TYPE_ID_TO"
+  "KEN\020\002\022\027\n\023RESPONSE_TYPE_TOKEN\020\003\022\026\n\022RESPON"
+  "SE_TYPE_CODE\020\004\022 \n\034RESPONSE_TYPE_ID_TOKEN"
+  "_TOKEN\020\005\022\037\n\033RESPONSE_TYPE_CODE_ID_TOKEN\020"
+  "\006\022\034\n\030RESPONSE_TYPE_CODE_TOKEN\020\007\022%\n!RESPO"
+  "NSE_TYPE_CODE_ID_TOKEN_TOKEN\020\010*\212\001\n\027Reque"
+  "stObjectSigningAlg\022$\n REQUEST_OBJECT_SIG"
+  "NING_ALG_UNSET\020\000\022#\n\037REQUEST_OBJECT_SIGNI"
+  "NG_ALG_NONE\020\001\022$\n REQUEST_OBJECT_SIGNING_"
+  "ALG_RS256\020\002*\222\001\n\031UserinfoSignedResponseAl"
+  "g\022&\n\"USERINFO_SIGNED_RESPONSE_ALG_UNSET\020"
+  "\000\022%\n!USERINFO_SIGNED_RESPONSE_ALG_NONE\020\001"
+  "\022&\n\"USERINFO_SIGNED_RESPONSE_ALG_RS256\020\002"
+  "2\243&\n\005Admin\022\215\001\n\016CreateIdentity\022<.depot.de"
+  "vtools.auth.v0.identity.admin.CreateIden"
+  "tityRequest\032=.depot.devtools.auth.v0.ide"
+  "ntity.admin.CreateIdentityResponse\022\204\001\n\013G"
+  "etIdentity\0229.depot.devtools.auth.v0.iden"
+  "tity.admin.GetIdentityRequest\032:.depot.de"
   "vtools.auth.v0.identity.admin.GetIdentit"
-  "yLoginAttemptsResponse\022\223\001\n\020CreateConnect"
+  "yResponse\022\250\001\n\027GetIdentityByIdentifier\022E."
+  "depot.devtools.auth.v0.identity.admin.Ge"
+  "tIdentityByIdentifierRequest\032F.depot.dev"
+  "tools.auth.v0.identity.admin.GetIdentity"
+  "ByIdentifierResponse\022\253\001\n\030GetIdentitiesBy"
+  "Attribute\022F.depot.devtools.auth.v0.ident"
+  "ity.admin.GetIdentitiesByAttributeReques"
+  "t\032G.depot.devtools.auth.v0.identity.admi"
+  "n.GetIdentitiesByAttributeResponse\022\212\001\n\rG"
+  "etIdentities\022;.depot.devtools.auth.v0.id"
+  "entity.admin.GetIdentitiesRequest\032<.depo"
+  "t.devtools.auth.v0.identity.admin.GetIde"
+  "ntitiesResponse\022\215\001\n\016UpdateIdentity\022<.dep"
+  "ot.devtools.auth.v0.identity.admin.Updat"
+  "eIdentityRequest\032=.depot.devtools.auth.v"
+  "0.identity.admin.UpdateIdentityResponse\022"
+  "\215\001\n\016DeleteIdentity\022<.depot.devtools.auth"
+  ".v0.identity.admin.DeleteIdentityRequest"
+  "\032=.depot.devtools.auth.v0.identity.admin"
+  ".DeleteIdentityResponse\022\207\001\n\014GetAddresses"
+  "\022:.depot.devtools.auth.v0.identity.admin"
+  ".GetAddressesRequest\032;.depot.devtools.au"
+  "th.v0.identity.admin.GetAddressesRespons"
+  "e\022\201\001\n\nGetAddress\0228.depot.devtools.auth.v"
+  "0.identity.admin.GetAddressRequest\0329.dep"
+  "ot.devtools.auth.v0.identity.admin.GetAd"
+  "dressResponse\022\212\001\n\rUpdateAddress\022;.depot."
+  "devtools.auth.v0.identity.admin.UpdateAd"
+  "dressRequest\032<.depot.devtools.auth.v0.id"
+  "entity.admin.UpdateAddressResponse\022~\n\tGe"
+  "tTraits\0227.depot.devtools.auth.v0.identit"
+  "y.admin.GetTraitsRequest\0328.depot.devtool"
+  "s.auth.v0.identity.admin.GetTraitsRespon"
+  "se\022\207\001\n\014UpdateTraits\022:.depot.devtools.aut"
+  "h.v0.identity.admin.UpdateTraitsRequest\032"
+  ";.depot.devtools.auth.v0.identity.admin."
+  "UpdateTraitsResponse\022\215\001\n\016GetCredentials\022"
+  "<.depot.devtools.auth.v0.identity.admin."
+  "GetCredentialsRequest\032=.depot.devtools.a"
+  "uth.v0.identity.admin.GetCredentialsResp"
+  "onse\022\223\001\n\020UpdateCredential\022>.depot.devtoo"
+  "ls.auth.v0.identity.admin.UpdateCredenti"
+  "alRequest\032\?.depot.devtools.auth.v0.ident"
+  "ity.admin.UpdateCredentialResponse\022\253\001\n\030G"
+  "etIdentityLoginAttempts\022F.depot.devtools"
+  ".auth.v0.identity.admin.GetIdentityLogin"
+  "AttemptsRequest\032G.depot.devtools.auth.v0"
+  ".identity.admin.GetIdentityLoginAttempts"
+  "Response\022\223\001\n\020CreateConnection\022>.depot.de"
+  "vtools.auth.v0.identity.admin.CreateConn"
+  "ectionRequest\032\?.depot.devtools.auth.v0.i"
+  "dentity.admin.CreateConnectionResponse\022\215"
+  "\001\n\016GetConnections\022<.depot.devtools.auth."
+  "v0.identity.admin.GetConnectionsRequest\032"
+  "=.depot.devtools.auth.v0.identity.admin."
+  "GetConnectionsResponse\022\223\001\n\020UpdateConnect"
   "ion\022>.depot.devtools.auth.v0.identity.ad"
-  "min.CreateConnectionRequest\032\?.depot.devt"
-  "ools.auth.v0.identity.admin.CreateConnec"
-  "tionResponse\022\215\001\n\016GetConnections\022<.depot."
-  "devtools.auth.v0.identity.admin.GetConne"
-  "ctionsRequest\032=.depot.devtools.auth.v0.i"
-  "dentity.admin.GetConnectionsResponse\022\223\001\n"
-  "\020UpdateConnection\022>.depot.devtools.auth."
-  "v0.identity.admin.UpdateConnectionReques"
-  "t\032\?.depot.devtools.auth.v0.identity.admi"
-  "n.UpdateConnectionResponse\022\223\001\n\020DeleteCon"
-  "nection\022>.depot.devtools.auth.v0.identit"
-  "y.admin.DeleteConnectionRequest\032\?.depot."
-  "devtools.auth.v0.identity.admin.DeleteCo"
-  "nnectionResponse\022\215\001\n\016CreateIdSchema\022<.de"
-  "pot.devtools.auth.v0.identity.admin.Crea"
-  "teIdSchemaRequest\032=.depot.devtools.auth."
-  "v0.identity.admin.CreateIdSchemaResponse"
-  "\022\207\001\n\014GetIdSchemas\022:.depot.devtools.auth."
-  "v0.identity.admin.GetIdSchemasRequest\032;."
-  "depot.devtools.auth.v0.identity.admin.Ge"
-  "tIdSchemasResponse\022\204\001\n\013GetIdSchema\0229.dep"
-  "ot.devtools.auth.v0.identity.admin.GetId"
-  "SchemaRequest\032:.depot.devtools.auth.v0.i"
-  "dentity.admin.GetIdSchemaResponse\022\231\001\n\022Ge"
-  "tDefaultIdSchema\022@.depot.devtools.auth.v"
-  "0.identity.admin.GetDefaultIdSchemaReque"
-  "st\032A.depot.devtools.auth.v0.identity.adm"
-  "in.GetDefaultIdSchemaResponse\022\215\001\n\016Update"
-  "IdSchema\022<.depot.devtools.auth.v0.identi"
-  "ty.admin.UpdateIdSchemaRequest\032=.depot.d"
-  "evtools.auth.v0.identity.admin.UpdateIdS"
-  "chemaResponse\022\234\001\n\023MarkDefaultIdSchema\022A."
-  "depot.devtools.auth.v0.identity.admin.Ma"
-  "rkDefaultIdSchemaRequest\032B.depot.devtool"
-  "s.auth.v0.identity.admin.MarkDefaultIdSc"
-  "hemaResponse\022\215\001\n\016DeleteIdSchema\022<.depot."
-  "devtools.auth.v0.identity.admin.DeleteId"
-  "SchemaRequest\032=.depot.devtools.auth.v0.i"
-  "dentity.admin.DeleteIdSchemaResponse\022\231\001\n"
-  "\022CreateOAuth2Client\022@.depot.devtools.aut"
-  "h.v0.identity.admin.CreateOAuth2ClientRe"
-  "quest\032A.depot.devtools.auth.v0.identity."
-  "admin.CreateOAuth2ClientResponse\022\223\001\n\020Get"
-  "OAuth2Clients\022>.depot.devtools.auth.v0.i"
-  "dentity.admin.GetOAuth2ClientsRequest\032\?."
-  "depot.devtools.auth.v0.identity.admin.Ge"
-  "tOAuth2ClientsResponse\022\231\001\n\022UpdateOAuth2C"
+  "min.UpdateConnectionRequest\032\?.depot.devt"
+  "ools.auth.v0.identity.admin.UpdateConnec"
+  "tionResponse\022\223\001\n\020DeleteConnection\022>.depo"
+  "t.devtools.auth.v0.identity.admin.Delete"
+  "ConnectionRequest\032\?.depot.devtools.auth."
+  "v0.identity.admin.DeleteConnectionRespon"
+  "se\022\215\001\n\016CreateIdSchema\022<.depot.devtools.a"
+  "uth.v0.identity.admin.CreateIdSchemaRequ"
+  "est\032=.depot.devtools.auth.v0.identity.ad"
+  "min.CreateIdSchemaResponse\022\207\001\n\014GetIdSche"
+  "mas\022:.depot.devtools.auth.v0.identity.ad"
+  "min.GetIdSchemasRequest\032;.depot.devtools"
+  ".auth.v0.identity.admin.GetIdSchemasResp"
+  "onse\022\204\001\n\013GetIdSchema\0229.depot.devtools.au"
+  "th.v0.identity.admin.GetIdSchemaRequest\032"
+  ":.depot.devtools.auth.v0.identity.admin."
+  "GetIdSchemaResponse\022\231\001\n\022GetDefaultIdSche"
+  "ma\022@.depot.devtools.auth.v0.identity.adm"
+  "in.GetDefaultIdSchemaRequest\032A.depot.dev"
+  "tools.auth.v0.identity.admin.GetDefaultI"
+  "dSchemaResponse\022\215\001\n\016UpdateIdSchema\022<.dep"
+  "ot.devtools.auth.v0.identity.admin.Updat"
+  "eIdSchemaRequest\032=.depot.devtools.auth.v"
+  "0.identity.admin.UpdateIdSchemaResponse\022"
+  "\234\001\n\023MarkDefaultIdSchema\022A.depot.devtools"
+  ".auth.v0.identity.admin.MarkDefaultIdSch"
+  "emaRequest\032B.depot.devtools.auth.v0.iden"
+  "tity.admin.MarkDefaultIdSchemaResponse\022\215"
+  "\001\n\016DeleteIdSchema\022<.depot.devtools.auth."
+  "v0.identity.admin.DeleteIdSchemaRequest\032"
+  "=.depot.devtools.auth.v0.identity.admin."
+  "DeleteIdSchemaResponse\022\231\001\n\022CreateOAuth2C"
   "lient\022@.depot.devtools.auth.v0.identity."
-  "admin.UpdateOAuth2ClientRequest\032A.depot."
+  "admin.CreateOAuth2ClientRequest\032A.depot."
+  "devtools.auth.v0.identity.admin.CreateOA"
+  "uth2ClientResponse\022\223\001\n\020GetOAuth2Clients\022"
+  ">.depot.devtools.auth.v0.identity.admin."
+  "GetOAuth2ClientsRequest\032\?.depot.devtools"
+  ".auth.v0.identity.admin.GetOAuth2Clients"
+  "Response\022\231\001\n\022UpdateOAuth2Client\022@.depot."
   "devtools.auth.v0.identity.admin.UpdateOA"
-  "uth2ClientResponse\022\231\001\n\022DeleteOAuth2Clien"
-  "t\022@.depot.devtools.auth.v0.identity.admi"
-  "n.DeleteOAuth2ClientRequest\032A.depot.devt"
+  "uth2ClientRequest\032A.depot.devtools.auth."
+  "v0.identity.admin.UpdateOAuth2ClientResp"
+  "onse\022\231\001\n\022DeleteOAuth2Client\022@.depot.devt"
   "ools.auth.v0.identity.admin.DeleteOAuth2"
-  "ClientResponse\022\215\001\n\016GetEmailsSetup\022<.depo"
-  "t.devtools.auth.v0.identity.admin.GetEma"
-  "ilsSetupRequest\032=.depot.devtools.auth.v0"
-  ".identity.admin.GetEmailsSetupResponse\022\226"
-  "\001\n\021UpdateEmailsSetup\022\?.depot.devtools.au"
-  "th.v0.identity.admin.UpdateEmailsSetupRe"
-  "quest\032@.depot.devtools.auth.v0.identity."
-  "admin.UpdateEmailsSetupResponse\022\242\001\n\025GetU"
-  "serBaseStatistics\022C.depot.devtools.auth."
-  "v0.identity.admin.GetUserBaseStatisticsR"
-  "equest\032D.depot.devtools.auth.v0.identity"
-  ".admin.GetUserBaseStatisticsResponseB\242\001\n"
-  "\030dev.auth3.identity.adminB\nAdminProtoP\001Z"
-  "\'github.com/auth3-dev/go-sdk/admin;admin"
-  "\370\001\001\242\002\004A3IA\252\002\024Auth3.Identity.Admin\312\002\024Auth"
-  "3\\Identity\\Admin\352\002\026Auth3::Identity::Admi"
-  "nb\006proto3"
+  "ClientRequest\032A.depot.devtools.auth.v0.i"
+  "dentity.admin.DeleteOAuth2ClientResponse"
+  "\022\215\001\n\016GetEmailsSetup\022<.depot.devtools.aut"
+  "h.v0.identity.admin.GetEmailsSetupReques"
+  "t\032=.depot.devtools.auth.v0.identity.admi"
+  "n.GetEmailsSetupResponse\022\226\001\n\021UpdateEmail"
+  "sSetup\022\?.depot.devtools.auth.v0.identity"
+  ".admin.UpdateEmailsSetupRequest\032@.depot."
+  "devtools.auth.v0.identity.admin.UpdateEm"
+  "ailsSetupResponse\022\242\001\n\025GetUserBaseStatist"
+  "ics\022C.depot.devtools.auth.v0.identity.ad"
+  "min.GetUserBaseStatisticsRequest\032D.depot"
+  ".devtools.auth.v0.identity.admin.GetUser"
+  "BaseStatisticsResponseB\242\001\n\030dev.auth3.ide"
+  "ntity.adminB\nAdminProtoP\001Z\'github.com/au"
+  "th3-dev/go-sdk/admin;admin\370\001\001\242\002\004A3IA\252\002\024A"
+  "uth3.Identity.Admin\312\002\024Auth3\\Identity\\Adm"
+  "in\352\002\026Auth3::Identity::Adminb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto_deps[2] = {
   &::descriptor_table_google_2fprotobuf_2fstruct_2eproto,
   &::descriptor_table_google_2fprotobuf_2ftimestamp_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto_sccs[81] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto_sccs[85] = {
   &scc_info_CreateConnectionRequest_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.base,
   &scc_info_CreateConnectionResponse_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.base,
   &scc_info_CreateIdSchemaRequest_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.base,
@@ -3107,6 +3262,10 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_dev
   &scc_info_GetIdentitiesRequest_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.base,
   &scc_info_GetIdentitiesResponse_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.base,
   &scc_info_GetIdentitiesResponse_Identity_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.base,
+  &scc_info_GetIdentityByIdentifierRequest_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.base,
+  &scc_info_GetIdentityByIdentifierResponse_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.base,
+  &scc_info_GetIdentityByIdentifierResponse_Identity_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.base,
+  &scc_info_GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.base,
   &scc_info_GetIdentityLoginAttemptsRequest_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.base,
   &scc_info_GetIdentityLoginAttemptsResponse_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.base,
   &scc_info_GetIdentityLoginAttemptsResponse_Attempt_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.base,
@@ -3145,10 +3304,10 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_dev
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto = {
-  false, false, descriptor_table_protodef_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto, "admin.proto", 25569,
-  &descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto_once, descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto_sccs, descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto_deps, 81, 2,
+  false, false, descriptor_table_protodef_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto, "admin.proto", 26795,
+  &descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto_once, descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto_sccs, descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto_deps, 85, 2,
   schemas, file_default_instances, TableStruct_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto::offsets,
-  file_level_metadata_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto, 81, file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto, file_level_service_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto,
+  file_level_metadata_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto, 85, file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto, file_level_service_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -3201,9 +3360,30 @@ constexpr GetIdentityResponse_Lock GetIdentityResponse::Lock_MIN;
 constexpr GetIdentityResponse_Lock GetIdentityResponse::Lock_MAX;
 constexpr int GetIdentityResponse::Lock_ARRAYSIZE;
 #endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* GetIdentitiesByAttributeResponse_Identity_Lock_descriptor() {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* GetIdentityByIdentifierResponse_Identity_Lock_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto);
   return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[2];
+}
+bool GetIdentityByIdentifierResponse_Identity_Lock_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+constexpr GetIdentityByIdentifierResponse_Identity_Lock GetIdentityByIdentifierResponse_Identity::UNLOCKED;
+constexpr GetIdentityByIdentifierResponse_Identity_Lock GetIdentityByIdentifierResponse_Identity::ADMIN_LOCKED;
+constexpr GetIdentityByIdentifierResponse_Identity_Lock GetIdentityByIdentifierResponse_Identity::Lock_MIN;
+constexpr GetIdentityByIdentifierResponse_Identity_Lock GetIdentityByIdentifierResponse_Identity::Lock_MAX;
+constexpr int GetIdentityByIdentifierResponse_Identity::Lock_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* GetIdentitiesByAttributeResponse_Identity_Lock_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto);
+  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[3];
 }
 bool GetIdentitiesByAttributeResponse_Identity_Lock_IsValid(int value) {
   switch (value) {
@@ -3224,7 +3404,7 @@ constexpr int GetIdentitiesByAttributeResponse_Identity::Lock_ARRAYSIZE;
 #endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* UpdateIdentityRequest_Lock_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto);
-  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[3];
+  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[4];
 }
 bool UpdateIdentityRequest_Lock_IsValid(int value) {
   switch (value) {
@@ -3245,7 +3425,7 @@ constexpr int UpdateIdentityRequest::Lock_ARRAYSIZE;
 #endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CreateConnectionRequest_Providers_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto);
-  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[4];
+  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[5];
 }
 bool CreateConnectionRequest_Providers_IsValid(int value) {
   switch (value) {
@@ -3364,7 +3544,7 @@ constexpr int CreateConnectionRequest::Providers_ARRAYSIZE;
 #endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CreateConnectionRequest_Types_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto);
-  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[5];
+  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[6];
 }
 bool CreateConnectionRequest_Types_IsValid(int value) {
   switch (value) {
@@ -3391,7 +3571,7 @@ constexpr int CreateConnectionRequest::Types_ARRAYSIZE;
 #endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* GetConnectionsResponse_Providers_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto);
-  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[6];
+  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[7];
 }
 bool GetConnectionsResponse_Providers_IsValid(int value) {
   switch (value) {
@@ -3510,7 +3690,7 @@ constexpr int GetConnectionsResponse::Providers_ARRAYSIZE;
 #endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* GetConnectionsResponse_Types_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto);
-  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[7];
+  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[8];
 }
 bool GetConnectionsResponse_Types_IsValid(int value) {
   switch (value) {
@@ -3537,7 +3717,7 @@ constexpr int GetConnectionsResponse::Types_ARRAYSIZE;
 #endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* GetConnectionsResponse_Purposes_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto);
-  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[8];
+  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[9];
 }
 bool GetConnectionsResponse_Purposes_IsValid(int value) {
   switch (value) {
@@ -3560,7 +3740,7 @@ constexpr int GetConnectionsResponse::Purposes_ARRAYSIZE;
 #endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* UpdateConnectionRequest_Providers_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto);
-  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[9];
+  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[10];
 }
 bool UpdateConnectionRequest_Providers_IsValid(int value) {
   switch (value) {
@@ -3679,7 +3859,7 @@ constexpr int UpdateConnectionRequest::Providers_ARRAYSIZE;
 #endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* UpdateConnectionRequest_Types_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto);
-  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[10];
+  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[11];
 }
 bool UpdateConnectionRequest_Types_IsValid(int value) {
   switch (value) {
@@ -3706,7 +3886,7 @@ constexpr int UpdateConnectionRequest::Types_ARRAYSIZE;
 #endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || _MSC_VER >= 1900)
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ClientType_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto);
-  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[11];
+  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[12];
 }
 bool ClientType_IsValid(int value) {
   switch (value) {
@@ -3722,7 +3902,7 @@ bool ClientType_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* SubjectType_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto);
-  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[12];
+  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[13];
 }
 bool SubjectType_IsValid(int value) {
   switch (value) {
@@ -3736,7 +3916,7 @@ bool SubjectType_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* TokenEndpointAuthMethod_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto);
-  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[13];
+  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[14];
 }
 bool TokenEndpointAuthMethod_IsValid(int value) {
   switch (value) {
@@ -3752,7 +3932,7 @@ bool TokenEndpointAuthMethod_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* TokenEndpointAuthSigningAlg_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto);
-  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[14];
+  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[15];
 }
 bool TokenEndpointAuthSigningAlg_IsValid(int value) {
   switch (value) {
@@ -3774,7 +3954,7 @@ bool TokenEndpointAuthSigningAlg_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* GrantType_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto);
-  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[15];
+  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[16];
 }
 bool GrantType_IsValid(int value) {
   switch (value) {
@@ -3792,7 +3972,7 @@ bool GrantType_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ResponseType_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto);
-  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[16];
+  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[17];
 }
 bool ResponseType_IsValid(int value) {
   switch (value) {
@@ -3813,7 +3993,7 @@ bool ResponseType_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* RequestObjectSigningAlg_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto);
-  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[17];
+  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[18];
 }
 bool RequestObjectSigningAlg_IsValid(int value) {
   switch (value) {
@@ -3828,7 +4008,7 @@ bool RequestObjectSigningAlg_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* UserinfoSignedResponseAlg_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto);
-  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[18];
+  return file_level_enum_descriptors_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto[19];
 }
 bool UserinfoSignedResponseAlg_IsValid(int value) {
   switch (value) {
@@ -4365,10 +4545,19 @@ GetIdentitiesRequest::GetIdentitiesRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena
 GetIdentitiesRequest::GetIdentitiesRequest(const GetIdentitiesRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_page_token().empty()) {
+    page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_page_token(),
+      GetArena());
+  }
+  page_size_ = from.page_size_;
   // @@protoc_insertion_point(copy_constructor:depot.devtools.auth.v0.identity.admin.GetIdentitiesRequest)
 }
 
 void GetIdentitiesRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetIdentitiesRequest_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.base);
+  page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  page_size_ = 0;
 }
 
 GetIdentitiesRequest::~GetIdentitiesRequest() {
@@ -4379,6 +4568,7 @@ GetIdentitiesRequest::~GetIdentitiesRequest() {
 
 void GetIdentitiesRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
+  page_token_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetIdentitiesRequest::ArenaDtor(void* object) {
@@ -4402,6 +4592,8 @@ void GetIdentitiesRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  page_token_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  page_size_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4412,6 +4604,25 @@ const char* GetIdentitiesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
+    switch (tag >> 3) {
+      // int32 page_size = 1[json_name = "pageSize"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          page_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string page_token = 2[json_name = "pageToken"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_page_token();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "depot.devtools.auth.v0.identity.admin.GetIdentitiesRequest.page_token"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
           ctx->SetLastTag(tag);
           goto success;
@@ -4421,6 +4632,8 @@ const char* GetIdentitiesRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAM
             ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
+      }
+    }  // switch
   }  // while
 success:
   return ptr;
@@ -4435,6 +4648,22 @@ failure:
   // @@protoc_insertion_point(serialize_to_array_start:depot.devtools.auth.v0.identity.admin.GetIdentitiesRequest)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
+
+  // int32 page_size = 1[json_name = "pageSize"];
+  if (this->page_size() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_page_size(), target);
+  }
+
+  // string page_token = 2[json_name = "pageToken"];
+  if (this->page_token().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_page_token().data(), static_cast<int>(this->_internal_page_token().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "depot.devtools.auth.v0.identity.admin.GetIdentitiesRequest.page_token");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_page_token(), target);
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -4451,6 +4680,20 @@ size_t GetIdentitiesRequest::ByteSizeLong() const {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // string page_token = 2[json_name = "pageToken"];
+  if (this->page_token().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_page_token());
+  }
+
+  // int32 page_size = 1[json_name = "pageSize"];
+  if (this->page_size() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_page_size());
+  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
@@ -4483,6 +4726,12 @@ void GetIdentitiesRequest::MergeFrom(const GetIdentitiesRequest& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.page_token().size() > 0) {
+    _internal_set_page_token(from._internal_page_token());
+  }
+  if (from.page_size() != 0) {
+    _internal_set_page_size(from._internal_page_size());
+  }
 }
 
 void GetIdentitiesRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -4506,6 +4755,8 @@ bool GetIdentitiesRequest::IsInitialized() const {
 void GetIdentitiesRequest::InternalSwap(GetIdentitiesRequest* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  page_token_.Swap(&other->page_token_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(page_size_, other->page_size_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetIdentitiesRequest::GetMetadata() const {
@@ -4948,11 +5199,19 @@ GetIdentitiesResponse::GetIdentitiesResponse(const GetIdentitiesResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       identities_(from.identities_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  next_page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_next_page_token().empty()) {
+    next_page_token_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_next_page_token(),
+      GetArena());
+  }
+  total_size_ = from.total_size_;
   // @@protoc_insertion_point(copy_constructor:depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse)
 }
 
 void GetIdentitiesResponse::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetIdentitiesResponse_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.base);
+  next_page_token_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  total_size_ = 0;
 }
 
 GetIdentitiesResponse::~GetIdentitiesResponse() {
@@ -4963,6 +5222,7 @@ GetIdentitiesResponse::~GetIdentitiesResponse() {
 
 void GetIdentitiesResponse::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
+  next_page_token_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void GetIdentitiesResponse::ArenaDtor(void* object) {
@@ -4987,6 +5247,8 @@ void GetIdentitiesResponse::Clear() {
   (void) cached_has_bits;
 
   identities_.Clear();
+  next_page_token_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  total_size_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -5008,6 +5270,22 @@ const char* GetIdentitiesResponse::_InternalParse(const char* ptr, ::PROTOBUF_NA
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // string next_page_token = 2[json_name = "nextPageToken"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_next_page_token();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.next_page_token"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int32 total_size = 3[json_name = "totalSize"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          total_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
         } else goto handle_unusual;
         continue;
       default: {
@@ -5046,6 +5324,22 @@ failure:
       InternalWriteMessage(1, this->_internal_identities(i), target, stream);
   }
 
+  // string next_page_token = 2[json_name = "nextPageToken"];
+  if (this->next_page_token().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_next_page_token().data(), static_cast<int>(this->_internal_next_page_token().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "depot.devtools.auth.v0.identity.admin.GetIdentitiesResponse.next_page_token");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_next_page_token(), target);
+  }
+
+  // int32 total_size = 3[json_name = "totalSize"];
+  if (this->total_size() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_total_size(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -5067,6 +5361,20 @@ size_t GetIdentitiesResponse::ByteSizeLong() const {
   for (const auto& msg : this->identities_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // string next_page_token = 2[json_name = "nextPageToken"];
+  if (this->next_page_token().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_next_page_token());
+  }
+
+  // int32 total_size = 3[json_name = "totalSize"];
+  if (this->total_size() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_total_size());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -5101,6 +5409,12 @@ void GetIdentitiesResponse::MergeFrom(const GetIdentitiesResponse& from) {
   (void) cached_has_bits;
 
   identities_.MergeFrom(from.identities_);
+  if (from.next_page_token().size() > 0) {
+    _internal_set_next_page_token(from._internal_next_page_token());
+  }
+  if (from.total_size() != 0) {
+    _internal_set_total_size(from._internal_total_size());
+  }
 }
 
 void GetIdentitiesResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -5125,6 +5439,8 @@ void GetIdentitiesResponse::InternalSwap(GetIdentitiesResponse* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   identities_.InternalSwap(&other->identities_);
+  next_page_token_.Swap(&other->next_page_token_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  swap(total_size_, other->total_size_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetIdentitiesResponse::GetMetadata() const {
@@ -5916,6 +6232,1085 @@ void GetIdentityResponse::InternalSwap(GetIdentityResponse* other) {
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GetIdentityResponse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void GetIdentityByIdentifierRequest::InitAsDefaultInstance() {
+}
+class GetIdentityByIdentifierRequest::_Internal {
+ public:
+};
+
+GetIdentityByIdentifierRequest::GetIdentityByIdentifierRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest)
+}
+GetIdentityByIdentifierRequest::GetIdentityByIdentifierRequest(const GetIdentityByIdentifierRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  attribute_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_attribute().empty()) {
+    attribute_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_attribute(),
+      GetArena());
+  }
+  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_value().empty()) {
+    value_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_value(),
+      GetArena());
+  }
+  connection_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_connection_id().empty()) {
+    connection_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_connection_id(),
+      GetArena());
+  }
+  // @@protoc_insertion_point(copy_constructor:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest)
+}
+
+void GetIdentityByIdentifierRequest::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetIdentityByIdentifierRequest_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.base);
+  attribute_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  connection_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+GetIdentityByIdentifierRequest::~GetIdentityByIdentifierRequest() {
+  // @@protoc_insertion_point(destructor:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void GetIdentityByIdentifierRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  attribute_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  value_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  connection_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void GetIdentityByIdentifierRequest::ArenaDtor(void* object) {
+  GetIdentityByIdentifierRequest* _this = reinterpret_cast< GetIdentityByIdentifierRequest* >(object);
+  (void)_this;
+}
+void GetIdentityByIdentifierRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void GetIdentityByIdentifierRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const GetIdentityByIdentifierRequest& GetIdentityByIdentifierRequest::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetIdentityByIdentifierRequest_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void GetIdentityByIdentifierRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  attribute_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  value_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  connection_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetIdentityByIdentifierRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string attribute = 1[json_name = "attribute"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_attribute();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.attribute"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string value = 2[json_name = "value"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          auto str = _internal_mutable_value();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.value"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string connection_id = 3[json_name = "connectionId"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          auto str = _internal_mutable_connection_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.connection_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetIdentityByIdentifierRequest::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string attribute = 1[json_name = "attribute"];
+  if (this->attribute().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_attribute().data(), static_cast<int>(this->_internal_attribute().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.attribute");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_attribute(), target);
+  }
+
+  // string value = 2[json_name = "value"];
+  if (this->value().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_value().data(), static_cast<int>(this->_internal_value().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.value");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_value(), target);
+  }
+
+  // string connection_id = 3[json_name = "connectionId"];
+  if (this->connection_id().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_connection_id().data(), static_cast<int>(this->_internal_connection_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest.connection_id");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_connection_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest)
+  return target;
+}
+
+size_t GetIdentityByIdentifierRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string attribute = 1[json_name = "attribute"];
+  if (this->attribute().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_attribute());
+  }
+
+  // string value = 2[json_name = "value"];
+  if (this->value().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_value());
+  }
+
+  // string connection_id = 3[json_name = "connectionId"];
+  if (this->connection_id().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_connection_id());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetIdentityByIdentifierRequest::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetIdentityByIdentifierRequest* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetIdentityByIdentifierRequest>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest)
+    MergeFrom(*source);
+  }
+}
+
+void GetIdentityByIdentifierRequest::MergeFrom(const GetIdentityByIdentifierRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.attribute().size() > 0) {
+    _internal_set_attribute(from._internal_attribute());
+  }
+  if (from.value().size() > 0) {
+    _internal_set_value(from._internal_value());
+  }
+  if (from.connection_id().size() > 0) {
+    _internal_set_connection_id(from._internal_connection_id());
+  }
+}
+
+void GetIdentityByIdentifierRequest::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetIdentityByIdentifierRequest::CopyFrom(const GetIdentityByIdentifierRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetIdentityByIdentifierRequest::IsInitialized() const {
+  return true;
+}
+
+void GetIdentityByIdentifierRequest::InternalSwap(GetIdentityByIdentifierRequest* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  attribute_.Swap(&other->attribute_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  value_.Swap(&other->value_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  connection_id_.Swap(&other->connection_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetIdentityByIdentifierRequest::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse::GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse() {}
+GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse::GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse::MergeFrom(const GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+void GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse::MergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::Message& other) {
+  ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom(other);
+}
+
+
+// ===================================================================
+
+void GetIdentityByIdentifierResponse_Identity::InitAsDefaultInstance() {
+  ::depot::devtools::auth::v0::identity::admin::_GetIdentityByIdentifierResponse_Identity_default_instance_._instance.get_mutable()->created_at_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
+      PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
+  ::depot::devtools::auth::v0::identity::admin::_GetIdentityByIdentifierResponse_Identity_default_instance_._instance.get_mutable()->updated_at_ = const_cast< PROTOBUF_NAMESPACE_ID::Timestamp*>(
+      PROTOBUF_NAMESPACE_ID::Timestamp::internal_default_instance());
+}
+class GetIdentityByIdentifierResponse_Identity::_Internal {
+ public:
+  static const PROTOBUF_NAMESPACE_ID::Timestamp& created_at(const GetIdentityByIdentifierResponse_Identity* msg);
+  static const PROTOBUF_NAMESPACE_ID::Timestamp& updated_at(const GetIdentityByIdentifierResponse_Identity* msg);
+};
+
+const PROTOBUF_NAMESPACE_ID::Timestamp&
+GetIdentityByIdentifierResponse_Identity::_Internal::created_at(const GetIdentityByIdentifierResponse_Identity* msg) {
+  return *msg->created_at_;
+}
+const PROTOBUF_NAMESPACE_ID::Timestamp&
+GetIdentityByIdentifierResponse_Identity::_Internal::updated_at(const GetIdentityByIdentifierResponse_Identity* msg) {
+  return *msg->updated_at_;
+}
+void GetIdentityByIdentifierResponse_Identity::clear_created_at() {
+  if (GetArena() == nullptr && created_at_ != nullptr) {
+    delete created_at_;
+  }
+  created_at_ = nullptr;
+}
+void GetIdentityByIdentifierResponse_Identity::clear_updated_at() {
+  if (GetArena() == nullptr && updated_at_ != nullptr) {
+    delete updated_at_;
+  }
+  updated_at_ = nullptr;
+}
+GetIdentityByIdentifierResponse_Identity::GetIdentityByIdentifierResponse_Identity(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  addresses_ids_(arena),
+  credentials_ids_(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity)
+}
+GetIdentityByIdentifierResponse_Identity::GetIdentityByIdentifierResponse_Identity(const GetIdentityByIdentifierResponse_Identity& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      addresses_ids_(from.addresses_ids_) {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  credentials_ids_.MergeFrom(from.credentials_ids_);
+  identity_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_identity_id().empty()) {
+    identity_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_identity_id(),
+      GetArena());
+  }
+  main_identifier_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_main_identifier().empty()) {
+    main_identifier_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_main_identifier(),
+      GetArena());
+  }
+  traits_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_traits_id().empty()) {
+    traits_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_traits_id(),
+      GetArena());
+  }
+  schema_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_schema_id().empty()) {
+    schema_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_schema_id(),
+      GetArena());
+  }
+  if (from._internal_has_created_at()) {
+    created_at_ = new PROTOBUF_NAMESPACE_ID::Timestamp(*from.created_at_);
+  } else {
+    created_at_ = nullptr;
+  }
+  if (from._internal_has_updated_at()) {
+    updated_at_ = new PROTOBUF_NAMESPACE_ID::Timestamp(*from.updated_at_);
+  } else {
+    updated_at_ = nullptr;
+  }
+  lock_ = from.lock_;
+  // @@protoc_insertion_point(copy_constructor:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity)
+}
+
+void GetIdentityByIdentifierResponse_Identity::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetIdentityByIdentifierResponse_Identity_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.base);
+  identity_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  main_identifier_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  traits_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  schema_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::memset(&created_at_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&lock_) -
+      reinterpret_cast<char*>(&created_at_)) + sizeof(lock_));
+}
+
+GetIdentityByIdentifierResponse_Identity::~GetIdentityByIdentifierResponse_Identity() {
+  // @@protoc_insertion_point(destructor:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void GetIdentityByIdentifierResponse_Identity::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  identity_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  main_identifier_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  traits_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  schema_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete created_at_;
+  if (this != internal_default_instance()) delete updated_at_;
+}
+
+void GetIdentityByIdentifierResponse_Identity::ArenaDtor(void* object) {
+  GetIdentityByIdentifierResponse_Identity* _this = reinterpret_cast< GetIdentityByIdentifierResponse_Identity* >(object);
+  (void)_this;
+}
+void GetIdentityByIdentifierResponse_Identity::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void GetIdentityByIdentifierResponse_Identity::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const GetIdentityByIdentifierResponse_Identity& GetIdentityByIdentifierResponse_Identity::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetIdentityByIdentifierResponse_Identity_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void GetIdentityByIdentifierResponse_Identity::Clear() {
+// @@protoc_insertion_point(message_clear_start:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  addresses_ids_.Clear();
+  credentials_ids_.Clear();
+  identity_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  main_identifier_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  traits_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  schema_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  if (GetArena() == nullptr && created_at_ != nullptr) {
+    delete created_at_;
+  }
+  created_at_ = nullptr;
+  if (GetArena() == nullptr && updated_at_ != nullptr) {
+    delete updated_at_;
+  }
+  updated_at_ = nullptr;
+  lock_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetIdentityByIdentifierResponse_Identity::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string identity_id = 1[json_name = "identityId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          auto str = _internal_mutable_identity_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.identity_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .google.protobuf.Timestamp created_at = 2[json_name = "createdAt"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_created_at(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .google.protobuf.Timestamp updated_at = 3[json_name = "updatedAt"];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr = ctx->ParseMessage(_internal_mutable_updated_at(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string main_identifier = 4[json_name = "mainIdentifier"];
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          auto str = _internal_mutable_main_identifier();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.main_identifier"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string traits_id = 5[json_name = "traitsId"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_traits_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.traits_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated string addresses_ids = 6[json_name = "addressesIds"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_addresses_ids();
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.addresses_ids"));
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<50>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // map<string, string> credentials_ids = 7[json_name = "credentialsIds"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 58)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&credentials_ids_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<58>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // string schema_id = 8[json_name = "schemaId"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 66)) {
+          auto str = _internal_mutable_schema_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.schema_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock lock = 9[json_name = "lock"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 72)) {
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          _internal_set_lock(static_cast<::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity_Lock>(val));
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetIdentityByIdentifierResponse_Identity::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string identity_id = 1[json_name = "identityId"];
+  if (this->identity_id().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_identity_id().data(), static_cast<int>(this->_internal_identity_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.identity_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_identity_id(), target);
+  }
+
+  // .google.protobuf.Timestamp created_at = 2[json_name = "createdAt"];
+  if (this->has_created_at()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::created_at(this), target, stream);
+  }
+
+  // .google.protobuf.Timestamp updated_at = 3[json_name = "updatedAt"];
+  if (this->has_updated_at()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        3, _Internal::updated_at(this), target, stream);
+  }
+
+  // string main_identifier = 4[json_name = "mainIdentifier"];
+  if (this->main_identifier().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_main_identifier().data(), static_cast<int>(this->_internal_main_identifier().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.main_identifier");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_main_identifier(), target);
+  }
+
+  // string traits_id = 5[json_name = "traitsId"];
+  if (this->traits_id().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_traits_id().data(), static_cast<int>(this->_internal_traits_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.traits_id");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_traits_id(), target);
+  }
+
+  // repeated string addresses_ids = 6[json_name = "addressesIds"];
+  for (int i = 0, n = this->_internal_addresses_ids_size(); i < n; i++) {
+    const auto& s = this->_internal_addresses_ids(i);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      s.data(), static_cast<int>(s.length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.addresses_ids");
+    target = stream->WriteString(6, s, target);
+  }
+
+  // map<string, string> credentials_ids = 7[json_name = "credentialsIds"];
+  if (!this->_internal_credentials_ids().empty()) {
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_pointer
+        ConstPtr;
+    typedef ConstPtr SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByDerefFirst<SortItem> Less;
+    struct Utf8Check {
+      static void Check(ConstPtr p) {
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+          p->first.data(), static_cast<int>(p->first.length()),
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+          "depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry.key");
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+          p->second.data(), static_cast<int>(p->second.length()),
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+          "depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry.value");
+      }
+    };
+
+    if (stream->IsSerializationDeterministic() &&
+        this->_internal_credentials_ids().size() > 1) {
+      ::std::unique_ptr<SortItem[]> items(
+          new SortItem[this->_internal_credentials_ids().size()]);
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::size_type size_type;
+      size_type n = 0;
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+          it = this->_internal_credentials_ids().begin();
+          it != this->_internal_credentials_ids().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      for (size_type i = 0; i < n; i++) {
+        target = GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse::Funcs::InternalSerialize(7, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
+        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
+      }
+    } else {
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+          it = this->_internal_credentials_ids().begin();
+          it != this->_internal_credentials_ids().end(); ++it) {
+        target = GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse::Funcs::InternalSerialize(7, it->first, it->second, target, stream);
+        Utf8Check::Check(&(*it));
+      }
+    }
+  }
+
+  // string schema_id = 8[json_name = "schemaId"];
+  if (this->schema_id().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_schema_id().data(), static_cast<int>(this->_internal_schema_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.schema_id");
+    target = stream->WriteStringMaybeAliased(
+        8, this->_internal_schema_id(), target);
+  }
+
+  // .depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock lock = 9[json_name = "lock"];
+  if (this->lock() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+      9, this->_internal_lock(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity)
+  return target;
+}
+
+size_t GetIdentityByIdentifierResponse_Identity::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated string addresses_ids = 6[json_name = "addressesIds"];
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(addresses_ids_.size());
+  for (int i = 0, n = addresses_ids_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      addresses_ids_.Get(i));
+  }
+
+  // map<string, string> credentials_ids = 7[json_name = "credentialsIds"];
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_credentials_ids_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+      it = this->_internal_credentials_ids().begin();
+      it != this->_internal_credentials_ids().end(); ++it) {
+    total_size += GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
+
+  // string identity_id = 1[json_name = "identityId"];
+  if (this->identity_id().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_identity_id());
+  }
+
+  // string main_identifier = 4[json_name = "mainIdentifier"];
+  if (this->main_identifier().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_main_identifier());
+  }
+
+  // string traits_id = 5[json_name = "traitsId"];
+  if (this->traits_id().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_traits_id());
+  }
+
+  // string schema_id = 8[json_name = "schemaId"];
+  if (this->schema_id().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_schema_id());
+  }
+
+  // .google.protobuf.Timestamp created_at = 2[json_name = "createdAt"];
+  if (this->has_created_at()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *created_at_);
+  }
+
+  // .google.protobuf.Timestamp updated_at = 3[json_name = "updatedAt"];
+  if (this->has_updated_at()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *updated_at_);
+  }
+
+  // .depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.Lock lock = 9[json_name = "lock"];
+  if (this->lock() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->_internal_lock());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetIdentityByIdentifierResponse_Identity::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetIdentityByIdentifierResponse_Identity* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetIdentityByIdentifierResponse_Identity>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity)
+    MergeFrom(*source);
+  }
+}
+
+void GetIdentityByIdentifierResponse_Identity::MergeFrom(const GetIdentityByIdentifierResponse_Identity& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  addresses_ids_.MergeFrom(from.addresses_ids_);
+  credentials_ids_.MergeFrom(from.credentials_ids_);
+  if (from.identity_id().size() > 0) {
+    _internal_set_identity_id(from._internal_identity_id());
+  }
+  if (from.main_identifier().size() > 0) {
+    _internal_set_main_identifier(from._internal_main_identifier());
+  }
+  if (from.traits_id().size() > 0) {
+    _internal_set_traits_id(from._internal_traits_id());
+  }
+  if (from.schema_id().size() > 0) {
+    _internal_set_schema_id(from._internal_schema_id());
+  }
+  if (from.has_created_at()) {
+    _internal_mutable_created_at()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_created_at());
+  }
+  if (from.has_updated_at()) {
+    _internal_mutable_updated_at()->PROTOBUF_NAMESPACE_ID::Timestamp::MergeFrom(from._internal_updated_at());
+  }
+  if (from.lock() != 0) {
+    _internal_set_lock(from._internal_lock());
+  }
+}
+
+void GetIdentityByIdentifierResponse_Identity::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetIdentityByIdentifierResponse_Identity::CopyFrom(const GetIdentityByIdentifierResponse_Identity& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetIdentityByIdentifierResponse_Identity::IsInitialized() const {
+  return true;
+}
+
+void GetIdentityByIdentifierResponse_Identity::InternalSwap(GetIdentityByIdentifierResponse_Identity* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  addresses_ids_.InternalSwap(&other->addresses_ids_);
+  credentials_ids_.Swap(&other->credentials_ids_);
+  identity_id_.Swap(&other->identity_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  main_identifier_.Swap(&other->main_identifier_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  traits_id_.Swap(&other->traits_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  schema_id_.Swap(&other->schema_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(GetIdentityByIdentifierResponse_Identity, lock_)
+      + sizeof(GetIdentityByIdentifierResponse_Identity::lock_)
+      - PROTOBUF_FIELD_OFFSET(GetIdentityByIdentifierResponse_Identity, created_at_)>(
+          reinterpret_cast<char*>(&created_at_),
+          reinterpret_cast<char*>(&other->created_at_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetIdentityByIdentifierResponse_Identity::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void GetIdentityByIdentifierResponse::InitAsDefaultInstance() {
+  ::depot::devtools::auth::v0::identity::admin::_GetIdentityByIdentifierResponse_default_instance_._instance.get_mutable()->identity_ = const_cast< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity*>(
+      ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity::internal_default_instance());
+}
+class GetIdentityByIdentifierResponse::_Internal {
+ public:
+  static const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity& identity(const GetIdentityByIdentifierResponse* msg);
+};
+
+const ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity&
+GetIdentityByIdentifierResponse::_Internal::identity(const GetIdentityByIdentifierResponse* msg) {
+  return *msg->identity_;
+}
+GetIdentityByIdentifierResponse::GetIdentityByIdentifierResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse)
+}
+GetIdentityByIdentifierResponse::GetIdentityByIdentifierResponse(const GetIdentityByIdentifierResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_identity()) {
+    identity_ = new ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity(*from.identity_);
+  } else {
+    identity_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse)
+}
+
+void GetIdentityByIdentifierResponse::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GetIdentityByIdentifierResponse_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.base);
+  identity_ = nullptr;
+}
+
+GetIdentityByIdentifierResponse::~GetIdentityByIdentifierResponse() {
+  // @@protoc_insertion_point(destructor:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void GetIdentityByIdentifierResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+  if (this != internal_default_instance()) delete identity_;
+}
+
+void GetIdentityByIdentifierResponse::ArenaDtor(void* object) {
+  GetIdentityByIdentifierResponse* _this = reinterpret_cast< GetIdentityByIdentifierResponse* >(object);
+  (void)_this;
+}
+void GetIdentityByIdentifierResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void GetIdentityByIdentifierResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const GetIdentityByIdentifierResponse& GetIdentityByIdentifierResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_GetIdentityByIdentifierResponse_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void GetIdentityByIdentifierResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArena() == nullptr && identity_ != nullptr) {
+    delete identity_;
+  }
+  identity_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* GetIdentityByIdentifierResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // .depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity identity = 1[json_name = "identity"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_identity(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* GetIdentityByIdentifierResponse::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity identity = 1[json_name = "identity"];
+  if (this->has_identity()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::identity(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse)
+  return target;
+}
+
+size_t GetIdentityByIdentifierResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity identity = 1[json_name = "identity"];
+  if (this->has_identity()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *identity_);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void GetIdentityByIdentifierResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  const GetIdentityByIdentifierResponse* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<GetIdentityByIdentifierResponse>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse)
+    MergeFrom(*source);
+  }
+}
+
+void GetIdentityByIdentifierResponse::MergeFrom(const GetIdentityByIdentifierResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.has_identity()) {
+    _internal_mutable_identity()->::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity::MergeFrom(from._internal_identity());
+  }
+}
+
+void GetIdentityByIdentifierResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void GetIdentityByIdentifierResponse::CopyFrom(const GetIdentityByIdentifierResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool GetIdentityByIdentifierResponse::IsInitialized() const {
+  return true;
+}
+
+void GetIdentityByIdentifierResponse::InternalSwap(GetIdentityByIdentifierResponse* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  swap(identity_, other->identity_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata GetIdentityByIdentifierResponse::GetMetadata() const {
   return GetMetadataStatic();
 }
 
@@ -27354,6 +28749,18 @@ template<> PROTOBUF_NOINLINE ::depot::devtools::auth::v0::identity::admin::GetId
 }
 template<> PROTOBUF_NOINLINE ::depot::devtools::auth::v0::identity::admin::GetIdentityResponse* Arena::CreateMaybeMessage< ::depot::devtools::auth::v0::identity::admin::GetIdentityResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::depot::devtools::auth::v0::identity::admin::GetIdentityResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest* Arena::CreateMaybeMessage< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse* Arena::CreateMaybeMessage< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity_CredentialsIdsEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity* Arena::CreateMaybeMessage< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse_Identity >(arena);
+}
+template<> PROTOBUF_NOINLINE ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse* Arena::CreateMaybeMessage< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::depot::devtools::auth::v0::identity::admin::GetIdentityByIdentifierResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeRequest* Arena::CreateMaybeMessage< ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::depot::devtools::auth::v0::identity::admin::GetIdentitiesByAttributeRequest >(arena);
