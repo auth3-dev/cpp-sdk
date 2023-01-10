@@ -6998,7 +6998,6 @@ class UpdateConnectionRequest PROTOBUF_FINAL :
 
   enum : int {
     kMfaFieldNumber = 8,
-    kNameFieldNumber = 1,
     kClientIdFieldNumber = 2,
     kClientSecretFieldNumber = 3,
     kButtonImageUrlFieldNumber = 4,
@@ -7030,22 +7029,6 @@ class UpdateConnectionRequest PROTOBUF_FINAL :
   private:
   const std::string& _internal_mfa(int index) const;
   std::string* _internal_add_mfa();
-  public:
-
-  // string name = 1[json_name = "name"];
-  void clear_name();
-  const std::string& name() const;
-  void set_name(const std::string& value);
-  void set_name(std::string&& value);
-  void set_name(const char* value);
-  void set_name(const char* value, size_t size);
-  std::string* mutable_name();
-  std::string* release_name();
-  void set_allocated_name(std::string* name);
-  private:
-  const std::string& _internal_name() const;
-  void _internal_set_name(const std::string& value);
-  std::string* _internal_mutable_name();
   public:
 
   // string client_id = 2[json_name = "clientId"];
@@ -7170,7 +7153,6 @@ class UpdateConnectionRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> mfa_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr client_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr client_secret_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr button_image_url_;
@@ -22195,68 +22177,6 @@ GetConnectionsResponse::connections() const {
 // -------------------------------------------------------------------
 
 // UpdateConnectionRequest
-
-// string name = 1[json_name = "name"];
-inline void UpdateConnectionRequest::clear_name() {
-  name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline const std::string& UpdateConnectionRequest::name() const {
-  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.UpdateConnectionRequest.name)
-  return _internal_name();
-}
-inline void UpdateConnectionRequest::set_name(const std::string& value) {
-  _internal_set_name(value);
-  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.UpdateConnectionRequest.name)
-}
-inline std::string* UpdateConnectionRequest::mutable_name() {
-  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.UpdateConnectionRequest.name)
-  return _internal_mutable_name();
-}
-inline const std::string& UpdateConnectionRequest::_internal_name() const {
-  return name_.Get();
-}
-inline void UpdateConnectionRequest::_internal_set_name(const std::string& value) {
-  
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
-}
-inline void UpdateConnectionRequest::set_name(std::string&& value) {
-  
-  name_.Set(
-    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.UpdateConnectionRequest.name)
-}
-inline void UpdateConnectionRequest::set_name(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
-              GetArena());
-  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.UpdateConnectionRequest.name)
-}
-inline void UpdateConnectionRequest::set_name(const char* value,
-    size_t size) {
-  
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.UpdateConnectionRequest.name)
-}
-inline std::string* UpdateConnectionRequest::_internal_mutable_name() {
-  
-  return name_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline std::string* UpdateConnectionRequest::release_name() {
-  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.UpdateConnectionRequest.name)
-  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void UpdateConnectionRequest::set_allocated_name(std::string* name) {
-  if (name != nullptr) {
-    
-  } else {
-    
-  }
-  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.UpdateConnectionRequest.name)
-}
 
 // string client_id = 2[json_name = "clientId"];
 inline void UpdateConnectionRequest::clear_client_id() {
