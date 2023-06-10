@@ -243,12 +243,12 @@ extern GetOAuth2ClientsResponseDefaultTypeInternal _GetOAuth2ClientsResponse_def
 class GetOAuth2ClientsResponse_Client;
 class GetOAuth2ClientsResponse_ClientDefaultTypeInternal;
 extern GetOAuth2ClientsResponse_ClientDefaultTypeInternal _GetOAuth2ClientsResponse_Client_default_instance_;
-class GetTraitsRequest;
-class GetTraitsRequestDefaultTypeInternal;
-extern GetTraitsRequestDefaultTypeInternal _GetTraitsRequest_default_instance_;
-class GetTraitsResponse;
-class GetTraitsResponseDefaultTypeInternal;
-extern GetTraitsResponseDefaultTypeInternal _GetTraitsResponse_default_instance_;
+class GetProfileRequest;
+class GetProfileRequestDefaultTypeInternal;
+extern GetProfileRequestDefaultTypeInternal _GetProfileRequest_default_instance_;
+class GetProfileResponse;
+class GetProfileResponseDefaultTypeInternal;
+extern GetProfileResponseDefaultTypeInternal _GetProfileResponse_default_instance_;
 class GetUserBaseStatisticsRequest;
 class GetUserBaseStatisticsRequestDefaultTypeInternal;
 extern GetUserBaseStatisticsRequestDefaultTypeInternal _GetUserBaseStatisticsRequest_default_instance_;
@@ -315,12 +315,12 @@ extern UpdateOAuth2ClientRequestDefaultTypeInternal _UpdateOAuth2ClientRequest_d
 class UpdateOAuth2ClientResponse;
 class UpdateOAuth2ClientResponseDefaultTypeInternal;
 extern UpdateOAuth2ClientResponseDefaultTypeInternal _UpdateOAuth2ClientResponse_default_instance_;
-class UpdateTraitsRequest;
-class UpdateTraitsRequestDefaultTypeInternal;
-extern UpdateTraitsRequestDefaultTypeInternal _UpdateTraitsRequest_default_instance_;
-class UpdateTraitsResponse;
-class UpdateTraitsResponseDefaultTypeInternal;
-extern UpdateTraitsResponseDefaultTypeInternal _UpdateTraitsResponse_default_instance_;
+class UpdateProfileRequest;
+class UpdateProfileRequestDefaultTypeInternal;
+extern UpdateProfileRequestDefaultTypeInternal _UpdateProfileRequest_default_instance_;
+class UpdateProfileResponse;
+class UpdateProfileResponseDefaultTypeInternal;
+extern UpdateProfileResponseDefaultTypeInternal _UpdateProfileResponse_default_instance_;
 }  // namespace admin
 }  // namespace identity
 }  // namespace v0
@@ -387,8 +387,8 @@ template<> ::depot::devtools::auth::v0::identity::admin::GetIdentityResponse_Cre
 template<> ::depot::devtools::auth::v0::identity::admin::GetOAuth2ClientsRequest* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::GetOAuth2ClientsRequest>(Arena*);
 template<> ::depot::devtools::auth::v0::identity::admin::GetOAuth2ClientsResponse* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::GetOAuth2ClientsResponse>(Arena*);
 template<> ::depot::devtools::auth::v0::identity::admin::GetOAuth2ClientsResponse_Client* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::GetOAuth2ClientsResponse_Client>(Arena*);
-template<> ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::GetTraitsRequest>(Arena*);
-template<> ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>(Arena*);
+template<> ::depot::devtools::auth::v0::identity::admin::GetProfileRequest* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::GetProfileRequest>(Arena*);
+template<> ::depot::devtools::auth::v0::identity::admin::GetProfileResponse* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::GetProfileResponse>(Arena*);
 template<> ::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsRequest* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsRequest>(Arena*);
 template<> ::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsResponse* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsResponse>(Arena*);
 template<> ::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsResponse_SessionsPerDayEntry_DoNotUse* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsResponse_SessionsPerDayEntry_DoNotUse>(Arena*);
@@ -411,8 +411,8 @@ template<> ::depot::devtools::auth::v0::identity::admin::UpdateIdentityRequest* 
 template<> ::depot::devtools::auth::v0::identity::admin::UpdateIdentityResponse* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::UpdateIdentityResponse>(Arena*);
 template<> ::depot::devtools::auth::v0::identity::admin::UpdateOAuth2ClientRequest* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::UpdateOAuth2ClientRequest>(Arena*);
 template<> ::depot::devtools::auth::v0::identity::admin::UpdateOAuth2ClientResponse* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::UpdateOAuth2ClientResponse>(Arena*);
-template<> ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest>(Arena*);
-template<> ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>(Arena*);
+template<> ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest>(Arena*);
+template<> ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse* Arena::CreateMaybeMessage<::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace depot {
 namespace devtools {
@@ -2350,7 +2350,7 @@ class GetIdentityResponse PROTOBUF_FINAL :
     kCredentialsIdsFieldNumber = 7,
     kIdentityIdFieldNumber = 1,
     kMainIdentifierFieldNumber = 4,
-    kTraitsIdFieldNumber = 5,
+    kProfileIdFieldNumber = 5,
     kSchemaIdFieldNumber = 8,
     kCreatedAtFieldNumber = 2,
     kUpdatedAtFieldNumber = 3,
@@ -2429,20 +2429,20 @@ class GetIdentityResponse PROTOBUF_FINAL :
   std::string* _internal_mutable_main_identifier();
   public:
 
-  // string traits_id = 5[json_name = "traitsId"];
-  void clear_traits_id();
-  const std::string& traits_id() const;
-  void set_traits_id(const std::string& value);
-  void set_traits_id(std::string&& value);
-  void set_traits_id(const char* value);
-  void set_traits_id(const char* value, size_t size);
-  std::string* mutable_traits_id();
-  std::string* release_traits_id();
-  void set_allocated_traits_id(std::string* traits_id);
+  // string profile_id = 5[json_name = "profileId"];
+  void clear_profile_id();
+  const std::string& profile_id() const;
+  void set_profile_id(const std::string& value);
+  void set_profile_id(std::string&& value);
+  void set_profile_id(const char* value);
+  void set_profile_id(const char* value, size_t size);
+  std::string* mutable_profile_id();
+  std::string* release_profile_id();
+  void set_allocated_profile_id(std::string* profile_id);
   private:
-  const std::string& _internal_traits_id() const;
-  void _internal_set_traits_id(const std::string& value);
-  std::string* _internal_mutable_traits_id();
+  const std::string& _internal_profile_id() const;
+  void _internal_set_profile_id(const std::string& value);
+  std::string* _internal_mutable_profile_id();
   public:
 
   // string schema_id = 8[json_name = "schemaId"];
@@ -2522,7 +2522,7 @@ class GetIdentityResponse PROTOBUF_FINAL :
       0 > credentials_ids_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr identity_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr main_identifier_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr traits_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr profile_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr schema_id_;
   PROTOBUF_NAMESPACE_ID::Timestamp* created_at_;
   PROTOBUF_NAMESPACE_ID::Timestamp* updated_at_;
@@ -2894,7 +2894,7 @@ class GetIdentityByIdentifierResponse_Identity PROTOBUF_FINAL :
     kCredentialsIdsFieldNumber = 7,
     kIdentityIdFieldNumber = 1,
     kMainIdentifierFieldNumber = 4,
-    kTraitsIdFieldNumber = 5,
+    kProfileIdFieldNumber = 5,
     kSchemaIdFieldNumber = 8,
     kCreatedAtFieldNumber = 2,
     kUpdatedAtFieldNumber = 3,
@@ -2973,20 +2973,20 @@ class GetIdentityByIdentifierResponse_Identity PROTOBUF_FINAL :
   std::string* _internal_mutable_main_identifier();
   public:
 
-  // string traits_id = 5[json_name = "traitsId"];
-  void clear_traits_id();
-  const std::string& traits_id() const;
-  void set_traits_id(const std::string& value);
-  void set_traits_id(std::string&& value);
-  void set_traits_id(const char* value);
-  void set_traits_id(const char* value, size_t size);
-  std::string* mutable_traits_id();
-  std::string* release_traits_id();
-  void set_allocated_traits_id(std::string* traits_id);
+  // string profile_id = 5[json_name = "profileId"];
+  void clear_profile_id();
+  const std::string& profile_id() const;
+  void set_profile_id(const std::string& value);
+  void set_profile_id(std::string&& value);
+  void set_profile_id(const char* value);
+  void set_profile_id(const char* value, size_t size);
+  std::string* mutable_profile_id();
+  std::string* release_profile_id();
+  void set_allocated_profile_id(std::string* profile_id);
   private:
-  const std::string& _internal_traits_id() const;
-  void _internal_set_traits_id(const std::string& value);
-  std::string* _internal_mutable_traits_id();
+  const std::string& _internal_profile_id() const;
+  void _internal_set_profile_id(const std::string& value);
+  std::string* _internal_mutable_profile_id();
   public:
 
   // string schema_id = 8[json_name = "schemaId"];
@@ -3066,7 +3066,7 @@ class GetIdentityByIdentifierResponse_Identity PROTOBUF_FINAL :
       0 > credentials_ids_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr identity_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr main_identifier_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr traits_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr profile_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr schema_id_;
   PROTOBUF_NAMESPACE_ID::Timestamp* created_at_;
   PROTOBUF_NAMESPACE_ID::Timestamp* updated_at_;
@@ -3568,7 +3568,7 @@ class GetIdentitiesByAttributeResponse_Identity PROTOBUF_FINAL :
     kCredentialsIdsFieldNumber = 7,
     kIdentityIdFieldNumber = 1,
     kMainIdentifierFieldNumber = 4,
-    kTraitsIdFieldNumber = 5,
+    kProfileIdFieldNumber = 5,
     kSchemaIdFieldNumber = 8,
     kCreatedAtFieldNumber = 2,
     kUpdatedAtFieldNumber = 3,
@@ -3647,20 +3647,20 @@ class GetIdentitiesByAttributeResponse_Identity PROTOBUF_FINAL :
   std::string* _internal_mutable_main_identifier();
   public:
 
-  // string traits_id = 5[json_name = "traitsId"];
-  void clear_traits_id();
-  const std::string& traits_id() const;
-  void set_traits_id(const std::string& value);
-  void set_traits_id(std::string&& value);
-  void set_traits_id(const char* value);
-  void set_traits_id(const char* value, size_t size);
-  std::string* mutable_traits_id();
-  std::string* release_traits_id();
-  void set_allocated_traits_id(std::string* traits_id);
+  // string profile_id = 5[json_name = "profileId"];
+  void clear_profile_id();
+  const std::string& profile_id() const;
+  void set_profile_id(const std::string& value);
+  void set_profile_id(std::string&& value);
+  void set_profile_id(const char* value);
+  void set_profile_id(const char* value, size_t size);
+  std::string* mutable_profile_id();
+  std::string* release_profile_id();
+  void set_allocated_profile_id(std::string* profile_id);
   private:
-  const std::string& _internal_traits_id() const;
-  void _internal_set_traits_id(const std::string& value);
-  std::string* _internal_mutable_traits_id();
+  const std::string& _internal_profile_id() const;
+  void _internal_set_profile_id(const std::string& value);
+  std::string* _internal_mutable_profile_id();
   public:
 
   // string schema_id = 8[json_name = "schemaId"];
@@ -3740,7 +3740,7 @@ class GetIdentitiesByAttributeResponse_Identity PROTOBUF_FINAL :
       0 > credentials_ids_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr identity_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr main_identifier_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr traits_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr profile_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr schema_id_;
   PROTOBUF_NAMESPACE_ID::Timestamp* created_at_;
   PROTOBUF_NAMESPACE_ID::Timestamp* updated_at_;
@@ -4734,7 +4734,7 @@ class GetCredentialsResponse_Credential PROTOBUF_FINAL :
   enum : int {
     kCredentialIdFieldNumber = 1,
     kIdentityIdFieldNumber = 4,
-    kNameFieldNumber = 6,
+    kConnectionIdFieldNumber = 6,
     kCreatedAtFieldNumber = 2,
     kUpdatedAtFieldNumber = 3,
     kTypeFieldNumber = 5,
@@ -4772,20 +4772,20 @@ class GetCredentialsResponse_Credential PROTOBUF_FINAL :
   std::string* _internal_mutable_identity_id();
   public:
 
-  // string name = 6[json_name = "name"];
-  void clear_name();
-  const std::string& name() const;
-  void set_name(const std::string& value);
-  void set_name(std::string&& value);
-  void set_name(const char* value);
-  void set_name(const char* value, size_t size);
-  std::string* mutable_name();
-  std::string* release_name();
-  void set_allocated_name(std::string* name);
+  // string connection_id = 6[json_name = "connectionId"];
+  void clear_connection_id();
+  const std::string& connection_id() const;
+  void set_connection_id(const std::string& value);
+  void set_connection_id(std::string&& value);
+  void set_connection_id(const char* value);
+  void set_connection_id(const char* value, size_t size);
+  std::string* mutable_connection_id();
+  std::string* release_connection_id();
+  void set_allocated_connection_id(std::string* connection_id);
   private:
-  const std::string& _internal_name() const;
-  void _internal_set_name(const std::string& value);
-  std::string* _internal_mutable_name();
+  const std::string& _internal_connection_id() const;
+  void _internal_set_connection_id(const std::string& value);
+  std::string* _internal_mutable_connection_id();
   public:
 
   // .google.protobuf.Timestamp created_at = 2[json_name = "createdAt"];
@@ -4851,7 +4851,7 @@ class GetCredentialsResponse_Credential PROTOBUF_FINAL :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr credential_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr identity_id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr connection_id_;
   PROTOBUF_NAMESPACE_ID::Timestamp* created_at_;
   PROTOBUF_NAMESPACE_ID::Timestamp* updated_at_;
   ::PROTOBUF_NAMESPACE_ID::int32 type_;
@@ -5629,7 +5629,7 @@ class CreateConnectionRequest PROTOBUF_FINAL :
 
   enum : int {
     kMfaFieldNumber = 8,
-    kNameFieldNumber = 1,
+    kIdFieldNumber = 1,
     kClientIdFieldNumber = 2,
     kClientSecretFieldNumber = 3,
     kButtonImageUrlFieldNumber = 4,
@@ -5662,20 +5662,20 @@ class CreateConnectionRequest PROTOBUF_FINAL :
   std::string* _internal_add_mfa();
   public:
 
-  // string name = 1[json_name = "name"];
-  void clear_name();
-  const std::string& name() const;
-  void set_name(const std::string& value);
-  void set_name(std::string&& value);
-  void set_name(const char* value);
-  void set_name(const char* value, size_t size);
-  std::string* mutable_name();
-  std::string* release_name();
-  void set_allocated_name(std::string* name);
+  // string id = 1[json_name = "id"];
+  void clear_id();
+  const std::string& id() const;
+  void set_id(const std::string& value);
+  void set_id(std::string&& value);
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  std::string* mutable_id();
+  std::string* release_id();
+  void set_allocated_id(std::string* id);
   private:
-  const std::string& _internal_name() const;
-  void _internal_set_name(const std::string& value);
-  std::string* _internal_mutable_name();
+  const std::string& _internal_id() const;
+  void _internal_set_id(const std::string& value);
+  std::string* _internal_mutable_id();
   public:
 
   // string client_id = 2[json_name = "clientId"];
@@ -5784,7 +5784,7 @@ class CreateConnectionRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> mfa_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr client_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr client_secret_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr button_image_url_;
@@ -5910,22 +5910,22 @@ class CreateConnectionResponse PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNameFieldNumber = 1,
+    kIdFieldNumber = 1,
   };
-  // string name = 1[json_name = "name"];
-  void clear_name();
-  const std::string& name() const;
-  void set_name(const std::string& value);
-  void set_name(std::string&& value);
-  void set_name(const char* value);
-  void set_name(const char* value, size_t size);
-  std::string* mutable_name();
-  std::string* release_name();
-  void set_allocated_name(std::string* name);
+  // string id = 1[json_name = "id"];
+  void clear_id();
+  const std::string& id() const;
+  void set_id(const std::string& value);
+  void set_id(std::string&& value);
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  std::string* mutable_id();
+  std::string* release_id();
+  void set_allocated_id(std::string* id);
   private:
-  const std::string& _internal_name() const;
-  void _internal_set_name(const std::string& value);
-  std::string* _internal_mutable_name();
+  const std::string& _internal_id() const;
+  void _internal_set_id(const std::string& value);
+  std::string* _internal_mutable_id();
   public:
 
   // @@protoc_insertion_point(class_scope:depot.devtools.auth.v0.identity.admin.CreateConnectionResponse)
@@ -5935,7 +5935,7 @@ class CreateConnectionResponse PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto;
 };
@@ -6179,16 +6179,15 @@ class GetConnectionsResponse_Connection PROTOBUF_FINAL :
 
   enum : int {
     kMfaFieldNumber = 8,
-    kNameFieldNumber = 1,
+    kIdFieldNumber = 1,
     kClientIdFieldNumber = 2,
     kClientSecretFieldNumber = 3,
     kButtonImageUrlFieldNumber = 4,
     kOidcDiscoveryUrlFieldNumber = 7,
-    kIdFieldNumber = 10,
-    kScopesFieldNumber = 11,
+    kScopesFieldNumber = 10,
     kProviderFieldNumber = 6,
     kTypeFieldNumber = 9,
-    kPurposeFieldNumber = 12,
+    kPurposeFieldNumber = 11,
   };
   // repeated string mfa = 8[json_name = "mfa"];
   int mfa_size() const;
@@ -6214,20 +6213,20 @@ class GetConnectionsResponse_Connection PROTOBUF_FINAL :
   std::string* _internal_add_mfa();
   public:
 
-  // string name = 1[json_name = "name"];
-  void clear_name();
-  const std::string& name() const;
-  void set_name(const std::string& value);
-  void set_name(std::string&& value);
-  void set_name(const char* value);
-  void set_name(const char* value, size_t size);
-  std::string* mutable_name();
-  std::string* release_name();
-  void set_allocated_name(std::string* name);
+  // string id = 1[json_name = "id"];
+  void clear_id();
+  const std::string& id() const;
+  void set_id(const std::string& value);
+  void set_id(std::string&& value);
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  std::string* mutable_id();
+  std::string* release_id();
+  void set_allocated_id(std::string* id);
   private:
-  const std::string& _internal_name() const;
-  void _internal_set_name(const std::string& value);
-  std::string* _internal_mutable_name();
+  const std::string& _internal_id() const;
+  void _internal_set_id(const std::string& value);
+  std::string* _internal_mutable_id();
   public:
 
   // string client_id = 2[json_name = "clientId"];
@@ -6294,23 +6293,7 @@ class GetConnectionsResponse_Connection PROTOBUF_FINAL :
   std::string* _internal_mutable_oidc_discovery_url();
   public:
 
-  // string id = 10[json_name = "id"];
-  void clear_id();
-  const std::string& id() const;
-  void set_id(const std::string& value);
-  void set_id(std::string&& value);
-  void set_id(const char* value);
-  void set_id(const char* value, size_t size);
-  std::string* mutable_id();
-  std::string* release_id();
-  void set_allocated_id(std::string* id);
-  private:
-  const std::string& _internal_id() const;
-  void _internal_set_id(const std::string& value);
-  std::string* _internal_mutable_id();
-  public:
-
-  // string scopes = 11[json_name = "scopes"];
+  // string scopes = 10[json_name = "scopes"];
   void clear_scopes();
   const std::string& scopes() const;
   void set_scopes(const std::string& value);
@@ -6344,7 +6327,7 @@ class GetConnectionsResponse_Connection PROTOBUF_FINAL :
   void _internal_set_type(::depot::devtools::auth::v0::identity::admin::GetConnectionsResponse_Types value);
   public:
 
-  // .depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Purposes purpose = 12[json_name = "purpose"];
+  // .depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Purposes purpose = 11[json_name = "purpose"];
   void clear_purpose();
   ::depot::devtools::auth::v0::identity::admin::GetConnectionsResponse_Purposes purpose() const;
   void set_purpose(::depot::devtools::auth::v0::identity::admin::GetConnectionsResponse_Purposes value);
@@ -6361,12 +6344,11 @@ class GetConnectionsResponse_Connection PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> mfa_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr client_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr client_secret_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr button_image_url_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr oidc_discovery_url_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr scopes_;
   int provider_;
   int type_;
@@ -11731,23 +11713,23 @@ class UpdateAddressResponse PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class GetTraitsRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:depot.devtools.auth.v0.identity.admin.GetTraitsRequest) */ {
+class GetProfileRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:depot.devtools.auth.v0.identity.admin.GetProfileRequest) */ {
  public:
-  inline GetTraitsRequest() : GetTraitsRequest(nullptr) {}
-  virtual ~GetTraitsRequest();
+  inline GetProfileRequest() : GetProfileRequest(nullptr) {}
+  virtual ~GetProfileRequest();
 
-  GetTraitsRequest(const GetTraitsRequest& from);
-  GetTraitsRequest(GetTraitsRequest&& from) noexcept
-    : GetTraitsRequest() {
+  GetProfileRequest(const GetProfileRequest& from);
+  GetProfileRequest(GetProfileRequest&& from) noexcept
+    : GetProfileRequest() {
     *this = ::std::move(from);
   }
 
-  inline GetTraitsRequest& operator=(const GetTraitsRequest& from) {
+  inline GetProfileRequest& operator=(const GetProfileRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline GetTraitsRequest& operator=(GetTraitsRequest&& from) noexcept {
+  inline GetProfileRequest& operator=(GetProfileRequest&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -11765,20 +11747,20 @@ class GetTraitsRequest PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const GetTraitsRequest& default_instance();
+  static const GetProfileRequest& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const GetTraitsRequest* internal_default_instance() {
-    return reinterpret_cast<const GetTraitsRequest*>(
-               &_GetTraitsRequest_default_instance_);
+  static inline const GetProfileRequest* internal_default_instance() {
+    return reinterpret_cast<const GetProfileRequest*>(
+               &_GetProfileRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     51;
 
-  friend void swap(GetTraitsRequest& a, GetTraitsRequest& b) {
+  friend void swap(GetProfileRequest& a, GetProfileRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(GetTraitsRequest* other) {
+  inline void Swap(GetProfileRequest* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -11786,7 +11768,7 @@ class GetTraitsRequest PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(GetTraitsRequest* other) {
+  void UnsafeArenaSwap(GetProfileRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -11794,17 +11776,17 @@ class GetTraitsRequest PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline GetTraitsRequest* New() const final {
-    return CreateMaybeMessage<GetTraitsRequest>(nullptr);
+  inline GetProfileRequest* New() const final {
+    return CreateMaybeMessage<GetProfileRequest>(nullptr);
   }
 
-  GetTraitsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<GetTraitsRequest>(arena);
+  GetProfileRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetProfileRequest>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const GetTraitsRequest& from);
-  void MergeFrom(const GetTraitsRequest& from);
+  void CopyFrom(const GetProfileRequest& from);
+  void MergeFrom(const GetProfileRequest& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -11818,13 +11800,13 @@ class GetTraitsRequest PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(GetTraitsRequest* other);
+  void InternalSwap(GetProfileRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "depot.devtools.auth.v0.identity.admin.GetTraitsRequest";
+    return "depot.devtools.auth.v0.identity.admin.GetProfileRequest";
   }
   protected:
-  explicit GetTraitsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit GetProfileRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -11862,7 +11844,7 @@ class GetTraitsRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_identity_id();
   public:
 
-  // @@protoc_insertion_point(class_scope:depot.devtools.auth.v0.identity.admin.GetTraitsRequest)
+  // @@protoc_insertion_point(class_scope:depot.devtools.auth.v0.identity.admin.GetProfileRequest)
  private:
   class _Internal;
 
@@ -11875,23 +11857,23 @@ class GetTraitsRequest PROTOBUF_FINAL :
 };
 // -------------------------------------------------------------------
 
-class GetTraitsResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:depot.devtools.auth.v0.identity.admin.GetTraitsResponse) */ {
+class GetProfileResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:depot.devtools.auth.v0.identity.admin.GetProfileResponse) */ {
  public:
-  inline GetTraitsResponse() : GetTraitsResponse(nullptr) {}
-  virtual ~GetTraitsResponse();
+  inline GetProfileResponse() : GetProfileResponse(nullptr) {}
+  virtual ~GetProfileResponse();
 
-  GetTraitsResponse(const GetTraitsResponse& from);
-  GetTraitsResponse(GetTraitsResponse&& from) noexcept
-    : GetTraitsResponse() {
+  GetProfileResponse(const GetProfileResponse& from);
+  GetProfileResponse(GetProfileResponse&& from) noexcept
+    : GetProfileResponse() {
     *this = ::std::move(from);
   }
 
-  inline GetTraitsResponse& operator=(const GetTraitsResponse& from) {
+  inline GetProfileResponse& operator=(const GetProfileResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline GetTraitsResponse& operator=(GetTraitsResponse&& from) noexcept {
+  inline GetProfileResponse& operator=(GetProfileResponse&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -11909,20 +11891,20 @@ class GetTraitsResponse PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const GetTraitsResponse& default_instance();
+  static const GetProfileResponse& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const GetTraitsResponse* internal_default_instance() {
-    return reinterpret_cast<const GetTraitsResponse*>(
-               &_GetTraitsResponse_default_instance_);
+  static inline const GetProfileResponse* internal_default_instance() {
+    return reinterpret_cast<const GetProfileResponse*>(
+               &_GetProfileResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     52;
 
-  friend void swap(GetTraitsResponse& a, GetTraitsResponse& b) {
+  friend void swap(GetProfileResponse& a, GetProfileResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(GetTraitsResponse* other) {
+  inline void Swap(GetProfileResponse* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -11930,7 +11912,7 @@ class GetTraitsResponse PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(GetTraitsResponse* other) {
+  void UnsafeArenaSwap(GetProfileResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -11938,17 +11920,17 @@ class GetTraitsResponse PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline GetTraitsResponse* New() const final {
-    return CreateMaybeMessage<GetTraitsResponse>(nullptr);
+  inline GetProfileResponse* New() const final {
+    return CreateMaybeMessage<GetProfileResponse>(nullptr);
   }
 
-  GetTraitsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<GetTraitsResponse>(arena);
+  GetProfileResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<GetProfileResponse>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const GetTraitsResponse& from);
-  void MergeFrom(const GetTraitsResponse& from);
+  void CopyFrom(const GetProfileResponse& from);
+  void MergeFrom(const GetProfileResponse& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -11962,13 +11944,13 @@ class GetTraitsResponse PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(GetTraitsResponse* other);
+  void InternalSwap(GetProfileResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "depot.devtools.auth.v0.identity.admin.GetTraitsResponse";
+    return "depot.devtools.auth.v0.identity.admin.GetProfileResponse";
   }
   protected:
-  explicit GetTraitsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit GetProfileResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -11988,54 +11970,54 @@ class GetTraitsResponse PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTraitsFieldNumber = 1,
+    kProfileFieldNumber = 1,
   };
-  // string traits = 1[json_name = "traits"];
-  void clear_traits();
-  const std::string& traits() const;
-  void set_traits(const std::string& value);
-  void set_traits(std::string&& value);
-  void set_traits(const char* value);
-  void set_traits(const char* value, size_t size);
-  std::string* mutable_traits();
-  std::string* release_traits();
-  void set_allocated_traits(std::string* traits);
+  // string profile = 1[json_name = "profile"];
+  void clear_profile();
+  const std::string& profile() const;
+  void set_profile(const std::string& value);
+  void set_profile(std::string&& value);
+  void set_profile(const char* value);
+  void set_profile(const char* value, size_t size);
+  std::string* mutable_profile();
+  std::string* release_profile();
+  void set_allocated_profile(std::string* profile);
   private:
-  const std::string& _internal_traits() const;
-  void _internal_set_traits(const std::string& value);
-  std::string* _internal_mutable_traits();
+  const std::string& _internal_profile() const;
+  void _internal_set_profile(const std::string& value);
+  std::string* _internal_mutable_profile();
   public:
 
-  // @@protoc_insertion_point(class_scope:depot.devtools.auth.v0.identity.admin.GetTraitsResponse)
+  // @@protoc_insertion_point(class_scope:depot.devtools.auth.v0.identity.admin.GetProfileResponse)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr traits_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr profile_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto;
 };
 // -------------------------------------------------------------------
 
-class UpdateTraitsRequest PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:depot.devtools.auth.v0.identity.admin.UpdateTraitsRequest) */ {
+class UpdateProfileRequest PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:depot.devtools.auth.v0.identity.admin.UpdateProfileRequest) */ {
  public:
-  inline UpdateTraitsRequest() : UpdateTraitsRequest(nullptr) {}
-  virtual ~UpdateTraitsRequest();
+  inline UpdateProfileRequest() : UpdateProfileRequest(nullptr) {}
+  virtual ~UpdateProfileRequest();
 
-  UpdateTraitsRequest(const UpdateTraitsRequest& from);
-  UpdateTraitsRequest(UpdateTraitsRequest&& from) noexcept
-    : UpdateTraitsRequest() {
+  UpdateProfileRequest(const UpdateProfileRequest& from);
+  UpdateProfileRequest(UpdateProfileRequest&& from) noexcept
+    : UpdateProfileRequest() {
     *this = ::std::move(from);
   }
 
-  inline UpdateTraitsRequest& operator=(const UpdateTraitsRequest& from) {
+  inline UpdateProfileRequest& operator=(const UpdateProfileRequest& from) {
     CopyFrom(from);
     return *this;
   }
-  inline UpdateTraitsRequest& operator=(UpdateTraitsRequest&& from) noexcept {
+  inline UpdateProfileRequest& operator=(UpdateProfileRequest&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -12053,20 +12035,20 @@ class UpdateTraitsRequest PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const UpdateTraitsRequest& default_instance();
+  static const UpdateProfileRequest& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const UpdateTraitsRequest* internal_default_instance() {
-    return reinterpret_cast<const UpdateTraitsRequest*>(
-               &_UpdateTraitsRequest_default_instance_);
+  static inline const UpdateProfileRequest* internal_default_instance() {
+    return reinterpret_cast<const UpdateProfileRequest*>(
+               &_UpdateProfileRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     53;
 
-  friend void swap(UpdateTraitsRequest& a, UpdateTraitsRequest& b) {
+  friend void swap(UpdateProfileRequest& a, UpdateProfileRequest& b) {
     a.Swap(&b);
   }
-  inline void Swap(UpdateTraitsRequest* other) {
+  inline void Swap(UpdateProfileRequest* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -12074,7 +12056,7 @@ class UpdateTraitsRequest PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(UpdateTraitsRequest* other) {
+  void UnsafeArenaSwap(UpdateProfileRequest* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -12082,17 +12064,17 @@ class UpdateTraitsRequest PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline UpdateTraitsRequest* New() const final {
-    return CreateMaybeMessage<UpdateTraitsRequest>(nullptr);
+  inline UpdateProfileRequest* New() const final {
+    return CreateMaybeMessage<UpdateProfileRequest>(nullptr);
   }
 
-  UpdateTraitsRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<UpdateTraitsRequest>(arena);
+  UpdateProfileRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<UpdateProfileRequest>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const UpdateTraitsRequest& from);
-  void MergeFrom(const UpdateTraitsRequest& from);
+  void CopyFrom(const UpdateProfileRequest& from);
+  void MergeFrom(const UpdateProfileRequest& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -12106,13 +12088,13 @@ class UpdateTraitsRequest PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(UpdateTraitsRequest* other);
+  void InternalSwap(UpdateProfileRequest* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "depot.devtools.auth.v0.identity.admin.UpdateTraitsRequest";
+    return "depot.devtools.auth.v0.identity.admin.UpdateProfileRequest";
   }
   protected:
-  explicit UpdateTraitsRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit UpdateProfileRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -12133,7 +12115,7 @@ class UpdateTraitsRequest PROTOBUF_FINAL :
 
   enum : int {
     kIdentityIdFieldNumber = 1,
-    kTraitsFieldNumber = 2,
+    kProfileFieldNumber = 2,
   };
   // string identity_id = 1[json_name = "identityId"];
   void clear_identity_id();
@@ -12151,23 +12133,23 @@ class UpdateTraitsRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_identity_id();
   public:
 
-  // string traits = 2[json_name = "traits"];
-  void clear_traits();
-  const std::string& traits() const;
-  void set_traits(const std::string& value);
-  void set_traits(std::string&& value);
-  void set_traits(const char* value);
-  void set_traits(const char* value, size_t size);
-  std::string* mutable_traits();
-  std::string* release_traits();
-  void set_allocated_traits(std::string* traits);
+  // string profile = 2[json_name = "profile"];
+  void clear_profile();
+  const std::string& profile() const;
+  void set_profile(const std::string& value);
+  void set_profile(std::string&& value);
+  void set_profile(const char* value);
+  void set_profile(const char* value, size_t size);
+  std::string* mutable_profile();
+  std::string* release_profile();
+  void set_allocated_profile(std::string* profile);
   private:
-  const std::string& _internal_traits() const;
-  void _internal_set_traits(const std::string& value);
-  std::string* _internal_mutable_traits();
+  const std::string& _internal_profile() const;
+  void _internal_set_profile(const std::string& value);
+  std::string* _internal_mutable_profile();
   public:
 
-  // @@protoc_insertion_point(class_scope:depot.devtools.auth.v0.identity.admin.UpdateTraitsRequest)
+  // @@protoc_insertion_point(class_scope:depot.devtools.auth.v0.identity.admin.UpdateProfileRequest)
  private:
   class _Internal;
 
@@ -12175,29 +12157,29 @@ class UpdateTraitsRequest PROTOBUF_FINAL :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr identity_id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr traits_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr profile_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_devtools_2fauth_2fv0_2fproto_2fidentity_2fadmin_2fadmin_2eproto;
 };
 // -------------------------------------------------------------------
 
-class UpdateTraitsResponse PROTOBUF_FINAL :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:depot.devtools.auth.v0.identity.admin.UpdateTraitsResponse) */ {
+class UpdateProfileResponse PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:depot.devtools.auth.v0.identity.admin.UpdateProfileResponse) */ {
  public:
-  inline UpdateTraitsResponse() : UpdateTraitsResponse(nullptr) {}
-  virtual ~UpdateTraitsResponse();
+  inline UpdateProfileResponse() : UpdateProfileResponse(nullptr) {}
+  virtual ~UpdateProfileResponse();
 
-  UpdateTraitsResponse(const UpdateTraitsResponse& from);
-  UpdateTraitsResponse(UpdateTraitsResponse&& from) noexcept
-    : UpdateTraitsResponse() {
+  UpdateProfileResponse(const UpdateProfileResponse& from);
+  UpdateProfileResponse(UpdateProfileResponse&& from) noexcept
+    : UpdateProfileResponse() {
     *this = ::std::move(from);
   }
 
-  inline UpdateTraitsResponse& operator=(const UpdateTraitsResponse& from) {
+  inline UpdateProfileResponse& operator=(const UpdateProfileResponse& from) {
     CopyFrom(from);
     return *this;
   }
-  inline UpdateTraitsResponse& operator=(UpdateTraitsResponse&& from) noexcept {
+  inline UpdateProfileResponse& operator=(UpdateProfileResponse&& from) noexcept {
     if (GetArena() == from.GetArena()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -12215,20 +12197,20 @@ class UpdateTraitsResponse PROTOBUF_FINAL :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return GetMetadataStatic().reflection;
   }
-  static const UpdateTraitsResponse& default_instance();
+  static const UpdateProfileResponse& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const UpdateTraitsResponse* internal_default_instance() {
-    return reinterpret_cast<const UpdateTraitsResponse*>(
-               &_UpdateTraitsResponse_default_instance_);
+  static inline const UpdateProfileResponse* internal_default_instance() {
+    return reinterpret_cast<const UpdateProfileResponse*>(
+               &_UpdateProfileResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     54;
 
-  friend void swap(UpdateTraitsResponse& a, UpdateTraitsResponse& b) {
+  friend void swap(UpdateProfileResponse& a, UpdateProfileResponse& b) {
     a.Swap(&b);
   }
-  inline void Swap(UpdateTraitsResponse* other) {
+  inline void Swap(UpdateProfileResponse* other) {
     if (other == this) return;
     if (GetArena() == other->GetArena()) {
       InternalSwap(other);
@@ -12236,7 +12218,7 @@ class UpdateTraitsResponse PROTOBUF_FINAL :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(UpdateTraitsResponse* other) {
+  void UnsafeArenaSwap(UpdateProfileResponse* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -12244,17 +12226,17 @@ class UpdateTraitsResponse PROTOBUF_FINAL :
 
   // implements Message ----------------------------------------------
 
-  inline UpdateTraitsResponse* New() const final {
-    return CreateMaybeMessage<UpdateTraitsResponse>(nullptr);
+  inline UpdateProfileResponse* New() const final {
+    return CreateMaybeMessage<UpdateProfileResponse>(nullptr);
   }
 
-  UpdateTraitsResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
-    return CreateMaybeMessage<UpdateTraitsResponse>(arena);
+  UpdateProfileResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<UpdateProfileResponse>(arena);
   }
   void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
   void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
-  void CopyFrom(const UpdateTraitsResponse& from);
-  void MergeFrom(const UpdateTraitsResponse& from);
+  void CopyFrom(const UpdateProfileResponse& from);
+  void MergeFrom(const UpdateProfileResponse& from);
   PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
   bool IsInitialized() const final;
 
@@ -12268,13 +12250,13 @@ class UpdateTraitsResponse PROTOBUF_FINAL :
   inline void SharedCtor();
   inline void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(UpdateTraitsResponse* other);
+  void InternalSwap(UpdateProfileResponse* other);
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "depot.devtools.auth.v0.identity.admin.UpdateTraitsResponse";
+    return "depot.devtools.auth.v0.identity.admin.UpdateProfileResponse";
   }
   protected:
-  explicit UpdateTraitsResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  explicit UpdateProfileResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   private:
   static void ArenaDtor(void* object);
   inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
@@ -12293,7 +12275,7 @@ class UpdateTraitsResponse PROTOBUF_FINAL :
 
   // accessors -------------------------------------------------------
 
-  // @@protoc_insertion_point(class_scope:depot.devtools.auth.v0.identity.admin.UpdateTraitsResponse)
+  // @@protoc_insertion_point(class_scope:depot.devtools.auth.v0.identity.admin.UpdateProfileResponse)
  private:
   class _Internal;
 
@@ -18388,66 +18370,66 @@ inline void GetIdentityResponse::set_allocated_main_identifier(std::string* main
   // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetIdentityResponse.main_identifier)
 }
 
-// string traits_id = 5[json_name = "traitsId"];
-inline void GetIdentityResponse::clear_traits_id() {
-  traits_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+// string profile_id = 5[json_name = "profileId"];
+inline void GetIdentityResponse::clear_profile_id() {
+  profile_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& GetIdentityResponse::traits_id() const {
-  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetIdentityResponse.traits_id)
-  return _internal_traits_id();
+inline const std::string& GetIdentityResponse::profile_id() const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetIdentityResponse.profile_id)
+  return _internal_profile_id();
 }
-inline void GetIdentityResponse::set_traits_id(const std::string& value) {
-  _internal_set_traits_id(value);
-  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetIdentityResponse.traits_id)
+inline void GetIdentityResponse::set_profile_id(const std::string& value) {
+  _internal_set_profile_id(value);
+  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetIdentityResponse.profile_id)
 }
-inline std::string* GetIdentityResponse::mutable_traits_id() {
-  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetIdentityResponse.traits_id)
-  return _internal_mutable_traits_id();
+inline std::string* GetIdentityResponse::mutable_profile_id() {
+  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetIdentityResponse.profile_id)
+  return _internal_mutable_profile_id();
 }
-inline const std::string& GetIdentityResponse::_internal_traits_id() const {
-  return traits_id_.Get();
+inline const std::string& GetIdentityResponse::_internal_profile_id() const {
+  return profile_id_.Get();
 }
-inline void GetIdentityResponse::_internal_set_traits_id(const std::string& value) {
+inline void GetIdentityResponse::_internal_set_profile_id(const std::string& value) {
   
-  traits_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+  profile_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void GetIdentityResponse::set_traits_id(std::string&& value) {
+inline void GetIdentityResponse::set_profile_id(std::string&& value) {
   
-  traits_id_.Set(
+  profile_id_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.GetIdentityResponse.traits_id)
+  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.GetIdentityResponse.profile_id)
 }
-inline void GetIdentityResponse::set_traits_id(const char* value) {
+inline void GetIdentityResponse::set_profile_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  traits_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+  profile_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.GetIdentityResponse.traits_id)
+  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.GetIdentityResponse.profile_id)
 }
-inline void GetIdentityResponse::set_traits_id(const char* value,
+inline void GetIdentityResponse::set_profile_id(const char* value,
     size_t size) {
   
-  traits_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+  profile_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.GetIdentityResponse.traits_id)
+  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.GetIdentityResponse.profile_id)
 }
-inline std::string* GetIdentityResponse::_internal_mutable_traits_id() {
+inline std::string* GetIdentityResponse::_internal_mutable_profile_id() {
   
-  return traits_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  return profile_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* GetIdentityResponse::release_traits_id() {
-  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetIdentityResponse.traits_id)
-  return traits_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* GetIdentityResponse::release_profile_id() {
+  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetIdentityResponse.profile_id)
+  return profile_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void GetIdentityResponse::set_allocated_traits_id(std::string* traits_id) {
-  if (traits_id != nullptr) {
+inline void GetIdentityResponse::set_allocated_profile_id(std::string* profile_id) {
+  if (profile_id != nullptr) {
     
   } else {
     
   }
-  traits_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), traits_id,
+  profile_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), profile_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetIdentityResponse.traits_id)
+  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetIdentityResponse.profile_id)
 }
 
 // repeated string addresses_ids = 6[json_name = "addressesIds"];
@@ -19109,66 +19091,66 @@ inline void GetIdentityByIdentifierResponse_Identity::set_allocated_main_identif
   // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.main_identifier)
 }
 
-// string traits_id = 5[json_name = "traitsId"];
-inline void GetIdentityByIdentifierResponse_Identity::clear_traits_id() {
-  traits_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+// string profile_id = 5[json_name = "profileId"];
+inline void GetIdentityByIdentifierResponse_Identity::clear_profile_id() {
+  profile_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& GetIdentityByIdentifierResponse_Identity::traits_id() const {
-  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.traits_id)
-  return _internal_traits_id();
+inline const std::string& GetIdentityByIdentifierResponse_Identity::profile_id() const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.profile_id)
+  return _internal_profile_id();
 }
-inline void GetIdentityByIdentifierResponse_Identity::set_traits_id(const std::string& value) {
-  _internal_set_traits_id(value);
-  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.traits_id)
+inline void GetIdentityByIdentifierResponse_Identity::set_profile_id(const std::string& value) {
+  _internal_set_profile_id(value);
+  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.profile_id)
 }
-inline std::string* GetIdentityByIdentifierResponse_Identity::mutable_traits_id() {
-  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.traits_id)
-  return _internal_mutable_traits_id();
+inline std::string* GetIdentityByIdentifierResponse_Identity::mutable_profile_id() {
+  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.profile_id)
+  return _internal_mutable_profile_id();
 }
-inline const std::string& GetIdentityByIdentifierResponse_Identity::_internal_traits_id() const {
-  return traits_id_.Get();
+inline const std::string& GetIdentityByIdentifierResponse_Identity::_internal_profile_id() const {
+  return profile_id_.Get();
 }
-inline void GetIdentityByIdentifierResponse_Identity::_internal_set_traits_id(const std::string& value) {
+inline void GetIdentityByIdentifierResponse_Identity::_internal_set_profile_id(const std::string& value) {
   
-  traits_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+  profile_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void GetIdentityByIdentifierResponse_Identity::set_traits_id(std::string&& value) {
+inline void GetIdentityByIdentifierResponse_Identity::set_profile_id(std::string&& value) {
   
-  traits_id_.Set(
+  profile_id_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.traits_id)
+  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.profile_id)
 }
-inline void GetIdentityByIdentifierResponse_Identity::set_traits_id(const char* value) {
+inline void GetIdentityByIdentifierResponse_Identity::set_profile_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  traits_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+  profile_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.traits_id)
+  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.profile_id)
 }
-inline void GetIdentityByIdentifierResponse_Identity::set_traits_id(const char* value,
+inline void GetIdentityByIdentifierResponse_Identity::set_profile_id(const char* value,
     size_t size) {
   
-  traits_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+  profile_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.traits_id)
+  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.profile_id)
 }
-inline std::string* GetIdentityByIdentifierResponse_Identity::_internal_mutable_traits_id() {
+inline std::string* GetIdentityByIdentifierResponse_Identity::_internal_mutable_profile_id() {
   
-  return traits_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  return profile_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* GetIdentityByIdentifierResponse_Identity::release_traits_id() {
-  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.traits_id)
-  return traits_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* GetIdentityByIdentifierResponse_Identity::release_profile_id() {
+  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.profile_id)
+  return profile_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void GetIdentityByIdentifierResponse_Identity::set_allocated_traits_id(std::string* traits_id) {
-  if (traits_id != nullptr) {
+inline void GetIdentityByIdentifierResponse_Identity::set_allocated_profile_id(std::string* profile_id) {
+  if (profile_id != nullptr) {
     
   } else {
     
   }
-  traits_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), traits_id,
+  profile_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), profile_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.traits_id)
+  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.profile_id)
 }
 
 // repeated string addresses_ids = 6[json_name = "addressesIds"];
@@ -19855,66 +19837,66 @@ inline void GetIdentitiesByAttributeResponse_Identity::set_allocated_main_identi
   // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetIdentitiesByAttributeResponse.Identity.main_identifier)
 }
 
-// string traits_id = 5[json_name = "traitsId"];
-inline void GetIdentitiesByAttributeResponse_Identity::clear_traits_id() {
-  traits_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+// string profile_id = 5[json_name = "profileId"];
+inline void GetIdentitiesByAttributeResponse_Identity::clear_profile_id() {
+  profile_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& GetIdentitiesByAttributeResponse_Identity::traits_id() const {
-  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetIdentitiesByAttributeResponse.Identity.traits_id)
-  return _internal_traits_id();
+inline const std::string& GetIdentitiesByAttributeResponse_Identity::profile_id() const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetIdentitiesByAttributeResponse.Identity.profile_id)
+  return _internal_profile_id();
 }
-inline void GetIdentitiesByAttributeResponse_Identity::set_traits_id(const std::string& value) {
-  _internal_set_traits_id(value);
-  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetIdentitiesByAttributeResponse.Identity.traits_id)
+inline void GetIdentitiesByAttributeResponse_Identity::set_profile_id(const std::string& value) {
+  _internal_set_profile_id(value);
+  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetIdentitiesByAttributeResponse.Identity.profile_id)
 }
-inline std::string* GetIdentitiesByAttributeResponse_Identity::mutable_traits_id() {
-  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetIdentitiesByAttributeResponse.Identity.traits_id)
-  return _internal_mutable_traits_id();
+inline std::string* GetIdentitiesByAttributeResponse_Identity::mutable_profile_id() {
+  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetIdentitiesByAttributeResponse.Identity.profile_id)
+  return _internal_mutable_profile_id();
 }
-inline const std::string& GetIdentitiesByAttributeResponse_Identity::_internal_traits_id() const {
-  return traits_id_.Get();
+inline const std::string& GetIdentitiesByAttributeResponse_Identity::_internal_profile_id() const {
+  return profile_id_.Get();
 }
-inline void GetIdentitiesByAttributeResponse_Identity::_internal_set_traits_id(const std::string& value) {
+inline void GetIdentitiesByAttributeResponse_Identity::_internal_set_profile_id(const std::string& value) {
   
-  traits_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+  profile_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void GetIdentitiesByAttributeResponse_Identity::set_traits_id(std::string&& value) {
+inline void GetIdentitiesByAttributeResponse_Identity::set_profile_id(std::string&& value) {
   
-  traits_id_.Set(
+  profile_id_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.GetIdentitiesByAttributeResponse.Identity.traits_id)
+  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.GetIdentitiesByAttributeResponse.Identity.profile_id)
 }
-inline void GetIdentitiesByAttributeResponse_Identity::set_traits_id(const char* value) {
+inline void GetIdentitiesByAttributeResponse_Identity::set_profile_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  traits_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+  profile_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.GetIdentitiesByAttributeResponse.Identity.traits_id)
+  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.GetIdentitiesByAttributeResponse.Identity.profile_id)
 }
-inline void GetIdentitiesByAttributeResponse_Identity::set_traits_id(const char* value,
+inline void GetIdentitiesByAttributeResponse_Identity::set_profile_id(const char* value,
     size_t size) {
   
-  traits_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+  profile_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.GetIdentitiesByAttributeResponse.Identity.traits_id)
+  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.GetIdentitiesByAttributeResponse.Identity.profile_id)
 }
-inline std::string* GetIdentitiesByAttributeResponse_Identity::_internal_mutable_traits_id() {
+inline std::string* GetIdentitiesByAttributeResponse_Identity::_internal_mutable_profile_id() {
   
-  return traits_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  return profile_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* GetIdentitiesByAttributeResponse_Identity::release_traits_id() {
-  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetIdentitiesByAttributeResponse.Identity.traits_id)
-  return traits_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* GetIdentitiesByAttributeResponse_Identity::release_profile_id() {
+  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetIdentitiesByAttributeResponse.Identity.profile_id)
+  return profile_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void GetIdentitiesByAttributeResponse_Identity::set_allocated_traits_id(std::string* traits_id) {
-  if (traits_id != nullptr) {
+inline void GetIdentitiesByAttributeResponse_Identity::set_allocated_profile_id(std::string* profile_id) {
+  if (profile_id != nullptr) {
     
   } else {
     
   }
-  traits_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), traits_id,
+  profile_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), profile_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetIdentitiesByAttributeResponse.Identity.traits_id)
+  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetIdentitiesByAttributeResponse.Identity.profile_id)
 }
 
 // repeated string addresses_ids = 6[json_name = "addressesIds"];
@@ -20673,66 +20655,66 @@ inline void GetCredentialsResponse_Credential::set_type(::PROTOBUF_NAMESPACE_ID:
   // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetCredentialsResponse.Credential.type)
 }
 
-// string name = 6[json_name = "name"];
-inline void GetCredentialsResponse_Credential::clear_name() {
-  name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+// string connection_id = 6[json_name = "connectionId"];
+inline void GetCredentialsResponse_Credential::clear_connection_id() {
+  connection_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& GetCredentialsResponse_Credential::name() const {
-  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetCredentialsResponse.Credential.name)
-  return _internal_name();
+inline const std::string& GetCredentialsResponse_Credential::connection_id() const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetCredentialsResponse.Credential.connection_id)
+  return _internal_connection_id();
 }
-inline void GetCredentialsResponse_Credential::set_name(const std::string& value) {
-  _internal_set_name(value);
-  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetCredentialsResponse.Credential.name)
+inline void GetCredentialsResponse_Credential::set_connection_id(const std::string& value) {
+  _internal_set_connection_id(value);
+  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetCredentialsResponse.Credential.connection_id)
 }
-inline std::string* GetCredentialsResponse_Credential::mutable_name() {
-  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetCredentialsResponse.Credential.name)
-  return _internal_mutable_name();
+inline std::string* GetCredentialsResponse_Credential::mutable_connection_id() {
+  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetCredentialsResponse.Credential.connection_id)
+  return _internal_mutable_connection_id();
 }
-inline const std::string& GetCredentialsResponse_Credential::_internal_name() const {
-  return name_.Get();
+inline const std::string& GetCredentialsResponse_Credential::_internal_connection_id() const {
+  return connection_id_.Get();
 }
-inline void GetCredentialsResponse_Credential::_internal_set_name(const std::string& value) {
+inline void GetCredentialsResponse_Credential::_internal_set_connection_id(const std::string& value) {
   
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+  connection_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void GetCredentialsResponse_Credential::set_name(std::string&& value) {
+inline void GetCredentialsResponse_Credential::set_connection_id(std::string&& value) {
   
-  name_.Set(
+  connection_id_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.GetCredentialsResponse.Credential.name)
+  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.GetCredentialsResponse.Credential.connection_id)
 }
-inline void GetCredentialsResponse_Credential::set_name(const char* value) {
+inline void GetCredentialsResponse_Credential::set_connection_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+  connection_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.GetCredentialsResponse.Credential.name)
+  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.GetCredentialsResponse.Credential.connection_id)
 }
-inline void GetCredentialsResponse_Credential::set_name(const char* value,
+inline void GetCredentialsResponse_Credential::set_connection_id(const char* value,
     size_t size) {
   
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+  connection_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.GetCredentialsResponse.Credential.name)
+  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.GetCredentialsResponse.Credential.connection_id)
 }
-inline std::string* GetCredentialsResponse_Credential::_internal_mutable_name() {
+inline std::string* GetCredentialsResponse_Credential::_internal_mutable_connection_id() {
   
-  return name_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  return connection_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* GetCredentialsResponse_Credential::release_name() {
-  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetCredentialsResponse.Credential.name)
-  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* GetCredentialsResponse_Credential::release_connection_id() {
+  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetCredentialsResponse.Credential.connection_id)
+  return connection_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void GetCredentialsResponse_Credential::set_allocated_name(std::string* name) {
-  if (name != nullptr) {
+inline void GetCredentialsResponse_Credential::set_allocated_connection_id(std::string* connection_id) {
+  if (connection_id != nullptr) {
     
   } else {
     
   }
-  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+  connection_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), connection_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetCredentialsResponse.Credential.name)
+  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetCredentialsResponse.Credential.connection_id)
 }
 
 // bool configured = 7[json_name = "configured"];
@@ -21003,66 +20985,66 @@ inline void UpdateCredentialRequest::set_allocated_identity_id(std::string* iden
 
 // CreateConnectionRequest
 
-// string name = 1[json_name = "name"];
-inline void CreateConnectionRequest::clear_name() {
-  name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+// string id = 1[json_name = "id"];
+inline void CreateConnectionRequest::clear_id() {
+  id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& CreateConnectionRequest::name() const {
-  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.CreateConnectionRequest.name)
-  return _internal_name();
+inline const std::string& CreateConnectionRequest::id() const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.CreateConnectionRequest.id)
+  return _internal_id();
 }
-inline void CreateConnectionRequest::set_name(const std::string& value) {
-  _internal_set_name(value);
-  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.CreateConnectionRequest.name)
+inline void CreateConnectionRequest::set_id(const std::string& value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.CreateConnectionRequest.id)
 }
-inline std::string* CreateConnectionRequest::mutable_name() {
-  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.CreateConnectionRequest.name)
-  return _internal_mutable_name();
+inline std::string* CreateConnectionRequest::mutable_id() {
+  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.CreateConnectionRequest.id)
+  return _internal_mutable_id();
 }
-inline const std::string& CreateConnectionRequest::_internal_name() const {
-  return name_.Get();
+inline const std::string& CreateConnectionRequest::_internal_id() const {
+  return id_.Get();
 }
-inline void CreateConnectionRequest::_internal_set_name(const std::string& value) {
+inline void CreateConnectionRequest::_internal_set_id(const std::string& value) {
   
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void CreateConnectionRequest::set_name(std::string&& value) {
+inline void CreateConnectionRequest::set_id(std::string&& value) {
   
-  name_.Set(
+  id_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.CreateConnectionRequest.name)
+  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.CreateConnectionRequest.id)
 }
-inline void CreateConnectionRequest::set_name(const char* value) {
+inline void CreateConnectionRequest::set_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.CreateConnectionRequest.name)
+  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.CreateConnectionRequest.id)
 }
-inline void CreateConnectionRequest::set_name(const char* value,
+inline void CreateConnectionRequest::set_id(const char* value,
     size_t size) {
   
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.CreateConnectionRequest.name)
+  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.CreateConnectionRequest.id)
 }
-inline std::string* CreateConnectionRequest::_internal_mutable_name() {
+inline std::string* CreateConnectionRequest::_internal_mutable_id() {
   
-  return name_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  return id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* CreateConnectionRequest::release_name() {
-  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.CreateConnectionRequest.name)
-  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* CreateConnectionRequest::release_id() {
+  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.CreateConnectionRequest.id)
+  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void CreateConnectionRequest::set_allocated_name(std::string* name) {
-  if (name != nullptr) {
+inline void CreateConnectionRequest::set_allocated_id(std::string* id) {
+  if (id != nullptr) {
     
   } else {
     
   }
-  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.CreateConnectionRequest.name)
+  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.CreateConnectionRequest.id)
 }
 
 // string client_id = 2[json_name = "clientId"];
@@ -21493,66 +21475,66 @@ inline void CreateConnectionRequest::set_allocated_scopes(std::string* scopes) {
 
 // CreateConnectionResponse
 
-// string name = 1[json_name = "name"];
-inline void CreateConnectionResponse::clear_name() {
-  name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+// string id = 1[json_name = "id"];
+inline void CreateConnectionResponse::clear_id() {
+  id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& CreateConnectionResponse::name() const {
-  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.CreateConnectionResponse.name)
-  return _internal_name();
+inline const std::string& CreateConnectionResponse::id() const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.CreateConnectionResponse.id)
+  return _internal_id();
 }
-inline void CreateConnectionResponse::set_name(const std::string& value) {
-  _internal_set_name(value);
-  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.CreateConnectionResponse.name)
+inline void CreateConnectionResponse::set_id(const std::string& value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.CreateConnectionResponse.id)
 }
-inline std::string* CreateConnectionResponse::mutable_name() {
-  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.CreateConnectionResponse.name)
-  return _internal_mutable_name();
+inline std::string* CreateConnectionResponse::mutable_id() {
+  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.CreateConnectionResponse.id)
+  return _internal_mutable_id();
 }
-inline const std::string& CreateConnectionResponse::_internal_name() const {
-  return name_.Get();
+inline const std::string& CreateConnectionResponse::_internal_id() const {
+  return id_.Get();
 }
-inline void CreateConnectionResponse::_internal_set_name(const std::string& value) {
+inline void CreateConnectionResponse::_internal_set_id(const std::string& value) {
   
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void CreateConnectionResponse::set_name(std::string&& value) {
+inline void CreateConnectionResponse::set_id(std::string&& value) {
   
-  name_.Set(
+  id_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.CreateConnectionResponse.name)
+  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.CreateConnectionResponse.id)
 }
-inline void CreateConnectionResponse::set_name(const char* value) {
+inline void CreateConnectionResponse::set_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.CreateConnectionResponse.name)
+  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.CreateConnectionResponse.id)
 }
-inline void CreateConnectionResponse::set_name(const char* value,
+inline void CreateConnectionResponse::set_id(const char* value,
     size_t size) {
   
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.CreateConnectionResponse.name)
+  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.CreateConnectionResponse.id)
 }
-inline std::string* CreateConnectionResponse::_internal_mutable_name() {
+inline std::string* CreateConnectionResponse::_internal_mutable_id() {
   
-  return name_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  return id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* CreateConnectionResponse::release_name() {
-  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.CreateConnectionResponse.name)
-  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* CreateConnectionResponse::release_id() {
+  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.CreateConnectionResponse.id)
+  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void CreateConnectionResponse::set_allocated_name(std::string* name) {
-  if (name != nullptr) {
+inline void CreateConnectionResponse::set_allocated_id(std::string* id) {
+  if (id != nullptr) {
     
   } else {
     
   }
-  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.CreateConnectionResponse.name)
+  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.CreateConnectionResponse.id)
 }
 
 // -------------------------------------------------------------------
@@ -21563,66 +21545,66 @@ inline void CreateConnectionResponse::set_allocated_name(std::string* name) {
 
 // GetConnectionsResponse_Connection
 
-// string name = 1[json_name = "name"];
-inline void GetConnectionsResponse_Connection::clear_name() {
-  name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+// string id = 1[json_name = "id"];
+inline void GetConnectionsResponse_Connection::clear_id() {
+  id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& GetConnectionsResponse_Connection::name() const {
-  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Connection.name)
-  return _internal_name();
+inline const std::string& GetConnectionsResponse_Connection::id() const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Connection.id)
+  return _internal_id();
 }
-inline void GetConnectionsResponse_Connection::set_name(const std::string& value) {
-  _internal_set_name(value);
-  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Connection.name)
+inline void GetConnectionsResponse_Connection::set_id(const std::string& value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Connection.id)
 }
-inline std::string* GetConnectionsResponse_Connection::mutable_name() {
-  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Connection.name)
-  return _internal_mutable_name();
+inline std::string* GetConnectionsResponse_Connection::mutable_id() {
+  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Connection.id)
+  return _internal_mutable_id();
 }
-inline const std::string& GetConnectionsResponse_Connection::_internal_name() const {
-  return name_.Get();
+inline const std::string& GetConnectionsResponse_Connection::_internal_id() const {
+  return id_.Get();
 }
-inline void GetConnectionsResponse_Connection::_internal_set_name(const std::string& value) {
+inline void GetConnectionsResponse_Connection::_internal_set_id(const std::string& value) {
   
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void GetConnectionsResponse_Connection::set_name(std::string&& value) {
+inline void GetConnectionsResponse_Connection::set_id(std::string&& value) {
   
-  name_.Set(
+  id_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Connection.name)
+  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Connection.id)
 }
-inline void GetConnectionsResponse_Connection::set_name(const char* value) {
+inline void GetConnectionsResponse_Connection::set_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Connection.name)
+  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Connection.id)
 }
-inline void GetConnectionsResponse_Connection::set_name(const char* value,
+inline void GetConnectionsResponse_Connection::set_id(const char* value,
     size_t size) {
   
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Connection.name)
+  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Connection.id)
 }
-inline std::string* GetConnectionsResponse_Connection::_internal_mutable_name() {
+inline std::string* GetConnectionsResponse_Connection::_internal_mutable_id() {
   
-  return name_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  return id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* GetConnectionsResponse_Connection::release_name() {
-  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Connection.name)
-  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* GetConnectionsResponse_Connection::release_id() {
+  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Connection.id)
+  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void GetConnectionsResponse_Connection::set_allocated_name(std::string* name) {
-  if (name != nullptr) {
+inline void GetConnectionsResponse_Connection::set_allocated_id(std::string* id) {
+  if (id != nullptr) {
     
   } else {
     
   }
-  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Connection.name)
+  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Connection.id)
 }
 
 // string client_id = 2[json_name = "clientId"];
@@ -21987,69 +21969,7 @@ inline void GetConnectionsResponse_Connection::set_type(::depot::devtools::auth:
   // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Connection.type)
 }
 
-// string id = 10[json_name = "id"];
-inline void GetConnectionsResponse_Connection::clear_id() {
-  id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline const std::string& GetConnectionsResponse_Connection::id() const {
-  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Connection.id)
-  return _internal_id();
-}
-inline void GetConnectionsResponse_Connection::set_id(const std::string& value) {
-  _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Connection.id)
-}
-inline std::string* GetConnectionsResponse_Connection::mutable_id() {
-  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Connection.id)
-  return _internal_mutable_id();
-}
-inline const std::string& GetConnectionsResponse_Connection::_internal_id() const {
-  return id_.Get();
-}
-inline void GetConnectionsResponse_Connection::_internal_set_id(const std::string& value) {
-  
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
-}
-inline void GetConnectionsResponse_Connection::set_id(std::string&& value) {
-  
-  id_.Set(
-    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Connection.id)
-}
-inline void GetConnectionsResponse_Connection::set_id(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
-              GetArena());
-  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Connection.id)
-}
-inline void GetConnectionsResponse_Connection::set_id(const char* value,
-    size_t size) {
-  
-  id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Connection.id)
-}
-inline std::string* GetConnectionsResponse_Connection::_internal_mutable_id() {
-  
-  return id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline std::string* GetConnectionsResponse_Connection::release_id() {
-  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Connection.id)
-  return id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void GetConnectionsResponse_Connection::set_allocated_id(std::string* id) {
-  if (id != nullptr) {
-    
-  } else {
-    
-  }
-  id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), id,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Connection.id)
-}
-
-// string scopes = 11[json_name = "scopes"];
+// string scopes = 10[json_name = "scopes"];
 inline void GetConnectionsResponse_Connection::clear_scopes() {
   scopes_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
@@ -22111,7 +22031,7 @@ inline void GetConnectionsResponse_Connection::set_allocated_scopes(std::string*
   // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Connection.scopes)
 }
 
-// .depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Purposes purpose = 12[json_name = "purpose"];
+// .depot.devtools.auth.v0.identity.admin.GetConnectionsResponse.Purposes purpose = 11[json_name = "purpose"];
 inline void GetConnectionsResponse_Connection::clear_purpose() {
   purpose_ = 0;
 }
@@ -29327,60 +29247,60 @@ inline UpdateAddressRequest::AttributeCase UpdateAddressRequest::attribute_case(
 
 // -------------------------------------------------------------------
 
-// GetTraitsRequest
+// GetProfileRequest
 
 // string identity_id = 1[json_name = "identityId"];
-inline void GetTraitsRequest::clear_identity_id() {
+inline void GetProfileRequest::clear_identity_id() {
   identity_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& GetTraitsRequest::identity_id() const {
-  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetTraitsRequest.identity_id)
+inline const std::string& GetProfileRequest::identity_id() const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetProfileRequest.identity_id)
   return _internal_identity_id();
 }
-inline void GetTraitsRequest::set_identity_id(const std::string& value) {
+inline void GetProfileRequest::set_identity_id(const std::string& value) {
   _internal_set_identity_id(value);
-  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetTraitsRequest.identity_id)
+  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetProfileRequest.identity_id)
 }
-inline std::string* GetTraitsRequest::mutable_identity_id() {
-  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetTraitsRequest.identity_id)
+inline std::string* GetProfileRequest::mutable_identity_id() {
+  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetProfileRequest.identity_id)
   return _internal_mutable_identity_id();
 }
-inline const std::string& GetTraitsRequest::_internal_identity_id() const {
+inline const std::string& GetProfileRequest::_internal_identity_id() const {
   return identity_id_.Get();
 }
-inline void GetTraitsRequest::_internal_set_identity_id(const std::string& value) {
+inline void GetProfileRequest::_internal_set_identity_id(const std::string& value) {
   
   identity_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void GetTraitsRequest::set_identity_id(std::string&& value) {
+inline void GetProfileRequest::set_identity_id(std::string&& value) {
   
   identity_id_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.GetTraitsRequest.identity_id)
+  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.GetProfileRequest.identity_id)
 }
-inline void GetTraitsRequest::set_identity_id(const char* value) {
+inline void GetProfileRequest::set_identity_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   identity_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.GetTraitsRequest.identity_id)
+  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.GetProfileRequest.identity_id)
 }
-inline void GetTraitsRequest::set_identity_id(const char* value,
+inline void GetProfileRequest::set_identity_id(const char* value,
     size_t size) {
   
   identity_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.GetTraitsRequest.identity_id)
+  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.GetProfileRequest.identity_id)
 }
-inline std::string* GetTraitsRequest::_internal_mutable_identity_id() {
+inline std::string* GetProfileRequest::_internal_mutable_identity_id() {
   
   return identity_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* GetTraitsRequest::release_identity_id() {
-  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetTraitsRequest.identity_id)
+inline std::string* GetProfileRequest::release_identity_id() {
+  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetProfileRequest.identity_id)
   return identity_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void GetTraitsRequest::set_allocated_identity_id(std::string* identity_id) {
+inline void GetProfileRequest::set_allocated_identity_id(std::string* identity_id) {
   if (identity_id != nullptr) {
     
   } else {
@@ -29388,131 +29308,131 @@ inline void GetTraitsRequest::set_allocated_identity_id(std::string* identity_id
   }
   identity_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), identity_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetTraitsRequest.identity_id)
+  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetProfileRequest.identity_id)
 }
 
 // -------------------------------------------------------------------
 
-// GetTraitsResponse
+// GetProfileResponse
 
-// string traits = 1[json_name = "traits"];
-inline void GetTraitsResponse::clear_traits() {
-  traits_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+// string profile = 1[json_name = "profile"];
+inline void GetProfileResponse::clear_profile() {
+  profile_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& GetTraitsResponse::traits() const {
-  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetTraitsResponse.traits)
-  return _internal_traits();
+inline const std::string& GetProfileResponse::profile() const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.GetProfileResponse.profile)
+  return _internal_profile();
 }
-inline void GetTraitsResponse::set_traits(const std::string& value) {
-  _internal_set_traits(value);
-  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetTraitsResponse.traits)
+inline void GetProfileResponse::set_profile(const std::string& value) {
+  _internal_set_profile(value);
+  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.GetProfileResponse.profile)
 }
-inline std::string* GetTraitsResponse::mutable_traits() {
-  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetTraitsResponse.traits)
-  return _internal_mutable_traits();
+inline std::string* GetProfileResponse::mutable_profile() {
+  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.GetProfileResponse.profile)
+  return _internal_mutable_profile();
 }
-inline const std::string& GetTraitsResponse::_internal_traits() const {
-  return traits_.Get();
+inline const std::string& GetProfileResponse::_internal_profile() const {
+  return profile_.Get();
 }
-inline void GetTraitsResponse::_internal_set_traits(const std::string& value) {
+inline void GetProfileResponse::_internal_set_profile(const std::string& value) {
   
-  traits_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+  profile_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void GetTraitsResponse::set_traits(std::string&& value) {
+inline void GetProfileResponse::set_profile(std::string&& value) {
   
-  traits_.Set(
+  profile_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.GetTraitsResponse.traits)
+  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.GetProfileResponse.profile)
 }
-inline void GetTraitsResponse::set_traits(const char* value) {
+inline void GetProfileResponse::set_profile(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  traits_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+  profile_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.GetTraitsResponse.traits)
+  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.GetProfileResponse.profile)
 }
-inline void GetTraitsResponse::set_traits(const char* value,
+inline void GetProfileResponse::set_profile(const char* value,
     size_t size) {
   
-  traits_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+  profile_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.GetTraitsResponse.traits)
+  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.GetProfileResponse.profile)
 }
-inline std::string* GetTraitsResponse::_internal_mutable_traits() {
+inline std::string* GetProfileResponse::_internal_mutable_profile() {
   
-  return traits_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  return profile_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* GetTraitsResponse::release_traits() {
-  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetTraitsResponse.traits)
-  return traits_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* GetProfileResponse::release_profile() {
+  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.GetProfileResponse.profile)
+  return profile_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void GetTraitsResponse::set_allocated_traits(std::string* traits) {
-  if (traits != nullptr) {
+inline void GetProfileResponse::set_allocated_profile(std::string* profile) {
+  if (profile != nullptr) {
     
   } else {
     
   }
-  traits_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), traits,
+  profile_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), profile,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetTraitsResponse.traits)
+  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.GetProfileResponse.profile)
 }
 
 // -------------------------------------------------------------------
 
-// UpdateTraitsRequest
+// UpdateProfileRequest
 
 // string identity_id = 1[json_name = "identityId"];
-inline void UpdateTraitsRequest::clear_identity_id() {
+inline void UpdateProfileRequest::clear_identity_id() {
   identity_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& UpdateTraitsRequest::identity_id() const {
-  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.UpdateTraitsRequest.identity_id)
+inline const std::string& UpdateProfileRequest::identity_id() const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.UpdateProfileRequest.identity_id)
   return _internal_identity_id();
 }
-inline void UpdateTraitsRequest::set_identity_id(const std::string& value) {
+inline void UpdateProfileRequest::set_identity_id(const std::string& value) {
   _internal_set_identity_id(value);
-  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.UpdateTraitsRequest.identity_id)
+  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.UpdateProfileRequest.identity_id)
 }
-inline std::string* UpdateTraitsRequest::mutable_identity_id() {
-  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.UpdateTraitsRequest.identity_id)
+inline std::string* UpdateProfileRequest::mutable_identity_id() {
+  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.UpdateProfileRequest.identity_id)
   return _internal_mutable_identity_id();
 }
-inline const std::string& UpdateTraitsRequest::_internal_identity_id() const {
+inline const std::string& UpdateProfileRequest::_internal_identity_id() const {
   return identity_id_.Get();
 }
-inline void UpdateTraitsRequest::_internal_set_identity_id(const std::string& value) {
+inline void UpdateProfileRequest::_internal_set_identity_id(const std::string& value) {
   
   identity_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void UpdateTraitsRequest::set_identity_id(std::string&& value) {
+inline void UpdateProfileRequest::set_identity_id(std::string&& value) {
   
   identity_id_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.UpdateTraitsRequest.identity_id)
+  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.UpdateProfileRequest.identity_id)
 }
-inline void UpdateTraitsRequest::set_identity_id(const char* value) {
+inline void UpdateProfileRequest::set_identity_id(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
   identity_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.UpdateTraitsRequest.identity_id)
+  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.UpdateProfileRequest.identity_id)
 }
-inline void UpdateTraitsRequest::set_identity_id(const char* value,
+inline void UpdateProfileRequest::set_identity_id(const char* value,
     size_t size) {
   
   identity_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.UpdateTraitsRequest.identity_id)
+  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.UpdateProfileRequest.identity_id)
 }
-inline std::string* UpdateTraitsRequest::_internal_mutable_identity_id() {
+inline std::string* UpdateProfileRequest::_internal_mutable_identity_id() {
   
   return identity_id_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* UpdateTraitsRequest::release_identity_id() {
-  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.UpdateTraitsRequest.identity_id)
+inline std::string* UpdateProfileRequest::release_identity_id() {
+  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.UpdateProfileRequest.identity_id)
   return identity_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void UpdateTraitsRequest::set_allocated_identity_id(std::string* identity_id) {
+inline void UpdateProfileRequest::set_allocated_identity_id(std::string* identity_id) {
   if (identity_id != nullptr) {
     
   } else {
@@ -29520,74 +29440,74 @@ inline void UpdateTraitsRequest::set_allocated_identity_id(std::string* identity
   }
   identity_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), identity_id,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.UpdateTraitsRequest.identity_id)
+  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.UpdateProfileRequest.identity_id)
 }
 
-// string traits = 2[json_name = "traits"];
-inline void UpdateTraitsRequest::clear_traits() {
-  traits_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+// string profile = 2[json_name = "profile"];
+inline void UpdateProfileRequest::clear_profile() {
+  profile_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline const std::string& UpdateTraitsRequest::traits() const {
-  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.UpdateTraitsRequest.traits)
-  return _internal_traits();
+inline const std::string& UpdateProfileRequest::profile() const {
+  // @@protoc_insertion_point(field_get:depot.devtools.auth.v0.identity.admin.UpdateProfileRequest.profile)
+  return _internal_profile();
 }
-inline void UpdateTraitsRequest::set_traits(const std::string& value) {
-  _internal_set_traits(value);
-  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.UpdateTraitsRequest.traits)
+inline void UpdateProfileRequest::set_profile(const std::string& value) {
+  _internal_set_profile(value);
+  // @@protoc_insertion_point(field_set:depot.devtools.auth.v0.identity.admin.UpdateProfileRequest.profile)
 }
-inline std::string* UpdateTraitsRequest::mutable_traits() {
-  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.UpdateTraitsRequest.traits)
-  return _internal_mutable_traits();
+inline std::string* UpdateProfileRequest::mutable_profile() {
+  // @@protoc_insertion_point(field_mutable:depot.devtools.auth.v0.identity.admin.UpdateProfileRequest.profile)
+  return _internal_mutable_profile();
 }
-inline const std::string& UpdateTraitsRequest::_internal_traits() const {
-  return traits_.Get();
+inline const std::string& UpdateProfileRequest::_internal_profile() const {
+  return profile_.Get();
 }
-inline void UpdateTraitsRequest::_internal_set_traits(const std::string& value) {
+inline void UpdateProfileRequest::_internal_set_profile(const std::string& value) {
   
-  traits_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+  profile_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
 }
-inline void UpdateTraitsRequest::set_traits(std::string&& value) {
+inline void UpdateProfileRequest::set_profile(std::string&& value) {
   
-  traits_.Set(
+  profile_.Set(
     &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.UpdateTraitsRequest.traits)
+  // @@protoc_insertion_point(field_set_rvalue:depot.devtools.auth.v0.identity.admin.UpdateProfileRequest.profile)
 }
-inline void UpdateTraitsRequest::set_traits(const char* value) {
+inline void UpdateProfileRequest::set_profile(const char* value) {
   GOOGLE_DCHECK(value != nullptr);
   
-  traits_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+  profile_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
               GetArena());
-  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.UpdateTraitsRequest.traits)
+  // @@protoc_insertion_point(field_set_char:depot.devtools.auth.v0.identity.admin.UpdateProfileRequest.profile)
 }
-inline void UpdateTraitsRequest::set_traits(const char* value,
+inline void UpdateProfileRequest::set_profile(const char* value,
     size_t size) {
   
-  traits_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+  profile_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
       reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.UpdateTraitsRequest.traits)
+  // @@protoc_insertion_point(field_set_pointer:depot.devtools.auth.v0.identity.admin.UpdateProfileRequest.profile)
 }
-inline std::string* UpdateTraitsRequest::_internal_mutable_traits() {
+inline std::string* UpdateProfileRequest::_internal_mutable_profile() {
   
-  return traits_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  return profile_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline std::string* UpdateTraitsRequest::release_traits() {
-  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.UpdateTraitsRequest.traits)
-  return traits_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* UpdateProfileRequest::release_profile() {
+  // @@protoc_insertion_point(field_release:depot.devtools.auth.v0.identity.admin.UpdateProfileRequest.profile)
+  return profile_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
-inline void UpdateTraitsRequest::set_allocated_traits(std::string* traits) {
-  if (traits != nullptr) {
+inline void UpdateProfileRequest::set_allocated_profile(std::string* profile) {
+  if (profile != nullptr) {
     
   } else {
     
   }
-  traits_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), traits,
+  profile_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), profile,
       GetArena());
-  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.UpdateTraitsRequest.traits)
+  // @@protoc_insertion_point(field_set_allocated:depot.devtools.auth.v0.identity.admin.UpdateProfileRequest.profile)
 }
 
 // -------------------------------------------------------------------
 
-// UpdateTraitsResponse
+// UpdateProfileResponse
 
 // -------------------------------------------------------------------
 

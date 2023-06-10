@@ -110,19 +110,19 @@ class Admin final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::UpdateAddressResponse>> PrepareAsyncUpdateAddress(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateAddressRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::UpdateAddressResponse>>(PrepareAsyncUpdateAddressRaw(context, request, cq));
     }
-    virtual ::grpc::Status GetTraits(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest& request, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>> AsyncGetTraits(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>>(AsyncGetTraitsRaw(context, request, cq));
+    virtual ::grpc::Status GetProfile(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest& request, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetProfileResponse>> AsyncGetProfile(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetProfileResponse>>(AsyncGetProfileRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>> PrepareAsyncGetTraits(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>>(PrepareAsyncGetTraitsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetProfileResponse>> PrepareAsyncGetProfile(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetProfileResponse>>(PrepareAsyncGetProfileRaw(context, request, cq));
     }
-    virtual ::grpc::Status UpdateTraits(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest& request, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>> AsyncUpdateTraits(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>>(AsyncUpdateTraitsRaw(context, request, cq));
+    virtual ::grpc::Status UpdateProfile(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest& request, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse>> AsyncUpdateProfile(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse>>(AsyncUpdateProfileRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>> PrepareAsyncUpdateTraits(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>>(PrepareAsyncUpdateTraitsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse>> PrepareAsyncUpdateProfile(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse>>(PrepareAsyncUpdateProfileRaw(context, request, cq));
     }
     virtual ::grpc::Status GetCredentials(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetCredentialsRequest& request, ::depot::devtools::auth::v0::identity::admin::GetCredentialsResponse* response) = 0;
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetCredentialsResponse>> AsyncGetCredentials(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetCredentialsRequest& request, ::grpc::CompletionQueue* cq) {
@@ -294,10 +294,10 @@ class Admin final {
       virtual void GetAddress(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetAddressRequest* request, ::depot::devtools::auth::v0::identity::admin::GetAddressResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void UpdateAddress(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateAddressRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateAddressResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void UpdateAddress(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateAddressRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateAddressResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void GetTraits(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest* request, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void GetTraits(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest* request, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
-      virtual void UpdateTraits(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void UpdateTraits(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void GetProfile(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest* request, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GetProfile(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest* request, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
+      virtual void UpdateProfile(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void UpdateProfile(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void GetCredentials(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetCredentialsRequest* request, ::depot::devtools::auth::v0::identity::admin::GetCredentialsResponse* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GetCredentials(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetCredentialsRequest* request, ::depot::devtools::auth::v0::identity::admin::GetCredentialsResponse* response, ::grpc::ClientUnaryReactor* reactor) = 0;
       virtual void UpdateCredential(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateCredentialRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateCredentialResponse* response, std::function<void(::grpc::Status)>) = 0;
@@ -365,10 +365,10 @@ class Admin final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetAddressResponse>* PrepareAsyncGetAddressRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetAddressRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::UpdateAddressResponse>* AsyncUpdateAddressRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateAddressRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::UpdateAddressResponse>* PrepareAsyncUpdateAddressRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateAddressRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>* AsyncGetTraitsRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>* PrepareAsyncGetTraitsRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>* AsyncUpdateTraitsRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>* PrepareAsyncUpdateTraitsRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetProfileResponse>* AsyncGetProfileRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetProfileResponse>* PrepareAsyncGetProfileRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse>* AsyncUpdateProfileRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse>* PrepareAsyncUpdateProfileRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetCredentialsResponse>* AsyncGetCredentialsRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetCredentialsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::GetCredentialsResponse>* PrepareAsyncGetCredentialsRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetCredentialsRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::depot::devtools::auth::v0::identity::admin::UpdateCredentialResponse>* AsyncUpdateCredentialRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateCredentialRequest& request, ::grpc::CompletionQueue* cq) = 0;
@@ -485,19 +485,19 @@ class Admin final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::UpdateAddressResponse>> PrepareAsyncUpdateAddress(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateAddressRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::UpdateAddressResponse>>(PrepareAsyncUpdateAddressRaw(context, request, cq));
     }
-    ::grpc::Status GetTraits(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest& request, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>> AsyncGetTraits(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>>(AsyncGetTraitsRaw(context, request, cq));
+    ::grpc::Status GetProfile(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest& request, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetProfileResponse>> AsyncGetProfile(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetProfileResponse>>(AsyncGetProfileRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>> PrepareAsyncGetTraits(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>>(PrepareAsyncGetTraitsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetProfileResponse>> PrepareAsyncGetProfile(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetProfileResponse>>(PrepareAsyncGetProfileRaw(context, request, cq));
     }
-    ::grpc::Status UpdateTraits(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest& request, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>> AsyncUpdateTraits(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>>(AsyncUpdateTraitsRaw(context, request, cq));
+    ::grpc::Status UpdateProfile(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest& request, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse>> AsyncUpdateProfile(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse>>(AsyncUpdateProfileRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>> PrepareAsyncUpdateTraits(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>>(PrepareAsyncUpdateTraitsRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse>> PrepareAsyncUpdateProfile(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse>>(PrepareAsyncUpdateProfileRaw(context, request, cq));
     }
     ::grpc::Status GetCredentials(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetCredentialsRequest& request, ::depot::devtools::auth::v0::identity::admin::GetCredentialsResponse* response) override;
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetCredentialsResponse>> AsyncGetCredentials(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetCredentialsRequest& request, ::grpc::CompletionQueue* cq) {
@@ -669,10 +669,10 @@ class Admin final {
       void GetAddress(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetAddressRequest* request, ::depot::devtools::auth::v0::identity::admin::GetAddressResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void UpdateAddress(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateAddressRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateAddressResponse* response, std::function<void(::grpc::Status)>) override;
       void UpdateAddress(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateAddressRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateAddressResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void GetTraits(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest* request, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse* response, std::function<void(::grpc::Status)>) override;
-      void GetTraits(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest* request, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
-      void UpdateTraits(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse* response, std::function<void(::grpc::Status)>) override;
-      void UpdateTraits(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void GetProfile(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest* request, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse* response, std::function<void(::grpc::Status)>) override;
+      void GetProfile(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest* request, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
+      void UpdateProfile(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse* response, std::function<void(::grpc::Status)>) override;
+      void UpdateProfile(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void GetCredentials(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetCredentialsRequest* request, ::depot::devtools::auth::v0::identity::admin::GetCredentialsResponse* response, std::function<void(::grpc::Status)>) override;
       void GetCredentials(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetCredentialsRequest* request, ::depot::devtools::auth::v0::identity::admin::GetCredentialsResponse* response, ::grpc::ClientUnaryReactor* reactor) override;
       void UpdateCredential(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateCredentialRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateCredentialResponse* response, std::function<void(::grpc::Status)>) override;
@@ -746,10 +746,10 @@ class Admin final {
     ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetAddressResponse>* PrepareAsyncGetAddressRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetAddressRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::UpdateAddressResponse>* AsyncUpdateAddressRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateAddressRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::UpdateAddressResponse>* PrepareAsyncUpdateAddressRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateAddressRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>* AsyncGetTraitsRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>* PrepareAsyncGetTraitsRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>* AsyncUpdateTraitsRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>* PrepareAsyncUpdateTraitsRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetProfileResponse>* AsyncGetProfileRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetProfileResponse>* PrepareAsyncGetProfileRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse>* AsyncUpdateProfileRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse>* PrepareAsyncUpdateProfileRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetCredentialsResponse>* AsyncGetCredentialsRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetCredentialsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetCredentialsResponse>* PrepareAsyncGetCredentialsRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetCredentialsRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::UpdateCredentialResponse>* AsyncUpdateCredentialRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateCredentialRequest& request, ::grpc::CompletionQueue* cq) override;
@@ -802,8 +802,8 @@ class Admin final {
     const ::grpc::internal::RpcMethod rpcmethod_GetAddresses_;
     const ::grpc::internal::RpcMethod rpcmethod_GetAddress_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateAddress_;
-    const ::grpc::internal::RpcMethod rpcmethod_GetTraits_;
-    const ::grpc::internal::RpcMethod rpcmethod_UpdateTraits_;
+    const ::grpc::internal::RpcMethod rpcmethod_GetProfile_;
+    const ::grpc::internal::RpcMethod rpcmethod_UpdateProfile_;
     const ::grpc::internal::RpcMethod rpcmethod_GetCredentials_;
     const ::grpc::internal::RpcMethod rpcmethod_UpdateCredential_;
     const ::grpc::internal::RpcMethod rpcmethod_GetIdentityLoginAttempts_;
@@ -842,8 +842,8 @@ class Admin final {
     virtual ::grpc::Status GetAddresses(::grpc::ServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetAddressesRequest* request, ::depot::devtools::auth::v0::identity::admin::GetAddressesResponse* response);
     virtual ::grpc::Status GetAddress(::grpc::ServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetAddressRequest* request, ::depot::devtools::auth::v0::identity::admin::GetAddressResponse* response);
     virtual ::grpc::Status UpdateAddress(::grpc::ServerContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateAddressRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateAddressResponse* response);
-    virtual ::grpc::Status GetTraits(::grpc::ServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest* request, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse* response);
-    virtual ::grpc::Status UpdateTraits(::grpc::ServerContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse* response);
+    virtual ::grpc::Status GetProfile(::grpc::ServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest* request, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse* response);
+    virtual ::grpc::Status UpdateProfile(::grpc::ServerContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse* response);
     virtual ::grpc::Status GetCredentials(::grpc::ServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetCredentialsRequest* request, ::depot::devtools::auth::v0::identity::admin::GetCredentialsResponse* response);
     virtual ::grpc::Status UpdateCredential(::grpc::ServerContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateCredentialRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateCredentialResponse* response);
     virtual ::grpc::Status GetIdentityLoginAttempts(::grpc::ServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsRequest* request, ::depot::devtools::auth::v0::identity::admin::GetIdentityLoginAttemptsResponse* response);
@@ -1067,42 +1067,42 @@ class Admin final {
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_GetTraits : public BaseClass {
+  class WithAsyncMethod_GetProfile : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithAsyncMethod_GetTraits() {
+    WithAsyncMethod_GetProfile() {
       ::grpc::Service::MarkMethodAsync(10);
     }
-    ~WithAsyncMethod_GetTraits() override {
+    ~WithAsyncMethod_GetProfile() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetTraits(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse* /*response*/) override {
+    ::grpc::Status GetProfile(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetTraits(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetProfile(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::GetProfileRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::GetProfileResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
-  class WithAsyncMethod_UpdateTraits : public BaseClass {
+  class WithAsyncMethod_UpdateProfile : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithAsyncMethod_UpdateTraits() {
+    WithAsyncMethod_UpdateProfile() {
       ::grpc::Service::MarkMethodAsync(11);
     }
-    ~WithAsyncMethod_UpdateTraits() override {
+    ~WithAsyncMethod_UpdateProfile() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateTraits(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse* /*response*/) override {
+    ::grpc::Status UpdateProfile(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestUpdateTraits(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestUpdateProfile(::grpc::ServerContext* context, ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest* request, ::grpc::ServerAsyncResponseWriter< ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -1526,7 +1526,7 @@ class Admin final {
       ::grpc::Service::RequestAsyncUnary(32, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_CreateIdentity<WithAsyncMethod_GetIdentity<WithAsyncMethod_GetIdentityByIdentifier<WithAsyncMethod_GetIdentitiesByAttribute<WithAsyncMethod_GetIdentities<WithAsyncMethod_UpdateIdentity<WithAsyncMethod_DeleteIdentity<WithAsyncMethod_GetAddresses<WithAsyncMethod_GetAddress<WithAsyncMethod_UpdateAddress<WithAsyncMethod_GetTraits<WithAsyncMethod_UpdateTraits<WithAsyncMethod_GetCredentials<WithAsyncMethod_UpdateCredential<WithAsyncMethod_GetIdentityLoginAttempts<WithAsyncMethod_CreateConnection<WithAsyncMethod_GetConnections<WithAsyncMethod_UpdateConnection<WithAsyncMethod_DeleteConnection<WithAsyncMethod_CreateIdSchema<WithAsyncMethod_GetIdSchemas<WithAsyncMethod_GetIdSchema<WithAsyncMethod_GetDefaultIdSchema<WithAsyncMethod_UpdateIdSchema<WithAsyncMethod_MarkDefaultIdSchema<WithAsyncMethod_DeleteIdSchema<WithAsyncMethod_CreateOAuth2Client<WithAsyncMethod_GetOAuth2Clients<WithAsyncMethod_UpdateOAuth2Client<WithAsyncMethod_DeleteOAuth2Client<WithAsyncMethod_GetEmailsSetup<WithAsyncMethod_UpdateEmailsSetup<WithAsyncMethod_GetUserBaseStatistics<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
+  typedef WithAsyncMethod_CreateIdentity<WithAsyncMethod_GetIdentity<WithAsyncMethod_GetIdentityByIdentifier<WithAsyncMethod_GetIdentitiesByAttribute<WithAsyncMethod_GetIdentities<WithAsyncMethod_UpdateIdentity<WithAsyncMethod_DeleteIdentity<WithAsyncMethod_GetAddresses<WithAsyncMethod_GetAddress<WithAsyncMethod_UpdateAddress<WithAsyncMethod_GetProfile<WithAsyncMethod_UpdateProfile<WithAsyncMethod_GetCredentials<WithAsyncMethod_UpdateCredential<WithAsyncMethod_GetIdentityLoginAttempts<WithAsyncMethod_CreateConnection<WithAsyncMethod_GetConnections<WithAsyncMethod_UpdateConnection<WithAsyncMethod_DeleteConnection<WithAsyncMethod_CreateIdSchema<WithAsyncMethod_GetIdSchemas<WithAsyncMethod_GetIdSchema<WithAsyncMethod_GetDefaultIdSchema<WithAsyncMethod_UpdateIdSchema<WithAsyncMethod_MarkDefaultIdSchema<WithAsyncMethod_DeleteIdSchema<WithAsyncMethod_CreateOAuth2Client<WithAsyncMethod_GetOAuth2Clients<WithAsyncMethod_UpdateOAuth2Client<WithAsyncMethod_DeleteOAuth2Client<WithAsyncMethod_GetEmailsSetup<WithAsyncMethod_UpdateEmailsSetup<WithAsyncMethod_GetUserBaseStatistics<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithCallbackMethod_CreateIdentity : public BaseClass {
    private:
@@ -1798,58 +1798,58 @@ class Admin final {
       ::grpc::CallbackServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::UpdateAddressRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::UpdateAddressResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_GetTraits : public BaseClass {
+  class WithCallbackMethod_GetProfile : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_GetTraits() {
+    WithCallbackMethod_GetProfile() {
       ::grpc::Service::MarkMethodCallback(10,
-          new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetProfileRequest, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest* request, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse* response) { return this->GetTraits(context, request, response); }));}
-    void SetMessageAllocatorFor_GetTraits(
-        ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>* allocator) {
+                   ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest* request, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse* response) { return this->GetProfile(context, request, response); }));}
+    void SetMessageAllocatorFor_GetProfile(
+        ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::GetProfileRequest, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(10);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::GetProfileRequest, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_GetTraits() override {
+    ~WithCallbackMethod_GetProfile() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetTraits(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse* /*response*/) override {
+    ::grpc::Status GetProfile(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* GetTraits(
-      ::grpc::CallbackServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse* /*response*/)  { return nullptr; }
+    virtual ::grpc::ServerUnaryReactor* GetProfile(
+      ::grpc::CallbackServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithCallbackMethod_UpdateTraits : public BaseClass {
+  class WithCallbackMethod_UpdateProfile : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithCallbackMethod_UpdateTraits() {
+    WithCallbackMethod_UpdateProfile() {
       ::grpc::Service::MarkMethodCallback(11,
-          new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>(
+          new ::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse* response) { return this->UpdateTraits(context, request, response); }));}
-    void SetMessageAllocatorFor_UpdateTraits(
-        ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>* allocator) {
+                   ::grpc::CallbackServerContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse* response) { return this->UpdateProfile(context, request, response); }));}
+    void SetMessageAllocatorFor_UpdateProfile(
+        ::grpc::MessageAllocator< ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse>* allocator) {
       ::grpc::internal::MethodHandler* const handler = ::grpc::Service::GetHandler(11);
-      static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>*>(handler)
+      static_cast<::grpc::internal::CallbackUnaryHandler< ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse>*>(handler)
               ->SetMessageAllocator(allocator);
     }
-    ~WithCallbackMethod_UpdateTraits() override {
+    ~WithCallbackMethod_UpdateProfile() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateTraits(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse* /*response*/) override {
+    ::grpc::Status UpdateProfile(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* UpdateTraits(
-      ::grpc::CallbackServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse* /*response*/)  { return nullptr; }
+    virtual ::grpc::ServerUnaryReactor* UpdateProfile(
+      ::grpc::CallbackServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
   class WithCallbackMethod_GetCredentials : public BaseClass {
@@ -2418,7 +2418,7 @@ class Admin final {
     virtual ::grpc::ServerUnaryReactor* GetUserBaseStatistics(
       ::grpc::CallbackServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsResponse* /*response*/)  { return nullptr; }
   };
-  typedef WithCallbackMethod_CreateIdentity<WithCallbackMethod_GetIdentity<WithCallbackMethod_GetIdentityByIdentifier<WithCallbackMethod_GetIdentitiesByAttribute<WithCallbackMethod_GetIdentities<WithCallbackMethod_UpdateIdentity<WithCallbackMethod_DeleteIdentity<WithCallbackMethod_GetAddresses<WithCallbackMethod_GetAddress<WithCallbackMethod_UpdateAddress<WithCallbackMethod_GetTraits<WithCallbackMethod_UpdateTraits<WithCallbackMethod_GetCredentials<WithCallbackMethod_UpdateCredential<WithCallbackMethod_GetIdentityLoginAttempts<WithCallbackMethod_CreateConnection<WithCallbackMethod_GetConnections<WithCallbackMethod_UpdateConnection<WithCallbackMethod_DeleteConnection<WithCallbackMethod_CreateIdSchema<WithCallbackMethod_GetIdSchemas<WithCallbackMethod_GetIdSchema<WithCallbackMethod_GetDefaultIdSchema<WithCallbackMethod_UpdateIdSchema<WithCallbackMethod_MarkDefaultIdSchema<WithCallbackMethod_DeleteIdSchema<WithCallbackMethod_CreateOAuth2Client<WithCallbackMethod_GetOAuth2Clients<WithCallbackMethod_UpdateOAuth2Client<WithCallbackMethod_DeleteOAuth2Client<WithCallbackMethod_GetEmailsSetup<WithCallbackMethod_UpdateEmailsSetup<WithCallbackMethod_GetUserBaseStatistics<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
+  typedef WithCallbackMethod_CreateIdentity<WithCallbackMethod_GetIdentity<WithCallbackMethod_GetIdentityByIdentifier<WithCallbackMethod_GetIdentitiesByAttribute<WithCallbackMethod_GetIdentities<WithCallbackMethod_UpdateIdentity<WithCallbackMethod_DeleteIdentity<WithCallbackMethod_GetAddresses<WithCallbackMethod_GetAddress<WithCallbackMethod_UpdateAddress<WithCallbackMethod_GetProfile<WithCallbackMethod_UpdateProfile<WithCallbackMethod_GetCredentials<WithCallbackMethod_UpdateCredential<WithCallbackMethod_GetIdentityLoginAttempts<WithCallbackMethod_CreateConnection<WithCallbackMethod_GetConnections<WithCallbackMethod_UpdateConnection<WithCallbackMethod_DeleteConnection<WithCallbackMethod_CreateIdSchema<WithCallbackMethod_GetIdSchemas<WithCallbackMethod_GetIdSchema<WithCallbackMethod_GetDefaultIdSchema<WithCallbackMethod_UpdateIdSchema<WithCallbackMethod_MarkDefaultIdSchema<WithCallbackMethod_DeleteIdSchema<WithCallbackMethod_CreateOAuth2Client<WithCallbackMethod_GetOAuth2Clients<WithCallbackMethod_UpdateOAuth2Client<WithCallbackMethod_DeleteOAuth2Client<WithCallbackMethod_GetEmailsSetup<WithCallbackMethod_UpdateEmailsSetup<WithCallbackMethod_GetUserBaseStatistics<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > CallbackService;
   typedef CallbackService ExperimentalCallbackService;
   template <class BaseClass>
   class WithGenericMethod_CreateIdentity : public BaseClass {
@@ -2591,35 +2591,35 @@ class Admin final {
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_GetTraits : public BaseClass {
+  class WithGenericMethod_GetProfile : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithGenericMethod_GetTraits() {
+    WithGenericMethod_GetProfile() {
       ::grpc::Service::MarkMethodGeneric(10);
     }
-    ~WithGenericMethod_GetTraits() override {
+    ~WithGenericMethod_GetProfile() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetTraits(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse* /*response*/) override {
+    ::grpc::Status GetProfile(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
   };
   template <class BaseClass>
-  class WithGenericMethod_UpdateTraits : public BaseClass {
+  class WithGenericMethod_UpdateProfile : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithGenericMethod_UpdateTraits() {
+    WithGenericMethod_UpdateProfile() {
       ::grpc::Service::MarkMethodGeneric(11);
     }
-    ~WithGenericMethod_UpdateTraits() override {
+    ~WithGenericMethod_UpdateProfile() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateTraits(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse* /*response*/) override {
+    ::grpc::Status UpdateProfile(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -3182,42 +3182,42 @@ class Admin final {
     }
   };
   template <class BaseClass>
-  class WithRawMethod_GetTraits : public BaseClass {
+  class WithRawMethod_GetProfile : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawMethod_GetTraits() {
+    WithRawMethod_GetProfile() {
       ::grpc::Service::MarkMethodRaw(10);
     }
-    ~WithRawMethod_GetTraits() override {
+    ~WithRawMethod_GetProfile() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetTraits(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse* /*response*/) override {
+    ::grpc::Status GetProfile(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestGetTraits(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestGetProfile(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(10, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
-  class WithRawMethod_UpdateTraits : public BaseClass {
+  class WithRawMethod_UpdateProfile : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawMethod_UpdateTraits() {
+    WithRawMethod_UpdateProfile() {
       ::grpc::Service::MarkMethodRaw(11);
     }
-    ~WithRawMethod_UpdateTraits() override {
+    ~WithRawMethod_UpdateProfile() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateTraits(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse* /*response*/) override {
+    ::grpc::Status UpdateProfile(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestUpdateTraits(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestUpdateProfile(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(11, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
@@ -3862,47 +3862,47 @@ class Admin final {
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_GetTraits : public BaseClass {
+  class WithRawCallbackMethod_GetProfile : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_GetTraits() {
+    WithRawCallbackMethod_GetProfile() {
       ::grpc::Service::MarkMethodRawCallback(10,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetTraits(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->GetProfile(context, request, response); }));
     }
-    ~WithRawCallbackMethod_GetTraits() override {
+    ~WithRawCallbackMethod_GetProfile() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status GetTraits(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse* /*response*/) override {
+    ::grpc::Status GetProfile(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* GetTraits(
+    virtual ::grpc::ServerUnaryReactor* GetProfile(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
-  class WithRawCallbackMethod_UpdateTraits : public BaseClass {
+  class WithRawCallbackMethod_UpdateProfile : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithRawCallbackMethod_UpdateTraits() {
+    WithRawCallbackMethod_UpdateProfile() {
       ::grpc::Service::MarkMethodRawCallback(11,
           new ::grpc::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
             [this](
-                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->UpdateTraits(context, request, response); }));
+                   ::grpc::CallbackServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response) { return this->UpdateProfile(context, request, response); }));
     }
-    ~WithRawCallbackMethod_UpdateTraits() override {
+    ~WithRawCallbackMethod_UpdateProfile() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status UpdateTraits(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse* /*response*/) override {
+    ::grpc::Status UpdateProfile(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual ::grpc::ServerUnaryReactor* UpdateTraits(
+    virtual ::grpc::ServerUnaryReactor* UpdateProfile(
       ::grpc::CallbackServerContext* /*context*/, const ::grpc::ByteBuffer* /*request*/, ::grpc::ByteBuffer* /*response*/)  { return nullptr; }
   };
   template <class BaseClass>
@@ -4638,58 +4638,58 @@ class Admin final {
     virtual ::grpc::Status StreamedUpdateAddress(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::depot::devtools::auth::v0::identity::admin::UpdateAddressRequest,::depot::devtools::auth::v0::identity::admin::UpdateAddressResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_GetTraits : public BaseClass {
+  class WithStreamedUnaryMethod_GetProfile : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithStreamedUnaryMethod_GetTraits() {
+    WithStreamedUnaryMethod_GetProfile() {
       ::grpc::Service::MarkMethodStreamed(10,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>(
+          ::depot::devtools::auth::v0::identity::admin::GetProfileRequest, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>* streamer) {
-                       return this->StreamedGetTraits(context,
+                     ::depot::devtools::auth::v0::identity::admin::GetProfileRequest, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse>* streamer) {
+                       return this->StreamedGetProfile(context,
                          streamer);
                   }));
     }
-    ~WithStreamedUnaryMethod_GetTraits() override {
+    ~WithStreamedUnaryMethod_GetProfile() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status GetTraits(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse* /*response*/) override {
+    ::grpc::Status GetProfile(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedGetTraits(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest,::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedGetProfile(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::depot::devtools::auth::v0::identity::admin::GetProfileRequest,::depot::devtools::auth::v0::identity::admin::GetProfileResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_UpdateTraits : public BaseClass {
+  class WithStreamedUnaryMethod_UpdateProfile : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service* /*service*/) {}
    public:
-    WithStreamedUnaryMethod_UpdateTraits() {
+    WithStreamedUnaryMethod_UpdateProfile() {
       ::grpc::Service::MarkMethodStreamed(11,
         new ::grpc::internal::StreamedUnaryHandler<
-          ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>(
+          ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse>(
             [this](::grpc::ServerContext* context,
                    ::grpc::ServerUnaryStreamer<
-                     ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>* streamer) {
-                       return this->StreamedUpdateTraits(context,
+                     ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse>* streamer) {
+                       return this->StreamedUpdateProfile(context,
                          streamer);
                   }));
     }
-    ~WithStreamedUnaryMethod_UpdateTraits() override {
+    ~WithStreamedUnaryMethod_UpdateProfile() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status UpdateTraits(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse* /*response*/) override {
+    ::grpc::Status UpdateProfile(::grpc::ServerContext* /*context*/, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest* /*request*/, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse* /*response*/) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedUpdateTraits(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest,::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedUpdateProfile(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest,::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse>* server_unary_streamer) = 0;
   };
   template <class BaseClass>
   class WithStreamedUnaryMethod_GetCredentials : public BaseClass {
@@ -5258,9 +5258,9 @@ class Admin final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedGetUserBaseStatistics(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsRequest,::depot::devtools::auth::v0::identity::admin::GetUserBaseStatisticsResponse>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_CreateIdentity<WithStreamedUnaryMethod_GetIdentity<WithStreamedUnaryMethod_GetIdentityByIdentifier<WithStreamedUnaryMethod_GetIdentitiesByAttribute<WithStreamedUnaryMethod_GetIdentities<WithStreamedUnaryMethod_UpdateIdentity<WithStreamedUnaryMethod_DeleteIdentity<WithStreamedUnaryMethod_GetAddresses<WithStreamedUnaryMethod_GetAddress<WithStreamedUnaryMethod_UpdateAddress<WithStreamedUnaryMethod_GetTraits<WithStreamedUnaryMethod_UpdateTraits<WithStreamedUnaryMethod_GetCredentials<WithStreamedUnaryMethod_UpdateCredential<WithStreamedUnaryMethod_GetIdentityLoginAttempts<WithStreamedUnaryMethod_CreateConnection<WithStreamedUnaryMethod_GetConnections<WithStreamedUnaryMethod_UpdateConnection<WithStreamedUnaryMethod_DeleteConnection<WithStreamedUnaryMethod_CreateIdSchema<WithStreamedUnaryMethod_GetIdSchemas<WithStreamedUnaryMethod_GetIdSchema<WithStreamedUnaryMethod_GetDefaultIdSchema<WithStreamedUnaryMethod_UpdateIdSchema<WithStreamedUnaryMethod_MarkDefaultIdSchema<WithStreamedUnaryMethod_DeleteIdSchema<WithStreamedUnaryMethod_CreateOAuth2Client<WithStreamedUnaryMethod_GetOAuth2Clients<WithStreamedUnaryMethod_UpdateOAuth2Client<WithStreamedUnaryMethod_DeleteOAuth2Client<WithStreamedUnaryMethod_GetEmailsSetup<WithStreamedUnaryMethod_UpdateEmailsSetup<WithStreamedUnaryMethod_GetUserBaseStatistics<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_CreateIdentity<WithStreamedUnaryMethod_GetIdentity<WithStreamedUnaryMethod_GetIdentityByIdentifier<WithStreamedUnaryMethod_GetIdentitiesByAttribute<WithStreamedUnaryMethod_GetIdentities<WithStreamedUnaryMethod_UpdateIdentity<WithStreamedUnaryMethod_DeleteIdentity<WithStreamedUnaryMethod_GetAddresses<WithStreamedUnaryMethod_GetAddress<WithStreamedUnaryMethod_UpdateAddress<WithStreamedUnaryMethod_GetProfile<WithStreamedUnaryMethod_UpdateProfile<WithStreamedUnaryMethod_GetCredentials<WithStreamedUnaryMethod_UpdateCredential<WithStreamedUnaryMethod_GetIdentityLoginAttempts<WithStreamedUnaryMethod_CreateConnection<WithStreamedUnaryMethod_GetConnections<WithStreamedUnaryMethod_UpdateConnection<WithStreamedUnaryMethod_DeleteConnection<WithStreamedUnaryMethod_CreateIdSchema<WithStreamedUnaryMethod_GetIdSchemas<WithStreamedUnaryMethod_GetIdSchema<WithStreamedUnaryMethod_GetDefaultIdSchema<WithStreamedUnaryMethod_UpdateIdSchema<WithStreamedUnaryMethod_MarkDefaultIdSchema<WithStreamedUnaryMethod_DeleteIdSchema<WithStreamedUnaryMethod_CreateOAuth2Client<WithStreamedUnaryMethod_GetOAuth2Clients<WithStreamedUnaryMethod_UpdateOAuth2Client<WithStreamedUnaryMethod_DeleteOAuth2Client<WithStreamedUnaryMethod_GetEmailsSetup<WithStreamedUnaryMethod_UpdateEmailsSetup<WithStreamedUnaryMethod_GetUserBaseStatistics<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_CreateIdentity<WithStreamedUnaryMethod_GetIdentity<WithStreamedUnaryMethod_GetIdentityByIdentifier<WithStreamedUnaryMethod_GetIdentitiesByAttribute<WithStreamedUnaryMethod_GetIdentities<WithStreamedUnaryMethod_UpdateIdentity<WithStreamedUnaryMethod_DeleteIdentity<WithStreamedUnaryMethod_GetAddresses<WithStreamedUnaryMethod_GetAddress<WithStreamedUnaryMethod_UpdateAddress<WithStreamedUnaryMethod_GetTraits<WithStreamedUnaryMethod_UpdateTraits<WithStreamedUnaryMethod_GetCredentials<WithStreamedUnaryMethod_UpdateCredential<WithStreamedUnaryMethod_GetIdentityLoginAttempts<WithStreamedUnaryMethod_CreateConnection<WithStreamedUnaryMethod_GetConnections<WithStreamedUnaryMethod_UpdateConnection<WithStreamedUnaryMethod_DeleteConnection<WithStreamedUnaryMethod_CreateIdSchema<WithStreamedUnaryMethod_GetIdSchemas<WithStreamedUnaryMethod_GetIdSchema<WithStreamedUnaryMethod_GetDefaultIdSchema<WithStreamedUnaryMethod_UpdateIdSchema<WithStreamedUnaryMethod_MarkDefaultIdSchema<WithStreamedUnaryMethod_DeleteIdSchema<WithStreamedUnaryMethod_CreateOAuth2Client<WithStreamedUnaryMethod_GetOAuth2Clients<WithStreamedUnaryMethod_UpdateOAuth2Client<WithStreamedUnaryMethod_DeleteOAuth2Client<WithStreamedUnaryMethod_GetEmailsSetup<WithStreamedUnaryMethod_UpdateEmailsSetup<WithStreamedUnaryMethod_GetUserBaseStatistics<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_CreateIdentity<WithStreamedUnaryMethod_GetIdentity<WithStreamedUnaryMethod_GetIdentityByIdentifier<WithStreamedUnaryMethod_GetIdentitiesByAttribute<WithStreamedUnaryMethod_GetIdentities<WithStreamedUnaryMethod_UpdateIdentity<WithStreamedUnaryMethod_DeleteIdentity<WithStreamedUnaryMethod_GetAddresses<WithStreamedUnaryMethod_GetAddress<WithStreamedUnaryMethod_UpdateAddress<WithStreamedUnaryMethod_GetProfile<WithStreamedUnaryMethod_UpdateProfile<WithStreamedUnaryMethod_GetCredentials<WithStreamedUnaryMethod_UpdateCredential<WithStreamedUnaryMethod_GetIdentityLoginAttempts<WithStreamedUnaryMethod_CreateConnection<WithStreamedUnaryMethod_GetConnections<WithStreamedUnaryMethod_UpdateConnection<WithStreamedUnaryMethod_DeleteConnection<WithStreamedUnaryMethod_CreateIdSchema<WithStreamedUnaryMethod_GetIdSchemas<WithStreamedUnaryMethod_GetIdSchema<WithStreamedUnaryMethod_GetDefaultIdSchema<WithStreamedUnaryMethod_UpdateIdSchema<WithStreamedUnaryMethod_MarkDefaultIdSchema<WithStreamedUnaryMethod_DeleteIdSchema<WithStreamedUnaryMethod_CreateOAuth2Client<WithStreamedUnaryMethod_GetOAuth2Clients<WithStreamedUnaryMethod_UpdateOAuth2Client<WithStreamedUnaryMethod_DeleteOAuth2Client<WithStreamedUnaryMethod_GetEmailsSetup<WithStreamedUnaryMethod_UpdateEmailsSetup<WithStreamedUnaryMethod_GetUserBaseStatistics<Service > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > StreamedService;
 };
 
 }  // namespace admin

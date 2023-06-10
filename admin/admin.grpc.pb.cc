@@ -37,8 +37,8 @@ static const char* Admin_method_names[] = {
   "/depot.devtools.auth.v0.identity.admin.Admin/GetAddresses",
   "/depot.devtools.auth.v0.identity.admin.Admin/GetAddress",
   "/depot.devtools.auth.v0.identity.admin.Admin/UpdateAddress",
-  "/depot.devtools.auth.v0.identity.admin.Admin/GetTraits",
-  "/depot.devtools.auth.v0.identity.admin.Admin/UpdateTraits",
+  "/depot.devtools.auth.v0.identity.admin.Admin/GetProfile",
+  "/depot.devtools.auth.v0.identity.admin.Admin/UpdateProfile",
   "/depot.devtools.auth.v0.identity.admin.Admin/GetCredentials",
   "/depot.devtools.auth.v0.identity.admin.Admin/UpdateCredential",
   "/depot.devtools.auth.v0.identity.admin.Admin/GetIdentityLoginAttempts",
@@ -79,8 +79,8 @@ Admin::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, con
   , rpcmethod_GetAddresses_(Admin_method_names[7], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetAddress_(Admin_method_names[8], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_UpdateAddress_(Admin_method_names[9], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_GetTraits_(Admin_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_UpdateTraits_(Admin_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetProfile_(Admin_method_names[10], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateProfile_(Admin_method_names[11], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetCredentials_(Admin_method_names[12], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_UpdateCredential_(Admin_method_names[13], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GetIdentityLoginAttempts_(Admin_method_names[14], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
@@ -334,48 +334,48 @@ void Admin::Stub::async::UpdateAddress(::grpc::ClientContext* context, const ::d
   return result;
 }
 
-::grpc::Status Admin::Stub::GetTraits(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest& request, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetTraits_, context, request, response);
+::grpc::Status Admin::Stub::GetProfile(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest& request, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::depot::devtools::auth::v0::identity::admin::GetProfileRequest, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetProfile_, context, request, response);
 }
 
-void Admin::Stub::async::GetTraits(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest* request, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetTraits_, context, request, response, std::move(f));
+void Admin::Stub::async::GetProfile(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest* request, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::depot::devtools::auth::v0::identity::admin::GetProfileRequest, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetProfile_, context, request, response, std::move(f));
 }
 
-void Admin::Stub::async::GetTraits(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest* request, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetTraits_, context, request, response, reactor);
+void Admin::Stub::async::GetProfile(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest* request, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetProfile_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>* Admin::Stub::PrepareAsyncGetTraitsRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse, ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetTraits_, context, request);
+::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetProfileResponse>* Admin::Stub::PrepareAsyncGetProfileRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::depot::devtools::auth::v0::identity::admin::GetProfileResponse, ::depot::devtools::auth::v0::identity::admin::GetProfileRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetProfile_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse>* Admin::Stub::AsyncGetTraitsRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::GetProfileResponse>* Admin::Stub::AsyncGetProfileRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncGetTraitsRaw(context, request, cq);
+    this->PrepareAsyncGetProfileRaw(context, request, cq);
   result->StartCall();
   return result;
 }
 
-::grpc::Status Admin::Stub::UpdateTraits(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest& request, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall< ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_UpdateTraits_, context, request, response);
+::grpc::Status Admin::Stub::UpdateProfile(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest& request, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_UpdateProfile_, context, request, response);
 }
 
-void Admin::Stub::async::UpdateTraits(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc::internal::CallbackUnaryCall< ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_UpdateTraits_, context, request, response, std::move(f));
+void Admin::Stub::async::UpdateProfile(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_UpdateProfile_, context, request, response, std::move(f));
 }
 
-void Admin::Stub::async::UpdateTraits(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse* response, ::grpc::ClientUnaryReactor* reactor) {
-  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_UpdateTraits_, context, request, response, reactor);
+void Admin::Stub::async::UpdateProfile(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_UpdateProfile_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>* Admin::Stub::PrepareAsyncUpdateTraitsRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_UpdateTraits_, context, request);
+::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse>* Admin::Stub::PrepareAsyncUpdateProfileRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse, ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_UpdateProfile_, context, request);
 }
 
-::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse>* Admin::Stub::AsyncUpdateTraitsRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest& request, ::grpc::CompletionQueue* cq) {
+::grpc::ClientAsyncResponseReader< ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse>* Admin::Stub::AsyncUpdateProfileRaw(::grpc::ClientContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest& request, ::grpc::CompletionQueue* cq) {
   auto* result =
-    this->PrepareAsyncUpdateTraitsRaw(context, request, cq);
+    this->PrepareAsyncUpdateProfileRaw(context, request, cq);
   result->StartCall();
   return result;
 }
@@ -967,22 +967,22 @@ Admin::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Admin_method_names[10],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::GetProfileRequest, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest* req,
-             ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse* resp) {
-               return service->GetTraits(ctx, req, resp);
+             const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest* req,
+             ::depot::devtools::auth::v0::identity::admin::GetProfileResponse* resp) {
+               return service->GetProfile(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Admin_method_names[11],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+      new ::grpc::internal::RpcMethodHandler< Admin::Service, ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
           [](Admin::Service* service,
              ::grpc::ServerContext* ctx,
-             const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest* req,
-             ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse* resp) {
-               return service->UpdateTraits(ctx, req, resp);
+             const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest* req,
+             ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse* resp) {
+               return service->UpdateProfile(ctx, req, resp);
              }, this)));
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Admin_method_names[12],
@@ -1269,14 +1269,14 @@ Admin::Service::~Service() {
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status Admin::Service::GetTraits(::grpc::ServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetTraitsRequest* request, ::depot::devtools::auth::v0::identity::admin::GetTraitsResponse* response) {
+::grpc::Status Admin::Service::GetProfile(::grpc::ServerContext* context, const ::depot::devtools::auth::v0::identity::admin::GetProfileRequest* request, ::depot::devtools::auth::v0::identity::admin::GetProfileResponse* response) {
   (void) context;
   (void) request;
   (void) response;
   return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
 }
 
-::grpc::Status Admin::Service::UpdateTraits(::grpc::ServerContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateTraitsRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateTraitsResponse* response) {
+::grpc::Status Admin::Service::UpdateProfile(::grpc::ServerContext* context, const ::depot::devtools::auth::v0::identity::admin::UpdateProfileRequest* request, ::depot::devtools::auth::v0::identity::admin::UpdateProfileResponse* response) {
   (void) context;
   (void) request;
   (void) response;
